@@ -16,6 +16,7 @@
       --accent: #16a085;
       --soft: #eaf4fb;
       --chip: #edf7f3;
+      --paper: #fff7ed;
     }
 
     * {
@@ -40,7 +41,7 @@
     }
 
     .page {
-      max-width: 980px;
+      max-width: 1020px;
       margin: 0 auto;
       padding: 40px 20px;
     }
@@ -92,7 +93,7 @@
 
     .summary {
       margin: 24px 0 0;
-      max-width: 820px;
+      max-width: 860px;
       color: #334155;
       font-size: 16px;
     }
@@ -186,6 +187,34 @@
       margin: 6px 0;
     }
 
+    .paper-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .paper-list li {
+      padding: 14px 16px;
+      border: 1px solid #fed7aa;
+      border-radius: 8px;
+      background: var(--paper);
+      color: #3f2c16;
+    }
+
+    .paper-tag {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #ffedd5;
+      color: #9a3412;
+      font-size: 12px;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -247,7 +276,7 @@
         <div class="name-row">
           <div>
             <h1>柯书奇</h1>
-            <p class="role">算法工程师方向 | 计算机视觉 / 边缘推理 / 端侧部署</p>
+            <p class="role">算法工程师方向 | 计算机视觉 / 目标检测 / 图像分割 / 端侧部署</p>
           </div>
         </div>
 
@@ -258,7 +287,7 @@
         </div>
 
         <p class="summary">
-          物联网工程专业背景，关注计算机视觉、深度学习模型训练与端侧部署。具备从算法模型训练、ONNX/TensorRT 导出、Jetson 实时推理，到 ESP32 传感器采集、后端告警管理与 Web 控制台开发的完整项目实践经验，希望从事算法工程师相关岗位。
+          物联网工程专业背景，研究方向聚焦目标检测、图像分割、深度学习模型优化与边缘设备部署。具备从算法建模、实验验证、模型轻量化、ONNX/TensorRT 导出，到 Jetson Orin Nano 实时推理和系统落地的完整实践经验。
         </p>
       </header>
 
@@ -268,57 +297,122 @@
           <ul class="skills">
             <li>Python</li>
             <li>C</li>
+            <li>PyTorch</li>
             <li>OpenCV</li>
             <li>深度学习</li>
             <li>YOLO 目标检测</li>
+            <li>U-Net 图像分割</li>
+            <li>迁移学习</li>
+            <li>模型轻量化</li>
             <li>ONNX</li>
             <li>TensorRT</li>
             <li>Jetson 边缘推理</li>
-            <li>ESP32</li>
             <li>端侧部署</li>
           </ul>
         </section>
 
         <section>
-          <h2>项目经历</h2>
+          <h2>算法科研经历</h2>
           <div class="item">
             <div class="item-head">
-              <h3 class="item-title">WildfireAegis：森林火焰 / 烟雾智能监测系统</h3>
-              <span class="item-meta">Python · YOLO · Jetson · ESP32 · Spring Boot</span>
+              <h3 class="item-title">九江学院计算机视觉研究所</h3>
+              <span class="item-meta">2022.12 - 2025.09 · 目标检测 / 图像分割</span>
             </div>
             <ul class="bullets">
-              <li>基于 Jetson 边缘推理、ESP32 传感器节点与 Spring Boot 控制台，构建端到端火焰 / 烟雾监测系统。</li>
-              <li>负责 YOLO 火焰烟雾检测模型训练，并完成 ONNX / TensorRT 导出，支持在 Jetson 设备上进行实时视频推理。</li>
-              <li>实现 Jetson 实时视频推理流程与 RTSP 推流，推动模型从训练结果落地到实际边缘设备运行。</li>
-              <li>完成 ESP32 温湿度、烟雾数据采集与蜂鸣器联动，实现视觉检测与传感器告警的协同。</li>
-              <li>参与后端设备状态管理、报警记录、邮件通知和 Web 可视化控制台开发，形成可演示、可维护的完整系统。</li>
-              <li>整理开源发布文档、模型归档和第三方许可说明，提高项目复现与发布规范性。</li>
+              <li>围绕复杂场景火灾烟雾检测、医学图像分割、边缘云实时交通检测等方向开展模型设计、实验验证与对比分析。</li>
+              <li>累计研读计算机视觉相关论文 100+ 篇，参与每周学术研讨，注重算法方案迭代、消融实验和实验结果分析。</li>
             </ul>
           </div>
 
           <div class="item">
             <div class="item-head">
-              <h3 class="item-title">GuessNumber：猜数字小游戏</h3>
-              <span class="item-meta">Python</span>
+              <h3 class="item-title">TY-YOLO：集成注意力的多尺度复杂场景火灾烟雾检测算法</h3>
+              <span class="item-meta">第一作者论文 · Under Review</span>
             </div>
             <ul class="bullets">
-              <li>使用 Python 实现基础交互式猜数字小游戏，练习随机数生成、条件判断、循环控制与用户输入处理。</li>
-              <li>通过小游戏项目巩固 Python 基础语法与程序流程设计能力。</li>
+              <li>独立设计注意力机制模块，改进多尺度特征融合结构，构建面向复杂场景的轻量级火灾烟雾检测模型。</li>
+              <li>完成模型参数优化、训练实验、结果分析与论文撰写，面向森林火灾早期检测场景提升烟雾与火焰识别能力。</li>
             </ul>
           </div>
+
+          <div class="item">
+            <div class="item-head">
+              <h3 class="item-title">FgFEU-Net：基于迁移学习的乳腺肿瘤分割模型</h3>
+              <span class="item-meta">医学图像分割 · U-Net</span>
+            </div>
+            <ul class="bullets">
+              <li>参与细粒度特征提取 U-Net 模型研究，用于乳腺癌超声图像自动分割。</li>
+              <li>负责实验验证与对比分析，评估迁移学习和特征提取模块对分割效果的影响。</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-head">
+              <h3 class="item-title">边缘 - 云协同实时智能交通检测系统</h3>
+              <span class="item-meta">轻量化模型 · 实时车辆检测</span>
+            </div>
+            <ul class="bullets">
+              <li>参与轻量级深度学习模型优化与系统测试，基于边缘云协同架构实现实时车辆检测。</li>
+              <li>关注模型推理效率、端到端延迟和边缘设备部署效果，推动检测算法在实时系统中的应用。</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>算法项目经历</h2>
+          <div class="item">
+            <div class="item-head">
+              <h3 class="item-title">WildfireAegis：森林火灾智能检测与预警系统</h3>
+              <span class="item-meta">YOLO · TensorRT · Jetson Orin Nano · ESP32</span>
+            </div>
+            <ul class="bullets">
+              <li>基于 Jetson 边缘推理、ESP32 传感器节点与 Web 控制台，构建端到端火焰 / 烟雾监测系统。</li>
+              <li>负责 YOLO 火焰烟雾检测模型训练、轻量化优化和 ONNX / TensorRT 导出，确保模型在 Jetson Orin Nano 上实时推理。</li>
+              <li>实现实时视频推理与 RTSP 推流，完成视觉检测结果与温湿度、烟雾传感器数据的联动告警。</li>
+              <li>整理模型归档、开源发布文档和第三方许可说明，提高项目复现与工程发布规范性。</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-head">
+              <h3 class="item-title">染色体分割检测系统</h3>
+              <span class="item-meta">图像处理 · OpenCV · PyQt5</span>
+            </div>
+            <ul class="bullets">
+              <li>采用图像处理算法优化染色体检测与分割流程，提升实验室数据标注与分析效率。</li>
+              <li>基于 PyQt5 开发交互式分析工具，支持检测结果查看、辅助分析和流程化处理。</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>论文成果</h2>
+          <ul class="paper-list">
+            <li>
+              <strong>TY-YOLO: An attention-based multi-scale complex scene fire smoke detection algorithm</strong>
+              <span class="paper-tag">JCR Q2 · 第一作者 · Under Review</span>
+            </li>
+            <li>
+              <strong>FgFEU-Net: A Fine-grained Feature Extraction U-Net Model for Breast Tumor Segmentation Based on Transfer Learning</strong>
+            </li>
+            <li>
+              <strong>The Real-Time Intelligent Transportation Detection System Based on Edge-Cloud Collaborative Computing</strong>
+            </li>
+          </ul>
         </section>
 
         <section class="two-col">
           <div class="small-panel">
             <h2>教育经历</h2>
             <strong>九江学院 · 物联网工程</strong>
-            <p>系统学习嵌入式、传感器、计算机网络、程序设计与物联网相关课程，项目方向聚焦深度学习与边缘智能应用。</p>
+            <p>2022.09 - 2026.06</p>
+            <p>核心课程：计算机组成原理、操作系统、数据结构、计算机网络、高级语言程序设计。</p>
           </div>
 
           <div class="small-panel">
             <h2>求职方向</h2>
             <strong>算法工程师</strong>
-            <p>期望参与计算机视觉、目标检测、边缘推理、模型部署与智能硬件结合方向的研发工作。</p>
+            <p>期望参与计算机视觉、目标检测、图像分割、模型轻量化、边缘推理与端侧部署方向的研发工作。</p>
           </div>
         </section>
       </div>
