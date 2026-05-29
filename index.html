@@ -325,15 +325,8 @@
       overflow-wrap: anywhere;
     }
 
-    .bullets {
-      margin: 8px 0 0;
-      padding-left: 18px;
-      color: #4f5d6c;
-      font-size: 15px;
-    }
-
-    .bullets li {
-      margin: 6px 0;
+    .item-body p:not(.tagline) + p {
+      margin-top: 8px;
     }
 
     .paper-ref {
@@ -511,10 +504,8 @@
           <div class="item-body">
             <h3>JJU CVI Lab</h3>
             <p class="tagline">Object Detection · Semantic Segmentation · Edge AI</p>
-            <ul class="bullets">
-              <li>依托 JJU CVI Lab 的计算机视觉研究平台，系统参与视觉智能、边缘计算与行业应用转化方向的科研训练；长期跟进前沿论文、实验规范和可复现研究方法，参与技术路线评估、实验方案设计与阶段性成果整理，形成从学术问题抽象、实验设计、工程验证到成果表达的完整研究闭环。</li>
-              <li>参与实验室生物医学图像工具链建设，将染色体检测、分割、结果复核和 PyQt5 交互界面整合为可运行系统，推动算法原型从脚本验证走向面向实验数据流的工程化工具。</li>
-            </ul>
+            <p>依托 JJU CVI Lab 参与视觉智能、边缘计算与行业应用转化研究，覆盖前沿论文研读、技术路线评估、实验设计与结果复盘，形成从问题抽象到工程验证、从实验记录到成果表达的科研闭环。</p>
+            <p>同时承担实验室生物医学图像工具链建设，将染色体检测、分割、结果复核与 PyQt5 交互界面整合为可运行系统，提升实验数据处理流程的规范性和可复用性。</p>
           </div>
         </div>
 
@@ -570,12 +561,8 @@
           </div>
           <div class="item-body">
             <h3>WildfireAegis：森林火灾智能检测与预警系统</h3>
-            <ul class="bullets">
-              <li>基于 Jetson 边缘推理、ESP32 传感器节点与 Web 控制台，构建端到端火焰 / 烟雾监测系统。</li>
-              <li>负责 YOLO 火焰烟雾检测模型训练、轻量化优化、ONNX / TensorRT 导出，保障模型在 Jetson Orin Nano 上实时推理。</li>
-              <li>实现实时视频推理与 RTSP 推流，将视觉检测结果与温湿度、烟雾传感器数据联动，形成告警闭环。</li>
-              <li>整理模型归档、开源发布文档和第三方许可说明，提升项目复现性与工程发布规范性。</li>
-            </ul>
+            <p>围绕森林火灾早期预警构建端到端火焰 / 烟雾监测系统，负责 YOLO 检测模型训练、轻量化优化、ONNX / TensorRT 导出与 Jetson Orin Nano 端侧部署，并通过 RTSP 推流联动温湿度、烟雾传感器和 Web 控制台，形成从视觉推理到告警闭环的边缘 AI 工程。</p>
+            <p>同步完成模型归档、开源发布文档和第三方许可说明，强化项目的复现性、部署规范和工程交付质量。</p>
           </div>
         </div>
 
@@ -586,12 +573,8 @@
           </div>
           <div class="item-body">
             <h3>VisionDot：五路相机标记点检测与边缘实时追踪系统</h3>
-            <ul class="bullets">
-              <li>面向五路 / 单路相机场景搭建跨 PC、RV1126B、RK3588 的端侧视觉工程，覆盖摄像头接入、GStreamer / MIPI 显示、上位机调参、日志分析与性能基准。</li>
-              <li>设计 RGB 分区阈值、形态学闭合、HoughCircles 初始化、灰度模板匹配与 Hue 基线偏移分析链路，实现标记点检测、模板追踪、位移可视化和第一帧基准回零。</li>
-              <li>采用多进程五路并发架构和 OpenCV 线程控制，建立 FPS / CPU / IPC / cache miss 性能剖析工具，完成 PC、RK3588、RV1126B 等平台的真实负载评估。</li>
-              <li>将按键系统升级为 MIPI 切路 + 全路一键校准双状态机，解决多路实时追踪中的显示调度、漂移复位和现场可控性问题。</li>
-            </ul>
+            <p>面向五路 / 单路相机场景构建跨 PC、RV1126B、RK3588 的端侧视觉系统，覆盖摄像头接入、GStreamer / MIPI 显示、上位机调参、日志分析与性能基准。算法链路以 RGB 分区阈值、形态学闭合、HoughCircles 初始化、灰度模板匹配和 Hue 基线偏移分析为核心，实现标记点检测、模板追踪、位移可视化与第一帧基准回零。</p>
+            <p>工程侧采用多进程五路并发和 OpenCV 线程控制，建立 FPS / CPU / IPC / cache miss 性能剖析工具，并将按键系统升级为 MIPI 切路 + 全路一键校准双状态机，解决多路实时追踪的显示调度、漂移复位和现场可控性问题。</p>
           </div>
         </div>
 
@@ -602,12 +585,8 @@
           </div>
           <div class="item-body">
             <h3>VTLA LeRobot：视觉-触觉机器人学习与真机训练推理栈</h3>
-            <ul class="bullets">
-              <li>基于 LeRobot 0.5.2 构建兼容上游 CLI / API 的机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机和训练 / 录制 / 推理配置，保留 lerobot-train、lerobot-record、lerobot-teleoperate 等工程入口。</li>
-              <li>打通 Piper 主从臂遥操作数据采集流程，组织顶部 / 腕部 / 触觉多模态观测、CAN 总线、流式编码、episode 管理和数据统计，为 PI0 / PI0.5 策略微调提供可复现数据闭环。</li>
-              <li>扩展 PI0.5 触觉输入能力，新增 tactile_image_keys、TactileEncoder、触觉 token 投影和 embed_tactile_image 流程，使触觉 RGB 流进入策略前缀嵌入与真实机器人评估链路。</li>
-              <li>改造训练管线的梯度累积与有效 batch 统计，补充 ACT / Piper / 触觉抓取训练配置，将模型训练、策略部署和硬件联调拉通为完整机器人学习工程。</li>
-            </ul>
+            <p>基于 LeRobot 0.5.2 构建兼容上游 CLI / API 的机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机与训练 / 录制 / 推理配置，打通 Piper 主从臂遥操作数据采集、CAN 总线、流式编码、episode 管理和多模态数据统计，为 PI0 / PI0.5 策略微调提供可复现数据闭环。</p>
+            <p>模型侧扩展 PI0.5 触觉输入能力，新增 tactile_image_keys、TactileEncoder、触觉 token 投影和 embed_tactile_image 流程；训练侧改造梯度累积与有效 batch 统计，补充 ACT / Piper / 触觉抓取训练配置，形成从真机数据到策略训练、部署评估的完整工程链路。</p>
           </div>
         </div>
       </section>
