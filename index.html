@@ -86,18 +86,32 @@
       background: rgba(0, 0, 0, 0.08);
     }
 
-    .monogram {
+    .avatar-frame {
       width: 104px;
       height: 104px;
-      display: grid;
-      place-items: center;
       border: 2px solid rgba(255, 255, 255, 0.78);
       border-radius: 50%;
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .avatar-photo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .monogram {
+      width: 100%;
+      height: 100%;
+      display: none;
+      place-items: center;
       color: #ffffff;
       font-size: 30px;
       font-weight: 800;
       letter-spacing: 0;
-      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.08);
     }
 
     .identity h1 {
@@ -429,9 +443,12 @@
   <article class="shell">
     <aside class="sidebar">
       <header class="identity">
-        <div class="monogram">KSQ</div>
+        <div class="avatar-frame">
+          <img class="avatar-photo" src="assets/avatar.jpg" alt="柯书奇头像" data-fallback="assets/avatar.png" onerror="if (!this.dataset.triedFallback) { this.dataset.triedFallback='1'; this.src=this.dataset.fallback; } else { this.style.display='none'; this.nextElementSibling.style.display='grid'; }" />
+          <div class="monogram">KSQ</div>
+        </div>
         <h1>柯书奇</h1>
-        <p class="title">算法工程师候选人</p>
+        <p class="title">Algorithm Engineer Candidate</p>
         <p class="sub-title">Computer Vision · Edge AI · Model Deployment</p>
       </header>
 
@@ -448,7 +465,7 @@
           </li>
           <li>
             <span class="label">Education</span>
-            九江学院 · 物联网工程
+            Jiujiang University · IoT Engineering
           </li>
         </ul>
       </section>
@@ -456,10 +473,10 @@
       <section class="side-block">
         <h2>Focus</h2>
         <ul class="focus-list">
-          <li>计算机视觉算法</li>
-          <li>目标检测与图像分割</li>
-          <li>模型轻量化与端侧部署</li>
-          <li>Jetson 边缘智能系统</li>
+          <li>Computer Vision</li>
+          <li>Object Detection / Segmentation</li>
+          <li>Model Compression & Deployment</li>
+          <li>Jetson Edge AI System</li>
         </ul>
       </section>
 
@@ -486,8 +503,8 @@
         <ul class="side-list">
           <li>
             <span class="label">2022.09 - 2026.06</span>
-            九江学院 · 物联网工程
-            <p class="side-note">核心课程：数据结构、计算机网络、操作系统、计算机组成原理、高级语言程序设计。</p>
+            Jiujiang University · IoT Engineering
+            <p class="side-note">Core courses: Data Structures, Computer Networks, Operating Systems, Computer Organization, Advanced Programming.</p>
           </li>
         </ul>
       </section>
@@ -508,17 +525,17 @@
       <section class="hero">
         <div>
           <p class="eyebrow">Algorithm Engineer</p>
-          <h2>计算机视觉与边缘智能方向算法工程师</h2>
+          <h2>Computer Vision & Edge AI Algorithm Engineer</h2>
           <p>
             研究与项目实践集中在目标检测、医学图像分割、轻量化模型优化和端侧部署。熟悉从模型选型、结构改进、损失函数调优、实验对比，到 ONNX/TensorRT 导出和 Jetson 边缘推理的完整流程，关注算法在真实场景中的稳定性、实时性与可复现性。
           </p>
           <ul class="profile-tags">
-            <li>目标检测</li>
-            <li>语义分割</li>
-            <li>迁移学习</li>
-            <li>模型轻量化</li>
-            <li>TensorRT 部署</li>
-            <li>边缘云协同</li>
+            <li>Object Detection</li>
+            <li>Semantic Segmentation</li>
+            <li>Transfer Learning</li>
+            <li>Model Compression</li>
+            <li>TensorRT Deployment</li>
+            <li>Edge-Cloud Collaboration</li>
           </ul>
         </div>
       </section>
@@ -531,8 +548,8 @@
             2022.12 - 2025.09
           </div>
           <div class="item-body">
-            <h3>九江学院计算机视觉研究所</h3>
-            <p class="tagline">目标检测 · 图像分割 · 边缘智能</p>
+            <h3>JJU CVI Lab</h3>
+            <p class="tagline">Object Detection · Semantic Segmentation · Edge AI</p>
             <p>围绕复杂场景火灾烟雾检测、乳腺肿瘤超声图像分割和智能交通实时检测开展科研训练，长期参与论文研读、模型复现、实验对比与方案迭代，形成了从视觉任务定义、网络结构分析、损失函数选择到部署约束评估的完整算法实践习惯。</p>
           </div>
         </div>
