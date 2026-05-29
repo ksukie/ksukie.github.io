@@ -211,10 +211,10 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr;
       gap: 24px;
       align-items: start;
-      padding-bottom: 26px;
+      padding-bottom: 28px;
       border-bottom: 1px solid var(--line);
       margin-bottom: 34px;
       min-width: 0;
@@ -246,56 +246,22 @@
       font-size: 16px;
     }
 
-    .status-card {
-      width: 180px;
-      padding: 16px 16px 14px;
-      border: 1px solid var(--line);
-      background: var(--pale);
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .status-card strong {
-      display: block;
-      color: var(--green);
-      font-size: 24px;
-      line-height: 1.1;
-    }
-
-    .status-card span {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 38px;
-    }
-
-    .metric {
-      min-height: 104px;
-      padding: 16px;
+    .profile-tags li {
+      padding: 7px 11px;
       border: 1px solid var(--line);
       background: #fbfdfe;
-      min-width: 0;
-      overflow-wrap: anywhere;
-    }
-
-    .metric strong {
-      display: block;
-      color: var(--heading, #1f2b35);
-      font-size: 22px;
-      line-height: 1.1;
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 9px;
-      color: var(--muted);
+      color: #36505a;
       font-size: 13px;
-      line-height: 1.45;
+      font-weight: 700;
     }
 
     .section {
@@ -383,35 +349,22 @@
       margin: 6px 0;
     }
 
-    .paper-list {
-      display: grid;
-      gap: 14px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .paper {
-      padding: 18px 18px 17px;
-      border: 1px solid var(--line);
-      border-left: 5px solid var(--green);
-      background: linear-gradient(90deg, var(--blue-soft), #ffffff 38%);
-    }
-
-    .paper strong {
-      display: block;
-      color: #26313d;
-      font-size: 15px;
-      line-height: 1.45;
+    .paper-ref {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--green);
+      background: #f6faf8;
+      color: #526270;
+      font-size: 13px;
+      line-height: 1.55;
       overflow-wrap: anywhere;
     }
 
-    .paper span {
-      display: inline-block;
-      margin-top: 8px;
-      color: #8a661e;
+    .paper-ref strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #1f2b35;
       font-size: 13px;
-      font-weight: 800;
     }
 
     @media (max-width: 980px) {
@@ -427,14 +380,6 @@
 
       .hero {
         grid-template-columns: 1fr;
-      }
-
-      .status-card {
-        width: 100%;
-      }
-
-      .metrics {
-        grid-template-columns: repeat(2, 1fr);
       }
 
       .item {
@@ -453,10 +398,6 @@
 
       .hero h2 {
         font-size: 25px;
-      }
-
-      .metrics {
-        grid-template-columns: 1fr;
       }
 
       .skills {
@@ -566,34 +507,19 @@
     <main class="main">
       <section class="hero">
         <div>
-          <p class="eyebrow">Algorithm Engineer Resume</p>
-          <h2>面向真实场景的计算机视觉算法与边缘智能落地实践者</h2>
+          <p class="eyebrow">Algorithm Engineer</p>
+          <h2>计算机视觉与边缘智能方向算法工程师</h2>
           <p>
-            聚焦目标检测、图像分割、深度学习模型优化与端侧部署。具备从算法设计、论文实验、模型导出，到 Jetson Orin Nano 实时推理、传感器联动和系统交付的完整链路经验。
+            研究与项目实践集中在目标检测、医学图像分割、轻量化模型优化和端侧部署。熟悉从模型选型、结构改进、损失函数调优、实验对比，到 ONNX/TensorRT 导出和 Jetson 边缘推理的完整流程，关注算法在真实场景中的稳定性、实时性与可复现性。
           </p>
-        </div>
-        <div class="status-card">
-          <strong>JCR Q2</strong>
-          <span>TY-YOLO 第一作者论文 Under Review</span>
-        </div>
-      </section>
-
-      <section class="metrics" aria-label="核心亮点">
-        <div class="metric">
-          <strong>100+</strong>
-          <span>计算机视觉论文研读与组会讨论</span>
-        </div>
-        <div class="metric">
-          <strong>3</strong>
-          <span>目标检测、医学分割、边缘云检测方向论文成果</span>
-        </div>
-        <div class="metric">
-          <strong>Jetson</strong>
-          <span>完成模型导出、实时推理与 RTSP 推流</span>
-        </div>
-        <div class="metric">
-          <strong>End-to-End</strong>
-          <span>从算法训练到硬件联动和 Web 可视化闭环</span>
+          <ul class="profile-tags">
+            <li>目标检测</li>
+            <li>语义分割</li>
+            <li>迁移学习</li>
+            <li>模型轻量化</li>
+            <li>TensorRT 部署</li>
+            <li>边缘云协同</li>
+          </ul>
         </div>
       </section>
 
@@ -607,7 +533,7 @@
           <div class="item-body">
             <h3>九江学院计算机视觉研究所</h3>
             <p class="tagline">目标检测 · 图像分割 · 边缘智能</p>
-            <p>围绕复杂场景火灾烟雾检测、乳腺肿瘤超声图像分割、边缘云实时交通检测开展模型设计、实验验证、对比分析与论文撰写，持续参与算法方案迭代和消融实验讨论。</p>
+            <p>围绕复杂场景火灾烟雾检测、乳腺肿瘤超声图像分割和智能交通实时检测开展科研训练，长期参与论文研读、模型复现、实验对比与方案迭代，形成了从视觉任务定义、网络结构分析、损失函数选择到部署约束评估的完整算法实践习惯。</p>
           </div>
         </div>
 
@@ -618,32 +544,41 @@
           </div>
           <div class="item-body">
             <h3>TY-YOLO：集成注意力的多尺度复杂场景火灾烟雾检测算法</h3>
-            <ul class="bullets">
-              <li>独立设计注意力机制模块，改进多尺度特征融合结构，构建面向复杂场景的轻量级火灾烟雾检测模型。</li>
-              <li>完成训练实验、参数优化、结果分析与论文撰写，提升火灾早期检测场景下烟雾与火焰识别能力。</li>
-            </ul>
+            <p>面向森林火灾早期预警中小目标烟雾、遮挡干扰和复杂背景误检问题，独立完成模型选型、结构优化、损失函数调优和论文撰写，通过注意力机制与多尺度特征融合增强火焰/烟雾表征能力，构建兼顾检测精度与边缘部署潜力的轻量级目标检测模型。</p>
+            <div class="paper-ref">
+              <strong>对应论文</strong>
+              TY-YOLO: An attention-based multi-scale complex scene fire smoke detection algorithm · JCR Q2 · 第一作者 · Under Review
+            </div>
           </div>
         </div>
 
         <div class="item">
           <div class="time">
             <strong>医学图像</strong>
-            U-Net · Transfer Learning
+            已发表 · U-Net
           </div>
           <div class="item-body">
             <h3>FgFEU-Net：基于迁移学习的乳腺肿瘤分割模型</h3>
-            <p>参与细粒度特征提取 U-Net 模型研究，面向乳腺癌超声图像自动分割任务，负责实验验证与对比分析，评估迁移学习和特征提取模块对分割效果的影响。</p>
+            <p>面向乳腺超声图像中肿瘤边界模糊、样本标注成本高和前景/背景不均衡等问题，构建基于迁移学习的细粒度特征提取 U-Net 模型，引入 VGG16 作为编码器增强低层纹理与语义特征抽取，通过同层特征融合恢复高分辨率定位信息，并结合 Combo Loss 改善医学图像语义分割中的类别不平衡。</p>
+            <div class="paper-ref">
+              <strong>对应论文</strong>
+              FgFEU-Net: A Fine-grained Feature Extraction U-Net Model for Breast Tumor Segmentation Based on Transfer Learning · 已发表
+            </div>
           </div>
         </div>
 
         <div class="item">
           <div class="time">
             <strong>实时检测</strong>
-            Edge-Cloud
+            已发表 · Edge-Cloud
           </div>
           <div class="item-body">
-            <h3>边缘 - 云协同实时智能交通检测系统</h3>
-            <p>参与轻量级深度学习模型优化与系统测试，基于边缘云协同架构实现实时车辆检测，关注推理效率、端到端延迟和边缘设备部署效果。</p>
+            <h3>边缘云协同智能交通感知系统</h3>
+            <p>面向城市交通场景中实时性、可扩展性和边缘部署成本约束，采用 YOLOv8n 作为轻量级目标检测模型，在边缘计算设备侧完成车辆类别识别、交通流统计、拥堵感知、逆行检测与越界告警，并通过边缘云协同方式降低集中式处理延迟，为异常交通事件感知和管理决策提供实时视觉分析能力。</p>
+            <div class="paper-ref">
+              <strong>对应论文</strong>
+              The Real-Time Intelligent Transportation Detection System Based on Edge-Cloud Collaborative Computing · 已发表
+            </div>
           </div>
         </div>
       </section>
@@ -678,21 +613,6 @@
         </div>
       </section>
 
-      <section class="section">
-        <h2 class="section-title">论文成果</h2>
-        <ul class="paper-list">
-          <li class="paper">
-            <strong>TY-YOLO: An attention-based multi-scale complex scene fire smoke detection algorithm</strong>
-            <span>JCR Q2 · 第一作者 · Under Review</span>
-          </li>
-          <li class="paper">
-            <strong>FgFEU-Net: A Fine-grained Feature Extraction U-Net Model for Breast Tumor Segmentation Based on Transfer Learning</strong>
-          </li>
-          <li class="paper">
-            <strong>The Real-Time Intelligent Transportation Detection System Based on Edge-Cloud Collaborative Computing</strong>
-          </li>
-        </ul>
-      </section>
     </main>
   </article>
 </body>
