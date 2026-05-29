@@ -366,6 +366,7 @@
           <li>RKNN / RV1126B / RK3588</li>
           <li>LeRobot / PI0 / PI0.5 / ACT</li>
           <li>Data Collection / Piper / Tactile</li>
+          <li>Optical Flow / RKNN Quantization</li>
         </ul>
       </section>
 
@@ -488,6 +489,18 @@
             <h3>VisionDot：五路相机标记点检测与边缘实时追踪系统</h3>
             <p>面向五路 / 单路相机场景构建跨 PC、RV1126B、RK3588 的端侧视觉系统，覆盖摄像头接入、GStreamer / MIPI 显示、上位机调参、日志分析与性能基准。算法链路以 RGB 分区阈值、形态学闭合、HoughCircles 初始化、灰度模板匹配和 Hue 基线偏移分析为核心，实现标记点检测、模板追踪、位移可视化与第一帧基准回零。</p>
             <p>工程侧采用多进程五路并发和 OpenCV 线程控制，建立 FPS / CPU / IPC / cache miss 性能剖析工具，并将按键系统升级为 MIPI 切路 + 全路一键校准双状态机，解决多路实时追踪的显示调度、漂移复位和现场可控性问题。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>模型优化与量化</strong>
+            Optical Flow · RKNN · INT8
+          </div>
+          <div class="item-body">
+            <h3>VectorMotionTrack：双帧运动向量预测模型与端侧量化部署</h3>
+            <p>面向视觉触觉传感器中的微小位移估计与实时运动跟踪，构建 Current + Initial 双帧输入的 dense flow 预测模型；基于 MobileNet-style 轻量编码器迭代 v5 / v6 结构，引入 80 / 160 / 320 三尺度 flow 预测头、skip 特征融合和 stage loss 训练机制，通过高低分辨率蒸馏、梯度一致性、静止区假流抑制以及小 / 中 / 大位移分段约束，系统修正小位移过估计和中等位移偏短问题。</p>
+            <p>工程侧将训练、推理、权重管理和导出流程整理为 DSFDetect Python 包，打通 PyTorch checkpoint 到 ONNX / RKNN 的转换链路；支持 FP16 与 INT8 量化、校准样本生成、量化算法选择和 RKNNLite 端侧推理，为 RV1126B / RK3588 等 Rockchip NPU 部署提供可复现的模型压缩与精度校准流程。</p>
           </div>
         </div>
       </section>
