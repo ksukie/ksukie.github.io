@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="柯书奇 - 算法工程师方向个人简历" />
-  <title>柯书奇 | 算法工程师简历</title>
+  <title>Shuqi Ke</title>
   <style>
     :root {
       --page: #e7eaee;
@@ -210,6 +210,16 @@
       overflow-wrap: anywhere;
     }
 
+    .course-list {
+      display: grid;
+      gap: 4px;
+      margin: 6px 0 0;
+      padding: 0;
+      color: var(--sidebar-muted);
+      font-size: 13px;
+      list-style: none;
+    }
+
     .sidebar-footer {
       padding: 34px;
       color: var(--sidebar-muted);
@@ -258,24 +268,6 @@
       max-width: 760px;
       color: #536170;
       font-size: 16px;
-    }
-
-    .profile-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .profile-tags li {
-      padding: 7px 11px;
-      border: 1px solid var(--line);
-      background: #fbfdfe;
-      color: #36505a;
-      font-size: 13px;
-      font-weight: 700;
     }
 
     .section {
@@ -474,8 +466,12 @@
         <h2>Focus</h2>
         <ul class="focus-list">
           <li>Computer Vision</li>
-          <li>Object Detection / Segmentation</li>
-          <li>Model Compression & Deployment</li>
+          <li>Object Detection</li>
+          <li>Semantic Segmentation</li>
+          <li>Transfer Learning</li>
+          <li>Model Compression</li>
+          <li>TensorRT Deployment</li>
+          <li>Edge-Cloud Collaboration</li>
           <li>Jetson Edge AI System</li>
         </ul>
       </section>
@@ -504,7 +500,14 @@
           <li>
             <span class="label">2022.09 - 2026.06</span>
             Jiujiang University · IoT Engineering
-            <p class="side-note">Core courses: Data Structures, Computer Networks, Operating Systems, Computer Organization, Advanced Programming.</p>
+            <p class="side-note">Core courses:</p>
+            <ul class="course-list">
+              <li>Data Structures</li>
+              <li>Computer Networks</li>
+              <li>Operating Systems</li>
+              <li>Computer Organization</li>
+              <li>Advanced Programming</li>
+            </ul>
           </li>
         </ul>
       </section>
@@ -525,14 +528,6 @@
           <p>
             研究与项目实践集中在目标检测、医学图像分割、轻量化模型优化和端侧部署。熟悉从模型选型、结构改进、损失函数调优、实验对比，到 ONNX/TensorRT 导出和 Jetson 边缘推理的完整流程，关注算法在真实场景中的稳定性、实时性与可复现性。
           </p>
-          <ul class="profile-tags">
-            <li>Object Detection</li>
-            <li>Semantic Segmentation</li>
-            <li>Transfer Learning</li>
-            <li>Model Compression</li>
-            <li>TensorRT Deployment</li>
-            <li>Edge-Cloud Collaboration</li>
-          </ul>
         </div>
       </section>
 
@@ -568,7 +563,7 @@
         <div class="item">
           <div class="time">
             <strong>医学图像</strong>
-            已发表 · U-Net
+            已发表 · 医学图像分割
           </div>
           <div class="item-body">
             <h3>FgFEU-Net：基于迁移学习的乳腺肿瘤分割模型</h3>
