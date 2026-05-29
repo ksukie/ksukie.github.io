@@ -80,8 +80,12 @@
 
     .identity {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 42px 34px 34px;
       background: rgba(0, 0, 0, 0.08);
+      text-align: center;
     }
 
     .avatar-frame {
@@ -207,7 +211,7 @@
     }
 
     .resume-head {
-      margin: 0 0 30px;
+      margin: 0 0 24px;
       min-width: 0;
       overflow-wrap: anywhere;
     }
@@ -230,7 +234,7 @@
     }
 
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 26px;
     }
 
     .section:last-child {
@@ -238,8 +242,8 @@
     }
 
     .section-title {
-      margin: 0 0 14px;
-      padding-bottom: 8px;
+      margin: 0 0 12px;
+      padding-bottom: 7px;
       border-bottom: 1px solid var(--line);
       color: #1f2b35;
       font-size: 21px;
@@ -250,8 +254,8 @@
     .item {
       display: grid;
       grid-template-columns: 145px 1fr;
-      gap: 16px;
-      padding: 18px 0;
+      gap: 14px;
+      padding: 16px 0;
       border-top: 1px solid var(--line);
     }
 
@@ -299,11 +303,12 @@
     }
 
     .paper-ref {
-      margin-top: 10px;
-      padding-top: 8px;
+      margin-top: 8px;
+      padding-top: 7px;
       border-top: 1px solid var(--line);
       color: #415263;
       font-size: 14px;
+      font-weight: 600;
       line-height: 1.55;
       overflow-wrap: anywhere;
     }
@@ -388,8 +393,8 @@
           <li>ONNX / TensorRT Deployment</li>
           <li>Jetson / Edge AI</li>
           <li>RKNN / RV1126B / RK3588</li>
-          <li>LeRobot / PI0 / PI0.5</li>
-          <li>Piper / Tactile Sensing</li>
+          <li>LeRobot / PI0 / PI0.5 / ACT</li>
+          <li>Data Collection / Piper / Tactile</li>
           <li>GStreamer / RTSP</li>
         </ul>
       </section>
@@ -493,8 +498,8 @@
           </div>
           <div class="item-body">
             <h3>VTLA LeRobot：视觉-触觉机器人学习与真机训练推理栈</h3>
-            <p>基于 LeRobot 0.5.2 构建兼容上游 CLI / API 的机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机与训练 / 录制 / 推理配置，打通 Piper 主从臂遥操作数据采集、CAN 总线、流式编码、episode 管理和多模态数据统计，为 PI0 / PI0.5 策略微调提供可复现数据闭环。</p>
-            <p>模型侧扩展 PI0.5 触觉输入能力，新增 tactile_image_keys、TactileEncoder、触觉 token 投影和 embed_tactile_image 流程；训练侧改造梯度累积与有效 batch 统计，补充 ACT / Piper / 触觉抓取训练配置，形成从真机数据到策略训练、部署评估的完整工程链路。</p>
+            <p>基于 LeRobot 0.5.2 构建兼容上游 CLI / API 的机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机与训练 / 录制 / 推理配置，面向 ACT 模仿学习和 PI0 / PI0.5 策略微调打通真机数据采集、CAN 总线、流式编码、episode 管理与多模态数据统计。</p>
+            <p>模型侧扩展 PI0.5 触觉输入能力，新增 tactile_image_keys、TactileEncoder、触觉 token 投影和 embed_tactile_image 流程；训练侧改造梯度累积与有效 batch 统计，形成从真机数据到策略训练、部署评估的完整工程链路。</p>
           </div>
         </div>
 
