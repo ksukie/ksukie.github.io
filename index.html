@@ -150,7 +150,7 @@
     }
 
     .nav {
-      width: min(1720px, calc(100% - 24px));
+      width: min(1880px, calc(100% - 20px));
       min-height: 72px;
       margin: 0 auto;
       display: flex;
@@ -195,13 +195,15 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-left: auto;
-      padding: 8px 13px;
+      margin-left: 0;
+      padding: 9px 15px;
       border: 1px solid rgba(98, 231, 215, 0.34);
       border-radius: 999px;
-      background: rgba(98, 231, 215, 0.08);
-      color: var(--cyan);
-      font-size: 13px;
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.2), rgba(78, 156, 255, 0.1)),
+        rgba(98, 231, 215, 0.08);
+      color: var(--ink);
+      font-size: 14px;
       font-weight: 900;
       white-space: nowrap;
       transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
@@ -215,6 +217,7 @@
     }
 
     .nav-links {
+      margin-left: auto;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -234,8 +237,8 @@
       padding: 8px 11px;
       border: 1px solid transparent;
       border-radius: 999px;
-      color: var(--text);
-      font-size: 13px;
+      color: var(--ink);
+      font-size: 14px;
       font-weight: 800;
       transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
     }
@@ -255,7 +258,7 @@
       width: 100%;
       min-height: calc(100svh - 72px);
       margin: 0 auto;
-      padding: clamp(34px, 4svh, 54px) max(16px, calc((100% - 1760px) / 2));
+      padding: clamp(34px, 4svh, 54px) max(12px, calc((100% - 1980px) / 2));
       scroll-margin-top: 96px;
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
@@ -355,6 +358,7 @@
 
     #repos {
       order: 4;
+      min-height: auto;
     }
 
     #life {
@@ -363,7 +367,10 @@
 
     #contact {
       order: 6;
-      grid-template-rows: minmax(0, 1fr);
+      min-height: auto;
+      grid-template-rows: auto;
+      padding-top: clamp(32px, 4svh, 52px);
+      padding-bottom: clamp(32px, 4svh, 52px);
     }
 
     #life::before {
@@ -393,7 +400,7 @@
 
     .hero-inner {
       position: relative;
-      width: min(1760px, calc(100% - 32px));
+      width: min(1960px, calc(100% - 24px));
       min-height: calc(100svh - 72px);
       margin: 0 auto;
       padding: clamp(66px, 8svh, 94px) 0 clamp(62px, 8svh, 92px);
@@ -404,7 +411,7 @@
     }
 
     .hero-content {
-      max-width: 1480px;
+      max-width: 1640px;
     }
 
     .hero-frame {
@@ -436,11 +443,21 @@
     }
 
     .hero h1 {
-      display: grid;
-      gap: clamp(16px, 2vw, 28px);
-      font-size: clamp(74px, 10.4vw, 150px);
-      line-height: 0.9;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: baseline;
+      gap: clamp(10px, 1.4vw, 24px);
+      max-width: 100%;
+      overflow-wrap: normal;
+      white-space: nowrap;
+      font-size: clamp(34px, 6.8vw, 118px);
+      line-height: 0.95;
       text-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    .hero h1 span:first-child {
+      color: var(--ink);
+      font-size: 0.78em;
     }
 
     .hero h1 span:last-child {
@@ -448,8 +465,8 @@
       background: linear-gradient(90deg, var(--lime), var(--cyan), var(--blue));
       -webkit-background-clip: text;
       background-clip: text;
-      font-size: clamp(34px, 4.6vw, 66px);
-      line-height: 1.12;
+      font-size: 1em;
+      line-height: 0.95;
     }
 
     .hero-copy {
@@ -553,11 +570,15 @@
 
     .section > .lens-console,
     .section > .project-stage,
-    .section > .repo-shell,
     .section > .archive-panel,
     .section > .contact-panel {
       min-height: 0;
       height: 100%;
+    }
+
+    .section > .repo-shell {
+      min-height: 0;
+      height: auto;
     }
 
     .lens-panel,
@@ -904,10 +925,19 @@
     .taste-tabs,
     .project-filters,
     .sort-group {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
       gap: 8px;
-      align-items: center;
+      align-items: stretch;
+    }
+
+    .project-filters {
+      width: min(100%, 560px);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .sort-group {
+      min-width: min(100%, 390px);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .taste-tabs {
@@ -924,18 +954,22 @@
 
     .taste-tab,
     .chip-button {
-      min-height: 38px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 8px 11px;
+      min-width: 0;
+      padding: 9px 13px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.035);
-      color: var(--text);
-      font-size: 12px;
+      color: var(--ink);
+      font-size: 13.5px;
       font-weight: 900;
+      line-height: 1.15;
+      text-align: center;
+      white-space: nowrap;
       transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
     }
 
@@ -984,6 +1018,10 @@
     .taste-content.is-active {
       display: grid;
       align-content: stretch;
+    }
+
+    .taste-content[data-taste-content="music"].is-active {
+      align-content: start;
     }
 
     .life-deck .taste-content {
@@ -1113,7 +1151,7 @@
     }
 
     .artist-card {
-      min-height: 100%;
+      min-height: clamp(170px, 22svh, 230px);
     }
 
     .artist-card img {
@@ -1123,7 +1161,7 @@
     .music-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 14px;
       padding: 4px 2px 8px;
       min-height: 100%;
     }
@@ -1177,8 +1215,9 @@
     }
 
     .track-panel {
-      min-height: 106px;
+      min-height: 116px;
       display: grid;
+      align-content: start;
       gap: 10px;
       margin-top: 16px;
       padding: 18px;
@@ -1197,11 +1236,12 @@
     .track-list {
       display: flex;
       flex-wrap: wrap;
+      align-items: flex-start;
       gap: 8px;
     }
 
     .track-list span {
-      min-height: 30px;
+      min-height: 32px;
       display: inline-flex;
       align-items: center;
       padding: 6px 10px;
@@ -1209,7 +1249,9 @@
       border-radius: 999px;
       color: var(--ink);
       background: rgba(255, 255, 255, 0.04);
-      font-size: 12px;
+      font-size: 13px;
+      line-height: 1.2;
+      align-self: flex-start;
     }
 
     .project-stage {
@@ -1232,8 +1274,8 @@
     }
 
     .project-toolbar {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
       gap: 13px;
       align-items: center;
       justify-content: space-between;
@@ -1323,18 +1365,33 @@
 
     .project-action,
     .repo-link {
-      min-height: 37px;
+      min-height: 42px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 7px 11px;
+      min-width: 104px;
+      padding: 8px 13px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.035);
       color: var(--ink);
+      font-size: 13px;
       font-weight: 900;
+      line-height: 1.15;
+      white-space: nowrap;
       transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .repo-links {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+      justify-content: stretch;
+    }
+
+    .repo-link {
+      width: 100%;
     }
 
     .project-action:hover,
@@ -1424,7 +1481,7 @@
       display: grid;
       grid-template-rows: auto auto minmax(0, 1fr);
       padding: clamp(24px, 2.4vw, 40px);
-      min-height: clamp(560px, 59svh, 720px);
+      min-height: 0;
     }
 
     .repo-toolbar {
@@ -1468,8 +1525,8 @@
     }
 
     .language-filter {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
       gap: 10px;
       margin: 0 0 19px;
     }
@@ -1486,17 +1543,20 @@
     .repo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      grid-auto-rows: minmax(224px, 1fr);
+      grid-auto-rows: auto;
       gap: clamp(14px, 1.6vw, 22px);
+      align-content: start;
+      align-items: start;
       min-height: 0;
     }
 
     .repo-card {
-      min-height: 0;
+      min-height: 156px;
       display: grid;
-      align-content: space-between;
-      gap: 19px;
-      padding: clamp(21px, 1.85vw, 32px);
+      grid-template-rows: auto auto;
+      align-content: start;
+      gap: 13px;
+      padding: clamp(17px, 1.35vw, 24px);
       border: 1px solid rgba(236, 246, 244, 0.1);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
@@ -1510,9 +1570,9 @@
     }
 
     .repo-card h3 {
-      margin: 0 0 14px;
+      margin: 0 0 8px;
       color: var(--ink);
-      font-size: clamp(22px, 1.6vw, 30px);
+      font-size: clamp(19px, 1.25vw, 25px);
       line-height: 1.25;
     }
 
@@ -1520,20 +1580,26 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .repo-description {
       margin: 0;
       color: var(--text);
-      font-size: clamp(14px, 0.92vw, 18px);
-      line-height: 1.58;
+      font-size: clamp(13px, 0.82vw, 16px);
+      line-height: 1.45;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
 
     .repo-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 8px 10px;
+      margin-bottom: 10px;
       color: var(--muted);
       font-size: 12px;
     }
@@ -1591,16 +1657,16 @@
     }
 
     .contact-band {
-      padding-bottom: clamp(34px, 4svh, 54px);
+      padding-bottom: clamp(32px, 4svh, 52px);
     }
 
     .contact-panel {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(370px, 0.72fr);
-      gap: clamp(28px, 4vw, 66px);
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+      gap: clamp(22px, 3vw, 46px);
       align-items: center;
-      min-height: 100%;
-      padding: clamp(37px, 4vw, 68px);
+      min-height: auto;
+      padding: clamp(24px, 2.8vw, 42px);
       background:
         linear-gradient(135deg, rgba(98, 231, 215, 0.12), rgba(232, 132, 122, 0.06)),
         var(--panel-strong);
@@ -1609,8 +1675,8 @@
     .contact-panel h3 {
       margin: 0;
       color: var(--ink);
-      font-size: clamp(46px, 5.6vw, 90px);
-      line-height: 0.98;
+      font-size: clamp(29px, 3.1vw, 52px);
+      line-height: 1.08;
     }
 
     .contact-panel p {
@@ -1621,15 +1687,17 @@
 
     .contact-actions {
       display: grid;
-      gap: clamp(13px, 1.6svh, 21px);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(12px, 1.4vw, 18px);
     }
 
     .contact-link {
-      min-height: clamp(92px, 10.4svh, 123px);
-      display: flex;
+      min-height: 118px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
       align-items: center;
-      gap: 18px;
-      padding: clamp(18px, 1.6vw, 26px);
+      gap: 14px;
+      padding: clamp(15px, 1.3vw, 21px);
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
@@ -1664,14 +1732,19 @@
       display: block;
     }
 
+    .contact-link > span:not(.icon-box) {
+      min-width: 0;
+    }
+
     .contact-link strong {
       color: var(--ink);
-      font-size: clamp(19px, 1.45vw, 27px);
+      font-size: clamp(17px, 1.05vw, 22px);
     }
 
     .contact-link span span {
       color: var(--muted);
       font-size: clamp(13px, 0.85vw, 17px);
+      overflow-wrap: anywhere;
     }
 
     .footer {
@@ -1718,6 +1791,7 @@
       }
 
       .nav-links {
+        margin-left: 0;
         width: 100%;
         justify-content: flex-start;
         overflow-x: auto;
@@ -1776,6 +1850,15 @@
       .repo-toolbar {
         grid-template-columns: 1fr;
       }
+
+      .sort-group {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .contact-actions {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 720px) {
@@ -1809,16 +1892,17 @@
       }
 
       .hero-inner {
-        width: min(100% - 20px, 1720px);
+        width: min(100% - 20px, 1960px);
         padding-top: 58px;
       }
 
       .hero h1 {
-        font-size: clamp(48px, 18vw, 88px);
+        gap: 8px;
+        font-size: clamp(28px, 8.4vw, 54px);
       }
 
       .hero h1 span:last-child {
-        font-size: clamp(28px, 10vw, 44px);
+        font-size: 1em;
       }
 
       .method-grid,
@@ -1846,6 +1930,20 @@
 
       .taste-tabs {
         grid-template-columns: 1fr;
+      }
+
+      .project-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .project-filters {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .sort-group,
+      .language-filter {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .life-command,
@@ -1895,11 +1993,6 @@
         min-height: 240px;
       }
 
-      .project-toolbar {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
       .contact-panel,
       .repo-shell,
       .project-main,
@@ -1908,11 +2001,15 @@
       }
 
       .contact-panel h3 {
-        font-size: clamp(42px, 13vw, 64px);
+        font-size: clamp(28px, 8vw, 42px);
+      }
+
+      .contact-actions {
+        grid-template-columns: 1fr;
       }
 
       .contact-link {
-        min-height: 92px;
+        min-height: 88px;
       }
 
       .archive-panel::after {
@@ -1952,10 +2049,6 @@
         <span class="brand-mark">&lt;K&gt;</span>
         <span>Shuqi Ke</span>
       </a>
-      <a class="nav-resume" href="resume.html">
-        <i data-lucide="file-text"></i>
-        Resume
-      </a>
       <div class="nav-links">
         <a href="#profile">Profile</a>
         <a href="#projects">Projects</a>
@@ -1963,6 +2056,10 @@
         <a href="#life">Life</a>
         <a href="#contact">Contact</a>
       </div>
+      <a class="nav-resume" href="resume.html">
+        <i data-lucide="file-text"></i>
+        获取简历
+      </a>
     </nav>
   </header>
 
@@ -2149,17 +2246,17 @@
 
               <div class="taste-content" data-taste-content="music" role="tabpanel">
                 <div class="music-grid" aria-label="歌手列表">
-              <button class="interest-card artist-card is-active" type="button" data-artist="Jay Chou" data-songs="分裂|上海1943|你听得到|以父之名|黑色幽默">
+              <button class="interest-card artist-card is-active" type="button" data-artist="Jay Chou" data-songs="晴天|七里香|以父之名|夜曲|稻香|简单爱|不能说的秘密|一路向北|轨迹|爱在西元前">
                 <img src="assets/taste/jay-chou.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Jay Chou</strong>
                 <span>Mandarin</span>
               </button>
-              <button class="interest-card artist-card" type="button" data-artist="Eason Chen" data-songs="浮夸|苦瓜|沙龙|阿牛|落花流水">
+              <button class="interest-card artist-card" type="button" data-artist="Eason Chen" data-songs="浮夸|十年|爱情转移|单车|富士山下|陀飞轮|苦瓜|沙龙|夕阳无限好|最佳损友">
                 <img src="assets/taste/eason-chen.jpg" alt="Eason Chen" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Eason Chen</strong>
                 <span>Cantonese</span>
               </button>
-              <button class="interest-card artist-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|还记得|我的宣言|到此为止">
+              <button class="interest-card artist-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|我的宣言|天窗|到此为止|还记得|同天空|宏愿|一事无成|百年不合">
                 <img src="assets/taste/pakho-chau.jpg" alt="Pakho Chau" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Pakho Chau</strong>
                 <span>Cantonese</span>
@@ -2643,7 +2740,7 @@
         if (!artist || !trackPanel) return;
         const songs = (artist.dataset.songs || "").split("|").filter(Boolean);
         trackPanel.innerHTML = `
-          <strong>${escapeHtml(artist.dataset.artist)}</strong>
+          <strong>${escapeHtml(artist.dataset.artist)} / 推荐曲目</strong>
           <div class="track-list">
             ${songs.map((song) => `<span>${escapeHtml(song)}</span>`).join("")}
           </div>
