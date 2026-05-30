@@ -150,7 +150,7 @@
     }
 
     .nav {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1380px, calc(100% - 56px));
       min-height: 72px;
       margin: 0 auto;
       display: flex;
@@ -225,10 +225,13 @@
 
     .section {
       position: relative;
-      width: min(1180px, calc(100% - 32px));
+      width: min(1380px, calc(100% - 56px));
+      min-height: 92svh;
       margin: 0 auto;
-      padding: 98px 0;
+      padding: 118px 0;
       scroll-margin-top: 96px;
+      display: grid;
+      align-content: center;
     }
 
     .section-heading {
@@ -270,8 +273,8 @@
     }
 
     .section h2 {
-      max-width: 820px;
-      font-size: clamp(34px, 5vw, 64px);
+      max-width: 980px;
+      font-size: clamp(44px, 5.8vw, 78px);
       line-height: 1.05;
     }
 
@@ -309,10 +312,10 @@
 
     .hero-inner {
       position: relative;
-      width: min(1180px, calc(100% - 32px));
+      width: min(1380px, calc(100% - 56px));
       min-height: calc(100svh - 72px);
       margin: 0 auto;
-      padding: 78px 0 72px;
+      padding: 98px 0 88px;
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       gap: 36px;
@@ -320,7 +323,7 @@
     }
 
     .hero-content {
-      max-width: 940px;
+      max-width: 1120px;
     }
 
     .hero-frame {
@@ -354,7 +357,7 @@
     .hero h1 {
       display: grid;
       gap: 16px;
-      font-size: clamp(58px, 12vw, 136px);
+      font-size: clamp(76px, 12vw, 160px);
       line-height: 0.9;
       text-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
     }
@@ -364,15 +367,19 @@
       background: linear-gradient(90deg, var(--lime), var(--cyan), var(--blue));
       -webkit-background-clip: text;
       background-clip: text;
-      font-size: clamp(28px, 4.4vw, 56px);
+      font-size: clamp(34px, 5vw, 68px);
       line-height: 1.12;
     }
 
     .hero-copy {
-      max-width: 780px;
+      max-width: 860px;
       margin: 26px 0 0;
       color: var(--text);
-      font-size: clamp(17px, 2vw, 21px);
+      font-size: clamp(18px, 2vw, 23px);
+    }
+
+    .copy-line {
+      display: block;
     }
 
     .hero-actions {
@@ -383,12 +390,12 @@
     }
 
     .button {
-      min-height: 46px;
+      min-height: 54px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      padding: 11px 16px;
+      padding: 12px 18px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       color: var(--ink);
@@ -426,13 +433,13 @@
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 34px;
+      gap: 14px;
+      margin-top: 38px;
     }
 
     .stat-tile {
       min-width: 0;
-      padding: 13px 12px;
+      padding: 18px 16px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: rgba(8, 23, 37, 0.66);
@@ -441,7 +448,7 @@
     .stat-value {
       display: block;
       color: var(--ink);
-      font-size: 25px;
+      font-size: 32px;
       font-weight: 950;
       line-height: 1.05;
     }
@@ -638,7 +645,7 @@
 
     .archive-panel {
       overflow: hidden;
-      padding: 24px;
+      padding: 30px;
     }
 
     .taste-topline {
@@ -709,13 +716,22 @@
     .taste-scroll {
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: minmax(210px, 270px);
-      gap: 14px;
+      grid-auto-columns: minmax(250px, 330px);
+      gap: 16px;
       overflow-x: auto;
       overscroll-behavior-x: contain;
       scroll-snap-type: x proximity;
       padding: 4px 2px 16px;
       scrollbar-color: rgba(98, 231, 215, 0.42) transparent;
+    }
+
+    .game-mosaic {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      grid-auto-rows: 96px;
+      gap: 10px;
+      min-height: 626px;
+      padding: 4px 2px 6px;
     }
 
     .interest-card {
@@ -732,6 +748,36 @@
         rgba(255, 255, 255, 0.035);
       scroll-snap-align: start;
       transition: border 180ms ease, transform 180ms ease, background 180ms ease;
+    }
+
+    .game-mosaic .interest-card {
+      min-height: 0;
+      scroll-snap-align: none;
+    }
+
+    .tile-xl {
+      grid-column: span 3;
+      grid-row: span 2;
+    }
+
+    .tile-wide {
+      grid-column: span 3;
+      grid-row: span 1;
+    }
+
+    .tile-tall {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .tile-mid {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .tile-small {
+      grid-column: span 1;
+      grid-row: span 1;
     }
 
     .interest-card:hover,
@@ -787,6 +833,61 @@
       font-family: Consolas, "SFMono-Regular", monospace;
       font-size: 12px;
       text-transform: uppercase;
+    }
+
+    .artist-card {
+      min-height: 238px;
+    }
+
+    .artist-card img {
+      filter: saturate(0.96) contrast(1.02) brightness(0.76);
+    }
+
+    .bookshelf {
+      position: relative;
+      max-height: 660px;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px 18px;
+      padding: 6px 6px 24px;
+      scrollbar-color: rgba(98, 231, 215, 0.42) transparent;
+    }
+
+    .bookshelf::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        180deg,
+        transparent 0 250px,
+        rgba(98, 231, 215, 0.16) 250px 252px,
+        rgba(255, 255, 255, 0.03) 252px 260px
+      );
+    }
+
+    .book-card {
+      min-height: 246px;
+      aspect-ratio: 0.66;
+      align-content: end;
+      padding: 12px;
+    }
+
+    .book-card img {
+      inset: 10px 10px 54px;
+      width: calc(100% - 20px);
+      height: calc(100% - 64px);
+      object-fit: contain;
+      padding: 8px;
+      border-radius: calc(var(--radius) - 2px);
+      background: rgba(236, 246, 244, 0.92);
+      filter: none;
+      transform: none;
+    }
+
+    .book-card::before {
+      background: linear-gradient(180deg, transparent 52%, rgba(5, 13, 24, 0.92));
     }
 
     .track-panel {
@@ -1263,7 +1364,7 @@
     }
 
     .footer {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1380px, calc(100% - 56px));
       margin: 0 auto;
       padding: 0 0 34px;
       color: var(--muted);
@@ -1330,6 +1431,16 @@
         scroll-margin-top: 164px;
       }
 
+      .game-mosaic {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: 112px;
+        min-height: auto;
+      }
+
+      .bookshelf {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .project-main {
         border-bottom: 1px solid var(--line);
       }
@@ -1340,17 +1451,34 @@
     }
 
     @media (max-width: 720px) {
+      .nav-links {
+        flex-wrap: wrap;
+        overflow-x: visible;
+      }
+
+      .nav-links a {
+        min-height: 34px;
+        padding: 6px 8px;
+        font-size: 12px;
+      }
+
       .section {
-        width: min(100% - 24px, 1180px);
+        width: min(100% - 24px, 1380px);
+        min-height: auto;
         padding: 76px 0;
       }
 
       .hero-inner {
-        width: min(100% - 24px, 1180px);
+        width: min(100% - 24px, 1380px);
+        padding-top: 58px;
       }
 
       .hero h1 {
         font-size: clamp(48px, 18vw, 88px);
+      }
+
+      .hero h1 span:last-child {
+        font-size: clamp(28px, 10vw, 44px);
       }
 
       .hero-stats,
@@ -1372,6 +1500,34 @@
         grid-auto-columns: minmax(190px, 78vw);
       }
 
+      .game-mosaic {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 116px;
+      }
+
+      .tile-xl,
+      .tile-wide,
+      .tile-tall,
+      .tile-mid,
+      .tile-small {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .tile-xl,
+      .tile-wide {
+        grid-column: span 2;
+      }
+
+      .bookshelf {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-height: 548px;
+      }
+
+      .book-card {
+        min-height: 228px;
+      }
+
       .project-toolbar {
         align-items: stretch;
         flex-direction: column;
@@ -1383,6 +1539,10 @@
       .project-detail,
       .archive-panel {
         padding: 18px;
+      }
+
+      .footer {
+        width: min(100% - 24px, 1380px);
       }
 
       .back-top {
@@ -1434,13 +1594,16 @@
               <span>Shuqi Ke</span>
               <span>柯书奇 · Perception Systems</span>
             </h1>
-            <p class="hero-copy reveal">Computer vision, edge deployment, and robot learning. 专注目标检测、语义分割与端侧视觉系统。</p>
+            <p class="hero-copy reveal">
+              <span class="copy-line">Computer vision, edge deployment, and robot learning.</span>
+              <span class="copy-line">专注目标检测、语义分割与端侧视觉系统。</span>
+            </p>
             <div class="hero-actions reveal">
               <a class="button button-primary" href="#projects">
                 <i data-lucide="radar"></i>
                 View Projects
               </a>
-              <a class="button button-ghost" href="#profile">
+              <a class="button button-ghost" href="resume.html">
                 <i data-lucide="user-round"></i>
                 Profile
               </a>
@@ -1567,59 +1730,119 @@
           </div>
 
           <div class="taste-content is-active" data-taste-content="games" role="tabpanel">
-            <div class="taste-scroll" aria-label="游戏列表">
-              <a class="interest-card" href="https://www.leagueoflegends.com/" target="_blank" rel="noreferrer">
+            <div class="game-mosaic" aria-label="游戏列表">
+              <a class="interest-card tile-wide" href="https://lol.qq.com/main.shtml" target="_blank" rel="noreferrer">
                 <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="League of Legends" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>League of Legends</strong>
-                <span>Official</span>
+                <span>China Official</span>
               </a>
-              <a class="interest-card" href="https://teamfighttactics.leagueoflegends.com/" target="_blank" rel="noreferrer">
+              <a class="interest-card tile-mid" href="https://lol.qq.com/tft/#/index" target="_blank" rel="noreferrer">
                 <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg" alt="Teamfight Tactics" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Teamfight Tactics</strong>
-                <span>Official</span>
+                <span>China Official</span>
               </a>
-              <a class="interest-card" href="https://store.steampowered.com/app/3590/Plants_vs_Zombies_GOTY_Edition/" target="_blank" rel="noreferrer">
+              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/3590/Plants_vs_Zombies_GOTY_Edition/" target="_blank" rel="noreferrer">
                 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/3590/header.jpg" alt="Plants vs. Zombies" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Plants vs. Zombies</strong>
                 <span>Steam</span>
               </a>
-              <a class="interest-card" href="https://store.steampowered.com/app/1426210/It_Takes_Two/" target="_blank" rel="noreferrer">
+              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1426210/It_Takes_Two/" target="_blank" rel="noreferrer">
                 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg" alt="It Takes Two" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>It Takes Two</strong>
                 <span>Steam</span>
               </a>
-              <a class="interest-card" href="https://store.steampowered.com/app/939400/LoveChoice/" target="_blank" rel="noreferrer">
+              <a class="interest-card tile-small" href="https://store.steampowered.com/app/939400/LoveChoice/" target="_blank" rel="noreferrer">
                 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/939400/header.jpg" alt="LoveChoice" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>LoveChoice</strong>
                 <span>Steam</span>
               </a>
-              <a class="interest-card" href="https://store.steampowered.com/app/1237970/Titanfall_2/" target="_blank" rel="noreferrer">
+              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1237970/Titanfall_2/" target="_blank" rel="noreferrer">
                 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1237970/header.jpg" alt="Titanfall 2" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Titanfall</strong>
                 <span>Steam</span>
               </a>
-              <a class="interest-card" href="https://roco.qq.com/" target="_blank" rel="noreferrer">
+              <a class="interest-card tile-mid" href="https://roco.qq.com/" target="_blank" rel="noreferrer">
                 <img src="https://game.gtimg.cn/images/roco/cp/a20200629brand/pc/kv.jpg" alt="洛克王国" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>洛克王国</strong>
-                <span>Official</span>
+                <span>China Official</span>
+              </a>
+              <a class="interest-card tile-xl" href="https://store.steampowered.com/app/322330/Dont_Starve_Together/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/322330/header.jpg" alt="Don't Starve Together" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Don't Starve Together</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-wide" href="https://store.steampowered.com/app/582010/Monster_Hunter_World/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/582010/header.jpg" alt="Monster Hunter: World" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Monster Hunter: World</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-wide" href="https://store.steampowered.com/app/105600/Terraria/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/105600/header.jpg" alt="Terraria" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Terraria</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1245620/ELDEN_RING/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg" alt="ELDEN RING" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>ELDEN RING</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-tall" href="https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/359550/header.jpg" alt="Tom Clancy's Rainbow Six Siege" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Rainbow Six Siege</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-tall" href="https://store.steampowered.com/app/457140/Oxygen_Not_Included/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/457140/header.jpg" alt="Oxygen Not Included" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Oxygen Not Included</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1086940/Baldurs_Gate_3/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg" alt="Baldur's Gate 3" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Baldur's Gate 3</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1364780/Street_Fighter_6/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1364780/header.jpg" alt="Street Fighter 6" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Street Fighter 6</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-wide" href="https://store.steampowered.com/app/553850/HELLDIVERS_2/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/553850/header.jpg" alt="HELLDIVERS 2" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>HELLDIVERS 2</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-small" href="https://store.steampowered.com/app/646570/Slay_the_Spire/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/646570/header.jpg" alt="Slay the Spire" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Slay the Spire</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/601150/Devil_May_Cry_5/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/601150/header.jpg" alt="Devil May Cry 5" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Devil May Cry 5</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card tile-wide" href="https://store.steampowered.com/app/1623730/Palworld/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1623730/header.jpg" alt="Palworld" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Palworld</strong>
+                <span>Steam</span>
               </a>
             </div>
           </div>
 
           <div class="taste-content" data-taste-content="music" role="tabpanel">
             <div class="taste-scroll" aria-label="歌手列表">
-              <button class="interest-card is-active" type="button" data-artist="Jay Chou" data-songs="分裂|上海1943|你听得到|以父之名|黑色幽默">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Jay_Chou_in_Shanghai_2023_%284%29.jpg/330px-Jay_Chou_in_Shanghai_2023_%284%29.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <button class="interest-card artist-card is-active" type="button" data-artist="Jay Chou" data-songs="分裂|上海1943|你听得到|以父之名|黑色幽默">
+                <img src="https://y.qq.com/music/photo_new/T001R300x300M0000025NhlN2yWrP4.jpg?max_age=2592000" alt="Jay Chou" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Jay Chou</strong>
                 <span>Mandarin</span>
               </button>
-              <button class="interest-card" type="button" data-artist="Eason Chen" data-songs="浮夸|苦瓜|沙龙|阿牛|落花流水">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/%E4%B8%8A%E6%B5%B7_%E5%92%AA%E5%92%95%E9%A2%81%E5%A5%96%E7%A4%BC%E7%BA%A2%E6%AF%AF_%281%29.jpg/330px-%E4%B8%8A%E6%B5%B7_%E5%92%AA%E5%92%95%E9%A2%81%E5%A5%96%E7%A4%BC%E7%BA%A2%E6%AF%AF_%281%29.jpg" alt="Eason Chen" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <button class="interest-card artist-card" type="button" data-artist="Eason Chen" data-songs="浮夸|苦瓜|沙龙|阿牛|落花流水">
+                <img src="https://y.qq.com/music/photo_new/T001R300x300M000003Nz2So3XXYek.jpg?max_age=2592000" alt="Eason Chen" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Eason Chen</strong>
                 <span>Cantonese</span>
               </button>
-              <button class="interest-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|还记得|我的宣言|到此为止">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Pakho_Chau_20201121.jpg/330px-Pakho_Chau_20201121.jpg" alt="Pakho Chau" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <button class="interest-card artist-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|还记得|我的宣言|到此为止">
+                <img src="https://y.qq.com/music/photo_new/T001R300x300M00000067r4p0wBDDN.jpg?max_age=2592000" alt="Pakho Chau" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Pakho Chau</strong>
                 <span>Cantonese</span>
               </button>
@@ -1628,15 +1851,35 @@
           </div>
 
           <div class="taste-content" data-taste-content="reading" role="tabpanel">
-            <div class="taste-scroll" aria-label="书目列表">
-              <article class="interest-card">
-                <img src="https://covers.openlibrary.org/b/isbn/9781501197277-L.jpg" alt="The Courage to Be Disliked" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+            <div class="bookshelf" aria-label="书架">
+              <article class="interest-card book-card">
+                <img src="https://covers.openlibrary.org/b/id/15179268-L.jpg" alt="被讨厌的勇气" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>被讨厌的勇气</strong>
                 <span>Book</span>
               </article>
-              <article class="interest-card">
-                <img src="https://covers.openlibrary.org/b/isbn/9781614272915-L.jpg" alt="What Life Could Mean to You" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <article class="interest-card book-card">
+                <img src="https://covers.openlibrary.org/b/id/1910283-L.jpg" alt="自卑与超越" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>自卑与超越</strong>
+                <span>Book</span>
+              </article>
+              <article class="interest-card book-card">
+                <img src="https://books.google.com/books/content?id=vgKnzwEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api" alt="盗墓笔记" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>盗墓笔记</strong>
+                <span>Book</span>
+              </article>
+              <article class="interest-card book-card">
+                <img src="https://covers.openlibrary.org/b/id/14351077-L.jpg" alt="杀死一只知更鸟" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>杀死一只知更鸟</strong>
+                <span>Book</span>
+              </article>
+              <article class="interest-card book-card">
+                <img src="https://books.google.com/books/content?id=sgRRzwEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api" alt="理解人性" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>理解人性</strong>
+                <span>Book</span>
+              </article>
+              <article class="interest-card book-card">
+                <img src="https://books.google.com/books/content?id=2T31zgEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api" alt="拖延心理学" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>拖延心理学</strong>
                 <span>Book</span>
               </article>
             </div>
