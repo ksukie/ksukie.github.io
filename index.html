@@ -482,32 +482,37 @@
     }
 
     .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+      width: min(100%, 860px);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+      gap: 16px;
       margin-top: clamp(28px, 4vw, 44px);
     }
 
     .button {
-      min-height: 52px;
+      min-height: 58px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 12px 20px;
+      gap: 11px;
+      padding: 13px 22px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       color: var(--ink);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 900;
+      line-height: 1.15;
       transition: transform 180ms ease, border 180ms ease, background 180ms ease, color 180ms ease;
     }
 
     .hero-actions .button {
       position: relative;
-      min-width: 174px;
-      padding-left: 52px;
+      width: 100%;
+      min-height: 70px;
+      min-width: 0;
+      padding: 16px 22px 16px 68px;
       border-color: rgba(98, 231, 215, 0.36);
+      font-size: clamp(16px, 1vw, 18px);
       background:
         linear-gradient(135deg, rgba(98, 231, 215, 0.15), rgba(78, 156, 255, 0.08)),
         rgba(8, 23, 37, 0.74);
@@ -517,10 +522,10 @@
     .hero-actions .button::before {
       content: attr(data-marker);
       position: absolute;
-      left: 14px;
+      left: 17px;
       top: 50%;
-      width: 28px;
-      height: 28px;
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
       border: 1px solid rgba(98, 231, 215, 0.58);
@@ -528,9 +533,14 @@
       color: var(--cyan);
       background: rgba(98, 231, 215, 0.12);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 11px;
+      font-size: 12.5px;
       font-weight: 950;
       transform: translateY(-50%);
+    }
+
+    .hero-actions .button svg {
+      width: 23px;
+      height: 23px;
     }
 
     .button svg,
