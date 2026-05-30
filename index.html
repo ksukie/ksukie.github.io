@@ -293,6 +293,35 @@
       transform: translateY(0);
     }
 
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero {
+      order: 1;
+    }
+
+    #profile {
+      order: 2;
+    }
+
+    #projects {
+      order: 3;
+    }
+
+    #taste {
+      order: 4;
+    }
+
+    #repos {
+      order: 5;
+    }
+
+    #contact {
+      order: 6;
+    }
+
     .hero {
       position: relative;
       min-height: calc(100svh - 72px);
@@ -1625,8 +1654,8 @@
       </a>
       <div class="nav-links">
         <a href="#profile">Profile</a>
-        <a href="#taste">Taste</a>
         <a href="#projects">Projects</a>
+        <a href="#taste">Taste</a>
         <a href="#repos">Repos</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1641,7 +1670,7 @@
             <p class="eyebrow reveal">Computer Vision · Edge AI · Robotics</p>
             <h1 id="hero-title" class="reveal">
               <span>Shuqi Ke</span>
-              <span>柯书奇 · Perception Systems</span>
+              <span>柯书奇 · Welcome to my world</span>
             </h1>
             <p class="hero-copy reveal">
               <span class="copy-line">Computer vision, edge deployment, and robot learning.</span>
@@ -1652,13 +1681,13 @@
                 <i data-lucide="radar"></i>
                 View Projects
               </a>
-              <a class="button button-ghost" href="resume.html" data-marker="02">
-                <i data-lucide="user-round"></i>
-                Profile
-              </a>
-              <a class="button button-ghost" href="https://github.com/ksukie" target="_blank" rel="noreferrer" data-marker="03">
+              <a class="button button-ghost" href="https://github.com/ksukie" target="_blank" rel="noreferrer" data-marker="02">
                 <i data-lucide="git-branch"></i>
                 GitHub
+              </a>
+              <a class="button button-ghost" href="resume.html" data-marker="03">
+                <i data-lucide="file-text"></i>
+                获取简历
               </a>
             </div>
             <div class="hero-stats reveal" aria-label="GitHub 与方向概览">
@@ -1811,8 +1840,8 @@
                 <span>Steam</span>
               </a>
               <a class="interest-card tile-wide" href="https://roco.qq.com/" target="_blank" rel="noreferrer">
-                <img src="https://game.gtimg.cn/images/roco/cp/a20200629brand/pc/kv.jpg" alt="洛克王国" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>洛克王国</strong>
+                <img src="assets/taste/roco-kingdom.webp" alt="Roco Kingdom" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Roco Kingdom</strong>
                 <span>China Official</span>
               </a>
             </div>
@@ -1849,11 +1878,6 @@
               <article class="interest-card book-card">
                 <img src="assets/taste/what-life-could-mean-to-you.jpg" alt="What Life Could Mean to You" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>What Life Could Mean to You</strong>
-                <span>Book</span>
-              </article>
-              <article class="interest-card book-card">
-                <img src="assets/taste/the-grave-robbers-chronicles.jpg" alt="The Grave Robbers' Chronicles" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>The Grave Robbers' Chronicles</strong>
                 <span>Book</span>
               </article>
               <article class="interest-card book-card">
