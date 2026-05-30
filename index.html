@@ -1207,16 +1207,18 @@
     }
 
     .book-card {
+      width: 100%;
+      min-width: 0;
       min-height: 336px;
-      aspect-ratio: 0.78;
+      aspect-ratio: auto;
       align-content: end;
       padding: 16px;
     }
 
     .book-card img {
-      inset: 14px 14px 64px;
+      inset: 14px 14px 88px;
       width: calc(100% - 28px);
-      height: calc(100% - 78px);
+      height: calc(100% - 102px);
       object-fit: contain;
       padding: 8px;
       border-radius: calc(var(--radius) - 2px);
@@ -1227,6 +1229,16 @@
 
     .book-card::before {
       background: linear-gradient(180deg, transparent 52%, rgba(5, 13, 24, 0.92));
+    }
+
+    .book-card strong {
+      font-size: clamp(16px, 1vw, 21px);
+      line-height: 1.12;
+      overflow-wrap: anywhere;
+    }
+
+    .book-card span {
+      font-size: 12px;
     }
 
     .track-panel {
@@ -2320,6 +2332,11 @@
               <article class="interest-card book-card">
                 <img src="assets/taste/procrastination.jpg" alt="Procrastination" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Procrastination</strong>
+                <span>Book</span>
+              </article>
+              <article class="interest-card book-card">
+                <img src="assets/taste/the-crowd.jpg" alt="The Crowd: A Study of the Popular Mind" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>The Crowd: A Study of the Popular Mind</strong>
                 <span>Book</span>
               </article>
                 </div>
