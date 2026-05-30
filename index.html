@@ -230,11 +230,11 @@
       width: 100%;
       min-height: calc(100svh - 72px);
       margin: 0 auto;
-      padding: clamp(42px, 5svh, 68px) max(16px, calc((100% - 1760px) / 2));
+      padding: clamp(34px, 4svh, 54px) max(16px, calc((100% - 1760px) / 2));
       scroll-margin-top: 96px;
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
-      gap: clamp(20px, 2.4svh, 32px);
+      gap: clamp(16px, 2svh, 26px);
       align-content: stretch;
     }
 
@@ -254,7 +254,7 @@
     .section-heading {
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(260px, 0.58fr);
-      gap: clamp(28px, 4vw, 58px);
+      gap: clamp(22px, 3.2vw, 46px);
       align-items: end;
       margin-bottom: 0;
     }
@@ -262,7 +262,7 @@
     .section-heading p:last-child {
       margin: 0;
       color: var(--text);
-      font-size: clamp(19px, 1.35vw, 25px);
+      font-size: clamp(16px, 1.1vw, 20px);
       line-height: 1.55;
     }
 
@@ -270,7 +270,7 @@
       margin: 0 0 13px;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: clamp(14px, 0.9vw, 17px);
+      font-size: clamp(12px, 0.72vw, 14px);
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -292,7 +292,7 @@
 
     .section h2 {
       max-width: 1180px;
-      font-size: clamp(60px, 7.4vw, 112px);
+      font-size: clamp(48px, 5.9vw, 90px);
       line-height: 1.05;
     }
 
@@ -371,20 +371,20 @@
       width: min(1760px, calc(100% - 32px));
       min-height: calc(100svh - 72px);
       margin: 0 auto;
-      padding: clamp(82px, 10svh, 118px) 0 clamp(78px, 10svh, 116px);
+      padding: clamp(66px, 8svh, 94px) 0 clamp(62px, 8svh, 92px);
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      gap: clamp(36px, 5vw, 72px);
+      gap: clamp(28px, 4vw, 58px);
       align-items: center;
     }
 
     .hero-content {
-      max-width: 1600px;
+      max-width: 1480px;
     }
 
     .hero-frame {
       position: relative;
-      padding: clamp(28px, 4vw, 48px) 0 clamp(30px, 4vw, 54px);
+      padding: clamp(22px, 3.2vw, 38px) 0 clamp(24px, 3.2vw, 44px);
     }
 
     .hero-frame::before,
@@ -413,7 +413,7 @@
     .hero h1 {
       display: grid;
       gap: clamp(16px, 2vw, 28px);
-      font-size: clamp(92px, 13vw, 188px);
+      font-size: clamp(74px, 10.4vw, 150px);
       line-height: 0.9;
       text-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
     }
@@ -423,7 +423,7 @@
       background: linear-gradient(90deg, var(--lime), var(--cyan), var(--blue));
       -webkit-background-clip: text;
       background-clip: text;
-      font-size: clamp(42px, 5.8vw, 82px);
+      font-size: clamp(34px, 4.6vw, 66px);
       line-height: 1.12;
     }
 
@@ -431,7 +431,7 @@
       max-width: 1060px;
       margin: clamp(28px, 4vw, 42px) 0 0;
       color: var(--text);
-      font-size: clamp(23px, 2.25vw, 32px);
+      font-size: clamp(18px, 1.8vw, 26px);
     }
 
     .copy-line {
@@ -441,29 +441,29 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      margin-top: clamp(36px, 5vw, 54px);
+      gap: 14px;
+      margin-top: clamp(28px, 4vw, 44px);
     }
 
     .button {
-      min-height: 64px;
+      min-height: 52px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      padding: 15px 24px;
+      padding: 12px 20px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       color: var(--ink);
-      font-size: 17px;
+      font-size: 14px;
       font-weight: 900;
       transition: transform 180ms ease, border 180ms ease, background 180ms ease, color 180ms ease;
     }
 
     .hero-actions .button {
       position: relative;
-      min-width: 218px;
-      padding-left: 64px;
+      min-width: 174px;
+      padding-left: 52px;
       border-color: rgba(98, 231, 215, 0.36);
       background:
         linear-gradient(135deg, rgba(98, 231, 215, 0.15), rgba(78, 156, 255, 0.08)),
@@ -476,8 +476,8 @@
       position: absolute;
       left: 14px;
       top: 50%;
-      width: 34px;
-      height: 34px;
+      width: 28px;
+      height: 28px;
       display: grid;
       place-items: center;
       border: 1px solid rgba(98, 231, 215, 0.58);
@@ -485,7 +485,7 @@
       color: var(--cyan);
       background: rgba(98, 231, 215, 0.12);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 950;
       transform: translateY(-50%);
     }
@@ -495,8 +495,8 @@
     .project-action svg,
     .contact-link svg,
     .repo-link svg {
-      width: 21px;
-      height: 21px;
+      width: 18px;
+      height: 18px;
       flex: 0 0 auto;
     }
 
@@ -520,14 +520,14 @@
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: clamp(42px, 5vw, 64px);
+      gap: 14px;
+      margin-top: clamp(34px, 4vw, 52px);
     }
 
     .stat-tile {
       min-width: 0;
-      min-height: 116px;
-      padding: 24px 22px;
+      min-height: 92px;
+      padding: 19px 18px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: rgba(8, 23, 37, 0.66);
@@ -536,7 +536,7 @@
     .stat-value {
       display: block;
       color: var(--ink);
-      font-size: clamp(42px, 4vw, 62px);
+      font-size: clamp(34px, 3.2vw, 50px);
       font-weight: 950;
       line-height: 1.05;
     }
@@ -546,14 +546,14 @@
       margin-top: 6px;
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 14px;
+      font-size: 12px;
       text-transform: uppercase;
     }
 
     .lens-console {
       display: grid;
-      grid-template-columns: minmax(330px, 0.48fr) minmax(0, 1fr);
-      gap: clamp(22px, 2vw, 34px);
+      grid-template-columns: minmax(300px, 0.45fr) minmax(0, 1fr);
+      gap: clamp(18px, 1.6vw, 28px);
       align-items: stretch;
       min-height: 0;
     }
@@ -581,25 +581,25 @@
     }
 
     .lens-panel {
-      padding: clamp(22px, 2vw, 34px);
+      padding: clamp(18px, 1.6vw, 28px);
       display: grid;
       align-content: start;
-      gap: 16px;
+      gap: 13px;
     }
 
     .lens-button {
       width: 100%;
-      min-height: 84px;
+      min-height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      padding: 18px;
+      padding: 14px;
       border: 1px solid rgba(236, 246, 244, 0.11);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
       color: var(--text);
-      font-size: 18px;
+      font-size: 15px;
       text-align: left;
       transition: border 180ms ease, background 180ms ease, transform 180ms ease, color 180ms ease;
     }
@@ -612,8 +612,8 @@
     }
 
     .lens-button svg {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       color: var(--cyan);
     }
 
@@ -621,7 +621,7 @@
       content: attr(data-index);
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 15px;
+      font-size: 12px;
     }
 
     .lens-button:hover,
@@ -635,15 +635,15 @@
     .method-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, minmax(260px, 1fr)) auto;
-      gap: clamp(22px, 2vw, 34px);
+      grid-template-rows: repeat(2, minmax(210px, 1fr)) auto;
+      gap: clamp(18px, 1.6vw, 28px);
       min-height: 0;
     }
 
     .method-grid article {
       position: relative;
       min-height: 0;
-      padding: clamp(28px, 2.6vw, 44px);
+      padding: clamp(22px, 2.1vw, 35px);
       overflow: hidden;
       transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
       transition: transform 200ms ease, border 180ms ease, background 180ms ease;
@@ -661,7 +661,7 @@
       right: 18px;
       color: rgba(236, 246, 244, 0.12);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: clamp(64px, 5.4vw, 96px);
+      font-size: clamp(52px, 4.3vw, 76px);
       font-weight: 900;
       line-height: 1;
     }
@@ -669,44 +669,44 @@
     .method-grid h3 {
       margin: 0 0 18px;
       color: var(--ink);
-      font-size: clamp(30px, 2.8vw, 46px);
+      font-size: clamp(24px, 2.2vw, 36px);
       line-height: 1.2;
     }
 
     .method-grid p {
       margin: 0;
       color: var(--text);
-      font-size: clamp(18px, 1.35vw, 24px);
+      font-size: clamp(15px, 1.08vw, 19px);
       line-height: 1.62;
     }
 
     .method-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
+      gap: 8px;
+      margin-top: 22px;
     }
 
     .tag {
       display: inline-flex;
       align-items: center;
-      min-height: 36px;
-      padding: 7px 12px;
+      min-height: 30px;
+      padding: 6px 10px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .focus-readout {
       grid-column: 1 / -1;
-      min-height: 164px;
+      min-height: 132px;
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 18px;
       align-items: center;
-      padding: 28px 32px;
+      padding: 22px 26px;
       border: 1px solid rgba(98, 231, 215, 0.24);
       border-radius: var(--radius);
       background:
@@ -718,19 +718,19 @@
       display: block;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 16px;
+      font-size: 13px;
       text-transform: uppercase;
     }
 
     .focus-readout p {
       margin: 10px 0 0;
       color: var(--ink);
-      font-size: clamp(22px, 1.9vw, 32px);
+      font-size: clamp(18px, 1.5vw, 26px);
     }
 
     .readout-meter {
-      width: 240px;
-      height: 14px;
+      width: 192px;
+      height: 11px;
       overflow: hidden;
       border: 1px solid rgba(98, 231, 215, 0.32);
       border-radius: 999px;
@@ -779,15 +779,15 @@
       z-index: 1;
       min-height: 100%;
       display: grid;
-      grid-template-columns: minmax(430px, 0.46fr) minmax(0, 1fr);
+      grid-template-columns: minmax(520px, 0.46fr) minmax(0, 1fr);
     }
 
     .life-command {
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: clamp(24px, 3svh, 44px);
-      padding: clamp(32px, 3.4vw, 58px);
+      gap: clamp(18px, 2.2svh, 34px);
+      padding: clamp(26px, 2.7vw, 46px);
       border-right: 1px solid var(--line);
       background:
         linear-gradient(180deg, rgba(98, 231, 215, 0.08), transparent 46%),
@@ -821,7 +821,7 @@
       margin-top: 24px;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -830,15 +830,23 @@
     .taste-quote {
       margin: 0;
       color: var(--ink);
-      font-size: clamp(38px, 3.9vw, 66px);
+      max-width: 720px;
+      font-size: clamp(20px, 1.42vw, 27px);
       font-weight: 950;
-      line-height: 1.06;
+      line-height: 1.18;
+      overflow-wrap: normal;
+      word-break: normal;
+      text-wrap: balance;
+    }
+
+    .taste-quote span {
+      display: block;
     }
 
     .life-copy {
       margin: 0;
       color: var(--text);
-      font-size: clamp(20px, 1.45vw, 27px);
+      font-size: clamp(16px, 1.16vw, 22px);
       line-height: 1.66;
     }
 
@@ -856,7 +864,7 @@
       gap: 12px;
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 15px;
+      font-size: 12px;
       text-transform: uppercase;
     }
 
@@ -870,18 +878,18 @@
       min-width: 0;
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
-      gap: clamp(20px, 2svh, 30px);
-      padding: clamp(30px, 3vw, 50px);
+      gap: clamp(16px, 1.6svh, 24px);
+      padding: clamp(24px, 2.4vw, 40px);
     }
 
     .life-panel-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 13px;
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -923,26 +931,26 @@
 
     .taste-tab,
     .chip-button {
-      min-height: 46px;
+      min-height: 38px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 14px;
+      padding: 8px 11px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.035);
       color: var(--text);
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 900;
       transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
     }
 
     .taste-tab {
       position: relative;
-      min-height: 62px;
+      min-height: 50px;
       justify-content: flex-start;
-      padding: 13px 44px 13px 16px;
+      padding: 10px 36px 10px 13px;
       border-radius: calc(var(--radius) - 2px);
       font-family: Consolas, "SFMono-Regular", monospace;
       text-transform: uppercase;
@@ -954,13 +962,13 @@
       top: 50%;
       right: 11px;
       color: rgba(236, 246, 244, 0.3);
-      font-size: 13px;
+      font-size: 11px;
       transform: translateY(-50%);
     }
 
     .taste-tab svg {
-      width: 21px;
-      height: 21px;
+      width: 17px;
+      height: 17px;
       color: var(--cyan);
     }
 
@@ -1004,19 +1012,19 @@
     .game-mosaic {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
-      grid-auto-rows: minmax(150px, 1fr);
-      gap: 16px;
+      grid-auto-rows: minmax(120px, 1fr);
+      gap: 13px;
       min-height: 100%;
       padding: 4px 2px 6px;
     }
 
     .interest-card {
       position: relative;
-      min-height: 210px;
+      min-height: 168px;
       overflow: hidden;
       display: grid;
       align-content: end;
-      padding: 20px;
+      padding: 16px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: var(--radius);
       background:
@@ -1099,7 +1107,7 @@
 
     .interest-card strong {
       color: var(--ink);
-      font-size: clamp(23px, 1.55vw, 32px);
+      font-size: clamp(18px, 1.24vw, 26px);
       line-height: 1.18;
     }
 
@@ -1107,7 +1115,7 @@
       margin-top: 5px;
       color: var(--text);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 15px;
+      font-size: 12px;
       text-transform: uppercase;
     }
 
@@ -1122,7 +1130,7 @@
     .music-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      gap: 18px;
       padding: 4px 2px 8px;
       min-height: 100%;
     }
@@ -1134,7 +1142,7 @@
       overflow-y: auto;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px 24px;
+      gap: 22px 19px;
       padding: 6px 6px 24px;
       scrollbar-color: rgba(98, 231, 215, 0.42) transparent;
     }
@@ -1153,7 +1161,7 @@
     }
 
     .book-card {
-      min-height: 420px;
+      min-height: 336px;
       aspect-ratio: 0.78;
       align-content: end;
       padding: 16px;
@@ -1176,11 +1184,11 @@
     }
 
     .track-panel {
-      min-height: 132px;
+      min-height: 106px;
       display: grid;
       gap: 10px;
       margin-top: 16px;
-      padding: 22px;
+      padding: 18px;
       border: 1px solid rgba(98, 231, 215, 0.22);
       border-radius: var(--radius);
       background: rgba(5, 13, 24, 0.48);
@@ -1189,7 +1197,7 @@
     .track-panel strong {
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 16px;
+      font-size: 13px;
       text-transform: uppercase;
     }
 
@@ -1200,15 +1208,15 @@
     }
 
     .track-list span {
-      min-height: 38px;
+      min-height: 30px;
       display: inline-flex;
       align-items: center;
-      padding: 7px 12px;
+      padding: 6px 10px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       color: var(--ink);
       background: rgba(255, 255, 255, 0.04);
-      font-size: 15px;
+      font-size: 12px;
     }
 
     .project-stage {
@@ -1217,7 +1225,7 @@
 
     .project-console {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(420px, 0.48fr);
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.45fr);
       min-height: 100%;
       height: 100%;
     }
@@ -1226,24 +1234,24 @@
       min-width: 0;
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
-      padding: clamp(30px, 3vw, 50px);
+      padding: clamp(24px, 2.4vw, 40px);
       border-right: 1px solid var(--line);
     }
 
     .project-toolbar {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 13px;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 19px;
     }
 
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-template-rows: repeat(2, minmax(0, 1fr));
-      gap: clamp(18px, 2vw, 30px);
+      gap: clamp(14px, 1.6vw, 24px);
       min-height: 0;
     }
 
@@ -1252,8 +1260,8 @@
       min-height: 0;
       display: grid;
       align-content: space-between;
-      gap: 22px;
-      padding: clamp(26px, 2.3vw, 40px);
+      gap: 18px;
+      padding: clamp(21px, 1.85vw, 32px);
       border: 1px solid rgba(236, 246, 244, 0.11);
       border-radius: var(--radius);
       background:
@@ -1274,14 +1282,14 @@
     .project-card h3 {
       margin: 18px 0 14px;
       color: var(--ink);
-      font-size: clamp(27px, 2vw, 38px);
+      font-size: clamp(22px, 1.6vw, 30px);
       line-height: 1.28;
     }
 
     .project-card p {
       margin: 0;
       color: var(--text);
-      font-size: clamp(17px, 1.15vw, 22px);
+      font-size: clamp(14px, 0.92vw, 18px);
       line-height: 1.58;
     }
 
@@ -1292,15 +1300,15 @@
     }
 
     .badge {
-      min-height: 34px;
+      min-height: 27px;
       display: inline-flex;
       align-items: center;
-      padding: 6px 11px;
+      padding: 5px 9px;
       border: 1px solid rgba(98, 231, 215, 0.22);
       border-radius: 999px;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 800;
     }
 
@@ -1317,17 +1325,17 @@
       align-items: center;
       justify-content: space-between;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 12px;
     }
 
     .project-action,
     .repo-link {
-      min-height: 46px;
+      min-height: 37px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 9px 14px;
+      padding: 7px 11px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.035);
@@ -1346,10 +1354,10 @@
 
     .project-detail {
       min-width: 0;
-      padding: clamp(32px, 3vw, 54px);
+      padding: clamp(26px, 2.4vw, 43px);
       display: grid;
       align-content: start;
-      gap: 28px;
+      gap: 22px;
       background:
         linear-gradient(180deg, rgba(78, 156, 255, 0.08), transparent 34%),
         rgba(5, 13, 24, 0.2);
@@ -1358,21 +1366,21 @@
     .detail-kicker {
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 15px;
+      font-size: 12px;
       text-transform: uppercase;
     }
 
     .project-detail h3 {
       margin: 0;
       color: var(--ink);
-      font-size: clamp(36px, 3vw, 58px);
+      font-size: clamp(29px, 2.4vw, 46px);
       line-height: 1.2;
     }
 
     .project-detail p {
       margin: 0;
       color: var(--text);
-      font-size: clamp(18px, 1.35vw, 25px);
+      font-size: clamp(14px, 1.08vw, 20px);
       line-height: 1.66;
     }
 
@@ -1384,62 +1392,62 @@
 
     .trail-step {
       display: grid;
-      grid-template-columns: 46px minmax(0, 1fr);
-      gap: 14px;
+      grid-template-columns: 37px minmax(0, 1fr);
+      gap: 11px;
       align-items: start;
-      padding: 16px;
+      padding: 13px;
       border: 1px solid rgba(236, 246, 244, 0.1);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
     }
 
     .trail-step span {
-      width: 46px;
-      height: 46px;
+      width: 37px;
+      height: 37px;
       display: grid;
       place-items: center;
       border: 1px solid rgba(98, 231, 215, 0.26);
       border-radius: 50%;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 900;
     }
 
     .trail-step strong {
       display: block;
       color: var(--ink);
-      font-size: 17px;
+      font-size: 14px;
     }
 
     .trail-step small {
       display: block;
       margin-top: 5px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .repo-shell {
       display: grid;
       grid-template-rows: auto auto minmax(0, 1fr);
-      padding: clamp(30px, 3vw, 50px);
-      min-height: clamp(700px, 74svh, 900px);
+      padding: clamp(24px, 2.4vw, 40px);
+      min-height: clamp(560px, 59svh, 720px);
     }
 
     .repo-toolbar {
       display: grid;
       grid-template-columns: minmax(240px, 1fr) auto;
-      gap: 18px;
+      gap: 14px;
       align-items: center;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .search-field {
-      min-height: 62px;
+      min-height: 50px;
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 0 18px;
+      gap: 11px;
+      padding: 0 14px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.04);
@@ -1447,8 +1455,8 @@
     }
 
     .search-field svg {
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
       flex: 0 0 auto;
     }
 
@@ -1459,7 +1467,7 @@
       outline: none;
       background: transparent;
       color: var(--ink);
-      font-size: 17px;
+      font-size: 14px;
     }
 
     .repo-search::placeholder {
@@ -1469,13 +1477,13 @@
     .language-filter {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin: 0 0 24px;
+      gap: 10px;
+      margin: 0 0 19px;
     }
 
     .language-dot {
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       display: inline-block;
       border-radius: 50%;
       background: var(--language-color, var(--cyan));
@@ -1484,9 +1492,9 @@
 
     .repo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-      grid-auto-rows: minmax(280px, 1fr);
-      gap: clamp(18px, 2vw, 28px);
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-auto-rows: minmax(224px, 1fr);
+      gap: clamp(14px, 1.6vw, 22px);
       min-height: 0;
     }
 
@@ -1494,8 +1502,8 @@
       min-height: 0;
       display: grid;
       align-content: space-between;
-      gap: 24px;
-      padding: clamp(26px, 2.3vw, 40px);
+      gap: 19px;
+      padding: clamp(21px, 1.85vw, 32px);
       border: 1px solid rgba(236, 246, 244, 0.1);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
@@ -1511,7 +1519,7 @@
     .repo-card h3 {
       margin: 0 0 14px;
       color: var(--ink);
-      font-size: clamp(27px, 2vw, 38px);
+      font-size: clamp(22px, 1.6vw, 30px);
       line-height: 1.25;
     }
 
@@ -1524,17 +1532,17 @@
     .repo-description {
       margin: 0;
       color: var(--text);
-      font-size: clamp(17px, 1.15vw, 22px);
+      font-size: clamp(14px, 0.92vw, 18px);
       line-height: 1.58;
     }
 
     .repo-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
-      margin-bottom: 18px;
+      gap: 10px;
+      margin-bottom: 14px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .repo-meta span {
@@ -1544,20 +1552,20 @@
     }
 
     .repo-meta svg {
-      width: 17px;
-      height: 17px;
+      width: 14px;
+      height: 14px;
     }
 
     .repo-empty,
     .repo-loading {
       grid-column: 1 / -1;
-      min-height: 260px;
+      min-height: 208px;
       display: grid;
       place-items: center;
       border: 1px dashed rgba(236, 246, 244, 0.15);
       border-radius: var(--radius);
       color: var(--text);
-      font-size: 18px;
+      font-size: 14px;
       text-align: center;
     }
 
@@ -1590,16 +1598,16 @@
     }
 
     .contact-band {
-      padding-bottom: clamp(42px, 5svh, 68px);
+      padding-bottom: clamp(34px, 4svh, 54px);
     }
 
     .contact-panel {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(460px, 0.72fr);
-      gap: clamp(36px, 5vw, 82px);
+      grid-template-columns: minmax(0, 0.9fr) minmax(370px, 0.72fr);
+      gap: clamp(28px, 4vw, 66px);
       align-items: center;
       min-height: 100%;
-      padding: clamp(46px, 5vw, 86px);
+      padding: clamp(37px, 4vw, 68px);
       background:
         linear-gradient(135deg, rgba(98, 231, 215, 0.12), rgba(232, 132, 122, 0.06)),
         var(--panel-strong);
@@ -1608,27 +1616,27 @@
     .contact-panel h3 {
       margin: 0;
       color: var(--ink);
-      font-size: clamp(58px, 7vw, 112px);
+      font-size: clamp(46px, 5.6vw, 90px);
       line-height: 0.98;
     }
 
     .contact-panel p {
-      margin: 24px 0 0;
+      margin: 19px 0 0;
       color: var(--text);
-      font-size: clamp(20px, 1.4vw, 28px);
+      font-size: clamp(16px, 1.12vw, 22px);
     }
 
     .contact-actions {
       display: grid;
-      gap: clamp(16px, 2svh, 26px);
+      gap: clamp(13px, 1.6svh, 21px);
     }
 
     .contact-link {
-      min-height: clamp(116px, 13svh, 154px);
+      min-height: clamp(92px, 10.4svh, 123px);
       display: flex;
       align-items: center;
-      gap: 22px;
-      padding: clamp(22px, 2vw, 32px);
+      gap: 18px;
+      padding: clamp(18px, 1.6vw, 26px);
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
@@ -1642,8 +1650,8 @@
     }
 
     .icon-box {
-      width: 68px;
-      height: 68px;
+      width: 54px;
+      height: 54px;
       display: grid;
       place-items: center;
       border: 1px solid rgba(98, 231, 215, 0.24);
@@ -1654,8 +1662,8 @@
     }
 
     .icon-box svg {
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
     }
 
     .contact-link strong,
@@ -1665,12 +1673,12 @@
 
     .contact-link strong {
       color: var(--ink);
-      font-size: clamp(24px, 1.8vw, 34px);
+      font-size: clamp(19px, 1.45vw, 27px);
     }
 
     .contact-link span span {
       color: var(--muted);
-      font-size: clamp(16px, 1.05vw, 21px);
+      font-size: clamp(13px, 0.85vw, 17px);
     }
 
     .footer {
@@ -2096,7 +2104,7 @@
         <div class="life-console">
           <aside class="life-command" aria-label="生活档案控制台">
             <span class="life-label">Life-world / Node 02</span>
-            <p class="taste-quote">As long as you stay clear, there is always enough time.</p>
+            <p class="taste-quote"><span>As long as you stay clear,</span><span>there is always enough time.</span></p>
             <p class="life-copy">这里不是技术栈的附录，而是这个个人世界的另一套坐标：玩什么、听什么、读什么。</p>
             <div class="taste-tabs" role="tablist" aria-label="生活档案分类">
               <button class="taste-tab is-active" type="button" role="tab" aria-selected="true" data-taste-tab="games" data-index="01"><i data-lucide="gamepad-2"></i><span>Games</span></button>
