@@ -225,13 +225,28 @@
 
     .section {
       position: relative;
-      width: min(1720px, calc(100% - 24px));
-      min-height: 92svh;
+      isolation: isolate;
+      overflow: hidden;
+      width: 100%;
+      min-height: calc(100svh - 72px);
       margin: 0 auto;
-      padding: 118px 0;
+      padding: 118px max(12px, calc((100% - 1720px) / 2));
       scroll-margin-top: 96px;
       display: grid;
       align-content: center;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      border-top: 1px solid rgba(98, 231, 215, 0.08);
+      background:
+        linear-gradient(90deg, rgba(98, 231, 215, 0.045), transparent 18%, transparent 82%, rgba(78, 156, 255, 0.04)),
+        repeating-linear-gradient(90deg, transparent 0 79px, rgba(236, 246, 244, 0.025) 79px 80px);
+      opacity: 0.86;
     }
 
     .section-heading {
@@ -310,16 +325,24 @@
       order: 3;
     }
 
-    #taste {
+    #repos {
       order: 4;
     }
 
-    #repos {
+    #life {
       order: 5;
     }
 
     #contact {
       order: 6;
+    }
+
+    #life::before {
+      background:
+        radial-gradient(circle at 18% 20%, rgba(168, 239, 117, 0.08), transparent 28%),
+        radial-gradient(circle at 82% 40%, rgba(78, 156, 255, 0.1), transparent 32%),
+        linear-gradient(135deg, rgba(98, 231, 215, 0.06), transparent 44%, rgba(232, 132, 122, 0.04)),
+        repeating-linear-gradient(90deg, transparent 0 63px, rgba(98, 231, 215, 0.04) 63px 64px);
     }
 
     .hero {
@@ -703,28 +726,157 @@
     }
 
     .archive-panel {
+      position: relative;
       overflow: hidden;
-      padding: 36px;
+      padding: 0;
     }
 
-    .taste-topline {
+    .archive-panel::before,
+    .archive-panel::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .archive-panel::before {
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 18%),
+        repeating-linear-gradient(0deg, transparent 0 18px, rgba(98, 231, 215, 0.045) 18px 19px);
+      opacity: 0.54;
+    }
+
+    .archive-panel::after {
+      inset: 14px;
+      border: 1px solid rgba(98, 231, 215, 0.14);
+      border-radius: calc(var(--radius) - 2px);
+      box-shadow: inset 0 0 34px rgba(98, 231, 215, 0.045);
+    }
+
+    .life-console {
+      position: relative;
+      z-index: 1;
+      min-height: clamp(640px, 72svh, 820px);
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 18px;
-      align-items: center;
-      margin-bottom: 22px;
+      grid-template-columns: minmax(360px, 0.42fr) minmax(0, 1fr);
+    }
+
+    .life-command {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding: clamp(24px, 3vw, 42px);
+      border-right: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(98, 231, 215, 0.08), transparent 46%),
+        rgba(5, 13, 24, 0.32);
+    }
+
+    .life-command::before,
+    .life-deck::before {
+      content: "";
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      border-color: rgba(98, 231, 215, 0.36);
+      border-style: solid;
+      pointer-events: none;
+    }
+
+    .life-command::before {
+      top: 18px;
+      left: 18px;
+      border-width: 1px 0 0 1px;
+    }
+
+    .life-deck::before {
+      right: 18px;
+      bottom: 18px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .life-label {
+      margin-top: 24px;
+      color: var(--cyan);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .taste-quote {
       margin: 0;
       color: var(--ink);
-      font-size: clamp(22px, 3.2vw, 42px);
+      font-size: clamp(26px, 3.2vw, 46px);
       font-weight: 950;
-      line-height: 1.12;
+      line-height: 1.06;
+    }
+
+    .life-copy {
+      margin: 0;
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .life-status {
+      display: grid;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(236, 246, 244, 0.1);
+    }
+
+    .life-status span {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .life-status span::after {
+      content: attr(data-state);
+      color: var(--lime);
+    }
+
+    .life-deck {
+      position: relative;
+      min-width: 0;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 18px;
+      padding: clamp(20px, 2.4vw, 34px);
+    }
+
+    .life-panel-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .life-panel-heading span:first-child {
+      color: var(--cyan);
     }
 
     .taste-panel {
       min-width: 0;
+    }
+
+    .life-deck .taste-panel {
+      display: grid;
+      min-height: 0;
     }
 
     .taste-tabs,
@@ -734,6 +886,18 @@
       flex-wrap: wrap;
       gap: 8px;
       align-items: center;
+    }
+
+    .taste-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      padding: 6px;
+      border: 1px solid rgba(98, 231, 215, 0.18);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.08), rgba(78, 156, 255, 0.04)),
+        rgba(255, 255, 255, 0.035);
     }
 
     .taste-tab,
@@ -753,6 +917,32 @@
       transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
     }
 
+    .taste-tab {
+      position: relative;
+      min-height: 48px;
+      justify-content: flex-start;
+      padding: 10px 34px 10px 12px;
+      border-radius: calc(var(--radius) - 2px);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      text-transform: uppercase;
+    }
+
+    .taste-tab::after {
+      content: attr(data-index);
+      position: absolute;
+      top: 50%;
+      right: 11px;
+      color: rgba(236, 246, 244, 0.3);
+      font-size: 11px;
+      transform: translateY(-50%);
+    }
+
+    .taste-tab svg {
+      width: 17px;
+      height: 17px;
+      color: var(--cyan);
+    }
+
     .taste-tab:hover,
     .taste-tab.is-active,
     .chip-button:hover,
@@ -765,11 +955,17 @@
 
     .taste-content {
       display: none;
+      min-height: 100%;
       margin-top: 22px;
     }
 
     .taste-content.is-active {
-      display: block;
+      display: grid;
+      align-content: stretch;
+    }
+
+    .life-deck .taste-content {
+      margin-top: 0;
     }
 
     .taste-scroll {
@@ -789,7 +985,7 @@
       grid-template-columns: repeat(6, minmax(0, 1fr));
       grid-auto-rows: 136px;
       gap: 12px;
-      min-height: auto;
+      min-height: clamp(560px, 58svh, 720px);
       padding: 4px 2px 6px;
     }
 
@@ -1484,8 +1680,17 @@
       .lens-console,
       .project-console,
       .contact-panel,
-      .taste-topline {
+      .life-console {
         grid-template-columns: 1fr;
+      }
+
+      .life-console {
+        min-height: auto;
+      }
+
+      .life-command {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
       }
 
       .hero-inner {
@@ -1533,9 +1738,9 @@
       }
 
       .section {
-        width: min(100% - 20px, 1720px);
-        min-height: auto;
-        padding: 76px 0;
+        width: 100%;
+        min-height: 100svh;
+        padding: 76px 10px;
       }
 
       .hero-inner {
@@ -1570,9 +1775,24 @@
         grid-auto-columns: minmax(190px, 78vw);
       }
 
+      .taste-tabs {
+        grid-template-columns: 1fr;
+      }
+
+      .life-command,
+      .life-deck {
+        padding: 18px;
+      }
+
+      .life-panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       .game-mosaic {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-auto-rows: 116px;
+        min-height: auto;
       }
 
       .tile-xl,
@@ -1614,9 +1834,12 @@
       .contact-panel,
       .repo-shell,
       .project-main,
-      .project-detail,
-      .archive-panel {
+      .project-detail {
         padding: 18px;
+      }
+
+      .archive-panel::after {
+        inset: 8px;
       }
 
       .footer {
@@ -1655,8 +1878,8 @@
       <div class="nav-links">
         <a href="#profile">Profile</a>
         <a href="#projects">Projects</a>
-        <a href="#taste">Taste</a>
         <a href="#repos">Repos</a>
+        <a href="#life">Life</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -1787,28 +2010,42 @@
       </div>
     </section>
 
-    <section class="section" id="taste" aria-labelledby="taste-title">
+    <section class="section" id="life" aria-labelledby="life-title">
       <div class="section-heading reveal">
         <div>
-          <p class="eyebrow">Taste / 兴趣</p>
-          <h2 id="taste-title">Games, music, reading.</h2>
+          <p class="eyebrow">Life Archive / 生活档案</p>
+          <h2 id="life-title">Life Archive.</h2>
         </div>
-        <p>Some personal favorites, kept light.</p>
+        <p>把游戏、音乐和阅读收进另一个世界层，保留技术之外的清醒、好奇和节奏。</p>
       </div>
 
       <div class="archive-panel reveal">
-        <div class="taste-topline">
-          <p class="taste-quote">As long as you stay clear, there is always enough time.</p>
-        </div>
-        <div class="taste-panel">
-          <div class="taste-tabs" role="tablist" aria-label="兴趣分类">
-            <button class="taste-tab is-active" type="button" role="tab" aria-selected="true" data-taste-tab="games">Games</button>
-            <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="music">Music</button>
-            <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="reading">Reading</button>
-          </div>
+        <div class="life-console">
+          <aside class="life-command" aria-label="生活档案控制台">
+            <span class="life-label">Life-world / Node 02</span>
+            <p class="taste-quote">As long as you stay clear, there is always enough time.</p>
+            <p class="life-copy">这里不是技术栈的附录，而是这个个人世界的另一套坐标：玩什么、听什么、读什么。</p>
+            <div class="taste-tabs" role="tablist" aria-label="生活档案分类">
+              <button class="taste-tab is-active" type="button" role="tab" aria-selected="true" data-taste-tab="games" data-index="01"><i data-lucide="gamepad-2"></i><span>Games</span></button>
+              <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="music" data-index="02"><i data-lucide="music-2"></i><span>Music</span></button>
+              <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="reading" data-index="03"><i data-lucide="book-open"></i><span>Reading</span></button>
+            </div>
+            <div class="life-status" aria-hidden="true">
+              <span data-state="ready">archive</span>
+              <span data-state="3">channels</span>
+              <span data-state="clear">signal</span>
+            </div>
+          </aside>
 
-          <div class="taste-content is-active" data-taste-content="games" role="tabpanel">
-            <div class="game-mosaic" aria-label="游戏列表">
+          <div class="life-deck">
+            <div class="life-panel-heading">
+              <span>Personal Signals</span>
+              <span>Games / Music / Reading</span>
+            </div>
+            <div class="taste-panel">
+
+              <div class="taste-content is-active" data-taste-content="games" role="tabpanel">
+                <div class="game-mosaic" aria-label="游戏列表">
               <a class="interest-card tile-xl" href="https://lol.qq.com/main.shtml" target="_blank" rel="noreferrer">
                 <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="League of Legends" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>League of Legends</strong>
@@ -1844,11 +2081,11 @@
                 <strong>Roco Kingdom</strong>
                 <span>China Official</span>
               </a>
-            </div>
-          </div>
+                </div>
+              </div>
 
-          <div class="taste-content" data-taste-content="music" role="tabpanel">
-            <div class="music-grid" aria-label="歌手列表">
+              <div class="taste-content" data-taste-content="music" role="tabpanel">
+                <div class="music-grid" aria-label="歌手列表">
               <button class="interest-card artist-card is-active" type="button" data-artist="Jay Chou" data-songs="分裂|上海1943|你听得到|以父之名|黑色幽默">
                 <img src="assets/taste/jay-chou.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Jay Chou</strong>
@@ -1864,12 +2101,12 @@
                 <strong>Pakho Chau</strong>
                 <span>Cantonese</span>
               </button>
-            </div>
-            <div class="track-panel" data-track-panel aria-live="polite"></div>
-          </div>
+                </div>
+                <div class="track-panel" data-track-panel aria-live="polite"></div>
+              </div>
 
-          <div class="taste-content" data-taste-content="reading" role="tabpanel">
-            <div class="bookshelf" aria-label="书架">
+              <div class="taste-content" data-taste-content="reading" role="tabpanel">
+                <div class="bookshelf" aria-label="书架">
               <article class="interest-card book-card">
                 <img src="assets/taste/the-courage-to-be-disliked.jpg" alt="The Courage to Be Disliked" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>The Courage to Be Disliked</strong>
@@ -1895,6 +2132,8 @@
                 <strong>Procrastination</strong>
                 <span>Book</span>
               </article>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2331,7 +2570,7 @@
       });
     }
 
-    function setupTasteArchive() {
+    function setupLifeArchive() {
       const tabs = document.querySelectorAll("[data-taste-tab]");
       const panels = document.querySelectorAll("[data-taste-content]");
       const artists = document.querySelectorAll("[data-artist]");
@@ -2659,7 +2898,7 @@
     setupTilt();
     setupConstellation();
     setupLensConsole();
-    setupTasteArchive();
+    setupLifeArchive();
     setupProjectExplorer();
     setupRepositories();
   </script>
