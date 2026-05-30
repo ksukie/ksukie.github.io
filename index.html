@@ -314,9 +314,13 @@
       margin: 0 auto;
       padding: 78px 0 72px;
       display: grid;
-      grid-template-columns: minmax(0, 0.98fr) minmax(320px, 0.72fr);
-      gap: 52px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 36px;
       align-items: center;
+    }
+
+    .hero-content {
+      max-width: 940px;
     }
 
     .hero-frame {
@@ -451,145 +455,6 @@
       text-transform: uppercase;
     }
 
-    .hero-visual {
-      position: relative;
-      align-self: stretch;
-      min-height: 520px;
-      display: grid;
-      align-content: center;
-    }
-
-    .visual-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 450px;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--radius);
-      background: rgba(7, 20, 34, 0.72);
-      box-shadow: 0 34px 90px var(--shadow);
-      transform-style: preserve-3d;
-    }
-
-    .visual-card img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.95) contrast(1.08) brightness(0.76);
-      transform: scale(1.04);
-    }
-
-    .visual-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(180deg, rgba(5, 13, 24, 0.08), rgba(5, 13, 24, 0.72)),
-        linear-gradient(90deg, rgba(5, 13, 24, 0.52), transparent 62%);
-    }
-
-    .visual-card::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      z-index: 2;
-      border: 1px solid rgba(236, 246, 244, 0.18);
-      border-radius: 4px;
-      pointer-events: none;
-    }
-
-    .hud {
-      position: absolute;
-      z-index: 3;
-      display: grid;
-      gap: 8px;
-      color: var(--ink);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12px;
-    }
-
-    .hud span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 7px 9px;
-      border: 1px solid rgba(98, 231, 215, 0.24);
-      border-radius: 999px;
-      background: rgba(5, 13, 24, 0.68);
-      backdrop-filter: blur(12px);
-    }
-
-    .hud span::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 14px var(--cyan);
-    }
-
-    .hud-top {
-      top: 34px;
-      left: 34px;
-    }
-
-    .hud-bottom {
-      right: 34px;
-      bottom: 34px;
-      justify-items: end;
-    }
-
-    .signal-stack {
-      position: absolute;
-      z-index: 5;
-      left: -26px;
-      bottom: 66px;
-      width: min(320px, calc(100% - 40px));
-      padding: 14px;
-      border: 1px solid rgba(98, 231, 215, 0.26);
-      border-radius: var(--radius);
-      background: rgba(7, 20, 34, 0.86);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 24px 58px rgba(0, 0, 0, 0.3);
-    }
-
-    .signal-stack strong {
-      display: block;
-      color: var(--cyan);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-
-    .signal-path {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .signal-node {
-      min-height: 54px;
-      display: grid;
-      place-items: center;
-      gap: 4px;
-      border: 1px solid rgba(236, 246, 244, 0.12);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .signal-node svg {
-      width: 17px;
-      height: 17px;
-      color: var(--cyan);
-    }
-
     .lens-console {
       display: grid;
       grid-template-columns: minmax(240px, 0.54fr) minmax(0, 1fr);
@@ -601,7 +466,6 @@
     .method-grid article,
     .archive-panel,
     .project-stage,
-    .timeline-panel,
     .repo-shell,
     .contact-panel {
       border: 1px solid var(--line);
@@ -773,69 +637,28 @@
     }
 
     .archive-panel {
-      display: grid;
-      grid-template-columns: minmax(260px, 0.48fr) minmax(0, 1fr);
-      gap: 0;
       overflow: hidden;
+      padding: 24px;
     }
 
-    .quote-panel {
-      min-height: 430px;
-      padding: 28px;
+    .taste-topline {
       display: grid;
-      align-content: space-between;
-      gap: 24px;
-      border-right: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(98, 231, 215, 0.1), rgba(232, 132, 122, 0.06)),
-        rgba(8, 23, 37, 0.72);
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 22px;
     }
 
-    .quote-mark {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(98, 231, 215, 0.28);
-      border-radius: 50%;
-      color: var(--cyan);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .quote-panel blockquote {
-      margin: 22px 0 0;
+    .taste-quote {
+      margin: 0;
       color: var(--ink);
-      font-size: clamp(25px, 3.6vw, 44px);
+      font-size: clamp(22px, 3.2vw, 42px);
       font-weight: 950;
       line-height: 1.12;
     }
 
-    .quote-panel p {
-      margin: 14px 0 0;
-      color: var(--text);
-    }
-
-    .trait-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .trait-pill {
-      min-height: 30px;
-      display: inline-flex;
-      align-items: center;
-      padding: 5px 9px;
-      border: 1px solid rgba(236, 246, 244, 0.12);
-      border-radius: 999px;
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
     .taste-panel {
       min-width: 0;
-      padding: 24px;
     }
 
     .taste-tabs,
@@ -880,58 +703,126 @@
     }
 
     .taste-content.is-active {
-      display: grid;
-      gap: 16px;
+      display: block;
     }
 
-    .taste-group {
+    .taste-scroll {
       display: grid;
-      grid-template-columns: 170px minmax(0, 1fr);
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(210px, 270px);
       gap: 14px;
-      align-items: start;
-      padding-bottom: 15px;
-      border-bottom: 1px solid rgba(236, 246, 244, 0.08);
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity;
+      padding: 4px 2px 16px;
+      scrollbar-color: rgba(98, 231, 215, 0.42) transparent;
     }
 
-    .taste-group strong {
+    .interest-card {
+      position: relative;
+      min-height: 168px;
+      overflow: hidden;
+      display: grid;
+      align-content: end;
+      padding: 14px;
+      border: 1px solid rgba(236, 246, 244, 0.12);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.14), rgba(78, 156, 255, 0.06)),
+        rgba(255, 255, 255, 0.035);
+      scroll-snap-align: start;
+      transition: border 180ms ease, transform 180ms ease, background 180ms ease;
+    }
+
+    .interest-card:hover,
+    .interest-card:focus-visible,
+    .interest-card.is-active {
+      border-color: rgba(98, 231, 215, 0.46);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.2), rgba(168, 239, 117, 0.08)),
+        rgba(255, 255, 255, 0.04);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .interest-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.9) contrast(1.04) brightness(0.68);
+      transform: scale(1.02);
+    }
+
+    .interest-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 28%, rgba(5, 13, 24, 0.86));
+    }
+
+    .interest-card.is-image-missing::before {
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.16), rgba(78, 156, 255, 0.08)),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 12px);
+    }
+
+    .interest-card strong,
+    .interest-card span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .interest-card strong {
       color: var(--ink);
-      font-size: 14px;
+      font-size: 19px;
+      line-height: 1.18;
     }
 
-    .taste-items {
+    .interest-card span {
+      margin-top: 5px;
+      color: var(--text);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .track-panel {
+      min-height: 100px;
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px solid rgba(98, 231, 215, 0.22);
+      border-radius: var(--radius);
+      background: rgba(5, 13, 24, 0.48);
+    }
+
+    .track-panel strong {
+      color: var(--cyan);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .track-list {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .taste-chip {
-      min-height: 34px;
-      padding: 7px 10px;
+    .track-list span {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.035);
-      color: var(--text);
-      transition: transform 180ms ease, border 180ms ease, color 180ms ease, background 180ms ease;
-    }
-
-    .taste-chip:hover,
-    .taste-chip:focus-visible,
-    .taste-chip.is-active {
-      border-color: rgba(168, 239, 117, 0.46);
-      background: rgba(168, 239, 117, 0.08);
-      color: var(--lime);
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .taste-status {
-      min-height: 70px;
-      margin-top: 20px;
-      padding: 15px;
-      border: 1px solid rgba(98, 231, 215, 0.22);
-      border-radius: var(--radius);
       color: var(--ink);
-      background: rgba(5, 13, 24, 0.46);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 13px;
     }
 
     .project-stage {
@@ -1131,83 +1022,6 @@
       margin-top: 3px;
       color: var(--muted);
       font-size: 12px;
-    }
-
-    .timeline-panel {
-      position: relative;
-      padding: 24px;
-      overflow: hidden;
-    }
-
-    .timeline-panel::before {
-      content: "";
-      position: absolute;
-      top: 38px;
-      bottom: 38px;
-      left: 194px;
-      width: 1px;
-      background: linear-gradient(180deg, transparent, var(--cyan), var(--blue), transparent);
-      opacity: 0.7;
-    }
-
-    .timeline {
-      position: relative;
-      display: grid;
-      gap: 16px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 150px minmax(0, 1fr);
-      gap: 36px;
-      align-items: start;
-    }
-
-    .timeline-time {
-      min-height: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 10px;
-      border: 1px solid rgba(236, 246, 244, 0.12);
-      border-radius: 999px;
-      color: var(--muted);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12px;
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .timeline-body {
-      position: relative;
-      padding: 18px;
-      border: 1px solid rgba(236, 246, 244, 0.1);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .timeline-body::before {
-      content: "";
-      position: absolute;
-      top: 26px;
-      left: -44px;
-      width: 14px;
-      height: 14px;
-      border: 2px solid var(--cyan);
-      border-radius: 50%;
-      background: var(--bg-2);
-      box-shadow: 0 0 18px rgba(98, 231, 215, 0.45);
-    }
-
-    .timeline-body h3 {
-      margin: 0 0 8px;
-      color: var(--ink);
-      font-size: 20px;
-      line-height: 1.25;
-    }
-
-    .timeline-body p {
-      margin: 0;
-      color: var(--text);
     }
 
     .repo-shell {
@@ -1501,9 +1315,9 @@
       .hero-inner,
       .section-heading,
       .lens-console,
-      .archive-panel,
       .project-console,
-      .contact-panel {
+      .contact-panel,
+      .taste-topline {
         grid-template-columns: 1fr;
       }
 
@@ -1516,39 +1330,12 @@
         scroll-margin-top: 164px;
       }
 
-      .hero-visual {
-        min-height: 430px;
-      }
-
-      .project-main,
-      .quote-panel {
-        border-right: 0;
-      }
-
       .project-main {
         border-bottom: 1px solid var(--line);
       }
 
       .repo-toolbar {
         grid-template-columns: 1fr;
-      }
-
-      .timeline-panel::before {
-        left: 28px;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding-left: 40px;
-      }
-
-      .timeline-time {
-        width: fit-content;
-      }
-
-      .timeline-body::before {
-        left: -47px;
       }
     }
 
@@ -1573,22 +1360,6 @@
         grid-template-columns: 1fr;
       }
 
-      .visual-card {
-        min-height: 360px;
-      }
-
-      .signal-stack {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        width: 100%;
-        margin-top: 12px;
-      }
-
-      .signal-path {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       .focus-readout {
         grid-template-columns: 1fr;
       }
@@ -1597,8 +1368,8 @@
         width: 100%;
       }
 
-      .taste-group {
-        grid-template-columns: 1fr;
+      .taste-scroll {
+        grid-auto-columns: minmax(190px, 78vw);
       }
 
       .project-toolbar {
@@ -1610,9 +1381,7 @@
       .repo-shell,
       .project-main,
       .project-detail,
-      .taste-panel,
-      .quote-panel,
-      .timeline-panel {
+      .archive-panel {
         padding: 18px;
       }
 
@@ -1647,9 +1416,8 @@
       </a>
       <div class="nav-links">
         <a href="#profile">Profile</a>
-        <a href="#taste">Archive</a>
+        <a href="#taste">Taste</a>
         <a href="#projects">Projects</a>
-        <a href="#timeline">Timeline</a>
         <a href="#repos">Repos</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1663,22 +1431,22 @@
           <div class="hero-frame">
             <p class="eyebrow reveal">Computer Vision · Edge AI · Robotics</p>
             <h1 id="hero-title" class="reveal">
-              <span>柯书奇</span>
-              <span>把感知系统送到现场</span>
+              <span>Shuqi Ke</span>
+              <span>柯书奇 · Perception Systems</span>
             </h1>
-            <p class="hero-copy reveal">算法工程师方向，关注目标检测、语义分割、端侧部署、视觉触觉机器人学习，以及从模型训练到硬件联调的完整工程闭环。</p>
+            <p class="hero-copy reveal">Computer vision, edge deployment, and robot learning. 专注目标检测、语义分割与端侧视觉系统。</p>
             <div class="hero-actions reveal">
               <a class="button button-primary" href="#projects">
                 <i data-lucide="radar"></i>
-                进入项目场
+                View Projects
               </a>
-              <a class="button button-ghost" href="resume.html">
-                <i data-lucide="file-text"></i>
-                简历版
+              <a class="button button-ghost" href="#profile">
+                <i data-lucide="user-round"></i>
+                Profile
               </a>
-              <a class="button button-ghost" href="#repos">
-                <i data-lucide="boxes"></i>
-                开源信号
+              <a class="button button-ghost" href="https://github.com/ksukie" target="_blank" rel="noreferrer">
+                <i data-lucide="git-branch"></i>
+                GitHub
               </a>
             </div>
             <div class="hero-stats reveal" aria-label="GitHub 与方向概览">
@@ -1702,28 +1470,6 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal">
-          <figure class="visual-card tilt-card">
-            <img src="assets/portfolio-visual.webp" alt="雾蓝青绿色自然边缘与视觉感知网络抽象图" />
-            <figcaption class="hud hud-top">
-              <span>PERCEPTION FIELD</span>
-              <span>JETSON / RK / TENSORRT</span>
-            </figcaption>
-            <div class="hud hud-bottom" aria-hidden="true">
-              <span>FPS WATCH</span>
-              <span>DEPLOY CHECK</span>
-            </div>
-          </figure>
-          <div class="signal-stack" aria-label="工程路径">
-            <strong>loop trace</strong>
-            <div class="signal-path">
-              <div class="signal-node"><i data-lucide="scan-eye"></i><span>detect</span></div>
-              <div class="signal-node"><i data-lucide="sliders-horizontal"></i><span>optimize</span></div>
-              <div class="signal-node"><i data-lucide="cpu"></i><span>deploy</span></div>
-              <div class="signal-node"><i data-lucide="activity"></i><span>verify</span></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1731,9 +1477,9 @@
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">Operating Mode</p>
-          <h2 id="profile-title">不是把经历摊开，而是看一套系统怎样运转。</h2>
+          <h2 id="profile-title">Vision, edge, robotics.</h2>
         </div>
-        <p>比起只停留在实验结果，我更在意数据、模型、量化、硬件联调和现场测试是否能接成闭环。</p>
+        <p>把模型训练、部署和设备验证连成可复用的工程流程。</p>
       </div>
 
       <div class="lens-console">
@@ -1803,27 +1549,16 @@
     <section class="section" id="taste" aria-labelledby="taste-title">
       <div class="section-heading reveal">
         <div>
-          <p class="eyebrow">Personal Archive</p>
-          <h2 id="taste-title">兴趣不做自我介绍，改成一组偏好线索。</h2>
+          <p class="eyebrow">Taste / 兴趣</p>
+          <h2 id="taste-title">Games, music, reading.</h2>
         </div>
-        <p>这些内容会影响我看系统、节奏、反馈和成长的方式，也让页面不只剩技术关键词。</p>
+        <p>Some personal favorites, kept light.</p>
       </div>
 
       <div class="archive-panel reveal">
-        <aside class="quote-panel">
-          <div>
-            <div class="quote-mark"><i data-lucide="quote"></i></div>
-            <blockquote>只要你不混乱，时间永远够用。</blockquote>
-            <p>As long as you stay clear, there is always enough time.</p>
-          </div>
-          <div class="trait-row" aria-label="个人关键词">
-            <span class="trait-pill">爱钻研</span>
-            <span class="trait-pill">动手能力强</span>
-            <span class="trait-pill">从 0 到 1</span>
-            <span class="trait-pill">好奇心强</span>
-          </div>
-        </aside>
-
+        <div class="taste-topline">
+          <p class="taste-quote">As long as you stay clear, there is always enough time.</p>
+        </div>
         <div class="taste-panel">
           <div class="taste-tabs" role="tablist" aria-label="兴趣分类">
             <button class="taste-tab is-active" type="button" role="tab" aria-selected="true" data-taste-tab="games">Games</button>
@@ -1832,58 +1567,80 @@
           </div>
 
           <div class="taste-content is-active" data-taste-content="games" role="tabpanel">
-            <div class="taste-group">
-              <strong>Systems & Strategy</strong>
-              <div class="taste-items">
-                <button class="taste-chip" type="button" data-note="英雄联盟：系统、节奏、团队协作和临场判断。">英雄联盟</button>
-                <button class="taste-chip" type="button" data-note="云顶之弈：构筑、概率、长期决策和版本理解。">云顶之弈</button>
-                <button class="taste-chip" type="button" data-note="植物大战僵尸：简单规则下的策略层次和资源管理。">植物大战僵尸</button>
-              </div>
-            </div>
-            <div class="taste-group">
-              <strong>Story & Co-op</strong>
-              <div class="taste-items">
-                <button class="taste-chip" type="button" data-note="It Takes Two：协作、关卡变化和情绪节奏。">It Takes Two</button>
-                <button class="taste-chip" type="button" data-note="拣爱：叙事选择、细腻表达和关系观察。">拣爱</button>
-              </div>
-            </div>
-            <div class="taste-group">
-              <strong>Control & Feedback</strong>
-              <div class="taste-items">
-                <button class="taste-chip" type="button" data-note="Titanfall：速度感、控制精度和即时反馈。">Titanfall</button>
-              </div>
-            </div>
-            <div class="taste-group">
-              <strong>Long-term Memory</strong>
-              <div class="taste-items">
-                <button class="taste-chip" type="button" data-note="洛克王国：长期陪伴、收集成长和童年记忆。">洛克王国</button>
-              </div>
+            <div class="taste-scroll" aria-label="游戏列表">
+              <a class="interest-card" href="https://www.leagueoflegends.com/" target="_blank" rel="noreferrer">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="League of Legends" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>League of Legends</strong>
+                <span>Official</span>
+              </a>
+              <a class="interest-card" href="https://teamfighttactics.leagueoflegends.com/" target="_blank" rel="noreferrer">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg" alt="Teamfight Tactics" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Teamfight Tactics</strong>
+                <span>Official</span>
+              </a>
+              <a class="interest-card" href="https://store.steampowered.com/app/3590/Plants_vs_Zombies_GOTY_Edition/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/3590/header.jpg" alt="Plants vs. Zombies" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Plants vs. Zombies</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card" href="https://store.steampowered.com/app/1426210/It_Takes_Two/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg" alt="It Takes Two" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>It Takes Two</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card" href="https://store.steampowered.com/app/939400/LoveChoice/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/939400/header.jpg" alt="LoveChoice" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>LoveChoice</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card" href="https://store.steampowered.com/app/1237970/Titanfall_2/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1237970/header.jpg" alt="Titanfall 2" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Titanfall</strong>
+                <span>Steam</span>
+              </a>
+              <a class="interest-card" href="https://roco.qq.com/" target="_blank" rel="noreferrer">
+                <img src="https://game.gtimg.cn/images/roco/cp/a20200629brand/pc/kv.jpg" alt="洛克王国" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>洛克王国</strong>
+                <span>Official</span>
+              </a>
             </div>
           </div>
 
           <div class="taste-content" data-taste-content="music" role="tabpanel">
-            <div class="taste-group">
-              <strong>Mandarin & Cantonese</strong>
-              <div class="taste-items">
-                <button class="taste-chip" type="button" data-note="Jay Chou：旋律、节奏和长期陪伴式输入。">Jay Chou</button>
-                <button class="taste-chip" type="button" data-note="Eason Chen：情绪表达、叙事感和粤语质地。">Eason Chen</button>
-                <button class="taste-chip" type="button" data-note="周柏豪：粤语旋律、表达和记忆点。">周柏豪</button>
-                <button class="taste-chip" type="button" data-note="国语 / 粤语：喜欢能长期循环、也能让人安静下来的表达。">国语 / 粤语</button>
-              </div>
+            <div class="taste-scroll" aria-label="歌手列表">
+              <button class="interest-card is-active" type="button" data-artist="Jay Chou" data-songs="分裂|上海1943|你听得到|以父之名|黑色幽默">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Jay_Chou_in_Shanghai_2023_%284%29.jpg/330px-Jay_Chou_in_Shanghai_2023_%284%29.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Jay Chou</strong>
+                <span>Mandarin</span>
+              </button>
+              <button class="interest-card" type="button" data-artist="Eason Chen" data-songs="浮夸|苦瓜|沙龙|阿牛|落花流水">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/%E4%B8%8A%E6%B5%B7_%E5%92%AA%E5%92%95%E9%A2%81%E5%A5%96%E7%A4%BC%E7%BA%A2%E6%AF%AF_%281%29.jpg/330px-%E4%B8%8A%E6%B5%B7_%E5%92%AA%E5%92%95%E9%A2%81%E5%A5%96%E7%A4%BC%E7%BA%A2%E6%AF%AF_%281%29.jpg" alt="Eason Chen" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Eason Chen</strong>
+                <span>Cantonese</span>
+              </button>
+              <button class="interest-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|还记得|我的宣言|到此为止">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Pakho_Chau_20201121.jpg/330px-Pakho_Chau_20201121.jpg" alt="Pakho Chau" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Pakho Chau</strong>
+                <span>Cantonese</span>
+              </button>
             </div>
+            <div class="track-panel" data-track-panel aria-live="polite"></div>
           </div>
 
           <div class="taste-content" data-taste-content="reading" role="tabpanel">
-            <div class="taste-group">
-              <strong>Self & Order</strong>
-              <div class="taste-items">
-                <button class="taste-chip" type="button" data-note="《被讨厌的勇气》：关注自我驱动、边界和行动感。">被讨厌的勇气</button>
-                <button class="taste-chip" type="button" data-note="《自卑与超越》：关注成长、补偿、目标和秩序感。">自卑与超越</button>
-              </div>
+            <div class="taste-scroll" aria-label="书目列表">
+              <article class="interest-card">
+                <img src="https://covers.openlibrary.org/b/isbn/9781501197277-L.jpg" alt="The Courage to Be Disliked" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>被讨厌的勇气</strong>
+                <span>Book</span>
+              </article>
+              <article class="interest-card">
+                <img src="https://covers.openlibrary.org/b/isbn/9781614272915-L.jpg" alt="What Life Could Mean to You" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>自卑与超越</strong>
+                <span>Book</span>
+              </article>
             </div>
           </div>
-
-          <div class="taste-status" data-taste-status>选择一个兴趣项，看看它对应的系统感、节奏感或成长线索。</div>
         </div>
       </div>
     </section>
@@ -1891,10 +1648,10 @@
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-heading reveal">
         <div>
-          <p class="eyebrow">Selected Projects</p>
-          <h2 id="projects-title">项目像可切换的现场记录，而不是一排说明书。</h2>
+          <p class="eyebrow">Projects / 项目成果</p>
+          <h2 id="projects-title">Selected project outcomes.</h2>
         </div>
-        <p>公开项目直接跳转 GitHub；未公开项目保留说明，但不会给一个虚假的链接。</p>
+        <p>Public projects link to GitHub. Private work stays as concise notes.</p>
       </div>
 
       <div class="project-stage reveal">
@@ -1906,9 +1663,8 @@
                 <button class="chip-button" type="button" data-project-filter="Robot"><i data-lucide="bot"></i>Robot</button>
                 <button class="chip-button" type="button" data-project-filter="Vision"><i data-lucide="scan-eye"></i>Vision</button>
                 <button class="chip-button" type="button" data-project-filter="Edge"><i data-lucide="cpu"></i>Edge</button>
-                <button class="chip-button" type="button" data-project-filter="Research"><i data-lucide="flask-conical"></i>Research</button>
               </div>
-              <button class="chip-button" type="button" data-random-project><i data-lucide="shuffle"></i>换一组焦点</button>
+              <button class="chip-button" type="button" data-random-project><i data-lucide="shuffle"></i>Shuffle</button>
             </div>
             <div class="project-grid" data-project-grid></div>
           </div>
@@ -1917,56 +1673,13 @@
       </div>
     </section>
 
-    <section class="section" id="timeline" aria-labelledby="timeline-title">
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow">Research & Experience</p>
-          <h2 id="timeline-title">时间线保留事实，视觉上更像一次回放。</h2>
-        </div>
-        <p>从视觉研究、论文实验到算法实习，核心目标是把问题定义、实验验证和工程落地接起来。</p>
-      </div>
-
-      <div class="timeline-panel reveal">
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-time">2026.02 - 至今</div>
-            <div class="timeline-body">
-              <h3>深圳市视塔机器人科技有限公司 · 图像算法实习生</h3>
-              <p>围绕具身智能与边缘视觉场景开展算法工程工作，参与机器人学习栈、视觉触觉感知与端侧实时视觉模块研发。</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-time">JCR Q2 · Under Review</div>
-            <div class="timeline-body">
-              <h3>TY-YOLO：集成注意力的多尺度复杂场景火灾烟雾检测算法</h3>
-              <p>面向森林火灾早期预警中小目标烟雾、遮挡干扰和复杂背景误检问题，构建适配边缘场景的轻量级检测模型。</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-time">已发表 · 医学图像</div>
-            <div class="timeline-body">
-              <h3>FgFEU-Net：基于迁移学习的乳腺肿瘤分割模型</h3>
-              <p>引入 VGG16 编码器、同层特征融合与 Combo Loss，改善乳腺超声图像语义分割中的边界与类别不平衡问题。</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-time">已发表 · Edge-Cloud</div>
-            <div class="timeline-body">
-              <h3>边缘云协同智能交通感知系统</h3>
-              <p>采用 YOLOv8n 在边缘设备侧完成车辆识别、交通流统计、拥堵感知、逆行检测与越界告警。</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="repos" aria-labelledby="repos-title">
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">GitHub Repositories</p>
-          <h2 id="repos-title">公开仓库实时读取，像一个轻量控制台。</h2>
+          <h2 id="repos-title">Repos.</h2>
         </div>
-        <p>可以按语言、更新时间、星标和名称切换，也可以直接搜索仓库说明。</p>
+        <p>Search, filter, and sort public repositories.</p>
       </div>
 
       <div class="repo-shell reveal">
@@ -2002,9 +1715,8 @@
     <section class="section contact-band" id="contact" aria-labelledby="contact-title">
       <div class="contact-panel reveal">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h3 id="contact-title">欢迎交流视觉算法、边缘部署、机器人学习与开源项目。</h3>
-          <p>当前身份：九江学院 IoT Engineering，本科 2022.09 - 2026.06；英语 CET-4 / CET-6。</p>
+          <p class="eyebrow">Contact / 联系</p>
+          <h3 id="contact-title">Email, profile, and GitHub are below.</h3>
         </div>
         <div class="contact-actions">
           <a class="contact-link" href="mailto:15707039996@163.com">
@@ -2013,7 +1725,7 @@
           </a>
           <a class="contact-link" href="resume.html">
             <span class="icon-box"><i data-lucide="file-text"></i></span>
-            <span><strong>Resume</strong><span>查看静态简历页面</span></span>
+            <span><strong>Profile</strong><span>Static profile page</span></span>
           </a>
           <a class="contact-link" href="https://github.com/ksukie" target="_blank" rel="noreferrer">
             <span class="icon-box"><i data-lucide="git-branch"></i></span>
@@ -2042,92 +1754,62 @@
 
     const projectData = [
       {
-        title: "VTLA LeRobot：视觉-触觉机器人学习与真机训练推理栈",
+        title: "VTLA LeRobot",
         shortTitle: "VTLA LeRobot",
         category: "Robot",
-        status: "Private Repository",
+        status: "Private",
         tags: ["VLA", "LeRobot", "Tactile"],
-        summary: "基于 LeRobot 0.5.2 构建机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机与训练 / 录制 / 推理配置。",
-        detail: "打通真机数据采集、CAN 总线、episode 管理、多模态统计与策略评估，重点放在机器人学习从脚本到设备的完整闭环。",
+        summary: "视觉-触觉机器人学习与真机训练推理栈。",
+        detail: "基于 LeRobot 构建数据采集、训练、推理和真机验证流程。",
         trail: [
-          ["Input", "Piper leader-follower 与触觉相机接入"],
-          ["Data", "episode 录制、回放、统计和配置管理"],
-          ["Policy", "训练、推理和真机验证链路"]
+          ["Input", "Piper 与触觉相机接入"],
+          ["Data", "episode 录制与回放"],
+          ["Policy", "训练、推理、真机验证"]
         ],
         private: true
       },
       {
-        title: "WildfireAegis：森林火灾智能检测与预警系统",
+        title: "WildfireAegis",
         shortTitle: "WildfireAegis",
         category: "Vision",
-        status: "Public Repository",
+        status: "Public",
         tags: ["YOLO", "TensorRT", "Jetson"],
-        summary: "围绕森林火灾早期预警构建端到端火焰 / 烟雾监测系统，覆盖模型训练、轻量化优化与端侧部署。",
-        detail: "负责 ONNX / TensorRT 导出、Jetson Orin Nano 端侧部署，并联动传感器和 Web 控制台，让识别结果进入可用的预警系统。",
+        summary: "森林火灾检测、端侧部署与 Web 预警系统。",
+        detail: "完成火焰 / 烟雾检测、TensorRT 推理、Jetson 部署和控制台联动。",
         trail: [
-          ["Detect", "火焰 / 烟雾检测与复杂背景误检控制"],
-          ["Optimize", "模型轻量化、TensorRT 推理链路"],
-          ["Deploy", "Jetson 端侧运行与 Web 控制台联动"]
+          ["Detect", "火焰 / 烟雾检测"],
+          ["Optimize", "ONNX / TensorRT"],
+          ["Deploy", "Jetson 与 Web 控制台"]
         ],
         url: "https://github.com/ksukie/WildfireAegis"
       },
       {
-        title: "VectorMotionTrack：双帧运动向量预测模型与端侧量化部署",
+        title: "VectorMotionTrack",
         shortTitle: "VectorMotionTrack",
         category: "Edge",
-        status: "Private Repository",
+        status: "Private",
         tags: ["Optical Flow", "INT8", "Deploy"],
-        summary: "面向视觉触觉传感器中的微小位移估计与实时运动跟踪，构建双帧 RGB 运动向量预测模型。",
-        detail: "完成 FP16 / INT8 量化、校准样本构建与端侧推理一致性检查，用工程化方式处理小位移和实时反馈。",
+        summary: "双帧运动向量预测与端侧量化部署。",
+        detail: "面向微小位移估计，完成 FP16 / INT8 量化和推理一致性检查。",
         trail: [
-          ["Frame", "双帧 RGB 输入与微小位移建模"],
-          ["Quant", "FP16 / INT8 量化和校准样本构建"],
-          ["Check", "端侧推理一致性与速度验证"]
+          ["Frame", "双帧 RGB 输入"],
+          ["Quant", "FP16 / INT8 量化"],
+          ["Check", "端侧一致性验证"]
         ],
         private: true
       },
       {
-        title: "VisionDot：五路相机标记点检测与边缘实时追踪系统",
+        title: "VisionDot",
         shortTitle: "VisionDot",
         category: "Edge",
-        status: "Private Repository",
+        status: "Private",
         tags: ["OpenCV", "RV1126B", "RK3588"],
-        summary: "构建跨 PC、RV1126B、RK3588 的端侧视觉系统，覆盖摄像头接入、上位机调参、日志分析与性能基准。",
-        detail: "围绕 GStreamer / MIPI 显示、多路相机同步、标记点检测和现场校准，让视觉模块能被长期调试和复用。",
+        summary: "五路相机标记点检测与边缘实时追踪。",
+        detail: "覆盖摄像头接入、标记点检测、现场校准、日志分析和性能基准。",
         trail: [
-          ["Capture", "多路相机接入与显示链路"],
-          ["Track", "标记点检测、追踪和校准"],
-          ["Bench", "日志分析、调参和性能基准"]
-        ],
-        private: true
-      },
-      {
-        title: "TY-YOLO：集成注意力的多尺度复杂场景火灾烟雾检测算法",
-        shortTitle: "TY-YOLO",
-        category: "Research",
-        status: "JCR Q2 · Under Review",
-        tags: ["Attention", "Smoke", "Detection"],
-        summary: "面向森林火灾早期预警中小目标烟雾、遮挡干扰和复杂背景误检问题，构建适配边缘场景的轻量级检测模型。",
-        detail: "研究重点在多尺度目标、注意力模块、复杂背景和边缘部署约束之间找平衡。",
-        trail: [
-          ["Scene", "复杂背景、小目标烟雾和遮挡问题"],
-          ["Model", "多尺度检测与注意力模块设计"],
-          ["Eval", "误检、召回、速度和部署适配"]
-        ],
-        private: true
-      },
-      {
-        title: "FgFEU-Net：基于迁移学习的乳腺肿瘤分割模型",
-        shortTitle: "FgFEU-Net",
-        category: "Research",
-        status: "Published",
-        tags: ["U-Net", "VGG16", "Medical"],
-        summary: "引入 VGG16 编码器、同层特征融合与 Combo Loss，改善乳腺超声图像语义分割中的边界与类别不平衡问题。",
-        detail: "从医学图像的边界细节、数据分布和损失函数入手，关注模型在分割任务中的稳定表现。",
-        trail: [
-          ["Encode", "迁移学习编码器提取稳定特征"],
-          ["Fuse", "同层特征融合处理边界细节"],
-          ["Loss", "Combo Loss 缓解类别不平衡"]
+          ["Capture", "多路相机接入"],
+          ["Track", "检测、追踪、校准"],
+          ["Bench", "日志与性能基准"]
         ],
         private: true
       }
@@ -2396,7 +2078,19 @@
     function setupTasteArchive() {
       const tabs = document.querySelectorAll("[data-taste-tab]");
       const panels = document.querySelectorAll("[data-taste-content]");
-      const status = document.querySelector("[data-taste-status]");
+      const artists = document.querySelectorAll("[data-artist]");
+      const trackPanel = document.querySelector("[data-track-panel]");
+
+      const renderTracks = (artist) => {
+        if (!artist || !trackPanel) return;
+        const songs = (artist.dataset.songs || "").split("|").filter(Boolean);
+        trackPanel.innerHTML = `
+          <strong>${escapeHtml(artist.dataset.artist)}</strong>
+          <div class="track-list">
+            ${songs.map((song) => `<span>${escapeHtml(song)}</span>`).join("")}
+          </div>
+        `;
+      };
 
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
@@ -2407,19 +2101,17 @@
             item.setAttribute("aria-selected", String(active));
           });
           panels.forEach((panel) => panel.classList.toggle("is-active", panel.dataset.tasteContent === target));
-          status.textContent = `${tab.textContent.trim()} · 选择一个兴趣项，读取它背后的节奏、系统或成长线索。`;
         });
       });
 
-      document.querySelectorAll(".taste-chip").forEach((chip) => {
-        const update = () => {
-          document.querySelectorAll(".taste-chip").forEach((item) => item.classList.toggle("is-active", item === chip));
-          status.textContent = chip.dataset.note || chip.textContent.trim();
-        };
-        chip.addEventListener("mouseenter", update);
-        chip.addEventListener("focus", update);
-        chip.addEventListener("click", update);
+      artists.forEach((artist) => {
+        artist.addEventListener("click", () => {
+          artists.forEach((item) => item.classList.toggle("is-active", item === artist));
+          renderTracks(artist);
+        });
       });
+
+      renderTracks(document.querySelector("[data-artist].is-active") || artists[0]);
     }
 
     function setupProjectExplorer() {
@@ -2461,12 +2153,12 @@
           ` : `
             <button class="project-action" type="button" data-private-project="${escapeHtml(project.shortTitle)}">
               <i data-lucide="lock"></i>
-              仓库未公开
+              Private
             </button>
           `}
         `;
         detail.querySelectorAll("[data-private-project]").forEach((button) => {
-          button.addEventListener("click", () => showToast(`${button.dataset.privateProject} · 仓库未公开，当前仅展示项目说明。`));
+          button.addEventListener("click", () => showToast(`${button.dataset.privateProject} · Private project.`));
         });
         updateIcons();
       }
@@ -2493,7 +2185,7 @@
               ` : `
                 <button class="project-action" type="button" data-private-project="${escapeHtml(project.shortTitle)}">
                   <i data-lucide="lock"></i>
-                  私有
+                  Private
                 </button>
               `}
             </div>
@@ -2510,7 +2202,7 @@
         });
 
         grid.querySelectorAll("[data-private-project]").forEach((button) => {
-          button.addEventListener("click", () => showToast(`${button.dataset.privateProject} · 仓库未公开，当前仅展示项目说明。`));
+          button.addEventListener("click", () => showToast(`${button.dataset.privateProject} · Private project.`));
         });
 
         renderDetail(projects[activeIndex]);
@@ -2531,7 +2223,7 @@
         const projects = visibleProjects();
         activeIndex = (activeIndex + 1 + Math.floor(Math.random() * Math.max(1, projects.length - 1))) % projects.length;
         renderProjects();
-        showToast(`焦点切换到 ${projects[activeIndex].shortTitle}`);
+        showToast(`Selected ${projects[activeIndex].shortTitle}`);
       });
 
       renderProjects();
