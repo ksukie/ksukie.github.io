@@ -543,6 +543,13 @@
       flex: 0 0 auto;
     }
 
+    .chip-button svg,
+    .project-action svg,
+    .repo-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
     .button-primary {
       border-color: rgba(98, 231, 215, 0.68);
       background: linear-gradient(135deg, rgba(98, 231, 215, 0.24), rgba(78, 156, 255, 0.18));
@@ -598,22 +605,23 @@
       padding: clamp(18px, 1.6vw, 28px);
       display: grid;
       align-content: start;
-      gap: 13px;
+      gap: 16px;
     }
 
     .lens-button {
       width: 100%;
-      min-height: 68px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      padding: 14px;
+      gap: 14px;
+      padding: 18px 17px;
       border: 1px solid rgba(236, 246, 244, 0.11);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
-      color: var(--text);
-      font-size: 15px;
+      color: var(--ink);
+      font-size: clamp(17px, 1.02vw, 20px);
+      line-height: 1.2;
       text-align: left;
       transition: border 180ms ease, background 180ms ease, transform 180ms ease, color 180ms ease;
     }
@@ -621,13 +629,13 @@
     .lens-button span {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       font-weight: 900;
     }
 
     .lens-button svg {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       color: var(--cyan);
     }
 
@@ -635,7 +643,8 @@
       content: attr(data-index);
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12px;
+      font-size: 13px;
+      font-weight: 900;
     }
 
     .lens-button:hover,
@@ -704,13 +713,14 @@
     .tag {
       display: inline-flex;
       align-items: center;
-      min-height: 30px;
-      padding: 6px 10px;
+      min-height: 36px;
+      padding: 7px 12px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12px;
+      font-size: 13.5px;
+      line-height: 1.15;
     }
 
     .focus-readout {
@@ -954,18 +964,18 @@
 
     .taste-tab,
     .chip-button {
-      min-height: 44px;
+      min-height: 54px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       min-width: 0;
-      padding: 9px 13px;
+      padding: 11px 15px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.035);
       color: var(--ink);
-      font-size: 13.5px;
+      font-size: clamp(15px, 0.9vw, 17px);
       font-weight: 900;
       line-height: 1.15;
       text-align: center;
@@ -975,9 +985,9 @@
 
     .taste-tab {
       position: relative;
-      min-height: 50px;
+      min-height: 62px;
       justify-content: flex-start;
-      padding: 10px 36px 10px 13px;
+      padding: 13px 42px 13px 16px;
       border-radius: calc(var(--radius) - 2px);
       font-family: Consolas, "SFMono-Regular", monospace;
       text-transform: uppercase;
@@ -987,15 +997,16 @@
       content: attr(data-index);
       position: absolute;
       top: 50%;
-      right: 11px;
+      right: 14px;
       color: rgba(236, 246, 244, 0.3);
-      font-size: 11px;
+      font-size: 12px;
+      font-weight: 900;
       transform: translateY(-50%);
     }
 
     .taste-tab svg {
-      width: 17px;
-      height: 17px;
+      width: 21px;
+      height: 21px;
       color: var(--cyan);
     }
 
@@ -1365,18 +1376,18 @@
 
     .project-action,
     .repo-link {
-      min-height: 42px;
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      min-width: 104px;
-      padding: 8px 13px;
+      gap: 10px;
+      min-width: 118px;
+      padding: 10px 15px;
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.035);
       color: var(--ink);
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 900;
       line-height: 1.15;
       white-space: nowrap;
@@ -1416,7 +1427,8 @@
     .detail-kicker {
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12px;
+      font-size: 13.5px;
+      font-weight: 900;
       text-transform: uppercase;
     }
 
@@ -1430,51 +1442,53 @@
     .project-detail p {
       margin: 0;
       color: var(--text);
-      font-size: clamp(14px, 1.08vw, 20px);
-      line-height: 1.66;
+      font-size: clamp(17px, 1.16vw, 22px);
+      line-height: 1.7;
     }
 
     .trail {
       display: grid;
-      gap: 16px;
+      gap: 18px;
       margin-top: 10px;
     }
 
     .trail-step {
       display: grid;
-      grid-template-columns: 37px minmax(0, 1fr);
-      gap: 11px;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 14px;
       align-items: start;
-      padding: 13px;
+      padding: 17px;
       border: 1px solid rgba(236, 246, 244, 0.1);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
     }
 
     .trail-step span {
-      width: 37px;
-      height: 37px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
       border: 1px solid rgba(98, 231, 215, 0.26);
       border-radius: 50%;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 11px;
+      font-size: 12.5px;
       font-weight: 900;
     }
 
     .trail-step strong {
       display: block;
       color: var(--ink);
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 1.25;
     }
 
     .trail-step small {
       display: block;
-      margin-top: 5px;
+      margin-top: 7px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
+      line-height: 1.35;
     }
 
     .repo-shell {
