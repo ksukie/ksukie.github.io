@@ -189,6 +189,31 @@
       letter-spacing: 0.02em;
     }
 
+    .nav-resume {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-left: auto;
+      padding: 8px 13px;
+      border: 1px solid rgba(98, 231, 215, 0.34);
+      border-radius: 999px;
+      background: rgba(98, 231, 215, 0.08);
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+      transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .nav-resume:hover {
+      border-color: rgba(98, 231, 215, 0.58);
+      background: rgba(98, 231, 215, 0.14);
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -428,10 +453,11 @@
     }
 
     .hero-copy {
-      max-width: 1060px;
+      max-width: 1180px;
       margin: clamp(28px, 4vw, 42px) 0 0;
       color: var(--text);
       font-size: clamp(18px, 1.8vw, 26px);
+      line-height: 1.55;
     }
 
     .copy-line {
@@ -515,39 +541,6 @@
       transform: translateY(-2px);
       border-color: var(--line-strong);
       color: var(--cyan);
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: clamp(34px, 4vw, 52px);
-    }
-
-    .stat-tile {
-      min-width: 0;
-      min-height: 92px;
-      padding: 19px 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(8, 23, 37, 0.66);
-    }
-
-    .stat-value {
-      display: block;
-      color: var(--ink);
-      font-size: clamp(34px, 3.2vw, 50px);
-      font-weight: 950;
-      line-height: 1.05;
-    }
-
-    .stat-label {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12px;
-      text-transform: uppercase;
     }
 
     .lens-console {
@@ -1731,6 +1724,10 @@
         padding-bottom: 2px;
       }
 
+      .nav-resume {
+        margin-left: 0;
+      }
+
       .hero-inner,
       .section-heading,
       .lens-console,
@@ -1824,7 +1821,6 @@
         font-size: clamp(28px, 10vw, 44px);
       }
 
-      .hero-stats,
       .method-grid,
       .project-grid,
       .repo-grid {
@@ -1956,6 +1952,10 @@
         <span class="brand-mark">&lt;K&gt;</span>
         <span>Shuqi Ke</span>
       </a>
+      <a class="nav-resume" href="resume.html">
+        <i data-lucide="file-text"></i>
+        Resume
+      </a>
       <div class="nav-links">
         <a href="#profile">Profile</a>
         <a href="#projects">Projects</a>
@@ -1971,14 +1971,14 @@
       <div class="hero-inner">
         <div class="hero-content">
           <div class="hero-frame">
-            <p class="eyebrow reveal">Computer Vision · Edge AI · Robotics</p>
+            <p class="eyebrow reveal">Technology · Life · Personal World</p>
             <h1 id="hero-title" class="reveal">
+              <span>Hello, I am</span>
               <span>Shuqi Ke</span>
-              <span>柯书奇 · Welcome to my world</span>
             </h1>
             <p class="hero-copy reveal">
-              <span class="copy-line">Computer vision, edge deployment, and robot learning.</span>
-              <span class="copy-line">专注目标检测、语义分割与端侧视觉系统。</span>
+              <span class="copy-line">I build with computer vision, edge AI, and robot learning, focusing on practical systems that can move from models to real devices.</span>
+              <span class="copy-line">技术之外，我也把游戏、音乐、阅读和长期思考放进这个个人世界：这里既展示我做什么，也展示我如何观察、选择和生活。</span>
             </p>
             <div class="hero-actions reveal">
               <a class="button button-primary" href="#projects" data-marker="01">
@@ -1993,24 +1993,6 @@
                 <i data-lucide="file-text"></i>
                 获取简历
               </a>
-            </div>
-            <div class="hero-stats reveal" aria-label="GitHub 与方向概览">
-              <div class="stat-tile">
-                <span class="stat-value" data-repo-count>--</span>
-                <span class="stat-label">Public repos</span>
-              </div>
-              <div class="stat-tile">
-                <span class="stat-value" data-star-count>--</span>
-                <span class="stat-label">Total stars</span>
-              </div>
-              <div class="stat-tile">
-                <span class="stat-value">4</span>
-                <span class="stat-label">Core loops</span>
-              </div>
-              <div class="stat-tile">
-                <span class="stat-value" data-follower-count>--</span>
-                <span class="stat-label">Followers</span>
-              </div>
             </div>
           </div>
         </div>
@@ -2828,10 +2810,6 @@
       const languageFilter = document.querySelector(".language-filter");
       const search = document.querySelector(".repo-search");
       const sortButtons = document.querySelectorAll("[data-sort]");
-      const repoCount = document.querySelector("[data-repo-count]");
-      const starCount = document.querySelector("[data-star-count]");
-      const followerCount = document.querySelector("[data-follower-count]");
-
       const state = {
         repos: [],
         language: "All",
@@ -2947,21 +2925,12 @@
         });
       });
 
-      Promise.all([
-        fetchJson(`https://api.github.com/users/${GITHUB_USER}`),
-        fetchAllRepos()
-      ]).then(([profile, repos]) => {
+      fetchAllRepos().then((repos) => {
         state.repos = repos;
-        repoCount.textContent = compactNumber(profile.public_repos ?? repos.length);
-        followerCount.textContent = compactNumber(profile.followers ?? 0);
-        starCount.textContent = compactNumber(repos.reduce((sum, repo) => sum + (repo.stargazers_count || 0), 0));
         renderLanguages();
         renderRepos();
       }).catch((error) => {
         console.error(error);
-        repoCount.textContent = "--";
-        followerCount.textContent = "--";
-        starCount.textContent = "--";
         grid.innerHTML = `
           <div class="repo-empty">
             GitHub 仓库暂时无法载入。可以直接访问
