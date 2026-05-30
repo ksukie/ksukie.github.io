@@ -884,29 +884,6 @@
       line-height: 1.66;
     }
 
-    .life-status {
-      display: grid;
-      gap: 12px;
-      margin-top: auto;
-      padding-top: 22px;
-      border-top: 1px solid rgba(236, 246, 244, 0.1);
-    }
-
-    .life-status span {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      color: var(--muted);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-
-    .life-status span::after {
-      content: attr(data-state);
-      color: var(--lime);
-    }
-
     .life-deck {
       position: relative;
       min-width: 0;
@@ -2225,11 +2202,6 @@
               <button class="taste-tab is-active" type="button" role="tab" aria-selected="true" data-taste-tab="games" data-index="01"><i data-lucide="gamepad-2"></i><span>Games</span></button>
               <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="music" data-index="02"><i data-lucide="music-2"></i><span>Music</span></button>
               <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="reading" data-index="03"><i data-lucide="book-open"></i><span>Reading</span></button>
-            </div>
-            <div class="life-status" aria-hidden="true">
-              <span data-state="ready">archive</span>
-              <span data-state="3">channels</span>
-              <span data-state="clear">signal</span>
             </div>
           </aside>
 
