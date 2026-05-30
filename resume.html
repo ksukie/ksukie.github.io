@@ -1,0 +1,527 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="柯书奇 - 算法工程师方向个人简历" />
+  <title>Shuqi Ke</title>
+  <style>
+    :root {
+      --page: #e9edf1;
+      --ink: #1f2933;
+      --text: #2f3a45;
+      --muted: #5f6b78;
+      --line: #d8dee5;
+      --paper: #ffffff;
+      --sidebar: #24373d;
+      --sidebar-soft: #314b53;
+      --sidebar-text: #f5f8f9;
+      --sidebar-muted: #c6d1d4;
+      --gold: #b58a3d;
+      --green: #2f3a45;
+      --pale: #f6f8fa;
+      --blue-soft: #eef5f7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--page);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, "Microsoft YaHei", sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      letter-spacing: 0;
+      overflow-x: hidden;
+      background:
+        linear-gradient(90deg, rgba(36, 55, 61, 0.06), transparent 34%),
+        var(--page);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .shell {
+      width: 100%;
+      margin: 0;
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      min-height: 100vh;
+      min-width: 0;
+    }
+
+    .sidebar {
+      color: var(--sidebar-text);
+      background: var(--sidebar);
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .identity {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 42px 34px 34px;
+      background: transparent;
+      text-align: center;
+    }
+
+    .avatar-frame {
+      width: 140px;
+      height: 140px;
+      border: 2px solid rgba(255, 255, 255, 0.78);
+      border-radius: 50%;
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .avatar-photo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .monogram {
+      width: 100%;
+      height: 100%;
+      display: none;
+      place-items: center;
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .identity h1 {
+      margin: 28px 0 8px;
+      color: #ffffff;
+      font-size: 40px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .identity .title {
+      margin: 0;
+      color: var(--sidebar-text);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .side-block {
+      position: relative;
+      padding: 28px 34px 0;
+    }
+
+    .side-block h2 {
+      margin: 0 0 16px;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .side-list {
+      display: grid;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--sidebar-text);
+      font-size: 17px;
+      overflow-wrap: anywhere;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--sidebar-muted);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .focus-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .focus-list li {
+      padding: 9px 11px;
+      border-left: 3px solid var(--gold);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .side-note {
+      margin: 10px 0 0;
+      color: var(--sidebar-muted);
+      font-size: 16px;
+      overflow-wrap: anywhere;
+    }
+
+    .course-list {
+      display: grid;
+      gap: 4px;
+      margin: 6px 0 0;
+      padding: 0;
+      color: var(--sidebar-muted);
+      font-size: 16px;
+      list-style: none;
+    }
+
+    .sidebar-footer {
+      padding: 34px;
+      color: var(--sidebar-muted);
+      font-size: 13px;
+    }
+
+    .main {
+      padding: 52px 54px 58px;
+      min-width: 0;
+      background:
+        linear-gradient(180deg, #ffffff, #ffffff 62%, #fbfcfd);
+    }
+
+    .section {
+      margin-bottom: 26px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 25px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 24px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .item:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .time {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .time strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 17px;
+    }
+
+    .item-body h3 {
+      margin: 0 0 5px;
+      color: var(--ink);
+      font-size: 23px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .tagline {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .item-body p {
+      margin: 0;
+      color: var(--text);
+      font-size: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    .item-body p:not(.tagline) + p {
+      margin-top: 8px;
+    }
+
+    .paper-ref {
+      margin-top: 8px;
+      padding-top: 7px;
+      border-top: 1px solid var(--line);
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 980px) {
+      .shell {
+        width: 100%;
+        margin: 0;
+        grid-template-columns: 1fr;
+      }
+
+      .main {
+        padding: 40px 28px 46px;
+      }
+
+      .item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .identity,
+      .side-block,
+      .sidebar-footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+    }
+
+    @media print {
+      html,
+      body {
+        background: #ffffff;
+      }
+
+      .shell {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="shell">
+    <aside class="sidebar">
+      <header class="identity">
+        <div class="avatar-frame">
+          <img class="avatar-photo" src="assets/avatar.jpg" alt="柯书奇头像" data-fallback="assets/avatar.png" onerror="if (!this.dataset.triedFallback) { this.dataset.triedFallback='1'; this.src=this.dataset.fallback; } else { this.style.display='none'; this.nextElementSibling.style.display='grid'; }" />
+          <div class="monogram">KSQ</div>
+        </div>
+        <h1>柯书奇</h1>
+        <p class="title">Algorithm Engineer</p>
+      </header>
+
+      <section class="side-block">
+        <h2>Contact</h2>
+        <ul class="side-list">
+          <li>
+            <span class="label">Phone</span>
+            <a href="tel:15707039996">15707039996</a>
+          </li>
+          <li>
+            <span class="label">Email</span>
+            <a href="mailto:15707039996@163.com">15707039996@163.com</a>
+          </li>
+          <li>
+            <span class="label">GitHub</span>
+            <a href="https://github.com/ksukie" target="_blank" rel="noreferrer">github.com/ksukie</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="side-block">
+        <h2>Tech Stack</h2>
+        <ul class="focus-list">
+          <li>Computer Vision / OpenCV</li>
+          <li>PyTorch / YOLO / U-Net</li>
+          <li>ONNX / TensorRT Deployment</li>
+          <li>Jetson / Edge AI / End to End</li>
+          <li>RKNN / RV1126B / RK3588</li>
+          <li>LeRobot / PI0 / PI0.5 / ACT</li>
+          <li>Data Collection / Piper / Tactile</li>
+          <li>Optical Flow / Quantization</li>
+        </ul>
+      </section>
+
+      <section class="side-block">
+        <h2>Education</h2>
+        <ul class="side-list">
+          <li>
+            <span class="label">2022.09 - 2026.06</span>
+            Jiujiang University · IoT Engineering
+            <p class="side-note">Core courses:</p>
+            <ul class="course-list">
+              <li>Data Structures</li>
+              <li>Computer Networks</li>
+              <li>Operating Systems</li>
+              <li>Computer Organization</li>
+              <li>Advanced Programming</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="side-block">
+        <h2>Credentials</h2>
+        <ul class="side-list">
+          <li>CET-4 / CET-6</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <section class="section">
+        <h2 class="section-title">实习经历</h2>
+        <div class="item">
+          <div class="time">
+            <strong>图像算法实习生</strong>
+            2026.02 - 至今
+          </div>
+          <div class="item-body">
+            <h3>深圳市视塔机器人科技有限公司</h3>
+            <p>实习期间围绕具身智能与边缘视觉场景开展算法工程工作，参与机器人学习栈、视觉触觉感知与端侧实时视觉模块研发，覆盖多模态数据采集、模型适配、训练验证、量化评估、硬件联调与现场测试等环节，沉淀从感知算法到真机部署的工程实践能力。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">科研经历</h2>
+        <div class="item">
+          <div class="time">
+            <strong>研究平台</strong>
+            2022.12 - 2025.09
+          </div>
+          <div class="item-body">
+            <h3>JJU CVI Lab</h3>
+            <p class="tagline">Object Detection · Semantic Segmentation · Edge AI</p>
+            <p>依托视觉研究所参与目标检测、医学图像分割与边缘智能应用研究，覆盖问题建模、实验假设设计、消融对比、误差分析与论文结果整理，形成从研究问题定义到实验验证和成果表达的科研训练。</p>
+            <p>同时承担实验室生物医学图像工具链建设，围绕染色体分割检测系统完成图像预处理、候选区域检测、分割结果复核与异常样本标注流程设计，基于 PyQt5 开发交互式分析工具，将批量图像载入、人工修正和结果导出整合为可运行系统，提升实验室数据标注与复核效率。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>第一作者</strong>
+            JCR Q2 · Under Review
+          </div>
+          <div class="item-body">
+            <h3>TY-YOLO：集成注意力的多尺度复杂场景火灾烟雾检测算法</h3>
+            <p>面向森林火灾早期预警中小目标烟雾、遮挡干扰和复杂背景误检问题，独立完成模型选型、结构优化、损失函数调优和论文撰写，通过注意力机制与多尺度特征融合增强火焰/烟雾表征能力，在检测精度、参数规模与推理开销之间进行折中优化，构建适配边缘场景的轻量级目标检测模型。</p>
+            <div class="paper-ref">
+              TY-YOLO: An attention-based multi-scale complex scene fire smoke detection algorithm
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>医学图像</strong>
+            已发表 · 医学图像分割
+          </div>
+          <div class="item-body">
+            <h3>FgFEU-Net：基于迁移学习的乳腺肿瘤分割模型</h3>
+            <p>面向乳腺超声图像中肿瘤边界模糊、样本标注成本高和前景/背景不均衡等问题，构建基于迁移学习的细粒度特征提取 U-Net 模型，引入 VGG16 作为编码器增强低层纹理与语义特征抽取，通过同层特征融合恢复高分辨率定位信息，并结合 Combo Loss 改善医学图像语义分割中的类别不平衡。</p>
+            <div class="paper-ref">
+              FgFEU-Net: A Fine-grained Feature Extraction U-Net Model for Breast Tumor Segmentation Based on Transfer Learning
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>实时检测</strong>
+            已发表 · Edge-Cloud
+          </div>
+          <div class="item-body">
+            <h3>边缘云协同智能交通感知系统</h3>
+            <p>面向城市交通场景中实时性、可扩展性和边缘部署成本约束，采用 YOLOv8n 作为轻量级目标检测模型，在边缘计算设备侧完成车辆类别识别、交通流统计、拥堵感知、逆行检测与越界告警，并通过边缘云协同方式降低集中式处理延迟，为异常交通事件感知和管理决策提供实时视觉分析能力。</p>
+            <div class="paper-ref">
+              The Real-Time Intelligent Transportation Detection System Based on Edge-Cloud Collaborative Computing
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">代表项目</h2>
+        <div class="item">
+          <div class="time">
+            <strong>VLA</strong>
+            LeRobot · Piper · Tactile
+          </div>
+          <div class="item-body">
+            <h3>VTLA LeRobot：视觉-触觉机器人学习与真机训练推理栈</h3>
+            <p>基于 LeRobot 0.5.2 构建兼容上游 CLI / API 的机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机与训练 / 录制 / 推理配置，面向 ACT 模仿学习和 PI0 / PI0.5 策略微调打通真机数据采集、CAN 总线、流式编码、episode 管理与多模态数据统计。</p>
+            <p>模型侧扩展 PI0.5 触觉输入能力，新增 tactile_image_keys、TactileEncoder、触觉 token 投影和 embed_tactile_image 流程；训练侧改造梯度累积与有效 batch 统计，形成从真机数据到策略训练、部署评估的完整工程链路。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>火灾感知系统</strong>
+            YOLO · TensorRT · Jetson
+          </div>
+          <div class="item-body">
+            <h3>WildfireAegis：森林火灾智能检测与预警系统</h3>
+            <p>围绕森林火灾早期预警构建端到端火焰 / 烟雾监测系统，负责 YOLO 检测模型训练、轻量化优化、ONNX / TensorRT 导出与 Jetson Orin Nano 端侧部署，打通 RTSP 视频流接入、端侧推理、传感器联动、告警状态同步与 Web 控制台可视化流程，形成面向现场部署的边缘 AI 系统。</p>
+            <p>系统侧基于 SpringBoot3 搭建 Web 后端，将端侧检测结果、环境传感器数据与告警状态实时上传云平台，支持远程监控、历史数据管理与异常事件追踪，完成从模型训练、硬件部署到云端联动的全流程开发。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>模型优化与量化</strong>
+            Optical Flow · INT8
+          </div>
+          <div class="item-body">
+            <h3>VectorMotionTrack：双帧运动向量预测模型与端侧量化部署</h3>
+            <p>面向视觉触觉传感器中的微小位移估计与实时运动跟踪，以双帧 RGB 输入构建运动向量预测模型，并针对端侧实时推理约束完成轻量化改进。重点优化 MobileNet-style 编码器、特征融合与分阶段损失设计，引入静止区假流抑制、方向一致性、位移幅值校正和分区误差约束，针对不同位移区间的误差模式设计约束项与校正策略。</p>
+            <p>量化侧围绕模型导出与端侧量化验证展开，完成 FP16 与 INT8 量化、校准样本构建、量化误差对比和端侧推理一致性检查，以量化前后精度保持、推理稳定性和端侧可运行性作为模型压缩效果的评估闭环。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>边缘视觉工程</strong>
+            OpenCV · RV1126B · RK3588
+          </div>
+          <div class="item-body">
+            <h3>VisionDot：五路相机标记点检测与边缘实时追踪系统</h3>
+            <p>面向五路 / 单路相机场景构建跨 PC、RV1126B、RK3588 的端侧视觉系统，覆盖摄像头接入、GStreamer / MIPI 显示、上位机调参、日志分析与性能基准。算法链路以 RGB 分区阈值、形态学闭合、HoughCircles 初始化、灰度模板匹配和 Hue 基线偏移分析为核心，实现标记点检测、模板追踪、位移可视化与第一帧基准回零。</p>
+            <p>工程侧采用多进程五路并发和 OpenCV 线程控制，建立 FPS / CPU / IPC / cache miss 性能剖析工具，并将现场控制流程升级为 MIPI 切路 + 全路一键校准双状态机，解决多路实时追踪的显示调度、漂移复位和现场可控性问题。</p>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </article>
+</body>
+</html>
