@@ -206,9 +206,9 @@
       margin: 0 auto;
       padding: 70px 0 78px;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+      grid-template-columns: minmax(0, 1fr);
       align-items: center;
-      gap: 52px;
+      gap: 36px;
     }
 
     .eyebrow {
@@ -323,53 +323,6 @@
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0;
-    }
-
-    .portrait-stage {
-      position: relative;
-      min-height: 430px;
-      display: grid;
-      place-items: center;
-    }
-
-    .portrait-stage::before,
-    .portrait-stage::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(167, 243, 208, 0.28);
-      border-radius: 50%;
-      transform: rotate(8deg);
-    }
-
-    .portrait-stage::before {
-      width: min(76vw, 410px);
-      aspect-ratio: 1;
-      animation: spin-slow 18s linear infinite;
-    }
-
-    .portrait-stage::after {
-      width: min(64vw, 330px);
-      aspect-ratio: 1;
-      border-color: rgba(8, 145, 178, 0.5);
-      animation: spin-slow 24s linear reverse infinite;
-    }
-
-    .portrait {
-      position: relative;
-      z-index: 1;
-      width: min(64vw, 280px);
-      aspect-ratio: 1;
-      border: 4px solid rgba(255, 255, 255, 0.82);
-      border-radius: 50%;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 28px 72px rgba(0, 0, 0, 0.32);
-    }
-
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     .section {
@@ -966,10 +919,6 @@
         padding-top: 58px;
       }
 
-      .portrait-stage {
-        min-height: 330px;
-      }
-
       .project-grid,
       .repo-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1104,12 +1053,6 @@
               <span class="stat-value" data-follower-count>--</span>
               <span class="stat-label">Followers</span>
             </div>
-          </div>
-        </div>
-
-        <div class="portrait-stage reveal" aria-label="头像">
-          <div class="portrait">
-            <img src="assets/avatar.jpg" alt="柯书奇头像" />
           </div>
         </div>
       </div>
