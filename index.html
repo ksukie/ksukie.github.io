@@ -205,7 +205,7 @@
         linear-gradient(135deg, rgba(98, 231, 215, 0.2), rgba(78, 156, 255, 0.1)),
         rgba(98, 231, 215, 0.08);
       color: var(--ink);
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 900;
       white-space: nowrap;
       transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
@@ -301,6 +301,38 @@
       line-height: 1.55;
     }
 
+    .profile-flow {
+      justify-self: end;
+      align-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: clamp(8px, 0.8vw, 13px);
+      padding: 11px 13px;
+      border: 1px solid rgba(98, 231, 215, 0.18);
+      border-radius: var(--radius);
+      background: rgba(8, 23, 37, 0.5);
+      color: var(--ink);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(13px, 0.82vw, 16px);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .profile-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border: 1px solid rgba(236, 246, 244, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .flow-arrow {
+      color: var(--cyan);
+      opacity: 0.78;
+    }
+
     .eyebrow {
       margin: 0 0 13px;
       color: var(--cyan);
@@ -355,27 +387,71 @@
       order: 1;
     }
 
-    #profile {
+    .hero-bridge {
       order: 2;
     }
 
-    #projects {
+    #profile {
       order: 3;
     }
 
-    #repos {
+    @media (min-width: 981px) {
+      #profile > .section-heading,
+      #profile > .lens-console {
+        transform: scale(0.95);
+        transform-origin: top center;
+      }
+    }
+
+    #projects {
       order: 4;
-      min-height: auto;
+    }
+
+    @media (min-width: 981px) {
+      #projects > .section-heading,
+      #projects > .project-stage {
+        transform: scale(0.95);
+        transform-origin: top center;
+      }
+    }
+
+    #repos {
+      order: 5;
+      min-height: calc(100svh - 72px);
+    }
+
+    @media (min-width: 981px) {
+      #repos > .section-heading,
+      #repos > .repo-shell {
+        transform: scale(0.95);
+        transform-origin: top center;
+      }
+    }
+
+    .life-bridge {
+      order: 6;
     }
 
     #life {
-      order: 5;
+      order: 7;
+    }
+
+    @media (min-width: 981px) {
+      #life > .section-heading,
+      #life > .archive-panel {
+        transform: scale(0.95);
+        transform-origin: top center;
+      }
+    }
+
+    .contact-bridge {
+      order: 8;
     }
 
     #contact {
-      order: 6;
-      min-height: auto;
-      grid-template-rows: auto;
+      order: 9;
+      min-height: calc(100svh - 72px);
+      grid-template-rows: minmax(0, 1fr);
       padding-top: clamp(32px, 4svh, 52px);
       padding-bottom: clamp(32px, 4svh, 52px);
     }
@@ -386,6 +462,321 @@
         radial-gradient(circle at 82% 40%, rgba(78, 156, 255, 0.1), transparent 32%),
         linear-gradient(135deg, rgba(98, 231, 215, 0.06), transparent 44%, rgba(232, 132, 122, 0.04)),
         repeating-linear-gradient(90deg, transparent 0 63px, rgba(98, 231, 215, 0.04) 63px 64px);
+    }
+
+    #life {
+      min-height: calc(100svh - 72px);
+      display: block;
+      padding: clamp(18px, 2.6svh, 32px) max(10px, calc((100% - 1980px) / 2));
+    }
+
+    @media (min-width: 981px) {
+      #life > .archive-panel.life-stage {
+        transform: none;
+      }
+    }
+
+    .life-stage {
+      position: relative;
+      height: calc(100vh - 118px);
+      height: calc(100svh - 118px);
+      min-height: 620px;
+      max-height: 860px;
+      border: 1px solid rgba(98, 231, 215, 0.2);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 18% 24%, rgba(98, 231, 215, 0.14), transparent 26%),
+        radial-gradient(circle at 76% 16%, rgba(78, 156, 255, 0.16), transparent 24%),
+        linear-gradient(135deg, rgba(6, 17, 31, 0.94), rgba(3, 9, 18, 0.98));
+      box-shadow: inset 0 0 60px rgba(98, 231, 215, 0.055), 0 34px 90px rgba(0, 0, 0, 0.32);
+      outline: none;
+    }
+
+    .life-stage:focus-visible {
+      border-color: rgba(98, 231, 215, 0.48);
+      box-shadow: inset 0 0 60px rgba(98, 231, 215, 0.08), 0 0 0 3px rgba(98, 231, 215, 0.16);
+    }
+
+    .life-stage::before {
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent 20%),
+        repeating-linear-gradient(0deg, transparent 0 21px, rgba(98, 231, 215, 0.045) 21px 22px),
+        repeating-linear-gradient(90deg, transparent 0 78px, rgba(236, 246, 244, 0.024) 78px 79px);
+      opacity: 0.66;
+    }
+
+    .life-stage::after {
+      inset: 22px;
+      border-color: rgba(98, 231, 215, 0.24);
+      box-shadow: inset 0 0 42px rgba(98, 231, 215, 0.06);
+    }
+
+    .life-stage-copy {
+      position: absolute;
+      z-index: 4;
+      top: clamp(28px, 5svh, 64px);
+      left: clamp(24px, 4.8vw, 74px);
+      width: min(720px, calc(100% - 180px));
+      pointer-events: none;
+    }
+
+    .life-stage-copy h2 {
+      max-width: 780px;
+      font-size: clamp(50px, 7.6vw, 116px);
+      line-height: 0.92;
+      text-transform: uppercase;
+    }
+
+    .life-stage-copy .taste-quote {
+      margin-top: clamp(14px, 1.8svh, 24px);
+      max-width: 600px;
+      color: var(--ink);
+      font-size: clamp(19px, 1.72vw, 30px);
+      font-weight: 800;
+      line-height: 1.36;
+    }
+
+    .life-stage-copy .life-copy {
+      max-width: 560px;
+      margin-top: 12px;
+      font-size: clamp(14px, 0.95vw, 18px);
+      display: none;
+    }
+
+    .life-stage[data-active-taste="music"] .life-stage-copy .taste-quote,
+    .life-stage[data-active-taste="reading"] .life-stage-copy .taste-quote {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+    }
+
+    .life-stage-status {
+      position: absolute;
+      z-index: 5;
+      top: clamp(34px, 5.4svh, 70px);
+      right: clamp(32px, 5.2vw, 84px);
+      display: grid;
+      gap: 7px;
+      justify-items: end;
+      color: var(--cyan);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(12px, 0.78vw, 15px);
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .life-stage-status span:last-child {
+      color: var(--muted);
+      letter-spacing: 0.28em;
+    }
+
+    .life-slide-tabs {
+      position: absolute;
+      z-index: 5;
+      left: clamp(24px, 4.8vw, 74px);
+      right: clamp(120px, 12vw, 210px);
+      bottom: clamp(24px, 4.6svh, 54px);
+      width: min(720px, calc(100% - 220px));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      backdrop-filter: blur(14px);
+    }
+
+    .life-slide-controls {
+      position: absolute;
+      z-index: 6;
+      top: 50%;
+      right: clamp(18px, 2.7vw, 48px);
+      display: grid;
+      justify-items: center;
+      gap: 13px;
+      min-width: 52px;
+      transform: translateY(-50%);
+    }
+
+    .life-slide-controls .taste-nav {
+      width: 52px;
+      height: 52px;
+      border-width: 2px;
+      border-color: rgba(98, 231, 215, 0.62);
+      background: rgba(17, 34, 64, 0.72);
+      box-shadow: 0 0 26px rgba(78, 156, 255, 0.22);
+    }
+
+    .life-slide-controls .taste-nav:hover,
+    .life-slide-controls .taste-nav:focus-visible {
+      background: rgba(98, 231, 215, 0.18);
+      transform: scale(1.06);
+      outline: none;
+    }
+
+    .life-slide-controls .taste-dots {
+      flex-direction: column;
+      padding: 12px 10px;
+      border-color: rgba(98, 231, 215, 0.22);
+      background: rgba(5, 13, 24, 0.68);
+      backdrop-filter: blur(12px);
+    }
+
+    .life-slide-controls .taste-dot {
+      width: 9px;
+      height: 9px;
+    }
+
+    .life-slide-controls .taste-dot.is-active {
+      width: 9px;
+      height: 30px;
+    }
+
+    #life .taste-panel {
+      position: absolute;
+      z-index: 3;
+      inset: clamp(206px, 28svh, 288px) clamp(104px, 9vw, 156px) clamp(120px, 15svh, 168px) clamp(24px, 4.6vw, 74px);
+      display: flex;
+      min-width: 0;
+      min-height: 0;
+      gap: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      padding: 0;
+      scrollbar-width: none;
+    }
+
+    #life .taste-panel::-webkit-scrollbar {
+      display: none;
+    }
+
+    #life .taste-panel::before {
+      display: none;
+    }
+
+    #life .taste-content {
+      flex: 0 0 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0 clamp(8px, 1.5vw, 22px) 0 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      align-content: stretch;
+      grid-template-rows: auto minmax(0, 1fr);
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      opacity: 0.18;
+      transform: translateX(34px) scale(0.97);
+      transition: opacity 520ms ease, transform 520ms ease;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(98, 231, 215, 0.42) transparent;
+    }
+
+    #life .taste-content.is-active {
+      border: 0;
+      background: transparent;
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+
+    #life .taste-content::before {
+      right: clamp(18px, 4vw, 70px);
+      top: clamp(4px, 1.5svh, 20px);
+      color: rgba(236, 246, 244, 0.07);
+      font-size: clamp(86px, 12vw, 206px);
+    }
+
+    .life-slide-title {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 10px 18px;
+      align-items: end;
+      max-width: min(840px, 78%);
+      margin-bottom: clamp(16px, 2.2svh, 24px);
+    }
+
+    .life-slide-title span {
+      grid-row: span 2;
+      color: rgba(98, 231, 215, 0.5);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(24px, 2.2vw, 40px);
+      line-height: 1;
+    }
+
+    .life-slide-title h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(30px, 3.3vw, 54px);
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .life-slide-title p {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(14px, 0.95vw, 18px);
+      line-height: 1.55;
+    }
+
+    #life .game-mosaic {
+      grid-auto-rows: minmax(104px, 1fr);
+      min-height: 0;
+    }
+
+    #life .music-grid {
+      grid-template-columns: repeat(6, minmax(116px, 1fr));
+      gap: 13px;
+      min-height: 0;
+    }
+
+    #life .artist-card {
+      min-height: clamp(150px, 19svh, 216px);
+      padding: 16px;
+    }
+
+    #life .track-panel {
+      min-height: auto;
+      margin-top: 14px;
+      padding: 16px;
+      background: rgba(5, 13, 24, 0.66);
+      backdrop-filter: blur(10px);
+    }
+
+    #life .track-list {
+      max-height: 96px;
+      overflow-y: auto;
+    }
+
+    #life .track-list span {
+      min-height: 38px;
+      padding: 8px 12px;
+      font-size: clamp(13px, 0.82vw, 16px);
+    }
+
+    #life .bookshelf {
+      height: auto;
+      max-height: none;
+      grid-template-columns: repeat(6, minmax(118px, 1fr));
+      gap: 15px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 4px 4px 18px;
+    }
+
+    #life .book-card {
+      min-height: clamp(230px, 34svh, 344px);
+    }
+
+    #life .interest-card {
+      border-color: rgba(236, 246, 244, 0.14);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.12), rgba(78, 156, 255, 0.07)),
+        rgba(8, 23, 37, 0.72);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
     }
 
     .hero {
@@ -420,6 +811,14 @@
     .hero-content {
       max-width: 1640px;
       min-width: 0;
+      overflow: visible;
+    }
+
+    @media (min-width: 981px) {
+      .hero-content {
+        transform: scale(1.1);
+        transform-origin: left center;
+      }
     }
 
     .hero .eyebrow {
@@ -428,6 +827,7 @@
 
     .hero-frame {
       position: relative;
+      overflow: visible;
       padding: clamp(22px, 3.2vw, 38px) 0 clamp(24px, 3.2vw, 44px);
     }
 
@@ -461,10 +861,17 @@
       gap: clamp(10px, 1.4vw, 24px);
       max-width: 100%;
       overflow-wrap: normal;
+      overflow: visible;
       white-space: nowrap;
       font-size: clamp(39px, 7.82vw, 136px);
-      line-height: 0.95;
+      line-height: 1.18;
+      padding-bottom: 0.16em;
       text-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    .hero h1 span {
+      display: inline-block;
+      overflow: visible;
     }
 
     .hero h1 span:first-child {
@@ -478,14 +885,15 @@
       -webkit-background-clip: text;
       background-clip: text;
       font-size: 1em;
-      line-height: 0.95;
+      line-height: 1.18;
+      padding-bottom: 0.08em;
     }
 
     .hero-copy {
       display: grid;
       gap: clamp(10px, 1.2vw, 16px);
-      width: min(100%, 1120px);
-      max-width: 1120px;
+      width: min(100%, 1280px);
+      max-width: 1280px;
       margin: clamp(28px, 4vw, 42px) 0 0;
       color: var(--text);
     }
@@ -497,15 +905,15 @@
     }
 
     .copy-line-primary {
-      max-width: 74ch;
+      max-width: 100%;
       color: var(--ink);
-      font-size: clamp(23px, 1.9vw, 31px);
+      font-size: clamp(21px, 1.55vw, 27px);
       font-weight: 800;
-      line-height: 1.42;
+      line-height: 1.38;
     }
 
     .copy-line-secondary {
-      max-width: 66em;
+      max-width: 80%;
       padding-left: clamp(12px, 1.2vw, 16px);
       border-left: 2px solid rgba(98, 231, 215, 0.55);
       color: rgba(229, 246, 247, 0.9);
@@ -520,7 +928,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
       gap: 16px;
-      margin-top: clamp(28px, 4vw, 44px);
+      margin-top: clamp(38px, 5vw, 58px);
     }
 
     .button {
@@ -611,6 +1019,179 @@
       color: var(--cyan);
     }
 
+    .hero-bridge,
+    .life-bridge,
+    .contact-bridge {
+      position: relative;
+      min-height: calc(100svh - 72px);
+      display: grid;
+      place-items: center;
+      padding: clamp(34px, 4svh, 54px) max(12px, calc((100% - 1980px) / 2));
+      overflow: hidden;
+      isolation: isolate;
+      scroll-margin-top: 96px;
+    }
+
+    .hero-bridge::before,
+    .life-bridge::before,
+    .contact-bridge::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(5, 13, 24, 0.92), rgba(8, 23, 37, 0.76) 48%, rgba(5, 13, 24, 0.94)),
+        radial-gradient(circle at 50% 35%, rgba(98, 231, 215, 0.12), transparent 36%),
+        repeating-linear-gradient(90deg, transparent 0 74px, rgba(236, 246, 244, 0.035) 74px 75px);
+    }
+
+    .life-bridge::before,
+    .contact-bridge::before {
+      background:
+        linear-gradient(180deg, rgba(5, 13, 24, 0.94), rgba(8, 23, 37, 0.72) 48%, rgba(5, 13, 24, 0.94)),
+        radial-gradient(circle at 36% 30%, rgba(168, 239, 117, 0.13), transparent 34%),
+        radial-gradient(circle at 68% 58%, rgba(232, 132, 122, 0.09), transparent 34%),
+        repeating-linear-gradient(90deg, transparent 0 74px, rgba(236, 246, 244, 0.032) 74px 75px);
+    }
+
+    .hero-bridge::after,
+    .life-bridge::after,
+    .contact-bridge::after {
+      content: "";
+      position: absolute;
+      top: 18%;
+      bottom: 18%;
+      left: 50%;
+      z-index: -1;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(98, 231, 215, 0.48), transparent);
+      box-shadow: 0 0 28px rgba(98, 231, 215, 0.34);
+    }
+
+    .life-bridge::after,
+    .contact-bridge::after {
+      background: linear-gradient(180deg, transparent, rgba(168, 239, 117, 0.44), rgba(98, 231, 215, 0.3), transparent);
+      box-shadow: 0 0 28px rgba(168, 239, 117, 0.28);
+    }
+
+    .bridge-inner {
+      width: min(1360px, calc(100% - 24px));
+      min-height: clamp(420px, 58svh, 620px);
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: clamp(16px, 2svh, 26px);
+      text-align: center;
+    }
+
+    .bridge-inner h2 {
+      margin: 0;
+      color: var(--ink);
+      max-width: 100%;
+      font-size: clamp(48px, 5.6vw, 94px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .hero-bridge .bridge-inner h2 {
+      max-width: min(1180px, 100%);
+      font-size: clamp(30px, 5vw, 60px);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .bridge-inner .eyebrow {
+      font-size: clamp(14px, 0.9vw, 18px);
+    }
+
+    .bridge-inner p:not(.eyebrow) {
+      max-width: min(1120px, 100%);
+      margin: 0;
+      color: rgba(229, 246, 247, 0.82);
+      font-size: clamp(18px, 1.35vw, 24px);
+      font-weight: 750;
+      line-height: 1.55;
+    }
+
+    .life-bridge .bridge-inner p:not(.eyebrow) {
+      white-space: nowrap;
+    }
+
+    .bridge-arrow {
+      position: relative;
+      width: 104px;
+      height: 104px;
+      display: grid;
+      place-items: center;
+      margin-top: clamp(12px, 2svh, 24px);
+      border: 1px solid rgba(98, 231, 215, 0.42);
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.18), rgba(78, 156, 255, 0.1)),
+        rgba(8, 23, 37, 0.84);
+      color: var(--cyan);
+      box-shadow: inset 0 0 24px rgba(98, 231, 215, 0.12), 0 18px 52px rgba(0, 0, 0, 0.28);
+      animation: bridgePulse 1800ms ease-in-out infinite;
+    }
+
+    .bridge-arrow::before,
+    .bridge-arrow::after {
+      content: "";
+      position: absolute;
+      inset: -13px;
+      border: 1px solid rgba(98, 231, 215, 0.2);
+      border-radius: inherit;
+    }
+
+    .bridge-arrow::after {
+      inset: -26px;
+      opacity: 0.45;
+    }
+
+    .bridge-arrow svg {
+      width: 38px;
+      height: 38px;
+      animation: bridgeArrow 1200ms ease-in-out infinite;
+    }
+
+    .bridge-arrow span {
+      position: absolute;
+      top: calc(100% + clamp(58px, 8svh, 110px));
+      width: max-content;
+      color: var(--muted);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(16px, 1vw, 20px);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes bridgeArrow {
+      0%,
+      100% {
+        transform: translateY(-5px);
+      }
+
+      50% {
+        transform: translateY(7px);
+      }
+    }
+
+    @keyframes bridgePulse {
+      0%,
+      100% {
+        transform: translateY(0);
+        border-color: rgba(98, 231, 215, 0.34);
+      }
+
+      50% {
+        transform: translateY(5px);
+        border-color: rgba(98, 231, 215, 0.68);
+      }
+    }
+
     .lens-console {
       display: grid;
       grid-template-columns: minmax(300px, 0.45fr) minmax(0, 1fr);
@@ -627,9 +1208,20 @@
       height: 100%;
     }
 
+    #life > .archive-panel.life-stage {
+      height: calc(100vh - 118px);
+      height: calc(100svh - 118px);
+      min-height: 620px;
+      max-height: 860px;
+    }
+
     .section > .repo-shell {
       min-height: 0;
       height: auto;
+    }
+
+    #repos > .repo-shell {
+      height: 100%;
     }
 
     .lens-panel,
@@ -648,23 +1240,25 @@
     .lens-panel {
       padding: clamp(18px, 1.6vw, 28px);
       display: grid;
-      align-content: start;
       gap: 16px;
+      align-content: stretch;
+      grid-auto-rows: minmax(0, 1fr);
     }
 
     .lens-button {
       width: 100%;
-      min-height: 82px;
+      height: 100%;
+      min-height: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      padding: 18px 17px;
+      padding: clamp(16px, 1.55vw, 27px) clamp(15px, 1.45vw, 24px);
       border: 1px solid rgba(236, 246, 244, 0.11);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
       color: var(--ink);
-      font-size: clamp(17px, 1.02vw, 20px);
+      font-size: clamp(18px, 1.12vw, 22px);
       line-height: 1.2;
       text-align: left;
       transition: border 180ms ease, background 180ms ease, transform 180ms ease, color 180ms ease;
@@ -674,12 +1268,13 @@
       display: inline-flex;
       align-items: center;
       gap: 14px;
+      min-width: 0;
       font-weight: 900;
     }
 
     .lens-button svg {
-      width: 24px;
-      height: 24px;
+      width: clamp(23px, 1.35vw, 28px);
+      height: clamp(23px, 1.35vw, 28px);
       color: var(--cyan);
     }
 
@@ -687,7 +1282,7 @@
       content: attr(data-index);
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 13px;
+      font-size: clamp(12px, 0.8vw, 15px);
       font-weight: 900;
     }
 
@@ -765,6 +1360,12 @@
       font-family: Consolas, "SFMono-Regular", monospace;
       font-size: 13.5px;
       line-height: 1.15;
+    }
+
+    .method-grid .tag {
+      min-height: 54px;
+      padding: 10px 18px;
+      font-size: 20px;
     }
 
     .focus-readout {
@@ -847,7 +1448,8 @@
       z-index: 1;
       min-height: 100%;
       display: grid;
-      grid-template-columns: minmax(520px, 0.46fr) minmax(0, 1fr);
+      grid-template-columns: minmax(430px, 0.36fr) minmax(0, 1fr);
+      grid-template-rows: minmax(0, 1fr);
     }
 
     .life-command {
@@ -886,7 +1488,8 @@
     }
 
     .life-label {
-      margin-top: 24px;
+      display: block;
+      margin: 24px 0 10px;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
       font-size: 12px;
@@ -944,13 +1547,108 @@
       color: var(--cyan);
     }
 
-    .taste-panel {
+    .taste-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       min-width: 0;
     }
 
-    .life-deck .taste-panel {
+    .taste-nav {
+      width: 42px;
+      height: 42px;
       display: grid;
+      place-items: center;
+      border: 1px solid rgba(236, 246, 244, 0.12);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--cyan);
+      transition: border 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+
+    .taste-nav:hover {
+      border-color: rgba(98, 231, 215, 0.42);
+      background: rgba(98, 231, 215, 0.09);
+      transform: translateY(-1px);
+    }
+
+    .taste-nav svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .taste-dots {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid rgba(236, 246, 244, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .taste-dot {
+      width: 11px;
+      height: 11px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(236, 246, 244, 0.25);
+      transition: width 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .taste-dot.is-active {
+      width: 28px;
+      border-radius: 999px;
+      background: var(--cyan);
+      box-shadow: 0 0 16px rgba(98, 231, 215, 0.42);
+    }
+
+    .taste-panel {
+      position: relative;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      touch-action: pan-x pan-y;
+      cursor: grab;
+      padding: clamp(10px, 1vw, 16px);
+      border: 1px solid rgba(98, 231, 215, 0.18);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.06), rgba(78, 156, 255, 0.035)),
+        rgba(5, 13, 24, 0.42);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(98, 231, 215, 0.42) transparent;
+    }
+
+    .taste-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(98, 231, 215, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(98, 231, 215, 0.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: 0.54;
+    }
+
+    .taste-panel.is-dragging {
+      cursor: grabbing;
+    }
+
+    .taste-panel.is-dragging .taste-content {
+      transition: none;
+    }
+
+    .life-deck .taste-panel {
+      display: flex;
       min-height: 0;
+      align-items: stretch;
+      gap: clamp(18px, 2vw, 32px);
     }
 
     .taste-tabs,
@@ -1042,18 +1740,58 @@
     }
 
     .taste-content {
-      display: none;
+      position: relative;
+      display: grid;
+      flex: 0 0 min(760px, 72vw);
       min-height: 100%;
       margin-top: 22px;
+      padding: clamp(18px, 1.7vw, 30px);
+      overflow: hidden;
+      border: 1px solid rgba(236, 246, 244, 0.12);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 52%),
+        rgba(8, 23, 37, 0.74);
+      box-shadow: inset 0 0 36px rgba(98, 231, 215, 0.045), 0 18px 44px rgba(0, 0, 0, 0.22);
+      scroll-snap-align: center;
+      transition: border 180ms ease, background 180ms ease, transform 180ms ease;
     }
 
     .taste-content.is-active {
-      display: grid;
-      align-content: stretch;
+      border-color: rgba(98, 231, 215, 0.4);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.08), rgba(78, 156, 255, 0.04)),
+        rgba(8, 23, 37, 0.82);
     }
 
-    .taste-content[data-taste-content="music"].is-active {
-      align-content: start;
+    .taste-content::before {
+      position: absolute;
+      right: clamp(18px, 2vw, 32px);
+      top: clamp(14px, 1.6vw, 26px);
+      z-index: 0;
+      color: rgba(236, 246, 244, 0.08);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(64px, 6.8vw, 128px);
+      font-weight: 350;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .taste-content[data-taste-content="games"]::before {
+      content: "GAMES";
+    }
+
+    .taste-content[data-taste-content="music"]::before {
+      content: "MUSIC";
+    }
+
+    .taste-content[data-taste-content="reading"]::before {
+      content: "READING";
+    }
+
+    .taste-content > * {
+      position: relative;
+      z-index: 1;
     }
 
     .life-deck .taste-content {
@@ -1351,7 +2089,7 @@
       min-height: 0;
       display: grid;
       align-content: space-between;
-      gap: 18px;
+      gap: 14px;
       padding: clamp(21px, 1.85vw, 32px);
       border: 1px solid rgba(236, 246, 244, 0.11);
       border-radius: var(--radius);
@@ -1371,7 +2109,7 @@
     }
 
     .project-card h3 {
-      margin: 18px 0 14px;
+      margin: 0 0 14px;
       color: var(--ink);
       font-size: clamp(22px, 1.6vw, 30px);
       line-height: 1.28;
@@ -1387,19 +2125,22 @@
     .project-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
+      gap: 9px;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(236, 246, 244, 0.12);
     }
 
     .badge {
-      min-height: 27px;
+      min-height: 38px;
       display: inline-flex;
       align-items: center;
-      padding: 5px 9px;
+      padding: 8px 13px;
       border: 1px solid rgba(98, 231, 215, 0.22);
       border-radius: 999px;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 11px;
+      font-size: clamp(14px, 0.86vw, 17px);
       font-weight: 800;
     }
 
@@ -1417,6 +2158,10 @@
       justify-content: space-between;
       color: var(--muted);
       font-size: 12px;
+    }
+
+    .project-footer {
+      font-size: clamp(13px, 0.78vw, 15px);
     }
 
     .project-action,
@@ -1437,6 +2182,18 @@
       line-height: 1.15;
       white-space: nowrap;
       transition: border 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .project-action {
+      min-height: 52px;
+      min-width: 132px;
+      padding: 11px 18px;
+      font-size: clamp(16px, 0.92vw, 18px);
+    }
+
+    .project-action svg {
+      width: 22px;
+      height: 22px;
     }
 
     .repo-links {
@@ -1462,7 +2219,8 @@
       min-width: 0;
       padding: clamp(26px, 2.4vw, 43px);
       display: grid;
-      align-content: start;
+      grid-template-rows: auto auto auto auto minmax(0, 1fr) auto;
+      align-content: stretch;
       gap: 22px;
       background:
         linear-gradient(180deg, rgba(78, 156, 255, 0.08), transparent 34%),
@@ -1491,17 +2249,34 @@
       line-height: 1.7;
     }
 
+    .project-detail .method-tags {
+      gap: 11px;
+      margin-top: 4px;
+      margin-bottom: 0;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(236, 246, 244, 0.14);
+    }
+
+    .project-detail .tag {
+      min-height: 40px;
+      padding: 8px 14px;
+      font-size: clamp(14px, 0.86vw, 17px);
+      color: rgba(236, 246, 244, 0.78);
+    }
+
     .trail {
       display: grid;
+      grid-auto-rows: minmax(0, 1fr);
       gap: 18px;
-      margin-top: 10px;
+      margin-top: 0;
+      min-height: 0;
     }
 
     .trail-step {
       display: grid;
-      grid-template-columns: 48px minmax(0, 1fr);
-      gap: 14px;
-      align-items: start;
+      grid-template-columns: clamp(56px, 3.1vw, 66px) minmax(0, 1fr);
+      gap: clamp(14px, 1vw, 18px);
+      align-items: center;
       padding: 17px;
       border: 1px solid rgba(236, 246, 244, 0.1);
       border-radius: var(--radius);
@@ -1509,22 +2284,22 @@
     }
 
     .trail-step span {
-      width: 48px;
-      height: 48px;
+      width: clamp(56px, 3.1vw, 66px);
+      height: clamp(56px, 3.1vw, 66px);
       display: grid;
       place-items: center;
       border: 1px solid rgba(98, 231, 215, 0.26);
       border-radius: 50%;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 12.5px;
+      font-size: clamp(15px, 0.9vw, 18px);
       font-weight: 900;
     }
 
     .trail-step strong {
       display: block;
       color: var(--ink);
-      font-size: 16px;
+      font-size: clamp(18px, 1.06vw, 22px);
       line-height: 1.25;
     }
 
@@ -1532,8 +2307,8 @@
       display: block;
       margin-top: 7px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.35;
+      font-size: clamp(15px, 0.92vw, 18px);
+      line-height: 1.42;
     }
 
     .repo-shell {
@@ -1601,21 +2376,22 @@
 
     .repo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto minmax(0, 1fr);
       grid-auto-rows: auto;
       gap: clamp(14px, 1.6vw, 22px);
-      align-content: start;
-      align-items: start;
+      align-content: stretch;
+      align-items: stretch;
       min-height: 0;
     }
 
     .repo-card {
-      min-height: 156px;
+      min-height: 196px;
       display: grid;
       grid-template-rows: auto auto;
-      align-content: start;
-      gap: 13px;
-      padding: clamp(17px, 1.35vw, 24px);
+      align-content: space-between;
+      gap: 16px;
+      padding: clamp(20px, 1.55vw, 28px);
       border: 1px solid rgba(236, 246, 244, 0.1);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
@@ -1674,6 +2450,28 @@
       height: 14px;
     }
 
+    .repo-signals {
+      grid-column: 1 / -1;
+      min-height: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(18px, 1.8vw, 28px);
+      border: 1px dashed rgba(98, 231, 215, 0.2);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.07), rgba(78, 156, 255, 0.04)),
+        rgba(255, 255, 255, 0.025);
+      align-self: stretch;
+    }
+
+    .repo-signals strong {
+      color: var(--cyan);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(22px, 1.6vw, 34px);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
     .repo-empty,
     .repo-loading {
       grid-column: 1 / -1;
@@ -1719,53 +2517,81 @@
       padding-bottom: clamp(32px, 4svh, 52px);
     }
 
+    .contact-band::before {
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.2), rgba(78, 156, 255, 0.12) 42%, rgba(5, 13, 24, 0.92) 74%),
+        linear-gradient(180deg, rgba(5, 13, 24, 0.84), rgba(8, 23, 37, 0.66) 48%, rgba(5, 13, 24, 0.92)),
+        radial-gradient(circle at 32% 26%, rgba(98, 231, 215, 0.22), transparent 34%),
+        radial-gradient(circle at 68% 62%, rgba(78, 156, 255, 0.16), transparent 38%),
+        repeating-linear-gradient(90deg, transparent 0 74px, rgba(236, 246, 244, 0.035) 74px 75px);
+      opacity: 1;
+    }
+
     .contact-panel {
       display: grid;
-      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
-      gap: clamp(22px, 3vw, 46px);
+      grid-template-columns: minmax(300px, 0.82fr) minmax(460px, 1.18fr);
+      gap: clamp(28px, 4vw, 72px);
       align-items: center;
-      min-height: auto;
-      padding: clamp(24px, 2.8vw, 42px);
+      min-height: 100%;
+      padding: clamp(32px, 4.4vw, 78px);
       background:
-        linear-gradient(135deg, rgba(98, 231, 215, 0.12), rgba(232, 132, 122, 0.06)),
-        var(--panel-strong);
+        linear-gradient(135deg, rgba(98, 231, 215, 0.2), rgba(78, 156, 255, 0.14) 45%, rgba(5, 13, 24, 0.36)),
+        rgba(11, 31, 49, 0.84);
     }
 
-    .contact-panel h3 {
+    .contact-copy {
+      display: grid;
+      align-content: center;
+      max-width: 760px;
+    }
+
+    .contact-copy .eyebrow {
+      margin-bottom: clamp(16px, 1.7vw, 26px);
+      font-size: clamp(18px, 1.35vw, 26px);
+    }
+
+    .contact-copy h3 {
       margin: 0;
       color: var(--ink);
-      font-size: clamp(29px, 3.1vw, 52px);
-      line-height: 1.08;
+      font-size: clamp(46px, 5.2vw, 92px);
+      line-height: 0.98;
     }
 
-    .contact-panel p {
-      margin: 19px 0 0;
+    .contact-copy p:not(.eyebrow) {
+      margin: clamp(18px, 2vw, 28px) 0 0;
       color: var(--text);
-      font-size: clamp(16px, 1.12vw, 22px);
+      font-size: clamp(17px, 1.12vw, 22px);
+      font-weight: 750;
+      line-height: 1.52;
+      white-space: nowrap;
     }
 
     .contact-actions {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(12px, 1.4vw, 18px);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(14px, 1.6vw, 22px);
     }
 
-    .contact-link {
-      min-height: 118px;
+    .contact-card {
+      min-height: clamp(142px, 15svh, 184px);
       display: grid;
       grid-template-columns: auto minmax(0, 1fr);
       align-items: center;
-      gap: 14px;
-      padding: clamp(15px, 1.3vw, 21px);
+      gap: clamp(14px, 1.4vw, 20px);
+      padding: clamp(18px, 1.8vw, 28px);
       border: 1px solid rgba(236, 246, 244, 0.12);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.035);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(98, 231, 215, 0.045)),
+        rgba(5, 13, 24, 0.42);
       transition: border 180ms ease, background 180ms ease, transform 180ms ease;
     }
 
-    .contact-link:hover {
+    .contact-card:hover {
       border-color: rgba(98, 231, 215, 0.38);
-      background: rgba(98, 231, 215, 0.08);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.1), rgba(78, 156, 255, 0.07)),
+        rgba(5, 13, 24, 0.48);
       transform: translateY(-2px);
     }
 
@@ -1786,21 +2612,21 @@
       height: 24px;
     }
 
-    .contact-link strong,
-    .contact-link span span {
+    .contact-card strong,
+    .contact-card span span {
       display: block;
     }
 
-    .contact-link > span:not(.icon-box) {
+    .contact-card > span:not(.icon-box) {
       min-width: 0;
     }
 
-    .contact-link strong {
+    .contact-card strong {
       color: var(--ink);
       font-size: clamp(17px, 1.05vw, 22px);
     }
 
-    .contact-link span span {
+    .contact-card span span {
       color: var(--muted);
       font-size: clamp(13px, 0.85vw, 17px);
       overflow-wrap: anywhere;
@@ -1861,6 +2687,10 @@
         margin-left: 0;
       }
 
+      .profile-flow {
+        justify-self: start;
+      }
+
       .hero-inner,
       .section-heading,
       .lens-console,
@@ -1882,6 +2712,18 @@
       .hero-inner {
         min-height: auto;
         padding-top: 52px;
+      }
+
+      .hero-bridge {
+        scroll-margin-top: 164px;
+      }
+
+      .life-bridge {
+        scroll-margin-top: 164px;
+      }
+
+      .contact-bridge {
+        scroll-margin-top: 164px;
       }
 
       .section {
@@ -1910,13 +2752,18 @@
         grid-template-columns: 1fr;
       }
 
+      .repo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+      }
+
       .sort-group {
         width: 100%;
         min-width: 0;
       }
 
       .contact-actions {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1990,10 +2837,44 @@
         grid-template-columns: 1fr;
       }
 
+      .hero-bridge {
+        min-height: 100svh;
+        padding: 76px 10px;
+      }
+
+      .life-bridge {
+        min-height: 100svh;
+        padding: 76px 10px;
+      }
+
+      .contact-bridge {
+        min-height: 100svh;
+        padding: 76px 10px;
+      }
+
+      .bridge-inner {
+        width: min(100% - 20px, 980px);
+        min-height: 66svh;
+      }
+
+      .bridge-inner h2 {
+        font-size: clamp(30px, 8vw, 54px);
+      }
+
+      .bridge-inner p:not(.eyebrow) {
+        font-size: 18px;
+      }
+
+      .bridge-arrow {
+        width: 86px;
+        height: 86px;
+      }
+
       .method-grid,
       .project-grid,
       .repo-grid {
         grid-template-columns: 1fr;
+        grid-template-rows: none;
       }
 
       .method-grid,
@@ -2029,6 +2910,10 @@
       .sort-group,
       .language-filter {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .repo-signals {
+        grid-template-columns: 1fr;
       }
 
       .life-command,
@@ -2085,15 +2970,19 @@
         padding: 18px;
       }
 
-      .contact-panel h3 {
+      .contact-copy h3 {
         font-size: clamp(28px, 8vw, 42px);
+      }
+
+      .contact-copy p:not(.eyebrow) {
+        white-space: normal;
       }
 
       .contact-actions {
         grid-template-columns: 1fr;
       }
 
-      .contact-link {
+      .contact-card {
         min-height: 88px;
       }
 
@@ -2108,6 +2997,1327 @@
       .back-top {
         right: 14px;
         bottom: 80px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      #life {
+        padding: 18px 12px 26px;
+      }
+
+      #life > .archive-panel.life-stage {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100svh;
+        max-height: none;
+      }
+
+      .life-stage-copy {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        padding: clamp(24px, 5vw, 42px) clamp(20px, 4vw, 38px) 14px;
+      }
+
+      .life-stage-copy .life-copy {
+        display: block;
+      }
+
+      .life-stage-status {
+        top: clamp(22px, 3vw, 34px);
+        right: clamp(22px, 4vw, 40px);
+      }
+
+      #life .taste-panel {
+        position: relative;
+        inset: auto;
+        height: min(620px, 62svh);
+        min-height: 520px;
+        margin: 0 clamp(20px, 4vw, 44px) 116px;
+      }
+
+      .life-slide-tabs {
+        left: clamp(20px, 4vw, 44px);
+        right: clamp(20px, 4vw, 44px);
+        bottom: 22px;
+        width: auto;
+      }
+
+      .life-slide-controls {
+        top: auto;
+        right: clamp(20px, 4vw, 44px);
+        bottom: 86px;
+        display: flex;
+        align-items: center;
+        transform: none;
+      }
+
+      .life-slide-controls .taste-dots {
+        flex-direction: row;
+      }
+
+      .life-slide-controls .taste-dot.is-active {
+        width: 28px;
+        height: 9px;
+      }
+
+      .life-slide-title {
+        max-width: 100%;
+      }
+
+      #life .music-grid,
+      #life .bookshelf {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow-y: auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      #life {
+        min-height: 100svh;
+        padding: clamp(76px, 38svh, 324px) 10px 24px;
+        scroll-margin-top: 0;
+      }
+
+      #life > .archive-panel.life-stage {
+        min-height: calc(100svh - 104px);
+      }
+
+      .life-stage::after {
+        inset: 8px;
+      }
+
+      .life-stage-copy {
+        padding: 18px 16px 10px;
+      }
+
+      .life-stage-copy h2 {
+        font-size: clamp(42px, 15vw, 68px);
+      }
+
+      .life-stage-copy .taste-quote {
+        font-size: clamp(18px, 5vw, 22px);
+      }
+
+      .life-stage-status {
+        position: relative;
+        top: auto;
+        right: auto;
+        justify-items: start;
+        margin: 0 16px 12px;
+      }
+
+      #life .taste-panel {
+        height: min(610px, 58svh);
+        min-height: 480px;
+        margin: 0 14px 156px;
+      }
+
+      #life .taste-content {
+        padding-right: 0;
+      }
+
+      .life-slide-title {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .life-slide-title span {
+        grid-row: auto;
+        font-size: 24px;
+      }
+
+      .life-slide-title h3 {
+        font-size: 36px;
+      }
+
+      #life .game-mosaic {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 126px;
+        overflow-y: auto;
+      }
+
+      #life .music-grid,
+      #life .bookshelf {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #life .artist-card {
+        min-height: 190px;
+      }
+
+      #life .book-card {
+        min-height: 270px;
+      }
+
+      .life-slide-tabs {
+        grid-template-columns: 1fr;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .life-slide-controls {
+        left: 14px;
+        right: 14px;
+        bottom: 104px;
+        justify-content: space-between;
+      }
+
+      .life-slide-controls .taste-nav {
+        width: 46px;
+        height: 46px;
+      }
+
+      .life-slide-controls .taste-dots {
+        padding: 10px;
+      }
+    }
+
+    #life.life-template-section {
+      height: calc(100vh - 72px);
+      height: calc(100svh - 72px);
+      min-height: calc(100svh - 72px);
+      padding: 0;
+      display: block;
+      overflow: hidden;
+      background: #020c1b;
+      scroll-margin-top: 96px;
+    }
+
+    #life.life-template-section::before {
+      background:
+        radial-gradient(circle at 18% 18%, rgba(98, 231, 215, 0.12), transparent 28%),
+        radial-gradient(circle at 82% 62%, rgba(78, 156, 255, 0.13), transparent 32%),
+        linear-gradient(180deg, rgba(2, 12, 27, 0.78), rgba(2, 12, 27, 0.96));
+    }
+
+    .life-template {
+      position: relative;
+      height: 100%;
+      min-height: 0;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(circle at 18% 26%, rgba(100, 255, 218, 0.11), transparent 30%),
+        radial-gradient(circle at 70% 14%, rgba(78, 156, 255, 0.13), transparent 26%),
+        linear-gradient(135deg, rgba(2, 12, 27, 0.98), rgba(6, 18, 35, 0.98));
+    }
+
+    .life-template::before,
+    .life-template::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .life-template::before {
+      background:
+        repeating-linear-gradient(90deg, transparent 0 79px, rgba(100, 255, 218, 0.04) 79px 80px),
+        repeating-linear-gradient(0deg, transparent 0 23px, rgba(230, 241, 255, 0.025) 23px 24px);
+      opacity: 0.72;
+    }
+
+    .life-template::after {
+      inset: 26px;
+      border: 1px solid rgba(100, 255, 218, 0.18);
+      box-shadow: inset 0 0 64px rgba(100, 255, 218, 0.055);
+    }
+
+    .life-track {
+      height: 100%;
+      display: flex;
+      transition: transform 720ms cubic-bezier(0.77, 0, 0.175, 1);
+      will-change: transform;
+    }
+
+    .life-template-slide {
+      position: relative;
+      flex: 0 0 100%;
+      min-width: 0;
+      height: 100%;
+      display: grid;
+      align-content: center;
+      gap: clamp(24px, 3svh, 42px);
+      padding: clamp(52px, 7svh, 86px) clamp(86px, 10vw, 154px) clamp(52px, 7svh, 86px) clamp(78px, 10vw, 150px);
+      overflow: hidden;
+    }
+
+    .life-template-slide::before {
+      content: attr(data-watermark);
+      position: absolute;
+      right: clamp(28px, 5vw, 90px);
+      bottom: clamp(42px, 7svh, 92px);
+      z-index: 0;
+      color: rgba(230, 241, 255, 0.055);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: clamp(94px, 16vw, 240px);
+      font-weight: 950;
+      line-height: 0.8;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .life-template-slide > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .life-template-slide[data-life-slide="intro"] {
+      padding-left: calc(clamp(78px, 10vw, 150px) + 10vw);
+    }
+
+    .life-template-slide[data-life-slide="intro"] .eyebrow {
+      display: none;
+    }
+
+    .life-template-slide[data-life-slide="games"] {
+      grid-template-columns: minmax(340px, 0.42fr) minmax(880px, 1.32fr);
+      align-items: center;
+      align-content: center;
+      column-gap: clamp(18px, 1.9vw, 30px);
+      padding: clamp(34px, 5svh, 62px) clamp(96px, 7vw, 118px) clamp(34px, 5svh, 62px) clamp(48px, 7vw, 108px);
+    }
+
+    .life-template-slide[data-life-slide="games"] .life-template-title {
+      align-self: center;
+      max-width: 600px;
+      transform: translate(clamp(41px, 2.4vw, 54px), calc(-1 * clamp(132px, 15.2svh, 220px)));
+    }
+
+    .life-template-slide[data-life-slide="games"] .life-template-title h3 {
+      display: block;
+      font-size: clamp(42px, 6.8vw, 106px);
+      line-height: 0.94;
+      white-space: nowrap;
+    }
+
+    .life-template-slide[data-life-slide="music"] {
+      grid-template-columns: minmax(520px, 0.95fr) minmax(420px, 0.78fr);
+      grid-template-rows: auto auto;
+      align-items: center;
+      align-content: center;
+      column-gap: clamp(42px, 6vw, 112px);
+      padding-right: clamp(86px, 6.5vw, 124px);
+    }
+
+    .life-template-slide[data-life-slide="music"] .life-template-title,
+    .life-template-slide[data-life-slide="music"] .life-music-grid {
+      grid-column: 1;
+    }
+
+    .life-template-slide[data-life-slide="music"] .life-track-panel {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      align-self: center;
+      justify-self: center;
+      width: min(730px, 100%);
+      max-width: 100%;
+    }
+
+    .life-template-slide[data-life-slide="music"] .life-branch-note {
+      left: clamp(96px, 7.2vw, 142px);
+      bottom: clamp(52px, 6svh, 86px);
+    }
+
+    .life-template-slide[data-life-slide="reading"] {
+      grid-template-columns: minmax(280px, 0.34fr) minmax(1060px, 1.66fr);
+      align-items: center;
+      align-content: center;
+      column-gap: clamp(32px, 3.4vw, 64px);
+      padding-right: clamp(32px, 3.6vw, 72px);
+    }
+
+    .life-template-slide[data-life-slide="reading"] .life-template-title {
+      grid-column: 1;
+      align-self: center;
+      max-width: min(920px, 78vw);
+      transform: translate(0, calc(-1 * clamp(150px, 17.3svh, 235px)));
+    }
+
+    .life-template-slide[data-life-slide="reading"] .life-template-title h3 {
+      white-space: nowrap;
+    }
+
+    .life-template-slide[data-life-slide="reading"] .life-reading-grid {
+      grid-column: 2;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .life-template-slide[data-life-slide="continued"] {
+      place-items: center;
+      text-align: center;
+    }
+
+    .life-template-slide[data-life-slide="continued"]::before {
+      content: "";
+    }
+
+    .life-continued-title {
+      margin: 0;
+      background: linear-gradient(90deg, #64ffda 0%, #7ce8ff 42%, #4e9cff 72%, #e6f1ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: clamp(26px, 3.8vw, 69px);
+      font-weight: 950;
+      line-height: 1;
+      text-align: center;
+      text-shadow: 0 0 42px rgba(100, 255, 218, 0.16);
+    }
+
+    .life-template-hero {
+      max-width: min(1080px, 86vw);
+    }
+
+    .life-big-title,
+    .life-template-hero h2 {
+      margin: 0;
+      color: #e6f1ff;
+      font-size: clamp(62px, 10vw, 150px);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .life-big-title .life-title-cn {
+      background: linear-gradient(90deg, #64ffda, #4e9cff 78%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 0.86em;
+      white-space: nowrap;
+    }
+
+    .life-big-title span,
+    .life-template-hero h2 span,
+    .life-template-title h3 span {
+      color: var(--cyan);
+    }
+
+    .life-lead,
+    .life-template-hero p:not(.eyebrow),
+    .life-template-title p {
+      max-width: 760px;
+      margin: clamp(16px, 2svh, 24px) 0 0;
+      color: rgba(230, 241, 255, 0.82);
+      font-size: clamp(18px, 1.55vw, 27px);
+      line-height: 1.55;
+    }
+
+    .life-lead-cn {
+      margin-bottom: 0;
+      color: rgba(100, 255, 218, 0.9);
+      font-weight: 850;
+    }
+
+    .life-lead-cn + .life-lead {
+      margin-top: 0;
+    }
+
+    .life-template-slide[data-life-slide="intro"] > .life-lead:last-child {
+      max-width: none;
+      white-space: nowrap;
+    }
+
+    .life-template-title {
+      max-width: min(920px, 78vw);
+    }
+
+    .life-template-title span:first-child {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: rgba(100, 255, 218, 0.62);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(24px, 2.3vw, 42px);
+      line-height: 1;
+    }
+
+    .life-template-title h3 {
+      margin: 0;
+      color: #e6f1ff;
+      font-size: clamp(42px, 6.8vw, 106px);
+      line-height: 0.94;
+      text-transform: uppercase;
+    }
+
+    .life-branch-note {
+      position: absolute;
+      left: clamp(96px, 8vw, 156px);
+      bottom: clamp(84px, 11svh, 138px);
+      width: min(680px, 36vw);
+      padding: 14px 0 0 18px;
+      border-left: 1px solid rgba(100, 255, 218, 0.46);
+      color: rgba(230, 241, 255, 0.74);
+    }
+
+    .life-branch-note span {
+      display: block;
+      margin-bottom: 8px;
+      color: rgba(100, 255, 218, 0.86);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(11px, 0.72vw, 13px);
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .life-branch-note p {
+      margin: 0;
+      color: rgba(230, 241, 255, 0.76);
+      font-size: clamp(16px, 1.02vw, 20px);
+      font-weight: 750;
+      line-height: 1.65;
+      white-space: nowrap;
+    }
+
+    .life-template-grid {
+      display: grid;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .life-game-grid {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      grid-template-rows: repeat(5, minmax(96px, 1fr));
+      justify-self: center;
+      align-self: center;
+      width: 100%;
+      max-width: 1280px;
+      height: min(clamp(616px, 81.4svh, 858px), calc(100svh - 142px));
+      padding: clamp(14px, 1.3vw, 22px);
+      border: 1px solid rgba(100, 255, 218, 0.24);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(100, 255, 218, 0.07), transparent 58%),
+        rgba(2, 12, 27, 0.48);
+      box-shadow: inset 0 0 34px rgba(100, 255, 218, 0.05), 0 24px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .life-game-grid .life-card {
+      min-height: 0;
+      height: 100%;
+    }
+
+    .life-game-grid .life-card:nth-child(1) {
+      grid-column: 1 / 4;
+      grid-row: 1 / 3;
+    }
+
+    .life-game-grid .life-card:nth-child(2) {
+      grid-column: 4 / 6;
+      grid-row: 1 / 4;
+    }
+
+    .life-game-grid .life-card:nth-child(3) {
+      grid-column: 6 / 9;
+      grid-row: 1 / 2;
+    }
+
+    .life-game-grid .life-card:nth-child(4) {
+      grid-column: 6 / 9;
+      grid-row: 2 / 3;
+    }
+
+    .life-game-grid .life-card:nth-child(5) {
+      grid-column: 6 / 9;
+      grid-row: 3 / 4;
+    }
+
+    .life-game-grid .life-card:nth-child(6) {
+      grid-column: 1 / 4;
+      grid-row: 3 / 5;
+    }
+
+    .life-game-grid .life-card:nth-child(7) {
+      grid-column: 4 / 8;
+      grid-row: 4 / 6;
+    }
+
+    .life-game-grid .life-card:nth-child(8) {
+      grid-column: 1 / 4;
+      grid-row: 5 / 6;
+    }
+
+    .life-game-grid .life-card:nth-child(9) {
+      grid-column: 8 / 9;
+      grid-row: 4 / 6;
+    }
+
+    .life-game-grid .life-card:nth-child(2) img {
+      object-position: 48% center;
+    }
+
+    .life-game-grid .life-card:nth-child(5) img {
+      object-position: 24% center;
+    }
+
+    .life-game-grid .life-card:nth-child(7) strong {
+      font-size: clamp(24px, 2vw, 36px);
+    }
+
+    .life-music-grid {
+      grid-template-columns: repeat(6, minmax(112px, 1fr));
+      max-width: 100%;
+    }
+
+    .life-artist-card strong {
+      font-size: clamp(16px, 1.15vw, 22px);
+      white-space: nowrap;
+    }
+
+    .life-reading-grid {
+      position: relative;
+      isolation: isolate;
+      width: min(1260px, 100%);
+      max-width: 100%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: clamp(322px, 28.8svh, 430px);
+      align-content: start;
+      height: min(784px, calc(80svh - 141px));
+      gap: clamp(18px, 1.35vw, 24px);
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: clamp(19px, 1.45vw, 27px);
+      padding-right: clamp(22px, 1.75vw, 34px);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(100, 255, 218, 0.11), transparent 34%),
+        linear-gradient(315deg, rgba(78, 156, 255, 0.09), transparent 38%),
+        rgba(2, 12, 27, 0.58);
+      box-shadow:
+        inset 0 0 0 1px rgba(230, 241, 255, 0.04),
+        inset 0 0 54px rgba(100, 255, 218, 0.05),
+        0 24px 64px rgba(0, 0, 0, 0.22);
+      scrollbar-color: rgba(100, 255, 218, 0.48) rgba(2, 12, 27, 0.42);
+      scrollbar-gutter: stable;
+      scrollbar-width: thin;
+    }
+
+    .life-reading-grid::before,
+    .life-reading-grid::after {
+      content: "";
+      position: absolute;
+      top: clamp(19px, 1.45vw, 27px);
+      bottom: clamp(19px, 1.45vw, 27px);
+      z-index: 0;
+      width: 1px;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent, rgba(100, 255, 218, 0.28), transparent);
+      box-shadow: 0 0 18px rgba(100, 255, 218, 0.14);
+    }
+
+    .life-reading-grid::before {
+      left: clamp(19px, 1.45vw, 27px);
+    }
+
+    .life-reading-grid::after {
+      right: clamp(22px, 1.75vw, 34px);
+    }
+
+    .life-reading-grid::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .life-reading-grid::-webkit-scrollbar-track {
+      background: rgba(2, 12, 27, 0.42);
+      border-radius: 999px;
+    }
+
+    .life-reading-grid::-webkit-scrollbar-thumb {
+      border: 2px solid rgba(2, 12, 27, 0.42);
+      border-radius: 999px;
+      background: rgba(100, 255, 218, 0.58);
+    }
+
+    .life-card {
+      position: relative;
+      min-height: 150px;
+      overflow: hidden;
+      display: grid;
+      align-content: end;
+      padding: 18px;
+      border: 1px solid rgba(100, 255, 218, 0.18);
+      border-radius: var(--radius);
+      background: rgba(17, 34, 64, 0.58);
+      color: #e6f1ff;
+      box-shadow: inset 0 0 26px rgba(100, 255, 218, 0.045), 0 20px 50px rgba(0, 0, 0, 0.26);
+      transition: border 180ms ease, transform 180ms ease, background 180ms ease;
+    }
+
+    .life-card:hover,
+    .life-card:focus-visible,
+    .life-card.is-active {
+      border-color: rgba(100, 255, 218, 0.58);
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .life-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.08) brightness(0.58);
+      transform: scale(1.02);
+    }
+
+    .life-artist-card img[alt="Joker Xue"] {
+      object-position: center 35%;
+    }
+
+    .life-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 28%, rgba(2, 12, 27, 0.92));
+    }
+
+    .life-card strong,
+    .life-card small {
+      position: relative;
+      z-index: 2;
+    }
+
+    .life-card strong {
+      color: #e6f1ff;
+      font-size: clamp(18px, 1.6vw, 27px);
+      line-height: 1.1;
+    }
+
+    .life-card small {
+      margin-top: 8px;
+      color: rgba(100, 255, 218, 0.78);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .life-card-xl {
+      grid-column: span 3;
+      grid-row: span 2;
+    }
+
+    .life-card-wide {
+      grid-column: span 3;
+    }
+
+    .life-card-mid {
+      grid-column: span 2;
+    }
+
+    .life-artist-card,
+    .life-book-card {
+      min-height: clamp(190px, 27svh, 280px);
+    }
+
+    .life-book-card img {
+      inset: 16px 16px 86px;
+      width: calc(100% - 32px);
+      height: calc(100% - 102px);
+      object-fit: contain;
+      padding: 8px;
+      border-radius: calc(var(--radius) - 2px);
+      background: rgba(236, 246, 244, 0.92);
+      filter: none;
+      transform: none;
+    }
+
+    .life-reading-grid .life-book-card {
+      --book-x: clamp(26px, 1.85vw, 38px);
+      --book-top: clamp(18px, 1.25vw, 24px);
+      --book-bottom: clamp(70px, 5vw, 88px);
+      z-index: 1;
+      height: 100%;
+      align-content: end;
+      padding: clamp(18px, 1.25vw, 24px);
+      border-color: rgba(230, 241, 255, 0.12);
+      background:
+        linear-gradient(180deg, rgba(230, 241, 255, 0.055), rgba(100, 255, 218, 0.055) 55%, rgba(2, 12, 27, 0.48)),
+        rgba(17, 34, 64, 0.62);
+      box-shadow:
+        inset 0 0 0 1px rgba(100, 255, 218, 0.06),
+        inset 0 -38px 54px rgba(2, 12, 27, 0.42),
+        0 22px 42px rgba(0, 0, 0, 0.24);
+      cursor: default;
+    }
+
+    .life-reading-grid .life-book-card::after {
+      content: "";
+      position: absolute;
+      left: clamp(18px, 1.25vw, 24px);
+      right: clamp(18px, 1.25vw, 24px);
+      bottom: clamp(48px, 3.5vw, 64px);
+      z-index: 1;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.32);
+      filter: blur(13px);
+      pointer-events: none;
+    }
+
+    .life-reading-grid .life-book-card:hover,
+    .life-reading-grid .life-book-card:focus-visible,
+    .life-reading-grid .life-book-card.is-active {
+      border-color: rgba(230, 241, 255, 0.12);
+      background:
+        linear-gradient(180deg, rgba(230, 241, 255, 0.055), rgba(100, 255, 218, 0.055) 55%, rgba(2, 12, 27, 0.48)),
+        rgba(17, 34, 64, 0.62);
+      transform: none;
+    }
+
+    .life-reading-grid .life-book-card::before {
+      background:
+        linear-gradient(180deg, transparent 42%, rgba(2, 12, 27, 0.88)),
+        linear-gradient(90deg, rgba(100, 255, 218, 0.16), transparent 18%, transparent 82%, rgba(78, 156, 255, 0.12));
+    }
+
+    .life-reading-grid .life-book-card img {
+      inset: var(--book-top) var(--book-x) var(--book-bottom);
+      width: calc(100% - (var(--book-x) * 2));
+      height: calc(100% - var(--book-top) - var(--book-bottom));
+      padding: clamp(8px, 0.8vw, 14px);
+      border: 1px solid rgba(2, 12, 27, 0.24);
+      border-radius: calc(var(--radius) - 3px);
+      background:
+        linear-gradient(90deg, rgba(2, 12, 27, 0.14), transparent 9%),
+        rgba(236, 246, 244, 0.94);
+      box-shadow:
+        -10px 12px 0 rgba(100, 255, 218, 0.08),
+        0 18px 34px rgba(0, 0, 0, 0.34);
+    }
+
+    .life-reading-grid .life-book-card strong {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      min-height: clamp(40px, 3.5vw, 52px);
+      min-width: 0;
+      box-sizing: border-box;
+      padding: 8px 12px;
+      overflow: visible;
+      border: 1px solid rgba(100, 255, 218, 0.16);
+      border-radius: calc(var(--radius) - 3px);
+      background: rgba(2, 12, 27, 0.42);
+      color: #e6f1ff;
+      font-size: clamp(12px, 0.78vw, 15px);
+      line-height: 1.22;
+      box-shadow: inset 0 0 16px rgba(100, 255, 218, 0.05);
+      text-align: center;
+      text-wrap: balance;
+      white-space: normal;
+    }
+
+    .life-reading-grid .life-book-card small {
+      display: none;
+    }
+
+    .life-track-panel {
+      width: min(730px, 40vw);
+      max-width: calc(100% - 48px);
+      height: min(876px, calc(100svh - 168px));
+      min-height: 0;
+      display: grid;
+      grid-template-rows: minmax(438px, 0.64fr) auto minmax(0, 1fr);
+      gap: clamp(14px, 1.5vw, 22px);
+      padding: clamp(18px, 1.7vw, 28px);
+      border: 1px solid rgba(100, 255, 218, 0.22);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(100, 255, 218, 0.09), transparent 48%),
+        rgba(2, 12, 27, 0.56);
+      backdrop-filter: blur(14px);
+      box-shadow: inset 0 0 42px rgba(100, 255, 218, 0.045), 0 24px 64px rgba(0, 0, 0, 0.2);
+    }
+
+    .track-artist-visual {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      border: 1px solid rgba(230, 241, 255, 0.12);
+      border-radius: calc(var(--radius) - 2px);
+      background: rgba(17, 34, 64, 0.5);
+    }
+
+    .track-artist-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.94) contrast(1.08) brightness(0.72);
+      transform: scale(1.02);
+    }
+
+    .track-artist-visual img[alt="Joker Xue"] {
+      object-position: center 35%;
+    }
+
+    .track-artist-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 36%, rgba(2, 12, 27, 0.72));
+      pointer-events: none;
+    }
+
+    .track-panel-title {
+      display: grid;
+      gap: 7px;
+    }
+
+    .track-panel-title span {
+      color: rgba(230, 241, 255, 0.56);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .life-track-panel strong {
+      display: block;
+      color: var(--cyan);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: clamp(14px, 0.95vw, 18px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .life-track-panel .track-list {
+      position: relative;
+      min-height: 292px;
+      height: 100%;
+      box-sizing: border-box;
+      max-height: none;
+      display: block;
+      overflow: hidden;
+      padding: 0;
+      cursor: default;
+      touch-action: manipulation;
+    }
+
+    #life .life-track-panel .track-list {
+      max-height: none;
+      overflow: hidden;
+    }
+
+    #life .life-track-panel .track-list span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      min-height: auto;
+      width: max-content;
+      max-width: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 11px;
+      border: 1px solid rgba(100, 255, 218, 0.42);
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(230, 241, 255, 0.88);
+      box-shadow: inset 0 0 12px rgba(100, 255, 218, 0.055);
+      font-size: clamp(12px, 0.78vw, 15px);
+      line-height: 1.15;
+      text-align: center;
+      white-space: nowrap;
+      user-select: none;
+      pointer-events: none;
+      transform: translate3d(var(--cloud-x, 0px), var(--cloud-y, 0px), 0);
+      will-change: transform;
+      transition: border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    }
+
+    #life .life-track-panel .track-list.is-reacting span {
+      border-color: rgba(100, 255, 218, 0.72);
+      color: #e6f1ff;
+      box-shadow: inset 0 0 16px rgba(100, 255, 218, 0.08);
+    }
+
+    .life-template-readout {
+      position: absolute;
+      top: clamp(36px, 6svh, 70px);
+      right: clamp(34px, 5vw, 82px);
+      z-index: 5;
+      display: grid;
+      gap: 8px;
+      justify-items: end;
+      color: var(--cyan);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .life-template-readout span:last-child {
+      color: rgba(230, 241, 255, 0.56);
+      letter-spacing: 0.3em;
+    }
+
+    .life-template-controls {
+      position: absolute;
+      left: clamp(10px, 1.2vw, 22px);
+      right: clamp(10px, 1.2vw, 22px);
+      top: 50%;
+      z-index: 6;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .life-arrow {
+      position: relative;
+      width: clamp(92px, 7.4vw, 120px);
+      height: clamp(92px, 7.4vw, 120px);
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--cyan);
+      box-shadow: none;
+      filter: drop-shadow(0 0 14px rgba(100, 255, 218, 0.46));
+      pointer-events: auto;
+      transition: color 180ms ease, filter 180ms ease, transform 180ms ease;
+    }
+
+    .life-arrow::before {
+      display: none;
+    }
+
+    .life-arrow[data-life-prev] {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: start;
+    }
+
+    .life-arrow[data-life-next] {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+    }
+
+    .life-next-label {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+      margin-right: clamp(92px, 7.2vw, 116px);
+      color: rgba(100, 255, 218, 0.9);
+      font-size: clamp(16px, 1.1vw, 22px);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-shadow: 0 0 18px rgba(100, 255, 218, 0.34);
+      pointer-events: none;
+    }
+
+    .life-arrow:hover,
+    .life-arrow:focus-visible {
+      color: #e6f1ff;
+      filter: drop-shadow(0 0 20px rgba(100, 255, 218, 0.68));
+      transform: scale(1.08);
+      outline: none;
+    }
+
+    .life-arrow svg {
+      width: clamp(54px, 4vw, 70px);
+      height: clamp(54px, 4vw, 70px);
+      stroke-width: 2.25;
+    }
+
+    .life-dots {
+      display: none;
+      gap: 8px;
+      padding: 12px 10px;
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: 999px;
+      background: rgba(2, 12, 27, 0.7);
+      backdrop-filter: blur(14px);
+    }
+
+    .life-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(230, 241, 255, 0.28);
+      transition: height 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .life-dot.is-active {
+      height: 30px;
+      background: var(--cyan);
+      box-shadow: 0 0 16px rgba(100, 255, 218, 0.42);
+    }
+
+    @media (max-width: 980px) {
+      #life.life-template-section {
+        height: auto;
+        scroll-margin-top: 0;
+      }
+
+      .life-template {
+        height: auto;
+        min-height: 100svh;
+      }
+
+      .life-template-slide {
+        min-height: 100svh;
+        height: auto;
+        overflow-y: auto;
+        padding: clamp(42px, 7svh, 80px) 76px clamp(120px, 16svh, 160px) 28px;
+      }
+
+      .life-template-slide[data-life-slide="games"] {
+        grid-template-columns: 1fr;
+        align-content: start;
+        row-gap: 24px;
+        padding-right: 76px;
+      }
+
+      .life-template-slide[data-life-slide="music"] {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        align-content: start;
+        row-gap: 24px;
+        padding-right: 76px;
+      }
+
+      .life-template-slide[data-life-slide="reading"] {
+        grid-template-columns: 1fr;
+        align-content: start;
+        row-gap: 24px;
+        padding-right: 76px;
+      }
+
+      .life-template-slide[data-life-slide="games"] .life-template-title {
+        max-width: min(720px, calc(100vw - 112px));
+      }
+
+      .life-template-slide[data-life-slide="music"] .life-track-panel {
+        position: relative;
+        top: auto;
+        right: auto;
+        grid-column: auto;
+        grid-row: auto;
+        width: 100%;
+        max-width: calc(100vw - 112px);
+        height: auto;
+        min-height: auto;
+        grid-template-rows: minmax(190px, 28svh) auto auto;
+      }
+
+      .life-template-slide[data-life-slide="reading"] .life-template-title,
+      .life-template-slide[data-life-slide="reading"] .life-reading-grid {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .life-branch-note {
+        position: static;
+        order: 3;
+        width: min(100%, 620px);
+      }
+
+      .life-branch-note p {
+        white-space: normal;
+      }
+
+      .life-template-slide[data-life-slide="games"] .life-template-title,
+      .life-template-slide[data-life-slide="music"] .life-template-title,
+      .life-template-slide[data-life-slide="reading"] .life-template-title {
+        order: 1;
+      }
+
+      .life-template-slide[data-life-slide="games"] .life-template-grid,
+      .life-template-slide[data-life-slide="music"] .life-template-grid,
+      .life-template-slide[data-life-slide="music"] .life-track-panel,
+      .life-template-slide[data-life-slide="reading"] .life-template-grid {
+        order: 2;
+      }
+
+      .life-game-grid,
+      .life-music-grid,
+      .life-reading-grid {
+        max-width: calc(100vw - 112px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        height: auto;
+        max-height: 56svh;
+        overflow-y: auto;
+        padding-right: 6px;
+      }
+
+      .life-game-grid {
+        max-height: 62svh;
+      }
+
+      .life-reading-grid {
+        grid-auto-rows: clamp(260px, 42svh, 380px);
+      }
+
+      .life-game-grid .life-card:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .life-game-grid .life-card.life-card-xl {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .life-game-grid .life-card.life-card-wide {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .life-game-grid .life-card.life-card-mid,
+      .life-music-grid .life-card,
+      .life-reading-grid .life-card {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .life-game-grid .life-card:nth-child(7) {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: clamp(210px, 34svh, 320px);
+      }
+
+      .life-track-panel {
+        max-width: calc(100vw - 112px);
+      }
+
+      .life-track-panel .track-list {
+        min-height: 260px;
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .life-template {
+        overflow-x: hidden;
+        overflow-y: visible;
+      }
+
+      .life-track {
+        height: auto;
+      }
+
+      .life-template-slide {
+        align-content: start;
+        padding: clamp(260px, 36svh, 320px) 24px 34px;
+      }
+
+      .life-template-hero h2 {
+        font-size: clamp(52px, 18vw, 82px);
+      }
+
+      .life-template-hero p:not(.eyebrow),
+      .life-template-title p {
+        font-size: 16px;
+      }
+
+      .life-template-title h3 {
+        font-size: clamp(42px, 14vw, 68px);
+      }
+
+      .life-template-slide[data-life-slide="games"] {
+        padding-right: 24px;
+      }
+
+      .life-template-slide[data-life-slide="music"] {
+        padding-right: 24px;
+      }
+
+      .life-template-slide[data-life-slide="reading"] {
+        padding-right: 24px;
+      }
+
+      .life-game-grid,
+      .life-music-grid,
+      .life-reading-grid,
+      .life-track-panel {
+        max-width: calc(100vw - 48px);
+      }
+
+      .life-game-grid,
+      .life-music-grid,
+      .life-reading-grid {
+        max-height: none;
+      }
+
+      .life-game-grid,
+      .life-music-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .life-reading-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: clamp(190px, 34svh, 280px);
+        gap: 10px;
+        height: auto;
+        padding: 12px;
+      }
+
+      .life-game-grid .life-card.life-card-xl,
+      .life-game-grid .life-card.life-card-wide {
+        grid-column: span 2;
+      }
+
+      .life-template-readout {
+        top: clamp(282px, 38svh, 334px);
+        right: 24px;
+        font-size: 11px;
+      }
+
+      .life-template-controls {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 50%;
+        bottom: auto;
+        width: auto;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        transform: translateY(-50%);
+      }
+
+      .life-arrow {
+        width: 76px;
+        height: 76px;
+      }
+
+      .life-arrow svg {
+        width: 42px;
+        height: 42px;
+      }
+
+      .life-next-label {
+        margin-right: 68px;
+        font-size: 15px;
+      }
+
+      .life-dots {
+        display: none;
+      }
+
+      .life-dot.is-active {
+        width: 30px;
+        height: 9px;
       }
     }
 
@@ -2135,13 +4345,13 @@
         <span>Shuqi Ke</span>
       </a>
       <div class="nav-links">
-        <a href="#profile">Profile</a>
-        <a href="#projects">Projects</a>
-        <a href="#repos">Repos</a>
-        <a href="#life">Life</a>
-        <a href="#contact">Contact</a>
+        <a href="#profile">能力</a>
+        <a href="#projects">项目</a>
+        <a href="#repos">仓库</a>
+        <a href="#life">关于我</a>
+        <a href="#contact">联系我</a>
       </div>
-      <a class="nav-resume" href="resume.html">
+      <a class="nav-resume" href="resume.html" target="_blank" rel="noreferrer">
         <i data-lucide="file-text"></i>
         获取简历
       </a>
@@ -2159,11 +4369,10 @@
               <span>Shuqi Ke</span>
             </h1>
             <p class="hero-copy reveal">
-              <span class="copy-line copy-line-primary">我用计算机视觉、边缘 AI 和机器人学习做实用系统，让模型从实验走向能运行的真实设备。</span>
-              <span class="copy-line copy-line-secondary">Beyond technology, this space keeps my games, music, reading, and long-view thinking in view. It shows what I make, and also how I notice, choose, and live.</span>
+              <span class="copy-line copy-line-secondary">I focus on computer vision, deep learning, edge AI, and robot learning, bringing models into real-world scenarios.</span>
             </p>
             <div class="hero-actions reveal">
-              <a class="button button-primary" href="#projects" data-marker="01">
+              <a class="button button-primary" href="#profile" data-marker="01">
                 <i data-lucide="radar"></i>
                 View Projects
               </a>
@@ -2171,7 +4380,7 @@
                 <i data-lucide="git-branch"></i>
                 GitHub
               </a>
-              <a class="button button-ghost" href="resume.html" data-marker="03">
+              <a class="button button-ghost" href="resume.html" target="_blank" rel="noreferrer" data-marker="03">
                 <i data-lucide="file-text"></i>
                 获取简历
               </a>
@@ -2182,13 +4391,30 @@
       </div>
     </section>
 
+    <section class="hero-bridge" aria-labelledby="bridge-title">
+      <div class="bridge-inner reveal">
+        <h2 id="bridge-title">Vision / edge AI / robotics Operating</h2>
+        <p>聚焦深度学习、视觉感知、边缘部署与机器人学习</p>
+        <a class="bridge-arrow" href="#profile" aria-label="进入 Profile 区域">
+          <i data-lucide="arrow-down"></i>
+          <span>GO!</span>
+        </a>
+      </div>
+    </section>
+
     <section class="section" id="profile" aria-labelledby="profile-title">
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">Operating Mode</p>
           <h2 id="profile-title">Vision, edge, robotics.</h2>
         </div>
-        <p>把模型训练、部署和设备验证连成可复用的工程流程。</p>
+        <div class="profile-flow" aria-label="Profile workflow">
+          <span>Train</span>
+          <span class="flow-arrow">-&gt;</span>
+          <span>Deploy</span>
+          <span class="flow-arrow">-&gt;</span>
+          <span>Validate</span>
+        </div>
       </div>
 
       <div class="lens-console">
@@ -2210,38 +4436,49 @@
         <div class="method-grid">
           <article class="reveal tilt-card" data-index="01">
             <h3>Computer Vision</h3>
-            <p>目标检测、语义分割、医学图像与交通/火灾感知场景，关注误检、边界、尺度和实时性问题。</p>
+            <p>目标检测、语义分割与多场景视觉识别能力，能够完成数据处理、模型训练、损失调优、模块创新、评估验证与实际场景适配。</p>
             <div class="method-tags">
+              <span class="tag">Deep Learning</span>
+              <span class="tag">U-Net</span>
+              <span class="tag">MobileNet</span>
               <span class="tag">YOLO</span>
               <span class="tag">Segmentation</span>
+              <span class="tag">Loss function</span>
               <span class="tag">Medical Image</span>
             </div>
           </article>
           <article class="reveal tilt-card" data-index="02">
             <h3>Edge Deployment</h3>
-            <p>ONNX、TensorRT、Jetson、RKNN、GStreamer 与多路相机链路，把模型推理接到真实设备。</p>
+            <p>模型端侧部署能力，熟悉 ONNX、TensorRT、RKNN、Jetson、RK3588 与多路相机链路优化。</p>
             <div class="method-tags">
               <span class="tag">TensorRT</span>
+              <span class="tag">QAT</span>
               <span class="tag">Jetson</span>
               <span class="tag">RK3588</span>
+              <span class="tag">RV1126</span>
             </div>
           </article>
           <article class="reveal tilt-card" data-index="03">
             <h3>Robot Learning</h3>
-            <p>围绕 LeRobot、Piper、触觉相机和模仿学习数据闭环，探索视觉触觉策略训练与真机评估。</p>
+            <p>机器人学习流程搭建能力，覆盖 LeRobot 数据采集、模仿学习训练、触觉感知接入与真机验证。</p>
             <div class="method-tags">
-              <span class="tag">LeRobot</span>
+              <span class="tag">Lerobot</span>
+              <span class="tag">VTLA</span>
+              <span class="tag">Pi0</span>
+              <span class="tag">Pi0.5</span>
               <span class="tag">Tactile</span>
               <span class="tag">Imitation</span>
+              <span class="tag">Data Collection</span>
             </div>
           </article>
           <article class="reveal tilt-card" data-index="04">
             <h3>Engineering Loop</h3>
-            <p>从 0 到 1 搭系统，喜欢钻细节，也喜欢把问题拆成可复现、可定位、可交付的工程步骤。</p>
+            <p>从原型到交付的工程闭环能力，能够进行问题定位、性能基准、日志分析与可复现实验设计。</p>
             <div class="method-tags">
-              <span class="tag">Debug</span>
+              <span class="tag">Experimental Design</span>
+              <span class="tag">Technical Documentation</span>
+              <span class="tag">Linked Debug</span>
               <span class="tag">Benchmark</span>
-              <span class="tag">Field Test</span>
             </div>
           </article>
           <div class="focus-readout reveal" aria-live="polite">
@@ -2255,147 +4492,201 @@
       </div>
     </section>
 
-    <section class="section" id="life" aria-labelledby="life-title">
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow">Life Archive / 生活档案</p>
-          <h2 id="life-title">Life Archive.</h2>
-        </div>
-        <p>把游戏、音乐和阅读收进另一个世界层，保留技术之外的清醒、好奇和节奏。</p>
+    <section class="life-bridge" aria-labelledby="life-bridge-title">
+      <div class="bridge-inner reveal">
+        <h2 id="life-bridge-title">Life Archive</h2>
+        <p>代码之外，每个人都有自己的人生branch</p>
+        <a class="bridge-arrow" href="#life" aria-label="进入 Life Archive 区域">
+          <i data-lucide="arrow-down"></i>
+          <span>Welcome to my World!</span>
+        </a>
       </div>
+    </section>
 
-      <div class="archive-panel reveal">
-        <div class="life-console">
-          <aside class="life-command" aria-label="生活档案控制台">
-            <span class="life-label">Life-world / Node 02</span>
-            <p class="taste-quote"><span>As long as you stay clear,</span><span>there is always enough time.</span></p>
-            <p class="life-copy">这里不是技术栈的附录，而是这个个人世界的另一套坐标：玩什么、听什么、读什么。</p>
-            <div class="taste-tabs" role="tablist" aria-label="生活档案分类">
-              <button class="taste-tab is-active" type="button" role="tab" aria-selected="true" data-taste-tab="games" data-index="01"><i data-lucide="gamepad-2"></i><span>Games</span></button>
-              <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="music" data-index="02"><i data-lucide="music-2"></i><span>Music</span></button>
-              <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="reading" data-index="03"><i data-lucide="book-open"></i><span>Reading</span></button>
+    <section class="section life-template-section" id="life" aria-labelledby="life-title">
+      <div class="life-template reveal" data-life-stage data-active-life="intro" tabindex="0">
+        <div class="life-track" data-life-track>
+          <article class="life-template-slide is-active" data-life-slide="intro" data-life-caption="Life Archive" data-watermark="Life">
+            <p class="eyebrow">Life Archive / 生活档案</p>
+            <h2 class="life-big-title" id="life-title">Life <span>Archive</span> <span class="life-title-cn">/ 人生档案</span></h2>
+            <p class="life-lead life-lead-cn">只要你不混乱，时间永远够用</p>
+            <p class="life-lead">As long as you stay clear, there is always enough time.</p>
+            <p class="life-lead">这里不是技术栈的延伸，而是生命的缤纷。欢迎参观代码之外，我的另一个 branch。</p>
+          </article>
+
+          <article class="life-template-slide" data-life-slide="games" data-life-caption="Gaming Archive" data-watermark="Games">
+            <div class="life-branch-note">
+              <span>Branch note</span>
+              <p>游戏不是逃离现实，而是在另一套规则里练习协作、判断和重新开始。</p>
             </div>
-          </aside>
-
-          <div class="life-deck">
-            <div class="life-panel-heading">
-              <span>Personal Signals</span>
-              <span>Games / Music / Reading</span>
-            </div>
-            <div class="taste-panel">
-
-              <div class="taste-content is-active" data-taste-content="games" role="tabpanel">
-                <div class="game-mosaic" aria-label="游戏列表">
-              <a class="interest-card tile-xl" href="https://lol.qq.com/main.shtml" target="_blank" rel="noreferrer">
-                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="League of Legends" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+            <header class="life-template-title">
+              <span>02</span>
+              <h3>Gaming</h3>
+              <p>這趟旅程若算開心<br />亦是無負這一生</p>
+            </header>
+            <div class="life-template-grid life-game-grid" aria-label="游戏列表">
+              <a class="life-card life-card-xl" href="https://lol.qq.com/main.shtml" target="_blank" rel="noreferrer">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="League of Legends" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>League of Legends</strong>
-                <span>China Official</span>
+                <small>China Official</small>
               </a>
-              <a class="interest-card tile-mid" href="https://lol.qq.com/tft/#/index" target="_blank" rel="noreferrer">
-                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg" alt="Teamfight Tactics" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <a class="life-card life-card-tall" href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/578080/library_600x900_2x.jpg" alt="PUBG: BATTLEGROUNDS" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>PUBG: BATTLEGROUNDS</strong>
+                <small>Steam</small>
+              </a>
+              <a class="life-card life-card-mid" href="https://lol.qq.com/tft/#/index" target="_blank" rel="noreferrer">
+                <img src="assets/taste/teamfight-tactics-generated.webp" alt="Teamfight Tactics" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Teamfight Tactics</strong>
-                <span>China Official</span>
+                <small>China Official</small>
               </a>
-              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/3590/Plants_vs_Zombies_GOTY_Edition/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/3590/header.jpg" alt="Plants vs. Zombies" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <a class="life-card life-card-mid" href="https://store.steampowered.com/app/3590/Plants_vs_Zombies_GOTY_Edition/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/3590/header.jpg" alt="Plants vs. Zombies" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Plants vs. Zombies</strong>
-                <span>Steam</span>
+                <small>Steam</small>
               </a>
-              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1426210/It_Takes_Two/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg" alt="It Takes Two" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <a class="life-card life-card-wide" href="https://speed.qq.com/main.shtml" target="_blank" rel="noreferrer">
+                <img src="assets/taste/qq-speed-generated.webp" alt="QQ Speed" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>QQ Speed</strong>
+                <small>China Official</small>
+              </a>
+              <a class="life-card life-card-mid" href="https://store.steampowered.com/app/1426210/It_Takes_Two/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg" alt="It Takes Two" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>It Takes Two</strong>
-                <span>Steam</span>
+                <small>Steam</small>
               </a>
-              <a class="interest-card tile-wide" href="https://store.steampowered.com/app/939400/LoveChoice/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/939400/header.jpg" alt="LoveChoice" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>LoveChoice</strong>
-                <span>Steam</span>
-              </a>
-              <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1237970/Titanfall_2/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1237970/header.jpg" alt="Titanfall 2" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <a class="life-card life-card-mid" href="https://store.steampowered.com/app/1237970/Titanfall_2/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1237970/header.jpg" alt="Titanfall 2" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Titanfall</strong>
-                <span>Steam</span>
+                <small>Steam</small>
               </a>
-              <a class="interest-card tile-wide" href="https://roco.qq.com/" target="_blank" rel="noreferrer">
-                <img src="assets/taste/roco-kingdom.webp" alt="Roco Kingdom" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
+              <a class="life-card life-card-wide" href="https://store.steampowered.com/app/939400/LoveChoice/" target="_blank" rel="noreferrer">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/939400/header.jpg" alt="LoveChoice" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>LoveChoice</strong>
+                <small>Steam</small>
+              </a>
+              <a class="life-card life-card-wide" href="https://roco.qq.com/" target="_blank" rel="noreferrer">
+                <img src="assets/taste/roco-kingdom.webp" alt="Roco Kingdom" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Roco Kingdom</strong>
-                <span>China Official</span>
+                <small>China Official</small>
               </a>
-                </div>
-              </div>
-
-              <div class="taste-content" data-taste-content="music" role="tabpanel">
-                <div class="music-grid" aria-label="歌手列表">
-              <button class="interest-card artist-card is-active" type="button" data-artist="Jay Chou" data-songs="晴天|七里香|以父之名|夜曲|稻香|简单爱|不能说的秘密|一路向北|轨迹|爱在西元前">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M0000025NhlN2yWrP4_11.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>Jay Chou</strong>
-                <span>Mandarin</span>
-              </button>
-              <button class="interest-card artist-card" type="button" data-artist="Eason Chen" data-songs="浮夸|十年|爱情转移|单车|富士山下|陀飞轮|苦瓜|沙龙|夕阳无限好|最佳损友">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000003Nz2So3XXYek_4.jpg" alt="Eason Chen" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>Eason Chen</strong>
-                <span>Cantonese</span>
-              </button>
-              <button class="interest-card artist-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|我的宣言|天窗|到此为止|还记得|同天空|宏愿|一事无成|百年不合">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M00000180Rk61RE4qh_4.jpg" alt="Pakho Chau" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>Pakho Chau</strong>
-                <span>Cantonese</span>
-              </button>
-              <button class="interest-card artist-card" type="button" data-artist="Joker Xue" data-songs="演员|丑八怪|认真的雪|绅士|天外来物|刚刚好|其实|意外|你还要我怎样|我好像在哪见过你">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000002J4UUk29y8BY_7.jpg" alt="Joker Xue" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>Joker Xue</strong>
-                <span>Mandarin</span>
-              </button>
-              <button class="interest-card artist-card" type="button" data-artist="JJ Lin" data-songs="江南|修炼爱情|可惜没如果|她说|不为谁而作的歌|曹操|小酒窝|美人鱼|Always Online|一千年以后">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000001BLpXF2DyJe2_13.jpg" alt="JJ Lin" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>JJ Lin</strong>
-                <span>Mandarin</span>
-              </button>
-              <button class="interest-card artist-card" type="button" data-artist="아이유" data-songs="Blueming|Celebrity|Palette|Through the Night|Love poem|Eight|Good Day|Twenty-three|strawberry moon|BBIBBI">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000004Bjyj52RTYOj_7.jpg" alt="아이유" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>아이유</strong>
-                <span>K-pop</span>
-              </button>
-                </div>
-                <div class="track-panel" data-track-panel aria-live="polite"></div>
-              </div>
-
-              <div class="taste-content" data-taste-content="reading" role="tabpanel">
-                <div class="bookshelf" aria-label="书架">
-              <article class="interest-card book-card">
-                <img src="assets/taste/the-courage-to-be-disliked.jpg" alt="The Courage to Be Disliked" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>The Courage to Be Disliked</strong>
-                <span>Book</span>
-              </article>
-              <article class="interest-card book-card">
-                <img src="assets/taste/what-life-could-mean-to-you.jpg" alt="What Life Could Mean to You" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>What Life Could Mean to You</strong>
-                <span>Book</span>
-              </article>
-              <article class="interest-card book-card">
-                <img src="assets/taste/to-kill-a-mockingbird.jpg" alt="To Kill a Mockingbird" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>To Kill a Mockingbird</strong>
-                <span>Book</span>
-              </article>
-              <article class="interest-card book-card">
-                <img src="assets/taste/understanding-human-nature.jpg" alt="Understanding Human Nature" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>Understanding Human Nature</strong>
-                <span>Book</span>
-              </article>
-              <article class="interest-card book-card">
-                <img src="assets/taste/procrastination.jpg" alt="Procrastination" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>Procrastination</strong>
-                <span>Book</span>
-              </article>
-              <article class="interest-card book-card">
-                <img src="assets/taste/the-crowd.jpg" alt="The Crowd: A Study of the Popular Mind" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>The Crowd: A Study of the Popular Mind</strong>
-                <span>Book</span>
-              </article>
-                </div>
-              </div>
             </div>
+          </article>
+
+          <article class="life-template-slide" data-life-slide="music" data-life-caption="Music Room" data-watermark="Music">
+            <div class="life-branch-note">
+              <span>Branch note</span>
+              <p>音乐不是背景音，而是把情绪、记忆和某一段时间重新接回身体。</p>
+            </div>
+            <header class="life-template-title">
+              <span>03</span>
+              <h3>Music</h3>
+              <p>音樂 話劇 詩詞和舞蹈<br />揉合生命 千樣好</p>
+            </header>
+            <div class="life-template-grid life-music-grid" aria-label="歌手列表">
+              <button class="life-card life-artist-card is-active" type="button" data-artist="Jay Chou" data-songs="晴天|七里香|以父之名|夜曲|稻香|简单爱|不能说的秘密|一路向北|轨迹|爱在西元前|青花瓷|半岛铁盒|龙卷风|发如雪|搁浅|等你下课|告白气球|开不了口|安静|说好的幸福呢">
+                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M0000025NhlN2yWrP4_11.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Jay Chou</strong>
+                <small>Mandarin</small>
+              </button>
+              <button class="life-card life-artist-card" type="button" data-artist="Eason Chen" data-songs="浮夸|十年|爱情转移|单车|富士山下|陀飞轮|苦瓜|沙龙|夕阳无限好|最佳损友|明年今日|K歌之王|淘汰|好久不见|葡萄成熟时|岁月如歌|无条件|任我行|1874|人来人往">
+                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000003Nz2So3XXYek_4.jpg" alt="Eason Chen" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Eason Chen</strong>
+                <small>Cantonese</small>
+              </button>
+              <button class="life-card life-artist-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|我的宣言|天窗|到此为止|还记得|同天空|宏愿|一事无成|百年不合|传闻|相安无事|最好不过|乞丐王子|只有一事不成全你|同行|我不要被你记住|男人背后|磨牙|天光">
+                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M00000180Rk61RE4qh_4.jpg" alt="Pakho Chau" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Pakho Chau</strong>
+                <small>Cantonese</small>
+              </button>
+              <button class="life-card life-artist-card" type="button" data-artist="Joker Xue" data-songs="演员|丑八怪|认真的雪|绅士|天外来物|刚刚好|其实|意外|你还要我怎样|我好像在哪见过你|方圆几里|动物世界|慢半拍|高尚|暧昧|违背的青春|怪咖|摩天大楼|丢手绢|黄色枫叶">
+                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000002J4UUk29y8BY_7.jpg" alt="Joker Xue" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Joker Xue</strong>
+                <small>Mandarin</small>
+              </button>
+              <button class="life-card life-artist-card" type="button" data-artist="JJ Lin" data-songs="江南|修炼爱情|可惜没如果|她说|不为谁而作的歌|曹操|小酒窝|美人鱼|Always Online|一千年以后|背对背拥抱|那些你很冒险的梦|交换余生|伟大的渺小|豆浆油条|被风吹过的夏天|关键词|第几个100天|学不会|裂缝中的阳光">
+                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000001BLpXF2DyJe2_13.jpg" alt="JJ Lin" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>JJ Lin</strong>
+                <small>Mandarin</small>
+              </button>
+              <button class="life-card life-artist-card" type="button" data-artist="아이유" data-songs="Blueming|Celebrity|Palette|Through the Night|Love poem|Eight|Good Day|Twenty-three|strawberry moon|BBIBBI|Lilac|Friday|You and I|Red Shoes|My sea|Dear Name|Hold My Hand|Love wins all|Shopper|Holssi">
+                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000004Bjyj52RTYOj_7.jpg" alt="아이유" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>아이유</strong>
+                <small>K-pop</small>
+              </button>
+            </div>
+            <div class="life-track-panel" data-track-panel aria-live="polite"></div>
+          </article>
+
+          <article class="life-template-slide" data-life-slide="reading" data-life-caption="Reading Shelf" data-watermark="Reading">
+            <div class="life-branch-note">
+              <span>Branch note</span>
+              <p>阅读不是为了寻找标准答案，而是让问题慢下来，也让自己看得更清楚。</p>
+            </div>
+            <header class="life-template-title">
+              <span>04</span>
+              <h3>Reading</h3>
+              <p>我知 路上或沒有更美的邂逅<br />但當你智慧都醞釀成紅酒<br />仍可一醉自救</p>
+            </header>
+            <div class="life-template-grid life-reading-grid" aria-label="书架">
+              <article class="life-card life-book-card">
+                <img src="assets/taste/the-courage-to-be-disliked.jpg" alt="The Courage to Be Disliked" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>The Courage to Be Disliked</strong>
+                <small>Book</small>
+              </article>
+              <article class="life-card life-book-card">
+                <img src="assets/taste/what-life-could-mean-to-you.jpg" alt="What Life Could Mean to You" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>What Life Could Mean to You</strong>
+                <small>Book</small>
+              </article>
+              <article class="life-card life-book-card">
+                <img src="assets/taste/to-kill-a-mockingbird.jpg" alt="To Kill a Mockingbird" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>To Kill a Mockingbird</strong>
+                <small>Book</small>
+              </article>
+              <article class="life-card life-book-card">
+                <img src="assets/taste/understanding-human-nature.jpg" alt="Understanding Human Nature" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Understanding Human Nature</strong>
+                <small>Book</small>
+              </article>
+              <article class="life-card life-book-card">
+                <img src="assets/taste/procrastination.jpg" alt="Procrastination" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>Procrastination</strong>
+                <small>Book</small>
+              </article>
+              <article class="life-card life-book-card">
+                <img src="assets/taste/the-crowd.jpg" alt="The Crowd: A Study of the Popular Mind" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <strong>The Crowd: A Study of the Popular Mind</strong>
+                <small>Book</small>
+              </article>
+            </div>
+          </article>
+
+          <article class="life-template-slide" data-life-slide="continued" data-life-caption="未完待续" data-watermark="">
+            <h3 class="life-continued-title">未完待续......</h3>
+          </article>
+        </div>
+
+        <div class="life-template-readout" aria-live="polite">
+          <span data-life-count>01 / 05</span>
+          <span data-life-current-caption>Life Archive</span>
+        </div>
+
+        <div class="life-template-controls" aria-label="生活档案滑动控制">
+          <button class="life-arrow" type="button" data-life-prev aria-label="上一页">
+            <i data-lucide="arrow-left"></i>
+          </button>
+          <div class="life-dots" aria-label="当前位置">
+            <button class="life-dot is-active" type="button" data-life-dot="intro" aria-label="Life Archive"></button>
+            <button class="life-dot" type="button" data-life-dot="games" aria-label="Gaming Archive"></button>
+            <button class="life-dot" type="button" data-life-dot="music" aria-label="Music Room"></button>
+            <button class="life-dot" type="button" data-life-dot="reading" aria-label="Reading Shelf"></button>
+            <button class="life-dot" type="button" data-life-dot="continued" aria-label="未完待续"></button>
           </div>
+          <span class="life-next-label" aria-hidden="true">探索</span>
+          <button class="life-arrow" type="button" data-life-next aria-label="下一页">
+            <i data-lucide="arrow-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -2406,7 +4697,6 @@
           <p class="eyebrow">Projects / 项目成果</p>
           <h2 id="projects-title">Selected project outcomes.</h2>
         </div>
-        <p>Public projects link to GitHub. Private work stays as concise notes.</p>
       </div>
 
       <div class="project-stage reveal">
@@ -2434,7 +4724,6 @@
           <p class="eyebrow">GitHub Repositories</p>
           <h2 id="repos-title">Repos.</h2>
         </div>
-        <p>Search, filter, and sort public repositories.</p>
       </div>
 
       <div class="repo-shell reveal">
@@ -2467,22 +4756,38 @@
       </div>
     </section>
 
+    <section class="contact-bridge" aria-labelledby="contact-bridge-title">
+      <div class="bridge-inner reveal">
+        <h2 id="contact-bridge-title">Get in Touch</h2>
+        <p>如果某个瞬间有共鸣，欢迎来信。</p>
+        <a class="bridge-arrow" href="#contact" aria-label="Enter Contact section">
+          <i data-lucide="arrow-down"></i>
+          <span>Contact</span>
+        </a>
+      </div>
+    </section>
+
     <section class="section contact-band" id="contact" aria-labelledby="contact-title">
       <div class="contact-panel reveal">
-        <div>
+        <div class="contact-copy">
           <p class="eyebrow">Contact / 联系</p>
-          <h3 id="contact-title">Email, profile, and GitHub.</h3>
+          <h3 id="contact-title">Shall We Talk</h3>
+          <p>Questions, collaboration, or project ideas are welcome.</p>
         </div>
-        <div class="contact-actions">
-          <a class="contact-link" href="mailto:15707039996@163.com">
+        <div class="contact-actions" aria-label="Contact details">
+          <a class="contact-card contact-link" href="mailto:15707039996@163.com">
             <span class="icon-box"><i data-lucide="mail"></i></span>
             <span><strong>Email</strong><span>15707039996@163.com</span></span>
           </a>
-          <a class="contact-link" href="resume.html">
+          <div class="contact-card" aria-label="Location">
+            <span class="icon-box"><i data-lucide="map-pin"></i></span>
+            <span><strong>Location</strong><span>Shenzhen, Guangdong</span></span>
+          </div>
+          <a class="contact-card contact-link" href="resume.html" target="_blank" rel="noreferrer">
             <span class="icon-box"><i data-lucide="file-text"></i></span>
-            <span><strong>Profile</strong><span>Static profile page</span></span>
+            <span><strong>Profile</strong><span>Resume page</span></span>
           </a>
-          <a class="contact-link" href="https://github.com/ksukie" target="_blank" rel="noreferrer">
+          <a class="contact-card contact-link" href="https://github.com/ksukie" target="_blank" rel="noreferrer">
             <span class="icon-box"><i data-lucide="git-branch"></i></span>
             <span><strong>GitHub</strong><span>github.com/ksukie</span></span>
           </a>
@@ -2715,6 +5020,86 @@
       window.addEventListener("scroll", clearNearTop, { passive: true });
     }
 
+    function setupPageSnap() {
+      const snapThreshold = 0.55;
+      const snapDelay = 90;
+      let snapTimer = 0;
+      let lastDirection = 0;
+      let isSnapping = false;
+
+      const getHeaderHeight = () => document.querySelector(".site-header")?.offsetHeight || 0;
+
+      const getPages = () => Array.from(document.querySelectorAll("main > section"))
+        .sort((a, b) => (
+          a.getBoundingClientRect().top + window.scrollY -
+          (b.getBoundingClientRect().top + window.scrollY)
+        ));
+
+      const getVisibleRatio = (page, headerHeight) => {
+        const rect = page.getBoundingClientRect();
+        const viewportTop = headerHeight;
+        const viewportBottom = window.innerHeight;
+        const visible = Math.min(rect.bottom, viewportBottom) - Math.max(rect.top, viewportTop);
+        return Math.max(0, visible) / Math.max(1, viewportBottom - viewportTop);
+      };
+
+      const canScrollInside = (node, direction) => {
+        let current = node instanceof Element ? node : node?.parentElement;
+        while (current && current !== document.body) {
+          const style = window.getComputedStyle(current);
+          const canScrollY = /(auto|scroll)/.test(style.overflowY) && current.scrollHeight > current.clientHeight + 2;
+          if (canScrollY) {
+            const atTop = current.scrollTop <= 2;
+            const atBottom = current.scrollTop + current.clientHeight >= current.scrollHeight - 2;
+            if ((direction < 0 && !atTop) || (direction > 0 && !atBottom)) return true;
+          }
+          current = current.parentElement;
+        }
+        return false;
+      };
+
+      const scrollToPage = (page) => {
+        const headerHeight = getHeaderHeight();
+        const targetTop = Math.max(0, page.getBoundingClientRect().top + window.scrollY - headerHeight);
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        isSnapping = true;
+        window.scrollTo({ top: targetTop, behavior: reduceMotion ? "auto" : "smooth" });
+        window.setTimeout(() => {
+          isSnapping = false;
+        }, reduceMotion ? 80 : 620);
+      };
+
+      const settle = () => {
+        if (!lastDirection || isSnapping) return;
+        const headerHeight = getHeaderHeight();
+        const pages = getPages();
+        const viewportTop = headerHeight;
+        const viewportBottom = window.innerHeight;
+
+        const candidate = lastDirection > 0
+          ? pages.find((page) => {
+              const rect = page.getBoundingClientRect();
+              return rect.top > viewportTop + 1 && rect.top < viewportBottom;
+            })
+          : pages.slice().reverse().find((page) => {
+              const rect = page.getBoundingClientRect();
+              return rect.bottom > viewportTop && rect.bottom < viewportBottom - 1;
+            });
+
+        if (candidate && getVisibleRatio(candidate, headerHeight) >= snapThreshold) {
+          scrollToPage(candidate);
+        }
+      };
+
+      window.addEventListener("wheel", (event) => {
+        if (Math.abs(event.deltaY) < Math.abs(event.deltaX)) return;
+        lastDirection = event.deltaY > 0 ? 1 : -1;
+        window.clearTimeout(snapTimer);
+        if (canScrollInside(event.target, lastDirection)) return;
+        snapTimer = window.setTimeout(settle, snapDelay);
+      }, { passive: true });
+    }
+
     function setupTilt() {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -2831,33 +5216,413 @@
     }
 
     function setupLifeArchive() {
-      const tabs = document.querySelectorAll("[data-taste-tab]");
-      const panels = document.querySelectorAll("[data-taste-content]");
+      const stage = document.querySelector("[data-life-stage]");
+      if (!stage) return;
+      const track = stage.querySelector("[data-life-track]");
+      const slides = Array.from(stage.querySelectorAll("[data-life-slide]"));
+      const dots = stage.querySelectorAll("[data-life-dot]");
+      const prev = stage.querySelector("[data-life-prev]");
+      const next = stage.querySelector("[data-life-next]");
+      const count = document.querySelector("[data-life-count]");
+      const caption = document.querySelector("[data-life-current-caption]");
       const artists = document.querySelectorAll("[data-artist]");
       const trackPanel = document.querySelector("[data-track-panel]");
+      const order = slides.map((slide) => slide.dataset.lifeSlide);
+      let firstLifeClone = null;
+      let lastLifeClone = null;
+      let activeIndex = 0;
+      let dragStartX = 0;
+      let dragDeltaX = 0;
+      let dragging = false;
+      let wheelLocked = false;
+      let isWrappingLife = false;
+      let wrapResetTimer = 0;
+      let trackCloudFrame = 0;
+      let activeTrackCloud = null;
+      let trackCloudResizeTimer = 0;
+
+      if (track && slides.length) {
+        lastLifeClone = slides[slides.length - 1].cloneNode(true);
+        lastLifeClone.classList.remove("is-active");
+        lastLifeClone.setAttribute("aria-hidden", "true");
+        lastLifeClone.dataset.lifeClone = "last";
+        lastLifeClone.querySelectorAll("[id]").forEach((node) => node.removeAttribute("id"));
+        track.insertBefore(lastLifeClone, slides[0]);
+
+        firstLifeClone = slides[0].cloneNode(true);
+        firstLifeClone.classList.remove("is-active");
+        firstLifeClone.setAttribute("aria-hidden", "true");
+        firstLifeClone.dataset.lifeClone = "first";
+        firstLifeClone.querySelectorAll("[id]").forEach((node) => node.removeAttribute("id"));
+        track.appendChild(firstLifeClone);
+      }
+
+      const clampNumber = (value, min, max) => Math.min(Math.max(value, min), max);
+
+      const stopTrackCloud = () => {
+        if (trackCloudFrame) {
+          window.cancelAnimationFrame(trackCloudFrame);
+          trackCloudFrame = 0;
+        }
+      };
+
+      const renderTrackCloudItems = (items) => {
+        items.forEach((item) => {
+          item.node.style.setProperty("--cloud-x", `${item.x.toFixed(2)}px`);
+          item.node.style.setProperty("--cloud-y", `${item.y.toFixed(2)}px`);
+        });
+      };
+
+      const keepTrackCloudInside = (item, width, height) => {
+        item.x = clampNumber(item.x, 0, Math.max(0, width - item.width));
+        item.y = clampNumber(item.y, 0, Math.max(0, height - item.height));
+      };
+
+      const resolveTrackCloudCollisions = (items, width, height, passes = 7) => {
+        const gap = 4;
+        for (let pass = 0; pass < passes; pass += 1) {
+          for (let i = 0; i < items.length; i += 1) {
+            for (let j = i + 1; j < items.length; j += 1) {
+              const a = items[i];
+              const b = items[j];
+              const overlapX = Math.min(a.x + a.width + gap, b.x + b.width + gap) - Math.max(a.x, b.x);
+              const overlapY = Math.min(a.y + a.height + gap, b.y + b.height + gap) - Math.max(a.y, b.y);
+              if (overlapX <= 0 || overlapY <= 0) continue;
+
+              const horizontalDirection = a.x + a.width / 2 < b.x + b.width / 2 ? -1 : 1;
+              const verticalDirection = a.y + a.height / 2 < b.y + b.height / 2 ? -1 : 1;
+              const verticalBlocked = (
+                (verticalDirection < 0 && a.y <= gap) ||
+                (verticalDirection > 0 && b.y <= gap) ||
+                (verticalDirection < 0 && b.y + b.height >= height - gap) ||
+                (verticalDirection > 0 && a.y + a.height >= height - gap)
+              );
+
+              if (overlapX < overlapY || verticalBlocked) {
+                const direction = horizontalDirection;
+                const shift = overlapX / 2 + 0.8;
+                a.x += direction * shift;
+                b.x -= direction * shift;
+                a.vx += direction * 0.08;
+                b.vx -= direction * 0.08;
+              } else {
+                const direction = verticalDirection;
+                const shift = overlapY / 2 + 0.8;
+                a.y += direction * shift;
+                b.y -= direction * shift;
+                a.vy += direction * 0.08;
+                b.vy -= direction * 0.08;
+              }
+            }
+          }
+          items.forEach((item) => keepTrackCloudInside(item, width, height));
+        }
+      };
+
+      const buildTrackCloudRings = (nodes, width, height) => {
+        const measured = nodes.map((node, index) => ({
+          node,
+          index,
+          width: Math.ceil(node.offsetWidth),
+          height: Math.ceil(node.offsetHeight),
+          vx: 0,
+          vy: 0,
+          phase: index * 0.83,
+          floatX: index % 2 === 0 ? 3.4 : -3.4,
+          floatY: 2.2 + (index % 4) * 0.7
+        }));
+
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const ringCounts = [1, 6, 13];
+        const ringX = [0, width * 0.23, width * 0.39];
+        const ringY = [0, height * 0.2, height * 0.38];
+        let cursor = 0;
+
+        ringCounts.forEach((count, ringIndex) => {
+          const ringItems = measured.slice(cursor, cursor + count);
+          cursor += count;
+          const angleOffset = ringIndex === 1 ? -Math.PI / 2 : -Math.PI / 2 + Math.PI / Math.max(6, count);
+
+          ringItems.forEach((item, itemIndex) => {
+            const angle = count === 1 ? 0 : angleOffset + (Math.PI * 2 * itemIndex) / count;
+            item.baseX = centerX + Math.cos(angle) * ringX[ringIndex] - item.width / 2;
+            item.baseY = centerY + Math.sin(angle) * ringY[ringIndex] - item.height / 2;
+            item.baseX = clampNumber(item.baseX, 0, Math.max(0, width - item.width));
+            item.baseY = clampNumber(item.baseY, 0, Math.max(0, height - item.height));
+            item.x = item.baseX;
+            item.y = item.baseY;
+          });
+        });
+
+        measured.slice(cursor).forEach((item, overflowIndex) => {
+          const angle = -Math.PI / 2 + (Math.PI * 2 * overflowIndex) / Math.max(1, measured.length - cursor);
+          item.baseX = centerX + Math.cos(angle) * width * 0.44 - item.width / 2;
+          item.baseY = centerY + Math.sin(angle) * height * 0.42 - item.height / 2;
+          item.baseX = clampNumber(item.baseX, 0, Math.max(0, width - item.width));
+          item.baseY = clampNumber(item.baseY, 0, Math.max(0, height - item.height));
+          item.x = item.baseX;
+          item.y = item.baseY;
+        });
+
+        return measured;
+      };
+
+      const layoutTrackCloud = (list) => {
+        if (!list) return;
+        stopTrackCloud();
+        const nodes = Array.from(list.querySelectorAll("span"));
+        if (!nodes.length) return;
+        const width = list.clientWidth;
+        const height = list.clientHeight;
+        if (!width || !height) {
+          window.requestAnimationFrame(() => layoutTrackCloud(list));
+          return;
+        }
+
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const items = buildTrackCloudRings(nodes, width, height);
+        const pointer = { x: width / 2, y: height / 2, active: false };
+        activeTrackCloud = { list, items, pointer };
+        resolveTrackCloudCollisions(items, width, height, 18);
+        renderTrackCloudItems(items);
+
+        if (list.cloudPointerMoveHandler) {
+          list.removeEventListener("pointermove", list.cloudPointerMoveHandler);
+        }
+        if (list.cloudPointerLeaveHandler) {
+          list.removeEventListener("pointerleave", list.cloudPointerLeaveHandler);
+        }
+        list.cloudPointerMoveHandler = (event) => {
+          const rect = list.getBoundingClientRect();
+          pointer.x = event.clientX - rect.left;
+          pointer.y = event.clientY - rect.top;
+          pointer.active = true;
+          list.classList.add("is-reacting");
+        };
+        list.cloudPointerLeaveHandler = () => {
+          pointer.active = false;
+          list.classList.remove("is-reacting");
+        };
+        list.addEventListener("pointermove", list.cloudPointerMoveHandler, { passive: true });
+        list.addEventListener("pointerleave", list.cloudPointerLeaveHandler, { passive: true });
+
+        const animate = (time) => {
+          if (!activeTrackCloud || activeTrackCloud.list !== list) return;
+          const currentWidth = list.clientWidth;
+          const currentHeight = list.clientHeight;
+          const avoidRadius = Math.max(92, Math.min(currentWidth, currentHeight) * 0.34);
+          items.forEach((item) => {
+            const floatX = reduceMotion ? 0 : Math.sin(time / 1120 + item.phase) * item.floatX;
+            const floatY = reduceMotion ? 0 : Math.cos(time / 1320 + item.phase) * item.floatY;
+            const targetX = item.baseX + floatX;
+            const targetY = item.baseY + floatY;
+            item.vx += (targetX - item.x) * 0.045;
+            item.vy += (targetY - item.y) * 0.045;
+            if (pointer.active && !reduceMotion) {
+              const centerX = item.x + item.width / 2;
+              const centerY = item.y + item.height / 2;
+              const deltaX = centerX - pointer.x;
+              const deltaY = centerY - pointer.y;
+              const distance = Math.max(1, Math.hypot(deltaX, deltaY));
+              if (distance < avoidRadius) {
+                const force = ((1 - distance / avoidRadius) ** 2) * 7.2;
+                item.vx += (deltaX / distance) * force;
+                item.vy += (deltaY / distance) * force;
+              }
+            }
+            item.vx *= 0.78;
+            item.vy *= 0.78;
+            item.x += item.vx;
+            item.y += item.vy;
+            keepTrackCloudInside(item, currentWidth, currentHeight);
+          });
+          resolveTrackCloudCollisions(items, currentWidth, currentHeight, 18);
+          renderTrackCloudItems(items);
+          trackCloudFrame = window.requestAnimationFrame(animate);
+        };
+
+        trackCloudFrame = window.requestAnimationFrame(animate);
+      };
 
       const renderTracks = (artist) => {
         if (!artist || !trackPanel) return;
         const songs = (artist.dataset.songs || "").split("|").filter(Boolean);
+        const image = artist.querySelector("img");
+        const imageSrc = image?.currentSrc || image?.getAttribute("src") || "";
+        const imageAlt = image?.getAttribute("alt") || artist.dataset.artist || "Artist";
         trackPanel.innerHTML = `
-          <strong>${escapeHtml(artist.dataset.artist)} / 推荐曲目</strong>
+          <div class="track-artist-visual">
+            ${imageSrc ? `<img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(imageAlt)}" />` : ""}
+          </div>
+          <div class="track-panel-title">
+            <span>Selected Artist</span>
+            <strong>${escapeHtml(artist.dataset.artist)}</strong>
+          </div>
           <div class="track-list">
             ${songs.map((song) => `<span>${escapeHtml(song)}</span>`).join("")}
           </div>
         `;
+        window.requestAnimationFrame(() => {
+          layoutTrackCloud(trackPanel.querySelector(".track-list"));
+        });
       };
 
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const target = tab.dataset.tasteTab;
-          tabs.forEach((item) => {
-            const active = item === tab;
-            item.classList.toggle("is-active", active);
-            item.setAttribute("aria-selected", String(active));
-          });
-          panels.forEach((panel) => panel.classList.toggle("is-active", panel.dataset.tasteContent === target));
+      const setActiveLife = (target, options = {}) => {
+        if (isWrappingLife && !options.instant) return;
+        const index = order.indexOf(target);
+        if (index < 0) return;
+        const previousIndex = activeIndex;
+        const shouldWrapForward = (
+          options.direction === "next" &&
+          previousIndex === order.length - 1 &&
+          index === 0 &&
+          track &&
+          firstLifeClone
+        );
+        const shouldWrapBackward = (
+          options.direction === "prev" &&
+          previousIndex === 0 &&
+          index === order.length - 1 &&
+          track &&
+          lastLifeClone
+        );
+        activeIndex = index;
+        const slide = slides[index];
+
+        slides.forEach((item, itemIndex) => {
+          item.classList.toggle("is-active", itemIndex === index);
         });
+        dots.forEach((dot) => dot.classList.toggle("is-active", dot.dataset.lifeDot === target));
+        stage.dataset.activeLife = target;
+        if (track) {
+          window.clearTimeout(wrapResetTimer);
+          if (shouldWrapForward) {
+            isWrappingLife = true;
+            track.style.transition = "";
+            track.style.transform = `translateX(-${(order.length + 1) * 100}%)`;
+            const resetForwardWrap = () => {
+              if (!isWrappingLife) return;
+              isWrappingLife = false;
+              window.clearTimeout(wrapResetTimer);
+              track.style.transition = "none";
+              track.style.transform = "translateX(-100%)";
+              window.requestAnimationFrame(() => {
+                track.style.transition = "";
+              });
+            };
+            track.addEventListener("transitionend", resetForwardWrap, { once: true });
+            wrapResetTimer = window.setTimeout(resetForwardWrap, 820);
+          } else if (shouldWrapBackward) {
+            isWrappingLife = true;
+            track.style.transition = "";
+            track.style.transform = "translateX(0%)";
+            const resetBackwardWrap = () => {
+              if (!isWrappingLife) return;
+              isWrappingLife = false;
+              window.clearTimeout(wrapResetTimer);
+              track.style.transition = "none";
+              track.style.transform = `translateX(-${order.length * 100}%)`;
+              window.requestAnimationFrame(() => {
+                track.style.transition = "";
+              });
+            };
+            track.addEventListener("transitionend", resetBackwardWrap, { once: true });
+            wrapResetTimer = window.setTimeout(resetBackwardWrap, 820);
+          } else {
+            track.style.transition = options.instant ? "none" : "";
+            track.style.transform = `translateX(-${(index + 1) * 100}%)`;
+          }
+          if (options.instant) {
+            window.requestAnimationFrame(() => {
+              track.style.transition = "";
+            });
+          }
+        }
+        if (count) count.textContent = `${String(index + 1).padStart(2, "0")} / ${String(order.length).padStart(2, "0")}`;
+        if (caption) caption.textContent = slide?.dataset.lifeCaption || target;
+      };
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => setActiveLife(dot.dataset.lifeDot));
       });
+
+      prev?.addEventListener("click", () => {
+        setActiveLife(order[(activeIndex - 1 + order.length) % order.length], { direction: "prev" });
+      });
+
+      next?.addEventListener("click", () => {
+        setActiveLife(order[(activeIndex + 1) % order.length], { direction: "next" });
+      });
+
+      stage.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          setActiveLife(order[(activeIndex - 1 + order.length) % order.length], { direction: "prev" });
+        }
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          setActiveLife(order[(activeIndex + 1) % order.length], { direction: "next" });
+        }
+      });
+
+      stage.addEventListener("pointerdown", (event) => {
+        if (event.target.closest("a, button, .life-book-card")) return;
+        dragging = true;
+        dragStartX = event.clientX;
+        dragDeltaX = 0;
+        stage.classList.add("is-dragging");
+      });
+
+      stage.addEventListener("pointermove", (event) => {
+        if (!dragging || !track) return;
+        dragDeltaX = event.clientX - dragStartX;
+        track.style.transition = "none";
+        track.style.transform = `translateX(calc(-${(activeIndex + 1) * 100}% + ${dragDeltaX}px))`;
+      });
+
+      const finishDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        stage.classList.remove("is-dragging");
+        if (track) track.style.transition = "";
+        if (Math.abs(dragDeltaX) > 70) {
+          const direction = dragDeltaX < 0 ? 1 : -1;
+          setActiveLife(order[(activeIndex + direction + order.length) % order.length], {
+            direction: direction > 0 ? "next" : "prev"
+          });
+        } else {
+          setActiveLife(order[activeIndex]);
+        }
+        dragStartX = 0;
+        dragDeltaX = 0;
+      };
+
+      stage.addEventListener("pointerup", finishDrag);
+      stage.addEventListener("pointercancel", finishDrag);
+      stage.addEventListener("pointerleave", finishDrag);
+
+      stage.addEventListener("wheel", (event) => {
+        const horizontalIntent = Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey;
+        if (!horizontalIntent || wheelLocked) return;
+        event.preventDefault();
+        wheelLocked = true;
+        const direction = (event.deltaX || event.deltaY) > 0 ? 1 : -1;
+        setActiveLife(order[(activeIndex + direction + order.length) % order.length], {
+          direction: direction > 0 ? "next" : "prev"
+        });
+        window.setTimeout(() => {
+          wheelLocked = false;
+        }, 560);
+      }, { passive: false });
+
+      window.addEventListener("resize", () => {
+        if (!activeTrackCloud?.list) return;
+        window.clearTimeout(trackCloudResizeTimer);
+        trackCloudResizeTimer = window.setTimeout(() => {
+          layoutTrackCloud(activeTrackCloud.list);
+        }, 120);
+      }, { passive: true });
 
       artists.forEach((artist) => {
         artist.addEventListener("click", () => {
@@ -2866,6 +5631,7 @@
         });
       });
 
+      setActiveLife(order[0], { instant: true });
       renderTracks(document.querySelector("[data-artist].is-active") || artists[0]);
     }
 
@@ -3015,7 +5781,10 @@
       };
 
       function renderLanguages() {
-        const languages = Array.from(new Set(state.repos.map((repo) => repo.language).filter(Boolean))).sort();
+        const languages = Array.from(new Set(state.repos
+          .filter((repo) => repo.name !== "ksukie.github.io")
+          .map((repo) => repo.language)
+          .filter(Boolean))).sort();
         const items = ["All", ...languages];
         languageFilter.innerHTML = items.map((language) => `
           <button class="chip-button ${state.language === language ? "is-active" : ""}" type="button" data-language="${escapeHtml(language)}">
@@ -3037,6 +5806,7 @@
       function getVisibleRepos() {
         const query = state.query.trim().toLowerCase();
         const filtered = state.repos.filter((repo) => {
+          if (repo.name === "ksukie.github.io") return false;
           const languageMatch = state.language === "All" || repo.language === state.language;
           const haystack = [
             repo.name,
@@ -3065,7 +5835,7 @@
           return;
         }
 
-        grid.innerHTML = repos.map((repo) => {
+        const repoCards = repos.map((repo) => {
           const language = repo.language || "Other";
           const description = repo.description || "No description provided.";
           const homepage = repo.homepage && /^https?:\/\//i.test(repo.homepage) ? repo.homepage : "";
@@ -3105,6 +5875,13 @@
           `;
         }).join("");
 
+        grid.innerHTML = `
+          ${repoCards}
+          <div class="repo-signals reveal" aria-label="More repositories coming soon">
+            <strong>Comming soon！</strong>
+          </div>
+        `;
+
         updateIcons();
         window.observeReveals?.(grid.querySelectorAll(".reveal"));
       }
@@ -3142,6 +5919,7 @@
     setupScrollProgress();
     setupReveal();
     setupScrollSpy();
+    setupPageSnap();
     setupTilt();
     setupConstellation();
     setupLensConsole();
