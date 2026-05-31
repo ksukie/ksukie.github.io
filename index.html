@@ -142,12 +142,21 @@
     }
 
     .site-header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 70;
       border-bottom: 1px solid rgba(98, 231, 215, 0.14);
       background: rgba(5, 13, 24, 0.78);
       backdrop-filter: blur(18px);
+      transform: translateY(calc(-100% + 12px));
+      transition: transform 220ms ease, background 220ms ease, border-color 220ms ease;
+    }
+
+    .site-header:hover,
+    .site-header:focus-within {
+      transform: translateY(0);
     }
 
     .nav {
@@ -3599,7 +3608,8 @@
     }
 
     .life-photo-slide {
-      grid-area: 1 / 1;
+      position: absolute;
+      inset: 0;
       display: block;
       width: 100%;
       height: 100%;
@@ -5423,6 +5433,16 @@
         transition-duration: 0.001ms !important;
       }
     }
+
+    #life .life-template-hero .life-big-title {
+      font-size: clamp(88px, 13vw, 210px);
+    }
+
+    @media (max-width: 720px) {
+      #life .life-template-hero .life-big-title {
+        font-size: clamp(64px, 20vw, 104px);
+      }
+    }
   </style>
 </head>
 <body>
@@ -5622,7 +5642,7 @@
           <article class="life-template-slide" data-life-slide="photography" data-life-caption="Photography" data-watermark="Photo">
             <div class="life-branch-note">
               <span>Branch note</span>
-              <p>摄影不是记录完美，而是把一瞬间的光、风和心情留成证据。</p>
+              <p>分享生活，留住感动。</p>
             </div>
             <header class="life-template-title">
               <span>02</span>
@@ -5631,12 +5651,15 @@
             </header>
             <div class="life-photo-shell" aria-label="Photography gallery shell">
               <div class="life-photo-slot life-photo-carousel" data-photo-carousel>
-                <img class="life-photo-slide is-active" src="assets/life/photography/photo-01.jpg" alt="Sunset over the river" loading="eager" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-02.jpg" alt="City skyline reflected on water" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-03.jpg" alt="Snow-covered mountain buildings" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-04.jpg" alt="Xi'an Bell Tower at night" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-05.jpg" alt="Mount Hua summit marker" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-06.png" alt="Person watching sunset from a balcony" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide is-active" src="assets/life/photography/photo-00.png" alt="Photography memory 1" loading="eager" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-01.jpg" alt="Photography memory 2" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-02.jpg" alt="Photography memory 3" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-03.jpg" alt="Photography memory 4" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-04.jpg" alt="Photography memory 5" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-05.png" alt="Photography memory 6" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-06.png" alt="Photography memory 7" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-07.jpg" alt="Photography memory 8" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-08.jpg" alt="Photography memory 9" loading="lazy" data-photo-slide />
               </div>
             </div>
           </article>
@@ -5644,7 +5667,7 @@
           <article class="life-template-slide" data-life-slide="games" data-life-caption="Gaming Archive" data-watermark="Games">
             <div class="life-branch-note">
               <span>Branch note</span>
-              <p>游戏不是逃离现实，而是在另一套规则里练习协作、判断和重新开始。</p>
+              <p>现实需要答案，游戏允许我们反复尝试。</p>
             </div>
             <header class="life-template-title">
               <span>03</span>
@@ -5703,7 +5726,7 @@
           <article class="life-template-slide" data-life-slide="music" data-life-caption="Music Room" data-watermark="Music">
             <div class="life-branch-note">
               <span>Branch note</span>
-              <p>音乐不是背景音，而是把情绪、记忆和某一段时间重新接回身体。</p>
+              <p>音乐不只是旋律，也是情绪的备份。</p>
             </div>
             <header class="life-template-title">
               <span>04</span>
@@ -5748,7 +5771,7 @@
           <article class="life-template-slide" data-life-slide="reading" data-life-caption="Reading Shelf" data-watermark="Reading">
             <div class="life-branch-note">
               <span>Branch note</span>
-              <p>阅读不是为了寻找标准答案，而是让问题慢下来，也让自己看得更清楚。</p>
+              <p>书里不一定有标准答案，但会有新的角度。</p>
             </div>
             <header class="life-template-title">
               <span>05</span>
