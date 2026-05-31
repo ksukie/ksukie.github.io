@@ -1271,7 +1271,7 @@
       font-size: clamp(18px, 1.12vw, 22px);
       line-height: 1.2;
       text-align: left;
-      transition: border 180ms ease, background 180ms ease, transform 180ms ease, color 180ms ease;
+      transition: border 220ms ease, background 260ms ease, transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1), color 220ms ease;
     }
 
     .lens-button span {
@@ -1321,13 +1321,34 @@
       overflow: hidden;
       transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
       cursor: pointer;
-      transition: transform 200ms ease, border 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      will-change: transform, background, border-color;
+      transition: transform 380ms cubic-bezier(0.16, 1, 0.3, 1), border 260ms ease, background 340ms ease, box-shadow 340ms ease;
     }
 
     .method-grid article:hover,
-    .method-grid article:focus-visible,
-    .method-grid article.is-active,
+    .method-grid article:focus-visible {
+      border-color: rgba(98, 231, 215, 0.3);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.05), rgba(78, 156, 255, 0.025) 58%),
+        rgba(255, 255, 255, 0.034);
+      box-shadow: inset 0 0 22px rgba(98, 231, 215, 0.026), 0 16px 42px rgba(0, 0, 0, 0.12);
+      outline: none;
+    }
+
+    .method-grid article:hover:not(.is-active) {
+      transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-3px) scale(1.004);
+    }
+
     .method-grid article.is-preview {
+      border-color: rgba(98, 231, 215, 0.38);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.085), rgba(78, 156, 255, 0.045)),
+        rgba(10, 33, 53, 0.74);
+      box-shadow: inset 0 0 30px rgba(98, 231, 215, 0.045), 0 18px 54px rgba(0, 0, 0, 0.18);
+      transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-3px) scale(1.004);
+    }
+
+    .method-grid article.is-active {
       border-color: var(--line-strong);
       background:
         linear-gradient(135deg, rgba(98, 231, 215, 0.1), rgba(78, 156, 255, 0.055)),
@@ -1348,11 +1369,27 @@
       line-height: 1;
     }
 
-    .method-grid article.is-active::before,
-    .method-grid article.is-preview::before,
     .method-grid article:hover::before,
     .method-grid article:focus-visible::before {
+      color: rgba(98, 231, 215, 0.18);
+    }
+
+    .method-grid article.is-preview::before,
+    .method-grid article.is-active::before {
       color: rgba(98, 231, 215, 0.24);
+    }
+
+    .method-grid article.is-activating {
+      animation: lens-card-settle 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    @keyframes lens-card-settle {
+      0% {
+        transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(6px) scale(0.985);
+      }
+      100% {
+        transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(0) scale(1);
+      }
     }
 
     .method-grid h3 {
@@ -1403,16 +1440,14 @@
       display: grid;
       gap: 10px;
       opacity: 0;
-      transform: translateY(10px);
+      transform: translateY(12px);
       max-height: 0;
       overflow: hidden;
-      transition: opacity 180ms ease, transform 180ms ease, max-height 220ms ease, border-color 180ms ease;
+      transition: opacity 300ms ease, transform 420ms cubic-bezier(0.16, 1, 0.3, 1), max-height 430ms ease, margin 360ms ease, padding 360ms ease, border-color 300ms ease;
     }
 
-    .method-grid article.is-active .method-card-detail,
     .method-grid article.is-preview .method-card-detail,
-    .method-grid article:hover .method-card-detail,
-    .method-grid article:focus-visible .method-card-detail {
+    .method-grid article.is-active .method-card-detail {
       margin-top: clamp(18px, 2svh, 28px);
       padding-top: clamp(14px, 1.6svh, 22px);
       opacity: 1;
@@ -3500,6 +3535,14 @@
       text-transform: uppercase;
     }
 
+    .life-template-title .life-song-credit {
+      margin-top: clamp(10px, 1.2svh, 16px);
+      color: rgba(230, 241, 255, 0.82);
+      font-size: clamp(15px, 1.05vw, 20px);
+      font-weight: 850;
+      letter-spacing: 0.02em;
+    }
+
     .life-branch-note {
       position: absolute;
       left: clamp(96px, 8vw, 156px);
@@ -4841,10 +4884,8 @@
         gap: var(--rs-10, 10px);
       }
 
-      .method-grid article.is-active .method-card-detail,
       .method-grid article.is-preview .method-card-detail,
-      .method-grid article:hover .method-card-detail,
-      .method-grid article:focus-visible .method-card-detail {
+      .method-grid article.is-active .method-card-detail {
         margin-top: clamp(var(--rs-18, 18px), 2svh, var(--rs-28, 28px));
         padding-top: clamp(var(--rs-14, 14px), 1.6svh, var(--rs-22, 22px));
       }
@@ -5648,6 +5689,7 @@
               <span>02</span>
               <h3>Photography</h3>
               <p>登高峰一秒 得獎一秒 再破紀錄的一秒<br />港灣晚燈 山頂破曉 摘下懷念 記住美妙<br />升職那刻 新婚那朝 成為父母的一秒<br />要拍照的事 可不少</p>
+              <p class="life-song-credit">陈奕迅 -《沙龙》</p>
             </header>
             <div class="life-photo-shell" aria-label="Photography gallery shell">
               <div class="life-photo-slot life-photo-carousel" data-photo-carousel>
@@ -5673,6 +5715,7 @@
               <span>03</span>
               <h3>Gaming</h3>
               <p>這趟旅行若算開心<br />亦是無負這一生</p>
+              <p class="life-song-credit">陈奕迅 -《落花流水》</p>
             </header>
             <div class="life-template-grid life-game-grid" aria-label="游戏列表">
               <a class="life-card life-card-xl" href="https://lol.qq.com/main.shtml" target="_blank" rel="noreferrer">
@@ -5732,6 +5775,7 @@
               <span>04</span>
               <h3>Music</h3>
               <p>音樂 話劇 詩詞和舞蹈<br />揉合生命 千樣好</p>
+              <p class="life-song-credit">陈奕迅 -《沙龙》</p>
             </header>
             <div class="life-template-grid life-music-grid" aria-label="歌手列表">
               <button class="life-card life-artist-card is-active" type="button" data-artist="Jay Chou" data-songs="晴天|七里香|以父之名|夜曲|稻香|简单爱|不能说的秘密|一路向北|轨迹|爱在西元前|青花瓷|半岛铁盒|龙卷风|发如雪|搁浅|等你下课|告白气球|开不了口|安静|说好的幸福呢">
@@ -5777,6 +5821,7 @@
               <span>05</span>
               <h3>Reading</h3>
               <p>我知 日後 路上或沒有更美的邂逅<br />但當你智慧都醞釀成紅酒<br />仍可一醉自救</p>
+              <p class="life-song-credit">陈奕迅 -《葡萄成熟时》</p>
             </header>
             <div class="life-template-grid life-reading-grid" aria-label="书架">
               <article class="life-card life-book-card">
@@ -6405,7 +6450,10 @@
 
       const previewLens = (lens) => {
         if (!lens || !lensCopy[lens]) return;
-        cards.forEach((card) => card.classList.toggle("is-preview", card.dataset.lensCard === lens && lens !== activeLens));
+        const isPreviewingActive = lens === activeLens;
+        cards.forEach((card) => {
+          card.classList.toggle("is-preview", card.dataset.lensCard === lens && !isPreviewingActive);
+        });
         setDetailVisibility(lens);
       };
 
@@ -6419,8 +6467,14 @@
         activeLens = lens;
         buttons.forEach((button) => button.classList.toggle("is-active", button.dataset.lens === lens));
         cards.forEach((card) => {
-          card.classList.toggle("is-active", card.dataset.lensCard === lens);
-          card.classList.remove("is-preview");
+          const isActive = card.dataset.lensCard === lens;
+          card.classList.toggle("is-active", isActive);
+          card.classList.remove("is-preview", "is-activating");
+          if (isActive) {
+            void card.offsetWidth;
+            card.classList.add("is-activating");
+            window.setTimeout(() => card.classList.remove("is-activating"), 380);
+          }
         });
         setDetailVisibility(activeLens);
       };
@@ -6435,8 +6489,6 @@
         card.addEventListener("click", () => activateLens(card.dataset.lensCard));
         card.addEventListener("pointerenter", () => previewLens(card.dataset.lensCard));
         card.addEventListener("pointerleave", clearPreview);
-        card.addEventListener("focus", () => previewLens(card.dataset.lensCard));
-        card.addEventListener("blur", clearPreview);
         card.addEventListener("keydown", (event) => {
           if (event.key !== "Enter" && event.key !== " ") return;
           event.preventDefault();
