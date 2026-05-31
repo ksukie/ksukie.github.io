@@ -1298,7 +1298,7 @@
     .method-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, minmax(210px, 1fr)) auto;
+      grid-template-rows: repeat(2, minmax(210px, 1fr));
       gap: clamp(18px, 1.6vw, 28px);
       min-height: 0;
     }
@@ -1306,15 +1306,25 @@
     .method-grid article {
       position: relative;
       min-height: 0;
+      display: grid;
+      align-content: start;
       padding: clamp(22px, 2.1vw, 35px);
       overflow: hidden;
       transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-      transition: transform 200ms ease, border 180ms ease, background 180ms ease;
+      cursor: pointer;
+      transition: transform 200ms ease, border 180ms ease, background 180ms ease, box-shadow 180ms ease;
     }
 
-    .method-grid article:hover {
+    .method-grid article:hover,
+    .method-grid article:focus-visible,
+    .method-grid article.is-active,
+    .method-grid article.is-preview {
       border-color: var(--line-strong);
-      background: rgba(10, 33, 53, 0.86);
+      background:
+        linear-gradient(135deg, rgba(98, 231, 215, 0.1), rgba(78, 156, 255, 0.055)),
+        rgba(10, 33, 53, 0.86);
+      box-shadow: inset 0 0 34px rgba(98, 231, 215, 0.055), 0 24px 70px rgba(0, 0, 0, 0.24);
+      outline: none;
     }
 
     .method-grid article::before {
@@ -1327,6 +1337,13 @@
       font-size: clamp(52px, 4.3vw, 76px);
       font-weight: 900;
       line-height: 1;
+    }
+
+    .method-grid article.is-active::before,
+    .method-grid article.is-preview::before,
+    .method-grid article:hover::before,
+    .method-grid article:focus-visible::before {
+      color: rgba(98, 231, 215, 0.24);
     }
 
     .method-grid h3 {
@@ -1369,22 +1386,34 @@
       font-size: 20px;
     }
 
-    .focus-readout {
-      grid-column: 1 / -1;
-      min-height: 132px;
+    .method-card-detail {
+      align-self: end;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0 solid transparent;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 18px;
-      align-items: center;
-      padding: 22px 26px;
-      border: 1px solid rgba(98, 231, 215, 0.24);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(90deg, rgba(98, 231, 215, 0.1), rgba(78, 156, 255, 0.05)),
-        rgba(7, 20, 34, 0.72);
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 180ms ease, transform 180ms ease, max-height 220ms ease, border-color 180ms ease;
     }
 
-    .focus-readout strong {
+    .method-grid article.is-active .method-card-detail,
+    .method-grid article.is-preview .method-card-detail,
+    .method-grid article:hover .method-card-detail,
+    .method-grid article:focus-visible .method-card-detail {
+      margin-top: clamp(18px, 2svh, 28px);
+      padding-top: clamp(14px, 1.6svh, 22px);
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 220px;
+      border-top-width: 1px;
+      border-color: rgba(98, 231, 215, 0.3);
+    }
+
+    .method-card-detail strong {
       display: block;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
@@ -1392,22 +1421,24 @@
       text-transform: uppercase;
     }
 
-    .focus-readout p {
-      margin: 10px 0 0;
+    .method-card-detail p {
+      margin: 0;
       color: var(--ink);
-      font-size: clamp(18px, 1.5vw, 26px);
+      font-size: clamp(14px, 0.94vw, 18px);
+      font-weight: 780;
+      line-height: 1.55;
     }
 
-    .readout-meter {
-      width: 192px;
-      height: 11px;
+    .method-meter {
+      width: min(100%, 192px);
+      height: 9px;
       overflow: hidden;
       border: 1px solid rgba(98, 231, 215, 0.32);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.06);
     }
 
-    .readout-meter span {
+    .method-meter span {
       display: block;
       width: var(--meter, 78%);
       height: 100%;
@@ -2881,14 +2912,6 @@
       .method-grid,
       .project-grid {
         grid-template-rows: none;
-      }
-
-      .focus-readout {
-        grid-template-columns: 1fr;
-      }
-
-      .readout-meter {
-        width: 100%;
       }
 
       .taste-scroll {
@@ -4614,7 +4637,7 @@
       }
 
       .method-grid {
-        grid-template-rows: repeat(2, minmax(var(--rs-210, 210px), 1fr)) auto;
+        grid-template-rows: repeat(2, minmax(var(--rs-210, 210px), 1fr));
         gap: clamp(var(--rs-18, 18px), 1.6vw, var(--rs-28, 28px));
       }
 
@@ -4633,7 +4656,7 @@
         font-size: clamp(var(--rs-24, 24px), 2.2vw, var(--rs-36, 36px));
       }
 
-      .method-grid p {
+      .method-grid > article > p {
         font-size: clamp(var(--rs-15, 15px), 1.08vw, var(--rs-19, 19px));
       }
 
@@ -4654,24 +4677,29 @@
         font-size: var(--rs-20, 20px);
       }
 
-      .focus-readout {
-        min-height: var(--rs-132, 132px);
-        gap: var(--rs-18, 18px);
-        padding: var(--rs-22, 22px) var(--rs-26, 26px);
+      .method-card-detail {
+        gap: var(--rs-10, 10px);
       }
 
-      .focus-readout strong {
+      .method-grid article.is-active .method-card-detail,
+      .method-grid article.is-preview .method-card-detail,
+      .method-grid article:hover .method-card-detail,
+      .method-grid article:focus-visible .method-card-detail {
+        margin-top: clamp(var(--rs-18, 18px), 2svh, var(--rs-28, 28px));
+        padding-top: clamp(var(--rs-14, 14px), 1.6svh, var(--rs-22, 22px));
+      }
+
+      .method-card-detail strong {
         font-size: var(--rs-13, 13px);
       }
 
-      .focus-readout p {
-        margin-top: var(--rs-10, 10px);
-        font-size: clamp(var(--rs-18, 18px), 1.5vw, var(--rs-26, 26px));
+      .method-card-detail p {
+        font-size: clamp(var(--rs-14, 14px), 0.94vw, var(--rs-18, 18px));
       }
 
-      .readout-meter {
+      .method-meter {
         width: var(--rs-192, 192px);
-        height: var(--rs-11, 11px);
+        height: var(--rs-9, 9px);
       }
 
       .project-console {
@@ -5317,7 +5345,7 @@
         </aside>
 
         <div class="method-grid">
-          <article class="reveal tilt-card" data-index="01">
+          <article class="reveal tilt-card is-active" data-index="01" data-lens-card="vision" tabindex="0">
             <h3>Computer Vision</h3>
             <p>目标检测、语义分割与多场景视觉识别能力，能够完成数据处理、模型训练、损失调优、模块创新、评估验证与实际场景适配。</p>
             <div class="method-tags">
@@ -5329,8 +5357,13 @@
               <span class="tag">Loss function</span>
               <span class="tag">Medical Image</span>
             </div>
+            <div class="method-card-detail" aria-hidden="false">
+              <strong>Computer Vision</strong>
+              <p>把检测、分割和多场景感知问题拆成数据、误差、实时性和可部署性几个可验证的环节。</p>
+              <div class="method-meter" aria-hidden="true"><span style="--meter: 82%;"></span></div>
+            </div>
           </article>
-          <article class="reveal tilt-card" data-index="02">
+          <article class="reveal tilt-card" data-index="02" data-lens-card="edge" tabindex="0">
             <h3>Edge Deployment</h3>
             <p>模型端侧部署能力，熟悉 ONNX、TensorRT、RKNN、Jetson、RK3588 与多路相机链路优化。</p>
             <div class="method-tags">
@@ -5340,8 +5373,13 @@
               <span class="tag">RK3588</span>
               <span class="tag">RV1126</span>
             </div>
+            <div class="method-card-detail" aria-hidden="true">
+              <strong>Edge Deployment</strong>
+              <p>关注模型导出、量化、推理后端、相机链路和现场性能，让算法真的跑在设备上。</p>
+              <div class="method-meter" aria-hidden="true"><span style="--meter: 88%;"></span></div>
+            </div>
           </article>
-          <article class="reveal tilt-card" data-index="03">
+          <article class="reveal tilt-card" data-index="03" data-lens-card="robot" tabindex="0">
             <h3>Robot Learning</h3>
             <p>机器人学习流程搭建能力，覆盖 LeRobot 数据采集、模仿学习训练、触觉感知接入与真机验证。</p>
             <div class="method-tags">
@@ -5353,8 +5391,13 @@
               <span class="tag">Imitation</span>
               <span class="tag">Data Collection</span>
             </div>
+            <div class="method-card-detail" aria-hidden="true">
+              <strong>Robot Learning</strong>
+              <p>把视觉、触觉、机械臂控制和模仿学习数据合在一起，优先打通可复现实验链路。</p>
+              <div class="method-meter" aria-hidden="true"><span style="--meter: 74%;"></span></div>
+            </div>
           </article>
-          <article class="reveal tilt-card" data-index="04">
+          <article class="reveal tilt-card" data-index="04" data-lens-card="loop" tabindex="0">
             <h3>Engineering Loop</h3>
             <p>从原型到交付的工程闭环能力，能够进行问题定位、性能基准、日志分析与可复现实验设计。</p>
             <div class="method-tags">
@@ -5363,14 +5406,12 @@
               <span class="tag">Linked Debug</span>
               <span class="tag">Benchmark</span>
             </div>
-          </article>
-          <div class="focus-readout reveal" aria-live="polite">
-            <div>
-              <strong data-lens-title>Computer Vision</strong>
-              <p data-lens-copy>把检测、分割和多场景感知问题拆成数据、误差、实时性和可部署性几个可验证的环节。</p>
+            <div class="method-card-detail" aria-hidden="true">
+              <strong>Engineering Loop</strong>
+              <p>从现象定位到基准、日志、复现脚本和交付路径，尽量让每个问题都能被再次验证。</p>
+              <div class="method-meter" aria-hidden="true"><span style="--meter: 91%;"></span></div>
             </div>
-            <div class="readout-meter" aria-hidden="true"><span data-lens-meter style="--meter: 82%;"></span></div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -6124,21 +6165,59 @@
     }
 
     function setupLensConsole() {
-      const buttons = document.querySelectorAll("[data-lens]");
-      const title = document.querySelector("[data-lens-title]");
-      const copy = document.querySelector("[data-lens-copy]");
-      const meter = document.querySelector("[data-lens-meter]");
+      const buttons = Array.from(document.querySelectorAll("[data-lens]"));
+      const cards = Array.from(document.querySelectorAll("[data-lens-card]"));
+      let activeLens = buttons.find((button) => button.classList.contains("is-active"))?.dataset.lens || "vision";
+
+      const setDetailVisibility = (visibleLens) => {
+        cards.forEach((card) => {
+          const detail = card.querySelector(".method-card-detail");
+          if (detail) detail.setAttribute("aria-hidden", String(card.dataset.lensCard !== visibleLens));
+        });
+      };
+
+      const previewLens = (lens) => {
+        if (!lens || !lensCopy[lens]) return;
+        cards.forEach((card) => card.classList.toggle("is-preview", card.dataset.lensCard === lens && lens !== activeLens));
+        setDetailVisibility(lens);
+      };
+
+      const clearPreview = () => {
+        cards.forEach((card) => card.classList.remove("is-preview"));
+        setDetailVisibility(activeLens);
+      };
+
+      const activateLens = (lens) => {
+        if (!lens || !lensCopy[lens]) return;
+        activeLens = lens;
+        buttons.forEach((button) => button.classList.toggle("is-active", button.dataset.lens === lens));
+        cards.forEach((card) => {
+          card.classList.toggle("is-active", card.dataset.lensCard === lens);
+          card.classList.remove("is-preview");
+        });
+        setDetailVisibility(activeLens);
+      };
 
       buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const item = lensCopy[button.dataset.lens];
-          if (!item) return;
-          buttons.forEach((node) => node.classList.toggle("is-active", node === button));
-          title.textContent = item.title;
-          copy.textContent = item.copy;
-          meter.style.setProperty("--meter", item.meter);
+        button.addEventListener("click", () => activateLens(button.dataset.lens));
+        button.addEventListener("pointerenter", () => previewLens(button.dataset.lens));
+        button.addEventListener("pointerleave", clearPreview);
+      });
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => activateLens(card.dataset.lensCard));
+        card.addEventListener("pointerenter", () => previewLens(card.dataset.lensCard));
+        card.addEventListener("pointerleave", clearPreview);
+        card.addEventListener("focus", () => previewLens(card.dataset.lensCard));
+        card.addEventListener("blur", clearPreview);
+        card.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          activateLens(card.dataset.lensCard);
         });
       });
+
+      activateLens(activeLens);
     }
 
     function setupLifeArchive() {
