@@ -3300,6 +3300,27 @@
       display: none;
     }
 
+    .life-template-slide[data-life-slide="photography"] {
+      grid-template-columns: minmax(340px, 0.42fr) minmax(880px, 1.32fr);
+      align-items: center;
+      align-content: center;
+      column-gap: clamp(18px, 1.9vw, 30px);
+      padding: clamp(34px, 5svh, 62px) clamp(96px, 7vw, 118px) clamp(34px, 5svh, 62px) clamp(48px, 7vw, 108px);
+    }
+
+    .life-template-slide[data-life-slide="photography"] .life-template-title {
+      align-self: center;
+      max-width: 600px;
+      transform: translate(clamp(41px, 2.4vw, 54px), calc(-1 * clamp(132px, 15.2svh, 220px)));
+    }
+
+    .life-template-slide[data-life-slide="photography"] .life-template-title h3 {
+      display: block;
+      font-size: clamp(42px, 6.8vw, 106px);
+      line-height: 0.94;
+      white-space: nowrap;
+    }
+
     .life-template-slide[data-life-slide="games"] {
       grid-template-columns: minmax(340px, 0.42fr) minmax(880px, 1.32fr);
       align-items: center;
@@ -3504,6 +3525,91 @@
       display: grid;
       gap: 14px;
       min-height: 0;
+    }
+
+    .life-photo-shell {
+      position: relative;
+      isolation: isolate;
+      justify-self: center;
+      align-self: center;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      width: min(1080px, 100%);
+      height: min(clamp(560px, 70svh, 760px), calc(100svh - 156px));
+      min-height: 0;
+      padding: clamp(16px, 1.5vw, 26px);
+      border: 1px solid rgba(100, 255, 218, 0.22);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(100, 255, 218, 0.09), transparent 42%),
+        linear-gradient(315deg, rgba(78, 156, 255, 0.11), transparent 46%),
+        rgba(2, 12, 27, 0.56);
+      box-shadow:
+        inset 0 0 0 1px rgba(230, 241, 255, 0.035),
+        inset 0 0 54px rgba(100, 255, 218, 0.045),
+        0 24px 64px rgba(0, 0, 0, 0.22);
+    }
+
+    .life-photo-slot {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(100, 255, 218, 0.24);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(230, 241, 255, 0.08), transparent 38%),
+        linear-gradient(180deg, rgba(17, 34, 64, 0.62), rgba(2, 12, 27, 0.78));
+    }
+
+    .life-photo-slot:first-child {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .life-photo-slot::before {
+      content: "";
+      position: absolute;
+      inset: clamp(14px, 1.2vw, 22px);
+      border: 1px dashed rgba(100, 255, 218, 0.28);
+      border-radius: calc(var(--radius) - 2px);
+      background:
+        linear-gradient(135deg, transparent calc(50% - 1px), rgba(100, 255, 218, 0.14) 50%, transparent calc(50% + 1px)),
+        linear-gradient(45deg, transparent calc(50% - 1px), rgba(78, 156, 255, 0.13) 50%, transparent calc(50% + 1px));
+      opacity: 0.72;
+    }
+
+    .life-photo-slot::after {
+      content: attr(data-photo-index);
+      position: absolute;
+      left: clamp(18px, 1.45vw, 27px);
+      bottom: clamp(16px, 1.35vw, 24px);
+      color: rgba(100, 255, 218, 0.74);
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+    }
+
+    .life-photo-carousel::before,
+    .life-photo-carousel::after {
+      content: none;
+    }
+
+    .life-photo-slide {
+      grid-area: 1 / 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 700ms ease;
+    }
+
+    .life-photo-slide.is-active {
+      opacity: 1;
     }
 
     .life-game-grid {
@@ -4105,6 +4211,13 @@
         padding: clamp(42px, 7svh, 80px) 76px clamp(120px, 16svh, 160px) 28px;
       }
 
+      .life-template-slide[data-life-slide="photography"] {
+        grid-template-columns: 1fr;
+        align-content: start;
+        row-gap: 24px;
+        padding-right: 76px;
+      }
+
       .life-template-slide[data-life-slide="games"] {
         grid-template-columns: 1fr;
         align-content: start;
@@ -4127,8 +4240,22 @@
         padding-right: 76px;
       }
 
+      .life-template-slide[data-life-slide="photography"] .life-template-title,
       .life-template-slide[data-life-slide="games"] .life-template-title {
         max-width: min(720px, calc(100vw - 112px));
+      }
+
+      .life-photo-shell {
+        width: 100%;
+        max-width: calc(100vw - 112px);
+        height: min(620px, 58svh);
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+
+      .life-photo-slot:first-child {
+        grid-column: 1;
+        grid-row: 1;
       }
 
       .life-template-slide[data-life-slide="music"] .life-track-panel {
@@ -4160,12 +4287,14 @@
         white-space: normal;
       }
 
+      .life-template-slide[data-life-slide="photography"] .life-template-title,
       .life-template-slide[data-life-slide="games"] .life-template-title,
       .life-template-slide[data-life-slide="music"] .life-template-title,
       .life-template-slide[data-life-slide="reading"] .life-template-title {
         order: 1;
       }
 
+      .life-photo-shell,
       .life-template-slide[data-life-slide="games"] .life-template-grid,
       .life-template-slide[data-life-slide="music"] .life-template-grid,
       .life-template-slide[data-life-slide="music"] .life-track-panel,
@@ -4258,6 +4387,14 @@
         font-size: clamp(42px, 14vw, 68px);
       }
 
+      .life-template-slide[data-life-slide="photography"] .life-template-title h3 {
+        font-size: clamp(32px, 10vw, 58px);
+      }
+
+      .life-template-slide[data-life-slide="photography"] {
+        padding-right: 24px;
+      }
+
       .life-template-slide[data-life-slide="games"] {
         padding-right: 24px;
       }
@@ -4270,11 +4407,24 @@
         padding-right: 24px;
       }
 
+      .life-photo-shell,
       .life-game-grid,
       .life-music-grid,
       .life-reading-grid,
       .life-track-panel {
         max-width: calc(100vw - 48px);
+      }
+
+      .life-photo-shell {
+        height: auto;
+        min-height: min(560px, 70svh);
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+
+      .life-photo-slot:first-child {
+        grid-column: auto;
+        grid-row: auto;
       }
 
       .life-game-grid,
@@ -5001,6 +5151,21 @@
         padding-left: clamp(var(--rs-156, 156px), 20vw, var(--rs-406, 406px));
       }
 
+      .life-template-slide[data-life-slide="photography"] {
+        grid-template-columns: minmax(var(--rs-340, 340px), 0.42fr) minmax(var(--rs-880, 880px), 1.32fr);
+        column-gap: clamp(var(--rs-18, 18px), 1.9vw, var(--rs-30, 30px));
+        padding: clamp(var(--rs-34, 34px), 5svh, var(--rs-62, 62px)) clamp(var(--rs-96, 96px), 7vw, var(--rs-118, 118px)) clamp(var(--rs-34, 34px), 5svh, var(--rs-62, 62px)) clamp(var(--rs-48, 48px), 7vw, var(--rs-108, 108px));
+      }
+
+      .life-template-slide[data-life-slide="photography"] .life-template-title {
+        max-width: var(--rs-600, 600px);
+        transform: translate(clamp(var(--rs-41, 41px), 2.4vw, var(--rs-54, 54px)), calc(-1 * clamp(var(--rs-132, 132px), 15.2svh, var(--rs-220, 220px))));
+      }
+
+      .life-template-slide[data-life-slide="photography"] .life-template-title h3 {
+        font-size: clamp(var(--rs-42, 42px), 6.8vw, var(--rs-106, 106px));
+      }
+
       .life-template-slide[data-life-slide="games"] {
         grid-template-columns: minmax(var(--rs-340, 340px), 0.42fr) minmax(var(--rs-880, 880px), 1.32fr);
         column-gap: clamp(var(--rs-18, 18px), 1.9vw, var(--rs-30, 30px));
@@ -5091,6 +5256,22 @@
 
       .life-template-grid {
         gap: var(--rs-14, 14px);
+      }
+
+      .life-photo-shell {
+        width: min(var(--rs-1080, 1080px), 100%);
+        height: min(clamp(var(--rs-560, 560px), 70svh, var(--rs-760, 760px)), calc(100svh - var(--rs-156, 156px)));
+        padding: clamp(var(--rs-16, 16px), 1.5vw, var(--rs-26, 26px));
+      }
+
+      .life-photo-slot::before {
+        inset: clamp(var(--rs-14, 14px), 1.2vw, var(--rs-22, 22px));
+      }
+
+      .life-photo-slot::after {
+        left: clamp(var(--rs-18, 18px), 1.45vw, var(--rs-27, 27px));
+        bottom: clamp(var(--rs-16, 16px), 1.35vw, var(--rs-24, 24px));
+        font-size: var(--rs-12, 12px);
       }
 
       .life-game-grid {
@@ -5438,13 +5619,35 @@
             <p class="life-lead">这里不是技术栈的延伸，而是生命的缤纷。欢迎参观代码之外，我的另一个 branch。</p>
           </article>
 
+          <article class="life-template-slide" data-life-slide="photography" data-life-caption="Photography" data-watermark="Photo">
+            <div class="life-branch-note">
+              <span>Branch note</span>
+              <p>摄影不是记录完美，而是把一瞬间的光、风和心情留成证据。</p>
+            </div>
+            <header class="life-template-title">
+              <span>02</span>
+              <h3>Photography</h3>
+              <p>登高峰一秒 得獎一秒 再破紀錄的一秒<br />港灣晚燈 山頂破曉 摘下懷念 記住美妙<br />升職那刻 新婚那朝 成為父母的一秒<br />要拍照的事 可不少</p>
+            </header>
+            <div class="life-photo-shell" aria-label="Photography gallery shell">
+              <div class="life-photo-slot life-photo-carousel" data-photo-carousel>
+                <img class="life-photo-slide is-active" src="assets/life/photography/photo-01.jpg" alt="Sunset over the river" loading="eager" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-02.jpg" alt="City skyline reflected on water" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-03.jpg" alt="Snow-covered mountain buildings" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-04.jpg" alt="Xi'an Bell Tower at night" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-05.jpg" alt="Mount Hua summit marker" loading="lazy" data-photo-slide />
+                <img class="life-photo-slide" src="assets/life/photography/photo-06.png" alt="Person watching sunset from a balcony" loading="lazy" data-photo-slide />
+              </div>
+            </div>
+          </article>
+
           <article class="life-template-slide" data-life-slide="games" data-life-caption="Gaming Archive" data-watermark="Games">
             <div class="life-branch-note">
               <span>Branch note</span>
               <p>游戏不是逃离现实，而是在另一套规则里练习协作、判断和重新开始。</p>
             </div>
             <header class="life-template-title">
-              <span>02</span>
+              <span>03</span>
               <h3>Gaming</h3>
               <p>這趟旅行若算開心<br />亦是無負這一生</p>
             </header>
@@ -5503,7 +5706,7 @@
               <p>音乐不是背景音，而是把情绪、记忆和某一段时间重新接回身体。</p>
             </div>
             <header class="life-template-title">
-              <span>03</span>
+              <span>04</span>
               <h3>Music</h3>
               <p>音樂 話劇 詩詞和舞蹈<br />揉合生命 千樣好</p>
             </header>
@@ -5548,7 +5751,7 @@
               <p>阅读不是为了寻找标准答案，而是让问题慢下来，也让自己看得更清楚。</p>
             </div>
             <header class="life-template-title">
-              <span>04</span>
+              <span>05</span>
               <h3>Reading</h3>
               <p>我知 日後 路上或沒有更美的邂逅<br />但當你智慧都醞釀成紅酒<br />仍可一醉自救</p>
             </header>
@@ -5592,7 +5795,7 @@
         </div>
 
         <div class="life-template-readout" aria-live="polite">
-          <span data-life-count>01 / 05</span>
+          <span data-life-count>01 / 06</span>
           <span data-life-current-caption>Life Archive</span>
         </div>
 
@@ -5602,6 +5805,7 @@
           </button>
           <div class="life-dots" aria-label="当前位置">
             <button class="life-dot is-active" type="button" data-life-dot="intro" aria-label="Life Archive"></button>
+            <button class="life-dot" type="button" data-life-dot="photography" aria-label="Photography"></button>
             <button class="life-dot" type="button" data-life-dot="games" aria-label="Gaming Archive"></button>
             <button class="life-dot" type="button" data-life-dot="music" aria-label="Music Room"></button>
             <button class="life-dot" type="button" data-life-dot="reading" aria-label="Reading Shelf"></button>
@@ -6640,6 +6844,25 @@
       renderTracks(document.querySelector("[data-artist].is-active") || artists[0]);
     }
 
+    function setupPhotographyCarousel() {
+      const carousel = document.querySelector("[data-photo-carousel]");
+      if (!carousel) return;
+      const slides = Array.from(carousel.querySelectorAll("[data-photo-slide]"));
+      if (!slides.length) return;
+      let activeIndex = 0;
+
+      const setActivePhoto = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("is-active", slideIndex === activeIndex);
+        });
+      };
+
+      setActivePhoto(0);
+      if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      window.setInterval(() => setActivePhoto(activeIndex + 1), 3000);
+    }
+
     function setupProjectExplorer() {
       const grid = document.querySelector("[data-project-grid]");
       const detail = document.querySelector("[data-project-detail]");
@@ -6930,6 +7153,7 @@
     setupConstellation();
     setupLensConsole();
     setupLifeArchive();
+    setupPhotographyCarousel();
     setupProjectExplorer();
     setupRepositories();
   </script>
