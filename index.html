@@ -419,6 +419,7 @@
 
     .hero-content {
       max-width: 1640px;
+      min-width: 0;
     }
 
     .hero-frame {
@@ -477,15 +478,33 @@
     }
 
     .hero-copy {
-      max-width: 1180px;
+      display: grid;
+      gap: clamp(10px, 1.2vw, 16px);
+      width: min(100%, 1120px);
+      max-width: 1120px;
       margin: clamp(28px, 4vw, 42px) 0 0;
       color: var(--text);
-      font-size: clamp(18px, 1.8vw, 26px);
-      line-height: 1.55;
     }
 
     .copy-line {
       display: block;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+
+    .copy-line-en {
+      max-width: 74ch;
+      color: var(--ink);
+      font-size: clamp(20px, 1.65vw, 27px);
+      font-weight: 800;
+      line-height: 1.42;
+    }
+
+    .copy-line-cn {
+      max-width: 66em;
+      color: rgba(197, 212, 215, 0.8);
+      font-size: clamp(16px, 1.18vw, 20px);
+      line-height: 1.72;
     }
 
     .hero-actions {
@@ -1929,12 +1948,38 @@
       }
 
       .hero h1 {
+        flex-wrap: wrap;
         gap: 8px;
         font-size: clamp(28px, 8.4vw, 54px);
+        white-space: normal;
       }
 
       .hero h1 span:last-child {
         font-size: 1em;
+      }
+
+      .hero-copy {
+        gap: 9px;
+        width: calc(100vw - 20px);
+        max-width: 100%;
+        margin-top: 24px;
+      }
+
+      .copy-line-en {
+        max-width: 100%;
+        font-size: clamp(18px, 4.9vw, 20px);
+        line-height: 1.48;
+      }
+
+      .copy-line-cn {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.68;
+      }
+
+      .hero-actions {
+        width: calc(100vw - 20px);
+        grid-template-columns: 1fr;
       }
 
       .method-grid,
@@ -2106,8 +2151,8 @@
               <span>Shuqi Ke</span>
             </h1>
             <p class="hero-copy reveal">
-              <span class="copy-line">I build with computer vision, edge AI, and robot learning, focusing on practical systems that can move from models to real devices.</span>
-              <span class="copy-line">技术之外，我也把游戏、音乐、阅读和长期思考放进这个个人世界：这里既展示我做什么，也展示我如何观察、选择和生活。</span>
+              <span class="copy-line copy-line-en">I build with computer vision, edge AI, and robot learning, focusing on practical systems that can move from models to real devices.</span>
+              <span class="copy-line copy-line-cn">技术之外，我也把游戏、音乐、阅读和长期思考放进这个个人世界：这里既展示我做什么，也展示我如何观察、选择和生活。</span>
             </p>
             <div class="hero-actions reveal">
               <a class="button button-primary" href="#projects" data-marker="01">
