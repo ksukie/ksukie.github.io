@@ -263,13 +263,13 @@
       isolation: isolate;
       overflow: hidden;
       width: 100%;
-      min-height: calc(100svh - 72px);
+      min-height: auto;
       margin: 0 auto;
-      padding: clamp(34px, 4svh, 54px) max(12px, calc((100% - 1980px) / 2));
+      padding: clamp(42px, 5.6svh, 76px) max(16px, calc((100% - 1880px) / 2));
       scroll-margin-top: 96px;
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
-      gap: clamp(16px, 2svh, 26px);
+      gap: clamp(14px, 1.6svh, 22px);
       align-content: stretch;
     }
 
@@ -288,8 +288,8 @@
 
     .section-heading {
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(260px, 0.58fr);
-      gap: clamp(22px, 3.2vw, 46px);
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.52fr);
+      gap: clamp(20px, 2.6vw, 38px);
       align-items: end;
       margin-bottom: 0;
     }
@@ -297,15 +297,16 @@
     .section-heading p:last-child {
       margin: 0;
       color: var(--text);
-      font-size: clamp(16px, 1.1vw, 20px);
-      line-height: 1.55;
+      font-size: clamp(18px, 1.22vw, 24px);
+      font-weight: 650;
+      line-height: 1.48;
     }
 
     .eyebrow {
       margin: 0 0 13px;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: clamp(12px, 0.72vw, 14px);
+      font-size: clamp(13px, 0.78vw, 16px);
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -315,7 +316,7 @@
     h2,
     h3,
     p {
-      overflow-wrap: anywhere;
+      overflow-wrap: break-word;
     }
 
     .section h2,
@@ -327,7 +328,7 @@
 
     .section h2 {
       max-width: 1180px;
-      font-size: clamp(48px, 5.9vw, 90px);
+      font-size: clamp(58px, 6.4vw, 112px);
       line-height: 1.05;
     }
 
@@ -410,15 +411,16 @@
       width: min(1960px, calc(100% - 24px));
       min-height: calc(100svh - 72px);
       margin: 0 auto;
-      padding: clamp(66px, 8svh, 94px) 0 clamp(62px, 8svh, 92px);
+      padding: clamp(68px, 8svh, 104px) 0 clamp(42px, 5.6svh, 72px);
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      gap: clamp(28px, 4vw, 58px);
-      align-items: center;
+      gap: clamp(20px, 3vw, 42px);
+      align-items: start;
     }
 
     .hero-content {
-      max-width: 1640px;
+      width: 100%;
+      max-width: 1820px;
       min-width: 0;
     }
 
@@ -428,7 +430,7 @@
 
     .hero-frame {
       position: relative;
-      padding: clamp(22px, 3.2vw, 38px) 0 clamp(24px, 3.2vw, 44px);
+      padding: clamp(18px, 2.4vw, 30px) 0 clamp(18px, 2.6vw, 34px);
     }
 
     .hero-frame::before,
@@ -462,7 +464,7 @@
       max-width: 100%;
       overflow-wrap: normal;
       white-space: nowrap;
-      font-size: clamp(39px, 7.82vw, 136px);
+      font-size: clamp(54px, 8.4vw, 156px);
       line-height: 0.95;
       text-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
     }
@@ -483,10 +485,12 @@
 
     .hero-copy {
       display: grid;
-      gap: clamp(10px, 1.2vw, 16px);
-      width: min(100%, 1120px);
-      max-width: 1120px;
-      margin: clamp(28px, 4vw, 42px) 0 0;
+      grid-template-columns: minmax(0, 0.92fr) minmax(380px, 0.68fr);
+      align-items: stretch;
+      gap: clamp(18px, 2.4vw, 36px);
+      width: min(100%, 1500px);
+      max-width: 1500px;
+      margin: clamp(22px, 3vw, 34px) 0 0;
       color: var(--text);
     }
 
@@ -497,30 +501,30 @@
     }
 
     .copy-line-primary {
-      max-width: 74ch;
+      max-width: 30ch;
       color: var(--ink);
-      font-size: clamp(23px, 1.9vw, 31px);
+      font-size: clamp(32px, 2.65vw, 50px);
       font-weight: 800;
-      line-height: 1.42;
+      line-height: 1.24;
     }
 
     .copy-line-secondary {
-      max-width: 66em;
-      padding-left: clamp(12px, 1.2vw, 16px);
+      max-width: 42ch;
+      padding: clamp(14px, 1.35vw, 20px) clamp(16px, 1.8vw, 28px);
       border-left: 2px solid rgba(98, 231, 215, 0.55);
       color: rgba(229, 246, 247, 0.9);
-      font-size: clamp(18px, 1.36vw, 23px);
+      font-size: clamp(20px, 1.42vw, 26px);
       font-weight: 650;
-      line-height: 1.66;
+      line-height: 1.58;
       background: linear-gradient(90deg, rgba(98, 231, 215, 0.08), transparent 72%);
     }
 
     .hero-actions {
-      width: min(100%, 860px);
+      width: min(100%, 1040px);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
       gap: 16px;
-      margin-top: clamp(28px, 4vw, 44px);
+      margin-top: clamp(24px, 3vw, 38px);
     }
 
     .button {
@@ -546,7 +550,7 @@
       min-width: 0;
       padding: 16px 22px 16px 68px;
       border-color: rgba(98, 231, 215, 0.36);
-      font-size: clamp(18px, 1.15vw, 21px);
+      font-size: clamp(19px, 1.25vw, 23px);
       background:
         linear-gradient(135deg, rgba(98, 231, 215, 0.15), rgba(78, 156, 255, 0.08)),
         rgba(8, 23, 37, 0.74);
@@ -613,18 +617,23 @@
 
     .lens-console {
       display: grid;
-      grid-template-columns: minmax(300px, 0.45fr) minmax(0, 1fr);
-      gap: clamp(18px, 1.6vw, 28px);
+      grid-template-columns: minmax(280px, 0.34fr) minmax(0, 1fr);
+      gap: clamp(14px, 1.35vw, 22px);
       align-items: stretch;
       min-height: 0;
     }
 
     .section > .lens-console,
     .section > .project-stage,
-    .section > .archive-panel,
+    .section > .archive-panel {
+      min-height: 0;
+      height: auto;
+      min-height: clamp(560px, 66svh, 760px);
+    }
+
     .section > .contact-panel {
       min-height: 0;
-      height: 100%;
+      height: auto;
     }
 
     .section > .repo-shell {
@@ -646,25 +655,25 @@
     }
 
     .lens-panel {
-      padding: clamp(18px, 1.6vw, 28px);
+      padding: clamp(16px, 1.35vw, 24px);
       display: grid;
       align-content: start;
-      gap: 16px;
+      gap: 12px;
     }
 
     .lens-button {
       width: 100%;
-      min-height: 82px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      padding: 18px 17px;
+      padding: 15px 16px;
       border: 1px solid rgba(236, 246, 244, 0.11);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
       color: var(--ink);
-      font-size: clamp(17px, 1.02vw, 20px);
+      font-size: clamp(18px, 1.08vw, 21px);
       line-height: 1.2;
       text-align: left;
       transition: border 180ms ease, background 180ms ease, transform 180ms ease, color 180ms ease;
@@ -702,15 +711,15 @@
     .method-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, minmax(210px, 1fr)) auto;
-      gap: clamp(18px, 1.6vw, 28px);
+      grid-template-rows: repeat(2, minmax(190px, 1fr)) auto;
+      gap: clamp(14px, 1.35vw, 22px);
       min-height: 0;
     }
 
     .method-grid article {
       position: relative;
       min-height: 0;
-      padding: clamp(22px, 2.1vw, 35px);
+      padding: clamp(22px, 1.95vw, 34px);
       overflow: hidden;
       transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
       transition: transform 200ms ease, border 180ms ease, background 180ms ease;
@@ -734,24 +743,25 @@
     }
 
     .method-grid h3 {
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       color: var(--ink);
-      font-size: clamp(24px, 2.2vw, 36px);
+      font-size: clamp(28px, 2.35vw, 42px);
       line-height: 1.2;
     }
 
     .method-grid p {
       margin: 0;
       color: var(--text);
-      font-size: clamp(15px, 1.08vw, 19px);
-      line-height: 1.62;
+      font-size: clamp(17px, 1.18vw, 22px);
+      font-weight: 560;
+      line-height: 1.52;
     }
 
     .method-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 22px;
+      margin-top: 18px;
     }
 
     .tag {
@@ -763,18 +773,18 @@
       border-radius: 999px;
       color: var(--muted);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 13.5px;
+      font-size: 14.5px;
       line-height: 1.15;
     }
 
     .focus-readout {
       grid-column: 1 / -1;
-      min-height: 132px;
+      min-height: 118px;
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 18px;
       align-items: center;
-      padding: 22px 26px;
+      padding: 20px 24px;
       border: 1px solid rgba(98, 231, 215, 0.24);
       border-radius: var(--radius);
       background:
@@ -793,7 +803,9 @@
     .focus-readout p {
       margin: 10px 0 0;
       color: var(--ink);
-      font-size: clamp(18px, 1.5vw, 26px);
+      font-size: clamp(21px, 1.55vw, 30px);
+      font-weight: 720;
+      line-height: 1.42;
     }
 
     .readout-meter {
@@ -847,18 +859,19 @@
       z-index: 1;
       min-height: 100%;
       display: grid;
-      grid-template-columns: minmax(520px, 0.46fr) minmax(0, 1fr);
+      grid-template-columns: minmax(360px, 0.32fr) minmax(0, 1fr);
     }
 
     .life-command {
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: clamp(18px, 2.2svh, 34px);
-      padding: clamp(26px, 2.7vw, 46px);
+      gap: clamp(16px, 1.8svh, 28px);
+      padding: clamp(24px, 2.2vw, 38px);
       border-right: 1px solid var(--line);
       background:
-        linear-gradient(180deg, rgba(98, 231, 215, 0.08), transparent 46%),
+        linear-gradient(180deg, rgba(232, 132, 122, 0.11), transparent 44%),
+        linear-gradient(135deg, rgba(229, 189, 104, 0.08), transparent 58%),
         rgba(5, 13, 24, 0.32);
     }
 
@@ -886,8 +899,8 @@
     }
 
     .life-label {
-      margin-top: 24px;
-      color: var(--cyan);
+      margin-top: 20px;
+      color: var(--amber);
       font-family: Consolas, "SFMono-Regular", monospace;
       font-size: 12px;
       font-weight: 900;
@@ -899,9 +912,9 @@
       margin: 0;
       color: var(--ink);
       max-width: 720px;
-      font-size: clamp(20px, 1.42vw, 27px);
+      font-size: clamp(30px, 3.05vw, 56px);
       font-weight: 950;
-      line-height: 1.18;
+      line-height: 1.04;
       overflow-wrap: normal;
       word-break: normal;
       text-wrap: balance;
@@ -914,8 +927,9 @@
     .life-copy {
       margin: 0;
       color: var(--text);
-      font-size: clamp(16px, 1.16vw, 22px);
-      line-height: 1.66;
+      font-size: clamp(18px, 1.25vw, 24px);
+      font-weight: 620;
+      line-height: 1.54;
     }
 
     .life-deck {
@@ -923,8 +937,8 @@
       min-width: 0;
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
-      gap: clamp(16px, 1.6svh, 24px);
-      padding: clamp(24px, 2.4vw, 40px);
+      gap: clamp(14px, 1.35svh, 20px);
+      padding: clamp(20px, 1.95vw, 34px);
     }
 
     .life-panel-heading {
@@ -933,11 +947,9 @@
       justify-content: space-between;
       gap: 13px;
       color: var(--muted);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: clamp(15px, 1vw, 18px);
+      font-size: clamp(16px, 1.05vw, 20px);
       font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      letter-spacing: 0;
     }
 
     .life-panel-heading span:first-child {
@@ -1010,8 +1022,8 @@
       justify-content: flex-start;
       padding: 13px 42px 13px 16px;
       border-radius: calc(var(--radius) - 2px);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      text-transform: uppercase;
+      font-family: inherit;
+      text-transform: none;
     }
 
     .taste-tab::after {
@@ -1044,7 +1056,7 @@
     .taste-content {
       display: none;
       min-height: 100%;
-      margin-top: 22px;
+      margin-top: 16px;
     }
 
     .taste-content.is-active {
@@ -1075,8 +1087,8 @@
     .game-mosaic {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
-      grid-auto-rows: minmax(120px, 1fr);
-      gap: 13px;
+      grid-auto-rows: minmax(138px, 1fr);
+      gap: 12px;
       min-height: 100%;
       padding: 4px 2px 6px;
     }
@@ -1170,21 +1182,20 @@
 
     .interest-card strong {
       color: var(--ink);
-      font-size: clamp(22px, 1.5vw, 30px);
+      font-size: clamp(25px, 1.72vw, 36px);
       line-height: 1.18;
     }
 
     .interest-card span {
       margin-top: 7px;
       color: var(--text);
-      font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 14px;
-      font-weight: 900;
-      text-transform: uppercase;
+      font-size: 15.5px;
+      font-weight: 780;
+      text-transform: none;
     }
 
     .artist-card {
-      min-height: clamp(220px, 28svh, 290px);
+      min-height: clamp(230px, 25svh, 286px);
       padding: 20px;
     }
 
@@ -1203,7 +1214,7 @@
     .music-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 14px;
       padding: 4px 2px 8px;
       min-height: 100%;
     }
@@ -1215,7 +1226,7 @@
       overflow-y: auto;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px 19px;
+      gap: 16px;
       padding: 6px 6px 24px;
       scrollbar-color: rgba(98, 231, 215, 0.42) transparent;
     }
@@ -1236,7 +1247,7 @@
     .book-card {
       width: 100%;
       min-width: 0;
-      min-height: 336px;
+      min-height: 310px;
       aspect-ratio: auto;
       align-content: end;
       padding: 16px;
@@ -1259,22 +1270,22 @@
     }
 
     .book-card strong {
-      font-size: clamp(16px, 1vw, 21px);
+      font-size: clamp(18px, 1.1vw, 23px);
       line-height: 1.12;
       overflow-wrap: anywhere;
     }
 
     .book-card span {
-      font-size: 12px;
+      font-size: 13px;
     }
 
     .track-panel {
-      min-height: 154px;
+      min-height: 132px;
       display: grid;
       align-content: start;
-      gap: 14px;
-      margin-top: 18px;
-      padding: 22px;
+      gap: 12px;
+      margin-top: 14px;
+      padding: 18px;
       border: 1px solid rgba(98, 231, 215, 0.22);
       border-radius: var(--radius);
       background: rgba(5, 13, 24, 0.48);
@@ -1283,7 +1294,7 @@
     .track-panel strong {
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: clamp(16px, 0.98vw, 18px);
+      font-size: clamp(16px, 1vw, 19px);
       font-weight: 900;
       text-transform: uppercase;
     }
@@ -1304,7 +1315,7 @@
       border-radius: 999px;
       color: var(--ink);
       background: rgba(255, 255, 255, 0.04);
-      font-size: clamp(16px, 0.95vw, 18px);
+      font-size: clamp(17px, 1vw, 19px);
       font-weight: 850;
       line-height: 1.2;
       align-self: flex-start;
@@ -1316,16 +1327,16 @@
 
     .project-console {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.45fr);
-      min-height: 100%;
-      height: 100%;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.34fr);
+      min-height: inherit;
+      height: auto;
     }
 
     .project-main {
       min-width: 0;
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
-      padding: clamp(24px, 2.4vw, 40px);
+      padding: clamp(20px, 1.95vw, 34px);
       border-right: 1px solid var(--line);
     }
 
@@ -1342,7 +1353,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-template-rows: repeat(2, minmax(0, 1fr));
-      gap: clamp(14px, 1.6vw, 24px);
+      gap: clamp(12px, 1.3vw, 20px);
       min-height: 0;
     }
 
@@ -1351,8 +1362,8 @@
       min-height: 0;
       display: grid;
       align-content: space-between;
-      gap: 18px;
-      padding: clamp(21px, 1.85vw, 32px);
+      gap: 14px;
+      padding: clamp(22px, 1.85vw, 34px);
       border: 1px solid rgba(236, 246, 244, 0.11);
       border-radius: var(--radius);
       background:
@@ -1371,17 +1382,18 @@
     }
 
     .project-card h3 {
-      margin: 18px 0 14px;
+      margin: 16px 0 12px;
       color: var(--ink);
-      font-size: clamp(22px, 1.6vw, 30px);
+      font-size: clamp(25px, 1.8vw, 36px);
       line-height: 1.28;
     }
 
     .project-card p {
       margin: 0;
       color: var(--text);
-      font-size: clamp(14px, 0.92vw, 18px);
-      line-height: 1.58;
+      font-size: clamp(16px, 1.06vw, 21px);
+      font-weight: 560;
+      line-height: 1.48;
     }
 
     .project-meta {
@@ -1399,7 +1411,7 @@
       border-radius: 999px;
       color: var(--cyan);
       font-family: Consolas, "SFMono-Regular", monospace;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
     }
 
@@ -1460,10 +1472,10 @@
 
     .project-detail {
       min-width: 0;
-      padding: clamp(26px, 2.4vw, 43px);
+      padding: clamp(22px, 2vw, 36px);
       display: grid;
       align-content: start;
-      gap: 22px;
+      gap: 18px;
       background:
         linear-gradient(180deg, rgba(78, 156, 255, 0.08), transparent 34%),
         rgba(5, 13, 24, 0.2);
@@ -1480,21 +1492,22 @@
     .project-detail h3 {
       margin: 0;
       color: var(--ink);
-      font-size: clamp(29px, 2.4vw, 46px);
+      font-size: clamp(32px, 2.45vw, 50px);
       line-height: 1.2;
     }
 
     .project-detail p {
       margin: 0;
       color: var(--text);
-      font-size: clamp(17px, 1.16vw, 22px);
-      line-height: 1.7;
+      font-size: clamp(18px, 1.2vw, 24px);
+      font-weight: 560;
+      line-height: 1.58;
     }
 
     .trail {
       display: grid;
-      gap: 18px;
-      margin-top: 10px;
+      gap: 12px;
+      margin-top: 4px;
     }
 
     .trail-step {
@@ -1502,7 +1515,7 @@
       grid-template-columns: 48px minmax(0, 1fr);
       gap: 14px;
       align-items: start;
-      padding: 17px;
+      padding: 15px;
       border: 1px solid rgba(236, 246, 244, 0.1);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.035);
@@ -1524,7 +1537,7 @@
     .trail-step strong {
       display: block;
       color: var(--ink);
-      font-size: 16px;
+      font-size: 17px;
       line-height: 1.25;
     }
 
@@ -1532,8 +1545,8 @@
       display: block;
       margin-top: 7px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.35;
+      font-size: 15px;
+      line-height: 1.34;
     }
 
     .repo-shell {
@@ -1576,7 +1589,7 @@
       outline: none;
       background: transparent;
       color: var(--ink);
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .repo-search::placeholder {
@@ -1631,7 +1644,7 @@
     .repo-card h3 {
       margin: 0 0 8px;
       color: var(--ink);
-      font-size: clamp(19px, 1.25vw, 25px);
+      font-size: clamp(20px, 1.32vw, 27px);
       line-height: 1.25;
     }
 
@@ -1646,8 +1659,8 @@
     .repo-description {
       margin: 0;
       color: var(--text);
-      font-size: clamp(13px, 0.82vw, 16px);
-      line-height: 1.45;
+      font-size: clamp(14px, 0.92vw, 17px);
+      line-height: 1.5;
       display: -webkit-box;
       overflow: hidden;
       -webkit-box-orient: vertical;
@@ -1683,7 +1696,7 @@
       border: 1px dashed rgba(236, 246, 244, 0.15);
       border-radius: var(--radius);
       color: var(--text);
-      font-size: 14px;
+      font-size: 16px;
       text-align: center;
     }
 
@@ -1884,8 +1897,28 @@
         padding-top: 52px;
       }
 
+      .hero-copy {
+        grid-template-columns: 1fr;
+        width: min(100%, 980px);
+      }
+
+      .copy-line-primary,
+      .copy-line-secondary {
+        max-width: 100%;
+      }
+
       .section {
         scroll-margin-top: 164px;
+      }
+
+      .section > .lens-console,
+      .section > .project-stage,
+      .section > .archive-panel {
+        min-height: auto;
+      }
+
+      .project-console {
+        min-height: auto;
       }
 
       .game-mosaic {
@@ -1921,25 +1954,55 @@
     }
 
     @media (max-width: 720px) {
+      .nav {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 10px;
+        min-height: auto;
+        padding: 10px 0;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+      }
+
       .nav-links {
-        flex-wrap: wrap;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 6px;
+        flex-wrap: nowrap;
         overflow-x: visible;
       }
 
       .nav-links a {
+        min-height: 38px;
+        padding: 6px 4px;
+        font-size: 13.5px;
+      }
+
+      .nav-resume {
+        grid-column: 2;
+        grid-row: 1;
         min-height: 42px;
-        padding: 8px 10px;
+        padding: 8px 12px;
         font-size: 14px;
       }
 
       .section {
         width: 100%;
-        min-height: 100svh;
-        padding: 76px 10px;
+        min-height: auto;
+        padding: 58px 10px;
       }
 
       .section h2 {
-        font-size: clamp(44px, 14vw, 68px);
+        font-size: clamp(42px, 14vw, 66px);
       }
 
       .section-heading p:last-child,
@@ -1968,7 +2031,8 @@
 
       .hero-copy {
         gap: 9px;
-        width: calc(100vw - 20px);
+        grid-template-columns: 1fr;
+        width: 100%;
         max-width: 100%;
         margin-top: 24px;
       }
@@ -1986,7 +2050,7 @@
       }
 
       .hero-actions {
-        width: calc(100vw - 20px);
+        width: 100%;
         grid-template-columns: 1fr;
       }
 
@@ -2143,7 +2207,7 @@
       </div>
       <a class="nav-resume" href="resume.html">
         <i data-lucide="file-text"></i>
-        获取简历
+        简历
       </a>
     </nav>
   </header>
@@ -2153,19 +2217,19 @@
       <div class="hero-inner">
         <div class="hero-content">
           <div class="hero-frame">
-            <p class="eyebrow reveal">Technology · Life · Personal World</p>
+            <p class="eyebrow reveal">Real devices · Field feedback · Personal pace</p>
             <h1 id="hero-title" class="reveal">
-              <span>Hello, I am</span>
-              <span>Shuqi Ke</span>
+              <span>Shuqi</span>
+              <span>Ke</span>
             </h1>
             <p class="hero-copy reveal">
-              <span class="copy-line copy-line-primary">我用计算机视觉、边缘 AI 和机器人学习做实用系统，让模型从实验走向能运行的真实设备。</span>
-              <span class="copy-line copy-line-secondary">Beyond technology, this space keeps my games, music, reading, and long-view thinking in view. It shows what I make, and also how I notice, choose, and live.</span>
+              <span class="copy-line copy-line-primary">我把视觉模型、边缘推理和机器人学习放进真实设备里验证。</span>
+              <span class="copy-line copy-line-secondary">跑得动、测得出、能复现，才算完成。专业时我关心数据、误差、延迟和现场约束；生活里，我也认真保留游戏、音乐、阅读和让自己保持清醒的东西。</span>
             </p>
             <div class="hero-actions reveal">
               <a class="button button-primary" href="#projects" data-marker="01">
                 <i data-lucide="radar"></i>
-                View Projects
+                看项目
               </a>
               <a class="button button-ghost" href="https://github.com/ksukie" target="_blank" rel="noreferrer" data-marker="02">
                 <i data-lucide="git-branch"></i>
@@ -2173,7 +2237,7 @@
               </a>
               <a class="button button-ghost" href="resume.html" data-marker="03">
                 <i data-lucide="file-text"></i>
-                获取简历
+                打开简历
               </a>
             </div>
           </div>
@@ -2186,9 +2250,9 @@
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">Operating Mode</p>
-          <h2 id="profile-title">Vision, edge, robotics.</h2>
+          <h2 id="profile-title">Build. Deploy. Verify.</h2>
         </div>
-        <p>把模型训练、部署和设备验证连成可复用的工程流程。</p>
+        <p>我更在意系统能不能在设备、数据和现场条件里稳定工作，而不是只停在一组离线指标上。</p>
       </div>
 
       <div class="lens-console">
@@ -2210,7 +2274,7 @@
         <div class="method-grid">
           <article class="reveal tilt-card" data-index="01">
             <h3>Computer Vision</h3>
-            <p>目标检测、语义分割、医学图像与交通/火灾感知场景，关注误检、边界、尺度和实时性问题。</p>
+            <p>从数据分布和错误类型切入，再决定模型、后处理和评估方式。准确率只是起点，误检、边界和实时性同样要被看见。</p>
             <div class="method-tags">
               <span class="tag">YOLO</span>
               <span class="tag">Segmentation</span>
@@ -2219,7 +2283,7 @@
           </article>
           <article class="reveal tilt-card" data-index="02">
             <h3>Edge Deployment</h3>
-            <p>ONNX、TensorRT、Jetson、RKNN、GStreamer 与多路相机链路，把模型推理接到真实设备。</p>
+            <p>把模型导出、量化、推理后端和相机链路接起来，关心吞吐、延迟、内存和现场稳定性。</p>
             <div class="method-tags">
               <span class="tag">TensorRT</span>
               <span class="tag">Jetson</span>
@@ -2228,7 +2292,7 @@
           </article>
           <article class="reveal tilt-card" data-index="03">
             <h3>Robot Learning</h3>
-            <p>围绕 LeRobot、Piper、触觉相机和模仿学习数据闭环，探索视觉触觉策略训练与真机评估。</p>
+            <p>围绕 LeRobot、Piper 和触觉相机搭建数据闭环，让策略训练、回放检查和真机评估能够接上。</p>
             <div class="method-tags">
               <span class="tag">LeRobot</span>
               <span class="tag">Tactile</span>
@@ -2237,7 +2301,7 @@
           </article>
           <article class="reveal tilt-card" data-index="04">
             <h3>Engineering Loop</h3>
-            <p>从 0 到 1 搭系统，喜欢钻细节，也喜欢把问题拆成可复现、可定位、可交付的工程步骤。</p>
+            <p>喜欢钻细节，也喜欢把问题拆成日志、基准、复现实验和交付路径，让复杂问题能被一步步按住。</p>
             <div class="method-tags">
               <span class="tag">Debug</span>
               <span class="tag">Benchmark</span>
@@ -2247,7 +2311,7 @@
           <div class="focus-readout reveal" aria-live="polite">
             <div>
               <strong data-lens-title>Computer Vision</strong>
-              <p data-lens-copy>把检测、分割和多场景感知问题拆成数据、误差、实时性和可部署性几个可验证的环节。</p>
+              <p data-lens-copy>先看数据分布、错误类型和场景约束，再决定模型结构和后处理；准确率、误检、边界和实时性都要被验证。</p>
             </div>
             <div class="readout-meter" aria-hidden="true"><span data-lens-meter style="--meter: 82%;"></span></div>
           </div>
@@ -2259,17 +2323,17 @@
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">Life Archive / 生活档案</p>
-          <h2 id="life-title">Life Archive.</h2>
+          <h2 id="life-title">Life, in full color.</h2>
         </div>
-        <p>把游戏、音乐和阅读收进另一个世界层，保留技术之外的清醒、好奇和节奏。</p>
+        <p>游戏给我节奏，音乐给情绪，阅读帮我把问题想远一点。这里放的是技术之外，仍然真实的一部分。</p>
       </div>
 
       <div class="archive-panel reveal">
         <div class="life-console">
           <aside class="life-command" aria-label="生活档案控制台">
             <span class="life-label">Life-world / Node 02</span>
-            <p class="taste-quote"><span>As long as you stay clear,</span><span>there is always enough time.</span></p>
-            <p class="life-copy">这里不是技术栈的附录，而是这个个人世界的另一套坐标：玩什么、听什么、读什么。</p>
+            <p class="taste-quote"><span>Stay clear.</span><span>Keep moving.</span></p>
+            <p class="life-copy">我喜欢把生活也整理成能回头看的坐标：通关时的投入、循环播放的歌，还有读完以后会改变判断的句子。</p>
             <div class="taste-tabs" role="tablist" aria-label="生活档案分类">
               <button class="taste-tab is-active" type="button" role="tab" aria-selected="true" data-taste-tab="games" data-index="01"><i data-lucide="gamepad-2"></i><span>Games</span></button>
               <button class="taste-tab" type="button" role="tab" aria-selected="false" data-taste-tab="music" data-index="02"><i data-lucide="music-2"></i><span>Music</span></button>
@@ -2279,8 +2343,8 @@
 
           <div class="life-deck">
             <div class="life-panel-heading">
-              <span>Personal Signals</span>
-              <span>Games / Music / Reading</span>
+              <span>Personal signals</span>
+              <span>Play / Listen / Read</span>
             </div>
             <div class="taste-panel">
 
@@ -2289,37 +2353,37 @@
               <a class="interest-card tile-xl" href="https://lol.qq.com/main.shtml" target="_blank" rel="noreferrer">
                 <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="League of Legends" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>League of Legends</strong>
-                <span>China Official</span>
+                <span>Team rhythm</span>
               </a>
               <a class="interest-card tile-mid" href="https://lol.qq.com/tft/#/index" target="_blank" rel="noreferrer">
                 <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg" alt="Teamfight Tactics" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Teamfight Tactics</strong>
-                <span>China Official</span>
+                <span>Late-night board</span>
               </a>
               <a class="interest-card tile-mid" href="https://store.steampowered.com/app/3590/Plants_vs_Zombies_GOTY_Edition/" target="_blank" rel="noreferrer">
                 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/3590/header.jpg" alt="Plants vs. Zombies" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Plants vs. Zombies</strong>
-                <span>Steam</span>
+                <span>Classic defense</span>
               </a>
               <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1426210/It_Takes_Two/" target="_blank" rel="noreferrer">
                 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg" alt="It Takes Two" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>It Takes Two</strong>
-                <span>Steam</span>
+                <span>Co-op story</span>
               </a>
               <a class="interest-card tile-wide" href="https://store.steampowered.com/app/939400/LoveChoice/" target="_blank" rel="noreferrer">
                 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/939400/header.jpg" alt="LoveChoice" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>LoveChoice</strong>
-                <span>Steam</span>
+                <span>Small decisions</span>
               </a>
               <a class="interest-card tile-mid" href="https://store.steampowered.com/app/1237970/Titanfall_2/" target="_blank" rel="noreferrer">
                 <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1237970/header.jpg" alt="Titanfall 2" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Titanfall</strong>
-                <span>Steam</span>
+                <span>Movement shooter</span>
               </a>
               <a class="interest-card tile-wide" href="https://roco.qq.com/" target="_blank" rel="noreferrer">
                 <img src="assets/taste/roco-kingdom.webp" alt="Roco Kingdom" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Roco Kingdom</strong>
-                <span>China Official</span>
+                <span>Childhood map</span>
               </a>
                 </div>
               </div>
@@ -2329,32 +2393,32 @@
               <button class="interest-card artist-card is-active" type="button" data-artist="Jay Chou" data-songs="晴天|七里香|以父之名|夜曲|稻香|简单爱|不能说的秘密|一路向北|轨迹|爱在西元前">
                 <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M0000025NhlN2yWrP4_11.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Jay Chou</strong>
-                <span>Mandarin</span>
+                <span>旋律与记忆</span>
               </button>
               <button class="interest-card artist-card" type="button" data-artist="Eason Chen" data-songs="浮夸|十年|爱情转移|单车|富士山下|陀飞轮|苦瓜|沙龙|夕阳无限好|最佳损友">
                 <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000003Nz2So3XXYek_4.jpg" alt="Eason Chen" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Eason Chen</strong>
-                <span>Cantonese</span>
+                <span>粤语叙事</span>
               </button>
               <button class="interest-card artist-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|我的宣言|天窗|到此为止|还记得|同天空|宏愿|一事无成|百年不合">
                 <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M00000180Rk61RE4qh_4.jpg" alt="Pakho Chau" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Pakho Chau</strong>
-                <span>Cantonese</span>
+                <span>安静后劲</span>
               </button>
               <button class="interest-card artist-card" type="button" data-artist="Joker Xue" data-songs="演员|丑八怪|认真的雪|绅士|天外来物|刚刚好|其实|意外|你还要我怎样|我好像在哪见过你">
                 <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000002J4UUk29y8BY_7.jpg" alt="Joker Xue" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Joker Xue</strong>
-                <span>Mandarin</span>
+                <span>情绪切面</span>
               </button>
               <button class="interest-card artist-card" type="button" data-artist="JJ Lin" data-songs="江南|修炼爱情|可惜没如果|她说|不为谁而作的歌|曹操|小酒窝|美人鱼|Always Online|一千年以后">
                 <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000001BLpXF2DyJe2_13.jpg" alt="JJ Lin" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>JJ Lin</strong>
-                <span>Mandarin</span>
+                <span>清亮声线</span>
               </button>
               <button class="interest-card artist-card" type="button" data-artist="아이유" data-songs="Blueming|Celebrity|Palette|Through the Night|Love poem|Eight|Good Day|Twenty-three|strawberry moon|BBIBBI">
                 <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000004Bjyj52RTYOj_7.jpg" alt="아이유" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>아이유</strong>
-                <span>K-pop</span>
+                <span>柔软光线</span>
               </button>
                 </div>
                 <div class="track-panel" data-track-panel aria-live="polite"></div>
@@ -2365,32 +2429,32 @@
               <article class="interest-card book-card">
                 <img src="assets/taste/the-courage-to-be-disliked.jpg" alt="The Courage to Be Disliked" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>The Courage to Be Disliked</strong>
-                <span>Book</span>
+                <span>Freedom</span>
               </article>
               <article class="interest-card book-card">
                 <img src="assets/taste/what-life-could-mean-to-you.jpg" alt="What Life Could Mean to You" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>What Life Could Mean to You</strong>
-                <span>Book</span>
+                <span>Meaning</span>
               </article>
               <article class="interest-card book-card">
                 <img src="assets/taste/to-kill-a-mockingbird.jpg" alt="To Kill a Mockingbird" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>To Kill a Mockingbird</strong>
-                <span>Book</span>
+                <span>Justice</span>
               </article>
               <article class="interest-card book-card">
                 <img src="assets/taste/understanding-human-nature.jpg" alt="Understanding Human Nature" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Understanding Human Nature</strong>
-                <span>Book</span>
+                <span>People</span>
               </article>
               <article class="interest-card book-card">
                 <img src="assets/taste/procrastination.jpg" alt="Procrastination" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Procrastination</strong>
-                <span>Book</span>
+                <span>Action</span>
               </article>
               <article class="interest-card book-card">
                 <img src="assets/taste/the-crowd.jpg" alt="The Crowd: A Study of the Popular Mind" loading="lazy" onerror="this.closest('.interest-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>The Crowd: A Study of the Popular Mind</strong>
-                <span>Book</span>
+                <span>Society</span>
               </article>
                 </div>
               </div>
@@ -2404,9 +2468,9 @@
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">Projects / 项目成果</p>
-          <h2 id="projects-title">Selected project outcomes.</h2>
+          <h2 id="projects-title">Systems that leave the lab.</h2>
         </div>
-        <p>Public projects link to GitHub. Private work stays as concise notes.</p>
+        <p>公开项目可跳转 GitHub；私有项目保留关键场景、难点和交付方式，让成果不只是一个名字。</p>
       </div>
 
       <div class="project-stage reveal">
@@ -2432,9 +2496,9 @@
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">GitHub Repositories</p>
-          <h2 id="repos-title">Repos.</h2>
+          <h2 id="repos-title">Public code traces.</h2>
         </div>
-        <p>Search, filter, and sort public repositories.</p>
+        <p>按语言、更新时间和关键词浏览公开仓库，看到最近留下的代码痕迹。</p>
       </div>
 
       <div class="repo-shell reveal">
@@ -2471,7 +2535,7 @@
       <div class="contact-panel reveal">
         <div>
           <p class="eyebrow">Contact / 联系</p>
-          <h3 id="contact-title">Email, profile, and GitHub.</h3>
+          <h3 id="contact-title">Email, resume, GitHub.</h3>
         </div>
         <div class="contact-actions">
           <a class="contact-link" href="mailto:15707039996@163.com">
@@ -2514,12 +2578,12 @@
         category: "Robot",
         status: "Private",
         tags: ["VLA", "LeRobot", "Tactile"],
-        summary: "视觉-触觉机器人学习与真机训练推理栈。",
-        detail: "基于 LeRobot 构建数据采集、训练、推理和真机验证流程。",
+        summary: "把视觉、触觉和机械臂动作链路接成可训练、可回放、可真机验证的机器人学习栈。",
+        detail: "围绕 LeRobot 与 Piper 搭建采集、episode 管理、策略训练和推理验证流程，重点处理数据一致性和真机闭环。",
         trail: [
-          ["Input", "Piper 与触觉相机接入"],
-          ["Data", "episode 录制与回放"],
-          ["Policy", "训练、推理、真机验证"]
+          ["Sense", "视觉与触觉输入同步"],
+          ["Dataset", "episode 录制、回放、检查"],
+          ["Policy", "训练、推理、真机评估"]
         ],
         private: true
       },
@@ -2529,12 +2593,12 @@
         category: "Vision",
         status: "Public",
         tags: ["YOLO", "TensorRT", "Jetson"],
-        summary: "森林火灾检测、端侧部署与 Web 预警系统。",
-        detail: "完成火焰 / 烟雾检测、TensorRT 推理、Jetson 部署和控制台联动。",
+        summary: "面向森林火灾场景，把检测模型、TensorRT 推理和 Web 预警控制台接成端侧系统。",
+        detail: "从火焰 / 烟雾检测到 Jetson 部署，处理模型导出、推理性能、告警展示和现场链路联动。",
         trail: [
-          ["Detect", "火焰 / 烟雾检测"],
-          ["Optimize", "ONNX / TensorRT"],
-          ["Deploy", "Jetson 与 Web 控制台"]
+          ["Detect", "火焰 / 烟雾目标检测"],
+          ["Optimize", "ONNX / TensorRT 推理"],
+          ["Deploy", "Jetson 与 Web 告警"]
         ],
         url: "https://github.com/ksukie/WildfireAegis"
       },
@@ -2544,12 +2608,12 @@
         category: "Edge",
         status: "Private",
         tags: ["Optical Flow", "INT8", "Deploy"],
-        summary: "双帧运动向量预测与端侧量化部署。",
-        detail: "面向微小位移估计，完成 FP16 / INT8 量化和推理一致性检查。",
+        summary: "面向微小位移估计，把双帧运动向量预测压到可部署的边缘推理形态。",
+        detail: "完成模型导出、FP16 / INT8 量化、端侧一致性检查，重点验证精度损失与推理吞吐。",
         trail: [
           ["Frame", "双帧 RGB 输入"],
-          ["Quant", "FP16 / INT8 量化"],
-          ["Check", "端侧一致性验证"]
+          ["Quant", "FP16 / INT8 部署"],
+          ["Check", "精度与吞吐验证"]
         ],
         private: true
       },
@@ -2559,12 +2623,12 @@
         category: "Edge",
         status: "Private",
         tags: ["OpenCV", "RV1126B", "RK3588"],
-        summary: "五路相机标记点检测与边缘实时追踪。",
-        detail: "覆盖摄像头接入、标记点检测、现场校准、日志分析和性能基准。",
+        summary: "面向多路相机现场，把标记点检测、追踪、校准和日志分析做成可调试链路。",
+        detail: "覆盖 RV1126B / RK3588 等边缘设备的图像接入、OpenCV 处理、异常定位和性能基准。",
         trail: [
-          ["Capture", "多路相机接入"],
-          ["Track", "检测、追踪、校准"],
-          ["Bench", "日志与性能基准"]
+          ["Capture", "多路图像接入"],
+          ["Track", "标记点检测与追踪"],
+          ["Bench", "日志、校准、性能基准"]
         ],
         private: true
       }
@@ -2573,22 +2637,22 @@
     const lensCopy = {
       vision: {
         title: "Computer Vision",
-        copy: "把检测、分割和多场景感知问题拆成数据、误差、实时性和可部署性几个可验证的环节。",
+        copy: "先看数据分布、错误类型和场景约束，再决定模型结构和后处理；准确率、误检、边界和实时性都要被验证。",
         meter: "82%"
       },
       edge: {
         title: "Edge Deployment",
-        copy: "关注模型导出、量化、推理后端、相机链路和现场性能，让算法真的跑在设备上。",
+        copy: "把模型放到 Jetson、RK3588 等设备上，关注导出格式、量化误差、相机链路和吞吐延迟，让算法真的进入现场。",
         meter: "88%"
       },
       robot: {
         title: "Robot Learning",
-        copy: "把视觉、触觉、机械臂控制和模仿学习数据合在一起，优先打通可复现实验链路。",
+        copy: "把视觉、触觉、机械臂控制和模仿学习数据合在一起，优先打通能采集、能回放、能评估的实验链路。",
         meter: "74%"
       },
       loop: {
         title: "Engineering Loop",
-        copy: "从现象定位到基准、日志、复现脚本和交付路径，尽量让每个问题都能被再次验证。",
+        copy: "从现象定位到基准、日志、复现脚本和交付路径，尽量让每个问题都有下一步，而不是停在猜测里。",
         meter: "91%"
       }
     };
@@ -2690,29 +2754,65 @@
       const sections = links
         .map((link) => document.querySelector(link.getAttribute("href")))
         .filter(Boolean);
-      const clearNearTop = () => {
-        if (window.scrollY < Math.max(260, window.innerHeight * 0.58)) {
-          links.forEach((link) => link.classList.remove("is-active"));
-        }
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const getHeaderOffset = () => (document.querySelector(".site-header")?.offsetHeight || 96) + 24;
+
+      const scrollToSection = (section) => {
+        const top = window.scrollY + section.getBoundingClientRect().top - getHeaderOffset();
+        window.scrollTo({
+          top: Math.max(0, top),
+          behavior: reduceMotion ? "auto" : "smooth"
+        });
       };
 
-      const observer = new IntersectionObserver((entries) => {
-        if (window.scrollY < Math.max(260, window.innerHeight * 0.58)) {
+      const update = () => {
+        const headerOffset = getHeaderOffset();
+        if (window.scrollY < Math.max(160, window.innerHeight * 0.32)) {
           links.forEach((link) => link.classList.remove("is-active"));
           return;
         }
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        const positions = sections
+          .map((section) => ({ section, top: section.getBoundingClientRect().top }));
+        const visible = positions
+          .filter((item) => item.top <= headerOffset + 120)
+          .sort((a, b) => b.top - a.top)[0]
+          || positions
+            .sort((a, b) => Math.abs(a.top - headerOffset) - Math.abs(b.top - headerOffset))[0];
+
         if (!visible) return;
         links.forEach((link) => {
-          link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.target.id}`);
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.section.id}`);
         });
-      }, { rootMargin: "-30% 0px -55% 0px", threshold: [0.08, 0.2, 0.45] });
+      };
 
-      sections.forEach((section) => observer.observe(section));
-      clearNearTop();
-      window.addEventListener("scroll", clearNearTop, { passive: true });
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const section = document.querySelector(link.getAttribute("href"));
+          if (!section) return;
+          event.preventDefault();
+          history.pushState(null, "", link.getAttribute("href"));
+          scrollToSection(section);
+          window.setTimeout(update, reduceMotion ? 80 : 420);
+        });
+      });
+
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+      window.addEventListener("hashchange", () => {
+        const section = document.querySelector(window.location.hash);
+        if (section) scrollToSection(section);
+        window.setTimeout(update, reduceMotion ? 80 : 420);
+      });
+
+      if (window.location.hash) {
+        window.setTimeout(() => {
+          const section = document.querySelector(window.location.hash);
+          if (section) scrollToSection(section);
+          update();
+        }, 80);
+      }
     }
 
     function setupTilt() {
@@ -2840,7 +2940,7 @@
         if (!artist || !trackPanel) return;
         const songs = (artist.dataset.songs || "").split("|").filter(Boolean);
         trackPanel.innerHTML = `
-          <strong>${escapeHtml(artist.dataset.artist)} / 推荐曲目</strong>
+          <strong>${escapeHtml(artist.dataset.artist)} / 循环播放</strong>
           <div class="track-list">
             ${songs.map((song) => `<span>${escapeHtml(song)}</span>`).join("")}
           </div>
@@ -3020,7 +3120,7 @@
         languageFilter.innerHTML = items.map((language) => `
           <button class="chip-button ${state.language === language ? "is-active" : ""}" type="button" data-language="${escapeHtml(language)}">
             ${language !== "All" ? `<span class="language-dot" style="--language-color: ${languageColor(language)}"></span>` : `<i data-lucide="layers-3"></i>`}
-            ${escapeHtml(language === "All" ? "全部" : language)}
+            ${escapeHtml(language === "All" ? "全部语言" : language)}
           </button>
         `).join("");
 
@@ -3061,7 +3161,7 @@
       function renderRepos() {
         const repos = getVisibleRepos();
         if (!repos.length) {
-          grid.innerHTML = `<div class="repo-empty">没有匹配的公开仓库。</div>`;
+          grid.innerHTML = `<div class="repo-empty">暂时没有匹配的公开仓库。</div>`;
           return;
         }
 
@@ -3130,7 +3230,7 @@
         console.error(error);
         grid.innerHTML = `
           <div class="repo-empty">
-            GitHub 仓库暂时无法载入。可以直接访问
+            GitHub 仓库暂时无法载入，可以直接访问
             <a href="https://github.com/${GITHUB_USER}?tab=repositories" target="_blank" rel="noreferrer">github.com/${GITHUB_USER}</a>
           </div>
         `;
