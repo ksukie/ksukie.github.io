@@ -6125,7 +6125,9 @@
         padding: var(--srs-18, 18px);
       }
 
-      .hero-bridge {
+      .hero-bridge,
+      .life-bridge,
+      .contact-bridge {
         padding-top: var(--srs-216, 216px);
       }
 
@@ -6924,12 +6926,16 @@
     }
 
     /* hero-bridge-small-screen-fit */
-    .hero-bridge .bridge-copy {
+    .hero-bridge .bridge-copy,
+    .life-bridge .bridge-copy,
+    .contact-bridge .bridge-copy {
       width: min(var(--rs-1194, 1194px), calc(100vw - clamp(var(--rs-32, 32px), 8vw, var(--rs-112, 112px))));
       overflow: visible;
     }
 
-    .hero-bridge .bridge-inner h2 {
+    .hero-bridge .bridge-inner h2,
+    .life-bridge .bridge-inner h2,
+    .contact-bridge .bridge-inner h2 {
       max-width: 100%;
       font-size: clamp(var(--rs-34, 34px), 4.4vw, var(--rs-56, 56px));
       white-space: normal;
@@ -6937,39 +6943,53 @@
       overflow-wrap: normal;
     }
 
-    .hero-bridge .bridge-inner p:not(.eyebrow) {
+    .hero-bridge .bridge-inner p:not(.eyebrow),
+    .life-bridge .bridge-inner p:not(.eyebrow),
+    .contact-bridge .bridge-inner p:not(.eyebrow) {
       max-width: 100%;
       text-wrap: balance;
     }
 
     @media (max-width: 900px) {
-      .hero-bridge {
+      .hero-bridge,
+      .life-bridge,
+      .contact-bridge {
         padding-top: clamp(var(--rs-96, 96px), 15svh, var(--rs-150, 150px));
       }
 
-      .hero-bridge .bridge-copy {
+      .hero-bridge .bridge-copy,
+      .life-bridge .bridge-copy,
+      .contact-bridge .bridge-copy {
         width: calc(100vw - var(--rs-28, 28px));
         min-height: auto;
         padding: var(--rs-32, 32px) var(--rs-28, 28px);
       }
 
-      .hero-bridge .bridge-inner h2 {
+      .hero-bridge .bridge-inner h2,
+      .life-bridge .bridge-inner h2,
+      .contact-bridge .bridge-inner h2 {
         font-size: clamp(var(--rs-30, 30px), 7.4vw, var(--rs-48, 48px));
         line-height: 1.06;
       }
 
-      .hero-bridge .bridge-inner p:not(.eyebrow) {
+      .hero-bridge .bridge-inner p:not(.eyebrow),
+      .life-bridge .bridge-inner p:not(.eyebrow),
+      .contact-bridge .bridge-inner p:not(.eyebrow) {
         font-size: clamp(var(--rs-17, 17px), 3.2vw, var(--rs-22, 22px));
       }
     }
 
     @media (max-width: 520px) {
-      .hero-bridge .bridge-copy {
+      .hero-bridge .bridge-copy,
+      .life-bridge .bridge-copy,
+      .contact-bridge .bridge-copy {
         border-radius: var(--rs-42, 42px);
         padding: var(--rs-28, 28px) var(--rs-18, 18px);
       }
 
-      .hero-bridge .bridge-copy::before {
+      .hero-bridge .bridge-copy::before,
+      .life-bridge .bridge-copy::before,
+      .contact-bridge .bridge-copy::before {
         border-radius: var(--rs-42, 42px);
       }
     }
@@ -7345,24 +7365,6 @@
       height: 100svh;
     }
 
-    .life-bridge,
-    .contact-bridge {
-      place-items: center;
-      padding-top: clamp(34px, 4svh, 54px);
-      padding-bottom: clamp(34px, 4svh, 54px);
-    }
-
-    .life-bridge .bridge-inner,
-    .contact-bridge .bridge-inner {
-      align-content: center;
-      justify-items: center;
-    }
-
-    .life-bridge .bridge-copy,
-    .contact-bridge .bridge-copy {
-      justify-self: center;
-      margin-inline: auto;
-    }
   </style>
 </head>
 <body>
@@ -7416,7 +7418,7 @@
         <p>聚焦深度学习、视觉感知、边缘部署与机器人学习</p>
         </div>
         <div class="bridge-arrow" aria-hidden="true">
-          <span class="bridge-go">GO!</span>
+          <span class="bridge-go">GO</span>
           <i data-lucide="arrow-down"></i>
         </div>
       </div>
@@ -7537,7 +7539,7 @@
           <p>代码之外，每个人都有自己的人生branch</p>
         </div>
         <div class="bridge-arrow" aria-hidden="true">
-          <span class="bridge-go">Welcome!</span>
+          <span class="bridge-go">Welcome to my World</span>
           <i data-lucide="arrow-down"></i>
         </div>
       </div>
@@ -7822,7 +7824,7 @@
           <p>如果某个瞬间有共鸣，欢迎来信</p>
         </div>
         <div class="bridge-arrow" aria-hidden="true">
-          <span class="bridge-go">Contact!</span>
+          <span class="bridge-go">Contact</span>
           <i data-lucide="arrow-down"></i>
         </div>
       </div>
