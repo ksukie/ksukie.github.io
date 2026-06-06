@@ -5,121 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="柯书奇 - Computer Vision, Edge AI and Robotics portfolio" />
   <title>Shuqi Ke · Portfolio</title>
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/soft.css">
 </head>
 <body>
-  <canvas class="field-canvas" id="fieldCanvas" aria-hidden="true"></canvas>
-  <div class="scroll-progress" aria-hidden="true"></div>
-  <div class="toast" role="status" aria-live="polite"></div>
-
-  <header class="site-header">
-    <nav class="nav" aria-label="主导航">
-      <a class="brand" href="#top" aria-label="返回顶部">
-        <span class="brand-mark">&lt;K&gt;</span>
-        <span>Shuqi Ke</span>
-      </a>
-      <div class="nav-links">
-        <a href="#profile">能力</a>
-        <a href="#projects">项目</a>
-        <a href="#repos">仓库</a>
-        <a href="#life">关于我</a>
-        <a href="#contact">联系我</a>
-      </div>
-      <a class="nav-resume" href="resume.html" target="_blank" rel="noreferrer">
-        <i data-lucide="file-text"></i>
-        获取简历
-      </a>
-    </nav>
-  </header>
-
-  <button class="nav-hanger" type="button" aria-label="点击我，展开导航栏" aria-expanded="false">
-    <span class="nav-hanger-pin" aria-hidden="true"></span>
-    <span class="nav-hanger-rope" aria-hidden="true"></span>
-    <span class="nav-hanger-ball" aria-hidden="true"></span>
-  </button>
-
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <div class="hero-frame">
-            <p class="eyebrow reveal">Technology · Life · Personal World</p>
-            <h1 id="hero-title" class="reveal">
-              <span>Hello, I am</span>
-              <span>Shuqi Ke</span>
-            </h1>
-            <p class="hero-copy reveal">
-              <span class="copy-line copy-line-secondary">I focus on computer vision, deep learning, edge AI, and robot learning, bringing models into real-world scenarios.</span>
-            </p>
-            <div class="hero-actions reveal">
-              <a class="button button-primary" href="#profile" data-marker="01">
-                <i data-lucide="radar"></i>
-                View Projects
-              </a>
-              <a class="button button-ghost" href="https://github.com/ksukie" target="_blank" rel="noreferrer" data-marker="02">
-                <i data-lucide="git-branch"></i>
-                GitHub
-              </a>
-              <a class="button button-ghost" href="resume.html" target="_blank" rel="noreferrer" data-marker="03">
-                <i data-lucide="file-text"></i>
-                获取简历
-              </a>
-              <a class="button button-ghost theme-switch-button" href="soft.html" data-marker="04">
-                <i data-lucide="sun"></i>
-                切换浅色版
-              </a>
-            </div>
-          </div>
+  <div class="page">
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="#top" aria-label="返回顶部">
+          <span class="brand-mark">&lt;K&gt;</span>
+          <span>Shuqi Ke</span>
+        </a>
+        <div class="nav-links">
+          <a href="#profile">能力</a>
+          <a href="#projects">项目</a>
+          <a href="#repos">仓库</a>
+          <a href="#life">关于我</a>
+          <a href="#contact">联系我</a>
         </div>
+        <a class="nav-resume" href="resume.html" target="_blank" rel="noreferrer">获取简历</a>
+      </nav>
+    </header>
 
-      </div>
-    </section>
+    <button class="nav-hanger" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span class="nav-hanger-pin" aria-hidden="true"></span>
+      <span class="nav-hanger-rope" aria-hidden="true"></span>
+      <span class="nav-hanger-ball" aria-hidden="true"></span>
+    </button>
+
+    <main class="hero" id="top">
+      <section class="hero-content" aria-labelledby="hero-title">
+        <h1 id="hero-title">Hello, I'm Shuqi Ke</h1>
+        <p class="copy">I focus on computer vision, deep learning, edge AI, and robot learning, bringing models into real-world scenarios.</p>
+
+        <div class="actions">
+          <a class="button button-primary" href="#profile">View Projects</a>
+          <a class="button" href="https://github.com/ksukie" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button" href="resume.html" target="_blank" rel="noreferrer">获取简历</a>
+          <a class="button theme-switch-button" href="index.html">切换深色版</a>
+        </div>
+      </section>
+    </main>
 
     <section class="hero-bridge" aria-labelledby="bridge-title">
-      <div class="bridge-inner reveal">
-        <h2 id="bridge-title">Vision / Edge AI / Robotics Operating</h2>
-        <p>聚焦深度学习、视觉感知、边缘部署与机器人学习</p>
-        <a class="bridge-arrow" href="#profile" aria-label="进入 Profile 区域">
-          <i data-lucide="arrow-down"></i>
-          <span>GO</span>
+      <div class="bridge-clickable-wrap">
+        <a class="g_clickable_link w-inline-block bridge-clickable-link" href="#profile" aria-label="进入 Profile 区域">
+          <span class="bridge-clickable-text">进入 Profile 区域</span>
         </a>
+      </div>
+      <div class="bridge-inner reveal">
+        <div class="bridge-copy">
+          <h2 id="bridge-title">Vision / Edge AI / Robotic Operating</h2>
+        <p>聚焦深度学习、视觉感知、边缘部署与机器人学习</p>
+        </div>
+        <div class="bridge-arrow" aria-hidden="true">
+          <span class="bridge-go">GO</span>
+          <i data-lucide="arrow-down"></i>
+        </div>
       </div>
     </section>
 
     <section class="section" id="profile" aria-labelledby="profile-title">
-      <div class="section-heading reveal">
+      <div class="section-heading">
         <div>
           <h2 id="profile-title">Vision, Edge, Robotics</h2>
-        </div>
-        <div class="profile-flow" aria-label="Profile workflow">
-          <span>Train</span>
-          <span class="flow-arrow">-&gt;</span>
-          <span>Deploy</span>
-          <span class="flow-arrow">-&gt;</span>
-          <span>Validate</span>
         </div>
       </div>
 
       <div class="lens-console">
-        <aside class="lens-panel reveal" aria-label="能力镜头">
+        <aside class="lens-panel" aria-label="能力镜头">
           <button class="lens-button is-active" type="button" data-lens="vision" data-index="01">
-            <span><i data-lucide="aperture"></i>Computer Vision</span>
+            <span class="lens-nav-content">
+              <span class="lens-nav-title"><i data-lucide="aperture"></i><strong>Computer Vision</strong></span>
+            </span>
           </button>
           <button class="lens-button" type="button" data-lens="edge" data-index="02">
-            <span><i data-lucide="microchip"></i>Edge Deployment</span>
+            <span class="lens-nav-content">
+              <span class="lens-nav-title"><i data-lucide="microchip"></i><strong>Edge Deployment</strong></span>
+            </span>
           </button>
           <button class="lens-button" type="button" data-lens="robot" data-index="03">
-            <span><i data-lucide="bot"></i>Robot Learning</span>
+            <span class="lens-nav-content">
+              <span class="lens-nav-title"><i data-lucide="bot"></i><strong>Robot Learning</strong></span>
+            </span>
           </button>
           <button class="lens-button" type="button" data-lens="loop" data-index="04">
-            <span><i data-lucide="repeat-2"></i>Engineering Loop</span>
+            <span class="lens-nav-content">
+              <span class="lens-nav-title"><i data-lucide="repeat-2"></i><strong>Engineering Loop</strong></span>
+            </span>
           </button>
         </aside>
 
         <div class="method-grid">
-          <article class="reveal tilt-card is-active" data-index="01" data-lens-card="vision" tabindex="0">
+          <article class="tilt-card is-active" data-index="01" data-lens-card="vision" tabindex="0">
             <h3>Computer Vision</h3>
-            <p>目标检测、语义分割与多场景视觉识别能力，能够完成数据处理、模型训练、损失调优、模块创新、评估验证与实际场景适配。</p>
+            <p><span class="keyword-highlight">目标检测</span>、<span class="keyword-highlight">语义分割</span>与<span class="keyword-highlight">多场景视觉识别</span>能力，能够完成<span class="keyword-highlight">数据处理</span>、<span class="keyword-highlight">模型训练</span>、<span class="keyword-highlight">损失调优</span>、模块创新、评估验证与实际场景适配。</p>
             <div class="method-tags">
               <span class="tag">Deep Learning</span>
               <span class="tag">U-Net</span>
@@ -130,14 +109,13 @@
               <span class="tag">Medical Image</span>
             </div>
             <div class="method-card-detail" aria-hidden="false">
-              <strong>Computer Vision</strong>
               <p>把检测、分割和多场景感知问题拆成数据、误差、实时性和可部署性几个可验证的环节。</p>
               <div class="method-meter" aria-hidden="true"><span style="--meter: 82%;"></span></div>
             </div>
           </article>
-          <article class="reveal tilt-card" data-index="02" data-lens-card="edge" tabindex="0">
+          <article class="tilt-card" data-index="02" data-lens-card="edge" tabindex="0">
             <h3>Edge Deployment</h3>
-            <p>模型端侧部署能力，熟悉 ONNX、TensorRT、RKNN、Jetson、RK3588 与多路相机链路优化。</p>
+            <p><span class="keyword-highlight">模型端侧部署</span>能力，熟悉 <span class="keyword-highlight">ONNX</span>、<span class="keyword-highlight">TensorRT</span>、RKNN、Jetson、RK3588 与<span class="keyword-highlight">多路相机链路优化</span>。</p>
             <div class="method-tags">
               <span class="tag">TensorRT</span>
               <span class="tag">QAT</span>
@@ -146,14 +124,13 @@
               <span class="tag">RV1126</span>
             </div>
             <div class="method-card-detail" aria-hidden="true">
-              <strong>Edge Deployment</strong>
-              <p>关注模型导出、量化、推理后端、相机链路和现场性能，让算法真的跑在设备上。</p>
+              <p>关注量化感知训练、模型导出、推理后端、相机链路和现场性能，让算法真的跑在设备上。</p>
               <div class="method-meter" aria-hidden="true"><span style="--meter: 88%;"></span></div>
             </div>
           </article>
-          <article class="reveal tilt-card" data-index="03" data-lens-card="robot" tabindex="0">
+          <article class="tilt-card" data-index="03" data-lens-card="robot" tabindex="0">
             <h3>Robot Learning</h3>
-            <p>机器人学习流程搭建能力，覆盖 LeRobot 数据采集、模仿学习训练、触觉感知接入与真机验证。</p>
+            <p><span class="keyword-highlight">机器人学习流程</span>搭建能力，覆盖 <span class="keyword-highlight">LeRobot 数据采集</span>、<span class="keyword-highlight">模仿学习训练</span>、<span class="keyword-highlight">触觉感知接入</span>与真机验证。</p>
             <div class="method-tags">
               <span class="tag">Lerobot</span>
               <span class="tag">VTLA</span>
@@ -164,14 +141,13 @@
               <span class="tag">Data Collection</span>
             </div>
             <div class="method-card-detail" aria-hidden="true">
-              <strong>Robot Learning</strong>
               <p>把视觉、触觉、机械臂控制和模仿学习数据合在一起，优先打通可复现实验链路。</p>
               <div class="method-meter" aria-hidden="true"><span style="--meter: 74%;"></span></div>
             </div>
           </article>
-          <article class="reveal tilt-card" data-index="04" data-lens-card="loop" tabindex="0">
+          <article class="tilt-card" data-index="04" data-lens-card="loop" tabindex="0">
             <h3>Engineering Loop</h3>
-            <p>从原型到交付的工程闭环能力，能够进行问题定位、性能基准、日志分析与可复现实验设计。</p>
+            <p>从<span class="keyword-highlight">原型到交付</span>的<span class="keyword-highlight">工程闭环</span>能力，能够进行<span class="keyword-highlight">问题定位</span>、<span class="keyword-highlight">性能基准</span>、日志分析与<span class="keyword-highlight">可复现实验设计</span>。</p>
             <div class="method-tags">
               <span class="tag">Experimental Design</span>
               <span class="tag">Technical Documentation</span>
@@ -179,7 +155,6 @@
               <span class="tag">Benchmark</span>
             </div>
             <div class="method-card-detail" aria-hidden="true">
-              <strong>Engineering Loop</strong>
               <p>从现象定位到基准、日志、复现脚本和交付路径，尽量让每个问题都能被再次验证。</p>
               <div class="method-meter" aria-hidden="true"><span style="--meter: 91%;"></span></div>
             </div>
@@ -189,13 +164,20 @@
     </section>
 
     <section class="life-bridge" aria-labelledby="life-bridge-title">
-      <div class="bridge-inner reveal">
-        <h2 id="life-bridge-title">Life Archive</h2>
-        <p>代码之外，每个人都有自己的人生branch</p>
-        <a class="bridge-arrow" href="#life" aria-label="进入 Life Archive 区域">
-          <i data-lucide="arrow-down"></i>
-          <span>Welcome to my World</span>
+      <div class="bridge-clickable-wrap">
+        <a class="g_clickable_link w-inline-block bridge-clickable-link" href="#life" aria-label="进入 Life Archive 区域">
+          <span class="bridge-clickable-text">进入 Life Archive 区域</span>
         </a>
+      </div>
+      <div class="bridge-inner reveal">
+        <div class="bridge-copy">
+          <h2 id="life-bridge-title">Life Archive</h2>
+          <p>代码之外，每个人都有自己的人生branch</p>
+        </div>
+        <div class="bridge-arrow" aria-hidden="true">
+          <span class="bridge-go">Welcome to my Worldz</span>
+          <i data-lucide="arrow-down"></i>
+        </div>
       </div>
     </section>
 
@@ -207,13 +189,13 @@
             <h2 class="life-big-title" id="life-title">Life <span>Archive</span> <span class="life-title-cn">/ 人生档案</span></h2>
             <p class="life-lead life-lead-cn">只要你不混乱，时间永远够用</p>
             <p class="life-lead">As long as you stay clear, there is always enough time.</p>
-            <p class="life-lead">这里不是技术栈的延伸，而是生命的缤纷。欢迎参观代码之外，我的另一个 branch。</p>
+            <p class="life-lead">这里不是技术栈的延伸，而是生命的缤纷。欢迎参观代码之外，我的另一个 branch</p>
           </article>
 
           <article class="life-template-slide" data-life-slide="photography" data-life-caption="Photography" data-watermark="Photo">
             <div class="life-branch-note">
               <span>Branch note</span>
-              <p>分享生活，留住感动。</p>
+              <p>浮光里活出真我，人不算白过。</p>
             </div>
             <header class="life-template-title">
               <span>02</span>
@@ -249,12 +231,12 @@
             </header>
             <div class="life-template-grid life-game-grid" aria-label="游戏列表">
               <a class="life-card life-card-xl" href="https://lol.qq.com/main.shtml" target="_blank" rel="noreferrer">
-                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" alt="League of Legends" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/games/league-of-legends-jinx.jpg" alt="League of Legends" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>League of Legends</strong>
                 <small>China Official</small>
               </a>
               <a class="life-card life-card-tall" href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/578080/library_600x900_2x.jpg" alt="PUBG: BATTLEGROUNDS" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/games/pubg-battlegrounds.jpg" alt="PUBG: BATTLEGROUNDS" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>PUBG: BATTLEGROUNDS</strong>
                 <small>Steam</small>
               </a>
@@ -264,7 +246,7 @@
                 <small>China Official</small>
               </a>
               <a class="life-card life-card-mid" href="https://store.steampowered.com/app/3590/Plants_vs_Zombies_GOTY_Edition/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/3590/header.jpg" alt="Plants vs. Zombies" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/games/plants-vs-zombies.jpg" alt="Plants vs. Zombies" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Plants vs. Zombies</strong>
                 <small>Steam</small>
               </a>
@@ -274,24 +256,19 @@
                 <small>China Official</small>
               </a>
               <a class="life-card life-card-mid" href="https://store.steampowered.com/app/1426210/It_Takes_Two/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg" alt="It Takes Two" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/games/it-takes-two.jpg" alt="It Takes Two" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>It Takes Two</strong>
                 <small>Steam</small>
               </a>
               <a class="life-card life-card-mid" href="https://store.steampowered.com/app/1237970/Titanfall_2/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1237970/header.jpg" alt="Titanfall 2" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/games/titanfall-2.jpg" alt="Titanfall 2" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Titanfall</strong>
                 <small>Steam</small>
               </a>
               <a class="life-card life-card-wide" href="https://store.steampowered.com/app/939400/LoveChoice/" target="_blank" rel="noreferrer">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/939400/header.jpg" alt="LoveChoice" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/games/lovechoice.jpg" alt="LoveChoice" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>LoveChoice</strong>
                 <small>Steam</small>
-              </a>
-              <a class="life-card life-card-wide" href="https://roco.qq.com/" target="_blank" rel="noreferrer">
-                <img src="assets/taste/roco-kingdom.webp" alt="Roco Kingdom" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
-                <strong>Roco Kingdom</strong>
-                <small>China Official</small>
               </a>
             </div>
           </article>
@@ -309,32 +286,32 @@
             </header>
             <div class="life-template-grid life-music-grid" aria-label="歌手列表">
               <button class="life-card life-artist-card is-active" type="button" data-artist="Jay Chou" data-songs="晴天|七里香|以父之名|夜曲|稻香|简单爱|不能说的秘密|一路向北|轨迹|爱在西元前|青花瓷|半岛铁盒|龙卷风|发如雪|搁浅|等你下课|告白气球|开不了口|安静|说好的幸福呢">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M0000025NhlN2yWrP4_11.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/music/jay-chou.jpg" alt="Jay Chou" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Jay Chou</strong>
                 <small>Mandarin</small>
               </button>
               <button class="life-card life-artist-card" type="button" data-artist="Eason Chen" data-songs="浮夸|十年|爱情转移|单车|富士山下|陀飞轮|苦瓜|沙龙|夕阳无限好|最佳损友|明年今日|K歌之王|淘汰|好久不见|葡萄成熟时|岁月如歌|无条件|任我行|1874|人来人往">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000003Nz2So3XXYek_4.jpg" alt="Eason Chen" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/music/eason-chen.jpg" alt="Eason Chen" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Eason Chen</strong>
                 <small>Cantonese</small>
               </button>
               <button class="life-card life-artist-card" type="button" data-artist="Pakho Chau" data-songs="够钟|小白|我的宣言|天窗|到此为止|还记得|同天空|宏愿|一事无成|百年不合|传闻|相安无事|最好不过|乞丐王子|只有一事不成全你|同行|我不要被你记住|男人背后|磨牙|天光">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M00000180Rk61RE4qh_4.jpg" alt="Pakho Chau" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/music/pakho-chau.jpg" alt="Pakho Chau" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Pakho Chau</strong>
                 <small>Cantonese</small>
               </button>
               <button class="life-card life-artist-card" type="button" data-artist="Joker Xue" data-songs="演员|丑八怪|认真的雪|绅士|天外来物|刚刚好|其实|意外|你还要我怎样|我好像在哪见过你|方圆几里|动物世界|慢半拍|高尚|暧昧|违背的青春|怪咖|摩天大楼|丢手绢|黄色枫叶">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000002J4UUk29y8BY_7.jpg" alt="Joker Xue" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/music/joker-xue.jpg" alt="Joker Xue" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>Joker Xue</strong>
                 <small>Mandarin</small>
               </button>
               <button class="life-card life-artist-card" type="button" data-artist="JJ Lin" data-songs="江南|修炼爱情|可惜没如果|她说|不为谁而作的歌|曹操|小酒窝|美人鱼|Always Online|一千年以后|背对背拥抱|那些你很冒险的梦|交换余生|伟大的渺小|豆浆油条|被风吹过的夏天|关键词|第几个100天|学不会|裂缝中的阳光">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000001BLpXF2DyJe2_13.jpg" alt="JJ Lin" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/music/jj-lin.jpg" alt="JJ Lin" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>JJ Lin</strong>
                 <small>Mandarin</small>
               </button>
               <button class="life-card life-artist-card" type="button" data-artist="아이유" data-songs="Blueming|Celebrity|Palette|Through the Night|Love poem|Eight|Good Day|Twenty-three|strawberry moon|BBIBBI|Lilac|Friday|You and I|Red Shoes|My sea|Dear Name|Hold My Hand|Love wins all|Shopper|Holssi">
-                <img src="https://y.gtimg.cn/music/photo_new/T001R500x500M000004Bjyj52RTYOj_7.jpg" alt="아이유" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
+                <img src="assets/life/music/iu.jpg" alt="아이유" loading="lazy" onerror="this.closest('.life-card').classList.add('is-image-missing'); this.remove();" />
                 <strong>아이유</strong>
                 <small>K-pop</small>
               </button>
@@ -418,13 +395,13 @@
     </section>
 
     <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading reveal">
+      <div class="section-heading">
         <div>
           <h2 id="projects-title">Selected project outcomes</h2>
         </div>
       </div>
 
-      <div class="project-stage reveal">
+      <div class="project-stage">
         <div class="project-console">
           <div class="project-main">
             <div class="project-toolbar">
@@ -444,62 +421,55 @@
     </section>
 
     <section class="section" id="repos" aria-labelledby="repos-title">
-      <div class="section-heading reveal">
-        <div>
-          <h2 id="repos-title">Repos</h2>
-        </div>
+      <div class="section-heading">
+        <h2 id="repos-title">Repos</h2>
       </div>
 
-      <div class="repo-shell reveal">
+      <div class="repo-shell">
         <div class="repo-toolbar">
           <label class="search-field">
-            <i data-lucide="search"></i>
             <input class="repo-search" type="search" placeholder="搜索仓库、描述、语言" aria-label="搜索公开仓库" />
           </label>
           <div class="sort-group" aria-label="仓库排序">
-            <button class="chip-button is-active" type="button" data-sort="updated">
-              <i data-lucide="clock-3"></i>
-              Updated
-            </button>
-            <button class="chip-button" type="button" data-sort="stars">
-              <i data-lucide="star"></i>
-              Stars
-            </button>
-            <button class="chip-button" type="button" data-sort="name">
-              <i data-lucide="arrow-down-a-z"></i>
-              Name
-            </button>
+            <button class="chip-button is-active" type="button" data-sort="updated">Updated</button>
+            <button class="chip-button" type="button" data-sort="stars">Stars</button>
+            <button class="chip-button" type="button" data-sort="name">Name</button>
           </div>
         </div>
         <div class="language-filter" aria-label="语言筛选"></div>
         <div class="repo-grid" aria-live="polite">
-          <div class="repo-loading">
-            <div class="loading-line" aria-hidden="true"></div>
-          </div>
+          <div class="repo-loading"></div>
         </div>
       </div>
     </section>
 
     <section class="contact-bridge" aria-labelledby="contact-bridge-title">
-      <div class="bridge-inner reveal">
-        <h2 id="contact-bridge-title">Welcome to contact</h2>
-        <p>如果某个瞬间有共鸣，欢迎来信</p>
-        <a class="bridge-arrow" href="#contact" aria-label="Enter Contact section">
-          <i data-lucide="arrow-down"></i>
-          <span>Contact</span>
+      <div class="bridge-clickable-wrap">
+        <a class="g_clickable_link w-inline-block bridge-clickable-link" href="#contact" aria-label="Enter Contact section">
+          <span class="bridge-clickable-text">Enter Contact section</span>
         </a>
+      </div>
+      <div class="bridge-inner reveal">
+        <div class="bridge-copy">
+          <h2 id="contact-bridge-title">Welcome to Contact</h2>
+          <p>如果某个瞬间有共鸣，欢迎来信</p>
+        </div>
+        <div class="bridge-arrow" aria-hidden="true">
+          <span class="bridge-go">Contact</span>
+          <i data-lucide="arrow-down"></i>
+        </div>
       </div>
     </section>
 
     <section class="section contact-band" id="contact" aria-labelledby="contact-title">
-      <div class="contact-panel reveal">
+      <div class="contact-panel">
         <div class="contact-copy">
           <p class="eyebrow">Contact / 联系</p>
           <h3 id="contact-title">Shall We Talk</h3>
           <p>Questions, collaboration, or project ideas are welcome.</p>
         </div>
         <div class="contact-actions" aria-label="Contact details">
-          <a class="contact-card contact-link" href="mailto:15707039996@163.com">
+          <a class="contact-card contact-link" href="https://mail.163.com/" target="_blank" rel="noreferrer">
             <span class="icon-box"><i data-lucide="mail"></i></span>
             <span><strong>Email</strong><span>15707039996@163.com</span></span>
           </a>
@@ -518,7 +488,9 @@
         </div>
       </div>
     </section>
-  </main>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
 
   <a class="back-top" href="#top" aria-label="返回顶部">
     <i data-lucide="arrow-up"></i>
@@ -528,7 +500,8 @@
     <span>© 2026 Shuqi Ke · Built for GitHub Pages</span>
   </footer>
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="js/index.js"></script>
+  <script src="assets/vendor/lucide/lucide.min.js"></script>
+
+  <script src="js/soft.js"></script>
 </body>
 </html>
