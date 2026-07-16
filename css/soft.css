@@ -9625,12 +9625,6 @@ summary,
     min-block-size: 0;
   }
 
-  .soft-repos-page #projects .repository-grid[data-repository-layout="showcase"] {
-    block-size: auto;
-    min-block-size: 100%;
-    grid-auto-rows: minmax(18.5rem, auto);
-    align-content: stretch;
-  }
 }
 
 @media (max-width: 980px) {

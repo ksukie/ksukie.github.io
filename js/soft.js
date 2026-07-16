@@ -1555,7 +1555,6 @@ setupRepositories();
     grid.setAttribute("aria-busy", "false");
 
     if (state.loadError) {
-      delete grid.dataset.repositoryLayout;
       grid.innerHTML = `
         <p class="repository-empty">
           仓库数据暂时无法载入。<a href="https://github.com/${GITHUB_USER}?tab=repositories" target="_blank" rel="noreferrer">直接访问 GitHub</a>
@@ -1565,12 +1564,10 @@ setupRepositories();
     }
 
     if (!repositories.length) {
-      delete grid.dataset.repositoryLayout;
       grid.innerHTML = '<p class="repository-empty">没有匹配的仓库。可尝试切换视图筛选。</p>';
       return;
     }
 
-    grid.dataset.repositoryLayout = repositories.length === 4 ? "showcase" : "list";
     grid.innerHTML = repositories.map((repo) => {
       const active = repo.name === activeRepository?.name;
       const topics = cardTopics(repo);
