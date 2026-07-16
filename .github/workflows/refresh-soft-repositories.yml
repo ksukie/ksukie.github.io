@@ -1,0 +1,49 @@
+name: Refresh Soft repositories
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/refresh-soft-repositories.yml"
+      - "scripts/refresh-soft-repositories.mjs"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Refresh Soft repository data
+        env:
+          PORTFOLIO_REPOSITORIES_TOKEN: ${{ secrets.PORTFOLIO_REPOSITORIES_TOKEN }}
+        run: |
+          if [ -z "$PORTFOLIO_REPOSITORIES_TOKEN" ]; then
+            echo "::error::PORTFOLIO_REPOSITORIES_TOKEN is not configured."
+            exit 1
+          fi
+          node scripts/refresh-soft-repositories.mjs --check
+          node scripts/refresh-soft-repositories.mjs
+
+      - name: Commit refreshed repository data
+        run: |
+          if git diff --quiet -- js/soft-repositories.js; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add js/soft-repositories.js
+          git commit -m "chore: refresh Soft repository data"
+          git push
