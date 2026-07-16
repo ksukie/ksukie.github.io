@@ -1136,7 +1136,6 @@ setupRepositories();
     sparkles: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.3 4.2L6.5 8.5l4.2 1.3L12 14l1.3-4.2 4.2-1.3-4.2-1.3L12 3Z"/><path d="m19 14-.7 2.3L16 17l2.3.7L19 20l.7-2.3L22 17l-2.3-.7L19 14Z"/><path d="m5 15-.6 1.9L2.5 17l1.9.6L5 19.5l.6-1.9 1.9-.6-1.9-.6L5 15Z"/></svg>',
     code: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m14 4-4 16"/></svg>',
     tag: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13 13 20 3 10V3h7l7 7Z"/><circle cx="7.5" cy="7.5" r="1"/></svg>',
-    lock: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>',
     github: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="currentColor"><path d="M12 .5C5.73.5.65 5.58.65 11.85c0 4.89 3.17 9.04 7.57 10.5.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.06-3.08.67-3.73-1.31-3.73-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.61 1.21 3.25.93.1-.72.39-1.21.71-1.49-2.46-.28-5.05-1.23-5.05-5.48 0-1.21.43-2.2 1.14-2.98-.11-.28-.5-1.41.11-2.94 0 0 .93-.3 3.04 1.14.88-.24 1.82-.36 2.76-.36s1.88.12 2.76.36c2.11-1.44 3.04-1.14 3.04-1.14.61 1.53.22 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.59 5.19-5.06 5.47.4.34.75 1.01.75 2.04 0 1.48-.01 2.67-.01 3.04 0 .29.2.64.76.53 4.4-1.47 7.56-5.61 7.56-10.5C23.35 5.58 18.27.5 12 .5Z"/></svg>'
   });
 
@@ -1194,9 +1193,8 @@ setupRepositories();
     return "tag";
   }
 
-  function sourceActionMarkup(isPrivate, className) {
-    const label = isPrivate ? "Private" : "GitHub";
-    return `${iconMarkup(isPrivate ? "lock" : "github", className)}<span>${label}</span>`;
+  function sourceActionMarkup(className) {
+    return `${iconMarkup("github", className)}<span>GitHub</span>`;
   }
 
   function safeUrl(value) {
@@ -1422,10 +1420,6 @@ setupRepositories();
     return `<span class="repository-tag repository-tag-more" title="还有 ${hiddenCount} 个 Topics"><span aria-hidden="true">+${hiddenCount}</span><span class="sr-only">还有 ${hiddenCount} 个 Topics，查看详情可见完整列表</span></span>`;
   }
 
-  function privateRepositoryTag(repo) {
-    return repo.private ? '<span class="repository-tag repository-tag-private">Private</span>' : "";
-  }
-
   function filterCandidateScore(topic, coveredRepositoryNames) {
     const uncoveredRepositories = state.repos.filter((repo) => (
       !coveredRepositoryNames.has(repo.name) && repo.topics.includes(topic)
@@ -1575,10 +1569,12 @@ setupRepositories();
       const active = repo.name === activeRepository?.name;
       const topics = cardTopics(repo);
       const tags = topics.visible.map(topicTag).join("") + moreTopicsTag(topics.hiddenCount);
-      const privateTag = privateRepositoryTag(repo);
       const description = repo.description || "No description provided.";
       const sourceUrl = repo.safeUrl || `https://github.com/${GITHUB_USER}/${encodeURIComponent(repo.name)}`;
-      const cardTags = `<div class="repository-card-tags">${privateTag}${tags}</div>`;
+      const sourceAction = repo.private
+        ? ""
+        : `<a class="repository-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${sourceActionMarkup("repository-link-icon")}</a>`;
+      const cardTags = `<div class="repository-card-tags">${tags}</div>`;
       const cardHeading = `<h3><button class="repository-select" type="button" data-repository-name="${escapeHtml(repo.name)}" aria-pressed="${active}" aria-label="查看 ${escapeHtml(repo.name)} 仓库详情">${escapeHtml(repo.name)}</button></h3>`;
       const cardDescription = `<p class="repository-card-description">${escapeHtml(description)}</p>`;
       const cardBody = isSoftReposPage
@@ -1590,7 +1586,7 @@ setupRepositories();
           <div class="repository-card-body">${cardBody}</div>
           <footer class="repository-card-footer">
             <span class="repository-card-meta"><span class="language-dot" aria-hidden="true"></span>${escapeHtml(repo.language)} · ★ ${formatNumber(repo.stargazers_count)}</span>
-            <a class="repository-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${sourceActionMarkup(repo.private, "repository-link-icon")}</a>
+            ${sourceAction}
           </footer>
         </article>
       `;
@@ -1618,8 +1614,9 @@ setupRepositories();
       detailTags.innerHTML = "";
       detailTrail.innerHTML = "";
       delete detail.dataset.repositoryVisibility;
+      sourceLink.hidden = false;
       sourceLink.href = `https://github.com/${GITHUB_USER}`;
-      sourceLink.innerHTML = sourceActionMarkup(false, "detail-action-icon");
+      sourceLink.innerHTML = sourceActionMarkup("detail-action-icon");
       return;
     }
 
@@ -1629,7 +1626,7 @@ setupRepositories();
     detailName.textContent = repo.name;
     detailDescription.textContent = repo.description || "No description provided.";
     const topics = sortedTopics(repo.topics);
-    detailTags.innerHTML = `${privateRepositoryTag(repo)}${topics.length
+    detailTags.innerHTML = `${topics.length
       ? topics.map(topicTag).join("")
       : '<span class="detail-topic-empty">No topics set.</span>'}`;
     detailTrail.innerHTML = [
@@ -1638,8 +1635,13 @@ setupRepositories();
       detailTrailStep(3, "Topics", topics.length ? topics.map(formatTopic).join(" · ") : "No topics set")
     ].join("");
 
-    sourceLink.href = repo.safeUrl || `https://github.com/${GITHUB_USER}/${encodeURIComponent(repo.name)}`;
-    sourceLink.innerHTML = sourceActionMarkup(repo.private, "detail-action-icon");
+    sourceLink.hidden = repo.private;
+    if (repo.private) {
+      sourceLink.removeAttribute("href");
+    } else {
+      sourceLink.href = repo.safeUrl || `https://github.com/${GITHUB_USER}/${encodeURIComponent(repo.name)}`;
+      sourceLink.innerHTML = sourceActionMarkup("detail-action-icon");
+    }
   }
 
   function render() {
