@@ -9574,7 +9574,8 @@ summary,
 }
 
 .soft-repos-page #projects .repository-trail {
-  grid-auto-rows: max-content;
+  grid-auto-rows: minmax(4.5rem, auto);
+  align-content: stretch;
 }
 
 .soft-repos-page #projects .repository-trail-step {
