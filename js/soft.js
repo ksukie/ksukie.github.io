@@ -1123,7 +1123,7 @@ setupRepositories();
     { rgb: "229, 204, 150", ink: "#846d36" },
     { rgb: "214, 199, 178", ink: "#6f6251" }
   ]);
-  const MAX_FILTER_TOPICS = 3;
+  const MAX_FILTER_TOPICS = 4;
   const MAX_CARD_TOPICS = 3;
   const REPOSITORY_CACHE_KEY = "ksukie.public-repositories.v4";
   const STATIC_REPOSITORY_SNAPSHOT = Array.isArray(globalThis.REPOSITORY_SNAPSHOT) ? globalThis.REPOSITORY_SNAPSHOT : [];
