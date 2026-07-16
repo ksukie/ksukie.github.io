@@ -1,3 +1,100 @@
+/* Canonical, self-contained application script for soft.html. */
+
+// Repository snapshot used when the live public GitHub API is unavailable.
+// This file is published with the site; only refresh private metadata here when it is intended to be public.
+globalThis.REPOSITORY_SNAPSHOT = [
+  {
+    name: "vision-workbench",
+    full_name: "ksukie/vision-workbench",
+    private: false,
+    visibility: "public",
+    description: "A beginner-friendly computer vision workbench for learning, experimenting, and building CV workflows.",
+    language: "Python",
+    topics: [],
+    homepage: null,
+    html_url: "https://github.com/ksukie/vision-workbench",
+    stargazers_count: 6,
+    forks_count: 0,
+    pushed_at: "2026-07-14T03:01:39Z",
+    updated_at: "2026-07-14T03:01:23Z"
+  },
+  {
+    name: "AgentGuard",
+    full_name: "ksukie/AgentGuard",
+    private: false,
+    visibility: "public",
+    description: "Cross-platform AGENTS.md templates and Windows-first read-only diagnostics for AI coding agents.",
+    language: "PowerShell",
+    topics: [],
+    homepage: null,
+    html_url: "https://github.com/ksukie/AgentGuard",
+    stargazers_count: 0,
+    forks_count: 0,
+    pushed_at: "2026-07-13T03:47:56Z",
+    updated_at: "2026-07-13T03:48:01Z"
+  },
+  {
+    name: "adaptive-ui-engineer",
+    full_name: "ksukie/adaptive-ui-engineer",
+    private: false,
+    visibility: "public",
+    description: "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
+    language: "Python",
+    topics: [],
+    homepage: null,
+    html_url: "https://github.com/ksukie/adaptive-ui-engineer",
+    stargazers_count: 1,
+    forks_count: 0,
+    pushed_at: "2026-07-12T07:42:26Z",
+    updated_at: "2026-07-12T07:40:47Z"
+  },
+  {
+    name: "ksukie.github.io",
+    full_name: "ksukie/ksukie.github.io",
+    private: false,
+    visibility: "public",
+    description: null,
+    language: "CSS",
+    topics: [],
+    homepage: null,
+    html_url: "https://github.com/ksukie/ksukie.github.io",
+    stargazers_count: 1,
+    forks_count: 0,
+    pushed_at: "2026-06-06T04:23:12Z",
+    updated_at: "2026-06-06T04:27:12Z"
+  },
+  {
+    name: "GuessNumber",
+    full_name: "ksukie/GuessNumber",
+    private: false,
+    visibility: "public",
+    description: null,
+    language: "Python",
+    topics: [],
+    homepage: null,
+    html_url: "https://github.com/ksukie/GuessNumber",
+    stargazers_count: 1,
+    forks_count: 0,
+    pushed_at: "2024-12-30T09:12:03Z",
+    updated_at: "2026-05-31T11:39:36Z"
+  },
+  {
+    name: "WildfireAegis",
+    full_name: "ksukie/WildfireAegis",
+    private: false,
+    visibility: "public",
+    description: null,
+    language: "Python",
+    topics: [],
+    homepage: null,
+    html_url: "https://github.com/ksukie/WildfireAegis",
+    stargazers_count: 3,
+    forks_count: 0,
+    pushed_at: "2026-05-29T07:28:55Z",
+    updated_at: "2026-05-31T11:39:35Z"
+  }
+];
+
 const GITHUB_USER = "ksukie";
 const root = document.documentElement;
 const toast = document.querySelector(".toast");
@@ -74,41 +171,51 @@ function updateIcons() {
 function setupNavHanger() {
   const header = document.querySelector(".site-header");
   const hanger = document.querySelector(".nav-hanger");
-  if (!header || !hanger) return;
+  const navLinks = document.querySelector("#site-header-nav");
+  if (!header || !hanger || !navLinks) return;
 
-  let hoverOpen = false;
-  let clickTimer = 0;
+  const mobileMenu = window.matchMedia("(max-width: 720px)");
+  let isOpen = false;
 
   const sync = () => {
-    const isOpen = hoverOpen;
-    header.classList.toggle("is-hanger-open", isOpen);
-    hanger.classList.toggle("is-hanger-open", isOpen);
-    hanger.setAttribute("aria-expanded", String(isOpen));
+    const open = mobileMenu.matches && isOpen;
+    header.classList.toggle("is-hanger-open", open);
+    hanger.classList.toggle("is-hanger-open", open);
+    hanger.setAttribute("aria-expanded", String(open));
+    navLinks.setAttribute("aria-hidden", String(mobileMenu.matches && !open));
   };
 
-  hanger.addEventListener("mouseenter", () => {
-    hoverOpen = true;
+  const setOpen = (next, restoreFocus = false) => {
+    isOpen = Boolean(next);
     sync();
+    if (restoreFocus && mobileMenu.matches) hanger.focus();
+  };
+
+  hanger.addEventListener("click", () => setOpen(!isOpen));
+  navLinks.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setOpen(false);
   });
-  hanger.addEventListener("mouseleave", () => {
-    hoverOpen = false;
+  document.addEventListener("click", (event) => {
+    if (!isOpen || !mobileMenu.matches || header.contains(event.target) || hanger.contains(event.target)) return;
+    setOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && isOpen) {
+      event.preventDefault();
+      setOpen(false, true);
+    }
+  });
+
+  const handleMenuModeChange = () => {
+    if (!mobileMenu.matches) isOpen = false;
     sync();
-  });
-  hanger.addEventListener("focus", () => {
-    hoverOpen = true;
-    sync();
-  });
-  hanger.addEventListener("blur", () => {
-    hoverOpen = false;
-    sync();
-  });
-  hanger.addEventListener("click", () => {
-    hanger.classList.add("is-clicking");
-    window.clearTimeout(clickTimer);
-    clickTimer = window.setTimeout(() => {
-      hanger.classList.remove("is-clicking");
-    }, 180);
-  });
+  };
+  if (mobileMenu.addEventListener) {
+    mobileMenu.addEventListener("change", handleMenuModeChange);
+  } else {
+    mobileMenu.addListener(handleMenuModeChange);
+  }
+  sync();
 }
 
 function escapeHtml(value) {
@@ -334,6 +441,7 @@ function setupPageSnap() {
     const deltaY = touchStartY - touchEndY;
     if (Math.abs(deltaY) > 18) {
       lastDirection = deltaY > 0 ? 1 : -1;
+      if (canScrollInside(event.target, lastDirection)) return;
       rememberIntent(lastDirection);
       scheduleSettle(40);
       return;
@@ -343,7 +451,6 @@ function setupPageSnap() {
   window.addEventListener("scrollend", () => scheduleSettle(0), { passive: true });
   window.addEventListener("resize", () => scheduleSettle(180), { passive: true });
 }
-
 
 function setupLifeArchive() {
   const stage = document.querySelector("[data-life-stage]");
@@ -358,34 +465,13 @@ function setupLifeArchive() {
   const artists = document.querySelectorAll("[data-artist]");
   const trackPanel = document.querySelector("[data-track-panel]");
   const order = slides.map((slide) => slide.dataset.lifeSlide);
-  let firstLifeClone = null;
-  let lastLifeClone = null;
   let activeIndex = 0;
   let dragStartX = 0;
   let dragDeltaX = 0;
   let dragging = false;
-  let wheelLocked = false;
-  let isWrappingLife = false;
-  let wrapResetTimer = 0;
   let trackCloudFrame = 0;
   let activeTrackCloud = null;
   let trackCloudResizeTimer = 0;
-
-  if (track && slides.length) {
-    lastLifeClone = slides[slides.length - 1].cloneNode(true);
-    lastLifeClone.classList.remove("is-active");
-    lastLifeClone.setAttribute("aria-hidden", "true");
-    lastLifeClone.dataset.lifeClone = "last";
-    lastLifeClone.querySelectorAll("[id]").forEach((node) => node.removeAttribute("id"));
-    track.insertBefore(lastLifeClone, slides[0]);
-
-    firstLifeClone = slides[0].cloneNode(true);
-    firstLifeClone.classList.remove("is-active");
-    firstLifeClone.setAttribute("aria-hidden", "true");
-    firstLifeClone.dataset.lifeClone = "first";
-    firstLifeClone.querySelectorAll("[id]").forEach((node) => node.removeAttribute("id"));
-    track.appendChild(firstLifeClone);
-  }
 
   const clampNumber = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -599,70 +685,31 @@ function setupLifeArchive() {
   };
 
   const setActiveLife = (target, options = {}) => {
-    if (isWrappingLife && !options.instant) return;
     const index = order.indexOf(target);
     if (index < 0) return;
-    const previousIndex = activeIndex;
-    const shouldWrapForward = (
-      options.direction === "next" &&
-      previousIndex === order.length - 1 &&
-      index === 0 &&
-      track &&
-      firstLifeClone
-    );
-    const shouldWrapBackward = (
-      options.direction === "prev" &&
-      previousIndex === 0 &&
-      index === order.length - 1 &&
-      track &&
-      lastLifeClone
-    );
     activeIndex = index;
     const slide = slides[index];
 
     slides.forEach((item, itemIndex) => {
-      item.classList.toggle("is-active", itemIndex === index);
+      const isActive = itemIndex === index;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-hidden", String(!isActive));
     });
-    dots.forEach((dot) => dot.classList.toggle("is-active", dot.dataset.lifeDot === target));
-    stage.dataset.activeLife = target;
-    if (track) {
-      window.clearTimeout(wrapResetTimer);
-      if (shouldWrapForward) {
-        isWrappingLife = true;
-        track.style.transition = "";
-        track.style.transform = `translateX(-${(order.length + 1) * 100}%)`;
-        const resetForwardWrap = () => {
-          if (!isWrappingLife) return;
-          isWrappingLife = false;
-          window.clearTimeout(wrapResetTimer);
-          track.style.transition = "none";
-          track.style.transform = "translateX(-100%)";
-          window.requestAnimationFrame(() => {
-            track.style.transition = "";
-          });
-        };
-        track.addEventListener("transitionend", resetForwardWrap, { once: true });
-        wrapResetTimer = window.setTimeout(resetForwardWrap, 820);
-      } else if (shouldWrapBackward) {
-        isWrappingLife = true;
-        track.style.transition = "";
-        track.style.transform = "translateX(0%)";
-        const resetBackwardWrap = () => {
-          if (!isWrappingLife) return;
-          isWrappingLife = false;
-          window.clearTimeout(wrapResetTimer);
-          track.style.transition = "none";
-          track.style.transform = `translateX(-${order.length * 100}%)`;
-          window.requestAnimationFrame(() => {
-            track.style.transition = "";
-          });
-        };
-        track.addEventListener("transitionend", resetBackwardWrap, { once: true });
-        wrapResetTimer = window.setTimeout(resetBackwardWrap, 820);
+    dots.forEach((dot) => {
+      const isActive = dot.dataset.lifeDot === target;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
       } else {
-        track.style.transition = options.instant ? "none" : "";
-        track.style.transform = `translateX(-${(index + 1) * 100}%)`;
+        dot.removeAttribute("aria-current");
       }
+    });
+    stage.dataset.activeLife = target;
+    if (prev) prev.disabled = index === 0;
+    if (next) next.disabled = index === order.length - 1;
+    if (track) {
+      track.style.transition = options.instant ? "none" : "";
+      track.style.transform = `translateX(-${index * 100}%)`;
       if (options.instant) {
         window.requestAnimationFrame(() => {
           track.style.transition = "";
@@ -678,21 +725,21 @@ function setupLifeArchive() {
   });
 
   prev?.addEventListener("click", () => {
-    setActiveLife(order[(activeIndex - 1 + order.length) % order.length], { direction: "prev" });
+    if (activeIndex > 0) setActiveLife(order[activeIndex - 1]);
   });
 
   next?.addEventListener("click", () => {
-    setActiveLife(order[(activeIndex + 1) % order.length], { direction: "next" });
+    if (activeIndex < order.length - 1) setActiveLife(order[activeIndex + 1]);
   });
 
   stage.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") {
+    if (event.key === "ArrowLeft" && activeIndex > 0) {
       event.preventDefault();
-      setActiveLife(order[(activeIndex - 1 + order.length) % order.length], { direction: "prev" });
+      setActiveLife(order[activeIndex - 1]);
     }
-    if (event.key === "ArrowRight") {
+    if (event.key === "ArrowRight" && activeIndex < order.length - 1) {
       event.preventDefault();
-      setActiveLife(order[(activeIndex + 1) % order.length], { direction: "next" });
+      setActiveLife(order[activeIndex + 1]);
     }
   });
 
@@ -708,7 +755,7 @@ function setupLifeArchive() {
     if (!dragging || !track) return;
     dragDeltaX = event.clientX - dragStartX;
     track.style.transition = "none";
-    track.style.transform = `translateX(calc(-${(activeIndex + 1) * 100}% + ${dragDeltaX}px))`;
+    track.style.transform = `translateX(calc(-${activeIndex * 100}% + ${dragDeltaX}px))`;
   });
 
   const finishDrag = () => {
@@ -718,9 +765,9 @@ function setupLifeArchive() {
     if (track) track.style.transition = "";
     if (Math.abs(dragDeltaX) > 70) {
       const direction = dragDeltaX < 0 ? 1 : -1;
-      setActiveLife(order[(activeIndex + direction + order.length) % order.length], {
-        direction: direction > 0 ? "next" : "prev"
-      });
+      const targetIndex = activeIndex + direction;
+      if (targetIndex >= 0 && targetIndex < order.length) setActiveLife(order[targetIndex]);
+      else setActiveLife(order[activeIndex]);
     } else {
       setActiveLife(order[activeIndex]);
     }
@@ -731,21 +778,6 @@ function setupLifeArchive() {
   stage.addEventListener("pointerup", finishDrag);
   stage.addEventListener("pointercancel", finishDrag);
   stage.addEventListener("pointerleave", finishDrag);
-
-  stage.addEventListener("wheel", (event) => {
-    if (event.target.closest(".life-reading-grid, .life-track-panel")) return;
-    const horizontalIntent = Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey;
-    if (!horizontalIntent || wheelLocked) return;
-    event.preventDefault();
-    wheelLocked = true;
-    const direction = (event.deltaX || event.deltaY) > 0 ? 1 : -1;
-    setActiveLife(order[(activeIndex + direction + order.length) % order.length], {
-      direction: direction > 0 ? "next" : "prev"
-    });
-    window.setTimeout(() => {
-      wheelLocked = false;
-    }, 560);
-  }, { passive: false });
 
   window.addEventListener("resize", () => {
     if (!activeTrackCloud?.list) return;
@@ -764,25 +796,6 @@ function setupLifeArchive() {
 
   setActiveLife(order[0], { instant: true });
   renderTracks(document.querySelector("[data-artist].is-active") || artists[0]);
-}
-
-function setupPhotographyCarousel() {
-  const carousel = document.querySelector("[data-photo-carousel]");
-  if (!carousel) return;
-  const slides = Array.from(carousel.querySelectorAll("[data-photo-slide]"));
-  if (!slides.length) return;
-  let activeIndex = 0;
-
-  const setActivePhoto = (index) => {
-    activeIndex = (index + slides.length) % slides.length;
-    slides.forEach((slide, slideIndex) => {
-      slide.classList.toggle("is-active", slideIndex === activeIndex);
-    });
-  };
-
-  setActivePhoto(0);
-  if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  window.setInterval(() => setActivePhoto(activeIndex + 1), 3000);
 }
 
 function showToast(message) {
@@ -838,7 +851,11 @@ function setupLensConsole() {
   const activateLens = (lens) => {
     if (!lens) return;
     activeLens = lens;
-    buttons.forEach((button) => button.classList.toggle("is-active", button.dataset.lens === lens));
+    buttons.forEach((button) => {
+      const isActive = button.dataset.lens === lens;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
     cards.forEach((card) => {
       card.classList.toggle("is-active", card.dataset.lensCard === lens);
       card.classList.remove("is-preview");
@@ -924,14 +941,14 @@ function setupProjectExplorer() {
     const projects = visibleProjects();
     if (activeIndex >= projects.length) activeIndex = 0;
     grid.innerHTML = projects.map((project, index) => `
-      <article class="project-card tilt-card ${index === activeIndex ? "is-active" : ""}" data-project-index="${index}" data-project-category="${escapeHtml(project.category)}">
-        <div>
-          <div class="project-meta">
+      <article class="project-card tilt-card ${index === activeIndex ? "is-active" : ""}" data-project-category="${escapeHtml(project.category)}">
+        <button class="project-card-select" type="button" data-project-index="${index}" aria-pressed="${index === activeIndex}" aria-label="查看 ${escapeHtml(project.shortTitle)} 项目详情">
+          <span class="project-meta">
             ${project.tags.map((tag, tagIndex) => `<span class="badge ${tagIndex === 1 ? "alt" : ""}">${escapeHtml(tag)}</span>`).join("")}
-          </div>
-          <h3>${escapeHtml(project.shortTitle)}</h3>
-          <p>${escapeHtml(project.summary)}</p>
-        </div>
+          </span>
+          <span class="project-card-title">${escapeHtml(project.shortTitle)}</span>
+          <span class="project-card-summary">${escapeHtml(project.summary)}</span>
+        </button>
         <div class="project-footer">
           <span>${escapeHtml(project.category)}</span>
           ${project.url ? `
@@ -949,11 +966,14 @@ function setupProjectExplorer() {
       </article>
     `).join("");
 
-    grid.querySelectorAll("[data-project-index]").forEach((card) => {
-      card.addEventListener("click", (event) => {
-        if (event.target.closest("a, button")) return;
-        activeIndex = Number(card.dataset.projectIndex);
-        grid.querySelectorAll(".project-card").forEach((item) => item.classList.toggle("is-active", item === card));
+    grid.querySelectorAll("[data-project-index]").forEach((button) => {
+      button.addEventListener("click", () => {
+        activeIndex = Number(button.dataset.projectIndex);
+        grid.querySelectorAll(".project-card").forEach((item, index) => {
+          const isActive = index === activeIndex;
+          item.classList.toggle("is-active", isActive);
+          item.querySelector("[data-project-index]")?.setAttribute("aria-pressed", String(isActive));
+        });
         renderDetail(projects[activeIndex]);
       });
     });
@@ -968,7 +988,11 @@ function setupProjectExplorer() {
     button.addEventListener("click", () => {
       activeFilter = button.dataset.projectFilter;
       activeIndex = 0;
-      filters.forEach((item) => item.classList.toggle("is-active", item === button));
+      filters.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
+      });
       renderProjects();
     });
   });
@@ -1037,6 +1061,7 @@ function setupRepositories() {
   const languageFilter = document.querySelector(".language-filter");
   const search = document.querySelector(".repo-search");
   const sortButtons = document.querySelectorAll("[data-sort]");
+  if (!grid || !languageFilter || !search || !sortButtons.length) return;
   const state = {
     repos: [],
     language: "All",
@@ -1172,6 +1197,607 @@ setupResponsiveScale();
 setupPageSnap();
 setupLensConsole();
 setupLifeArchive();
-setupPhotographyCarousel();
 setupProjectExplorer();
 setupRepositories();
+
+(() => {
+  "use strict";
+
+  const GITHUB_USER = "ksukie";
+  // GitHub's public REST API does not expose profile pins. Keep this list in the same order as the public profile's pinned cards.
+  const FEATURED_REPOSITORY_NAMES = [
+    "WildfireAegis",
+    "vision-workbench",
+    "adaptive-ui-engineer",
+    "AgentGuard"
+  ];
+  // GitHub Topics are the source of card metadata and representative top-level filters.
+  const REPOSITORY_PALETTES = Object.freeze([
+    { rgb: "113, 131, 143", ink: "#60717c" },
+    { rgb: "211, 147, 148", ink: "#9f686a" },
+    { rgb: "229, 204, 150", ink: "#846d36" },
+    { rgb: "214, 199, 178", ink: "#6f6251" }
+  ]);
+  const MAX_FILTER_TOPICS = 3;
+  const MAX_CARD_TOPICS = 3;
+  const REPOSITORY_CACHE_KEY = "ksukie.public-repositories.v4";
+  const STATIC_REPOSITORY_SNAPSHOT = Array.isArray(globalThis.REPOSITORY_SNAPSHOT) ? globalThis.REPOSITORY_SNAPSHOT : [];
+  const ICON_SVGS = Object.freeze({
+    layers: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 7 3.5-7 3.5-7-3.5L12 3Z"/><path d="m5 12.5 7 3.5 7-3.5"/><path d="m5 16.5 7 3.5 7-3.5"/></svg>',
+    pin: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v9"/><path d="M9 3h6"/><path d="M9 3v5l-4 4v1h14v-1l-4-4V3"/></svg>',
+    vision: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></svg>',
+    cpu: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v5M15 1v5M9 18v5M15 18v5M18 9h5M18 15h5M1 9h5M1 15h5"/><path d="M10 10h4v4h-4z"/></svg>',
+    terminal: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7 4 5-4 5"/><path d="M12 17h7"/></svg>',
+    sparkles: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.3 4.2L6.5 8.5l4.2 1.3L12 14l1.3-4.2 4.2-1.3-4.2-1.3L12 3Z"/><path d="m19 14-.7 2.3L16 17l2.3.7L19 20l.7-2.3L22 17l-2.3-.7L19 14Z"/><path d="m5 15-.6 1.9L2.5 17l1.9.6L5 19.5l.6-1.9 1.9-.6-1.9-.6L5 15Z"/></svg>',
+    code: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m14 4-4 16"/></svg>',
+    tag: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13 13 20 3 10V3h7l7 7Z"/><circle cx="7.5" cy="7.5" r="1"/></svg>',
+    lock: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>',
+    github: '<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="currentColor"><path d="M12 .5C5.73.5.65 5.58.65 11.85c0 4.89 3.17 9.04 7.57 10.5.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.06-3.08.67-3.73-1.31-3.73-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.61 1.21 3.25.93.1-.72.39-1.21.71-1.49-2.46-.28-5.05-1.23-5.05-5.48 0-1.21.43-2.2 1.14-2.98-.11-.28-.5-1.41.11-2.94 0 0 .93-.3 3.04 1.14.88-.24 1.82-.36 2.76-.36s1.88.12 2.76.36c2.11-1.44 3.04-1.14 3.04-1.14.61 1.53.22 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.59 5.19-5.06 5.47.4.34.75 1.01.75 2.04 0 1.48-.01 2.67-.01 3.04 0 .29.2.64.76.53 4.4-1.47 7.56-5.61 7.56-10.5C23.35 5.58 18.27.5 12 .5Z"/></svg>'
+  });
+
+  const filterRow = document.querySelector("[data-repository-filters]");
+  const grid = document.querySelector("[data-repository-grid]");
+  const detail = document.querySelector("[data-repository-detail]");
+  const detailName = document.querySelector("[data-repository-name]");
+  const detailDescription = document.querySelector("[data-repository-description]");
+  const detailTags = document.querySelector("[data-repository-tags]");
+  const detailTrail = document.querySelector("[data-repository-trail]");
+  const sourceLink = document.querySelector("[data-repository-source]");
+  const isSoftReposPage = document.querySelector(".soft-repos-page") !== null;
+
+  if (!filterRow || !grid || !detail || !detailName || !detailDescription || !detailTags || !detailTrail || !sourceLink) {
+    return;
+  }
+
+  const state = {
+    repos: [],
+    view: "featured",
+    activeTag: "",
+    activeName: "",
+    loadError: false,
+    dataSource: "loading"
+  };
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function iconMarkup(name, className) {
+    const icon = ICON_SVGS[name] || ICON_SVGS.tag;
+    return `<span class="${className}" aria-hidden="true">${icon}</span>`;
+  }
+
+  function normalizeFilterTerm(value) {
+    return String(value ?? "").trim().toLowerCase().replace(/[\s_-]+/g, "");
+  }
+
+  function filterIconName(view, label) {
+    if (view === "featured") return "pin";
+    if (view === "all") return "layers";
+
+    const normalizedLabel = normalizeFilterTerm(label);
+    if (normalizedLabel.includes("vision")) return "vision";
+    if (normalizedLabel.includes("edge") || normalizedLabel.includes("esp") || normalizedLabel.includes("ai")) return "cpu";
+    if (normalizedLabel.includes("power") || normalizedLabel.includes("shell")) return "terminal";
+    if (normalizedLabel.includes("skill") || normalizedLabel.includes("agent")) return "sparkles";
+    if (normalizedLabel.includes("pyqt") || normalizedLabel.includes("python") || normalizedLabel.includes("json")) return "code";
+    return "tag";
+  }
+
+  function sourceActionMarkup(isPrivate, className) {
+    const label = isPrivate ? "Private" : "GitHub";
+    return `${iconMarkup(isPrivate ? "lock" : "github", className)}<span>${label}</span>`;
+  }
+
+  function safeUrl(value) {
+    try {
+      const url = new URL(value);
+      return url.protocol === "https:" || url.protocol === "http:" ? url.href : "";
+    } catch {
+      return "";
+    }
+  }
+
+  function isPrivateRepository(repo) {
+    return repo?.private === true || repo?.visibility === "private";
+  }
+
+  function repositoryTopics(repo) {
+    if (!Array.isArray(repo.topics)) return [];
+
+    return [...new Set(
+      repo.topics
+        .filter((topic) => typeof topic === "string")
+        .map((topic) => topic.trim().toLowerCase())
+        .filter(Boolean)
+    )];
+  }
+
+  function formatTopic(topic) {
+    return String(topic)
+      .trim()
+      .split(/[-_\s]+/)
+      .filter(Boolean)
+      .map((part) => part.length <= 3
+        ? part.toUpperCase()
+        : `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+      .join(" ");
+  }
+
+  function compareTopicsByDisplay(left, right) {
+    const leftLabel = formatTopic(left);
+    const rightLabel = formatTopic(right);
+    const leftLength = [...leftLabel.replace(/\s/g, "")].length;
+    const rightLength = [...rightLabel.replace(/\s/g, "")].length;
+    const lengthDifference = leftLength - rightLength;
+
+    if (lengthDifference) return lengthDifference;
+
+    const initialDifference = leftLabel.charAt(0).localeCompare(rightLabel.charAt(0), "en", { sensitivity: "base" });
+    return initialDifference || leftLabel.localeCompare(rightLabel, "en", { sensitivity: "base", numeric: true });
+  }
+
+  function sortedTopics(topics) {
+    return [...new Set(topics)].sort(compareTopicsByDisplay);
+  }
+
+  function paletteFor(value) {
+    let hash = 0;
+    for (const character of String(value || "repository")) {
+      hash = character.charCodeAt(0) + ((hash << 5) - hash);
+    }
+    return REPOSITORY_PALETTES[Math.abs(hash) % REPOSITORY_PALETTES.length];
+  }
+
+  function normalizeRepository(repo) {
+    const privateRepository = isPrivateRepository(repo);
+    const language = repo.language || "Other";
+    const topics = repositoryTopics(repo);
+    const featuredOrder = FEATURED_REPOSITORY_NAMES.indexOf(repo.name);
+
+    return {
+      ...repo,
+      private: privateRepository,
+      visibility: privateRepository ? "private" : repo.visibility || "public",
+      topics,
+      featured: featuredOrder !== -1,
+      featuredOrder,
+      language,
+      safeUrl: safeUrl(repo.html_url)
+    };
+  }
+
+  function topicFrequencies(repositories) {
+    const frequencies = new Map();
+
+    repositories.forEach((repo) => {
+      repo.topics.forEach((topic) => {
+        frequencies.set(topic, (frequencies.get(topic) || 0) + 1);
+      });
+    });
+
+    return frequencies;
+  }
+
+  function normalizeRepositories(repos) {
+    const repositories = Array.isArray(repos) ? repos.filter(Boolean).map(normalizeRepository) : [];
+
+    return repositories.map((repo) => {
+      const palette = paletteFor(repo.topics[0] || repo.name);
+
+      return {
+        ...repo,
+        repositoryRgb: palette.rgb,
+        repositoryInk: palette.ink
+      };
+    });
+  }
+
+  function publicRepositories(repos) {
+    return normalizeRepositories(repos).filter((repo) => !repo.private);
+  }
+
+  function mergeRepositories(...sources) {
+    const merged = new Map();
+
+    sources.flat().forEach((repo) => {
+      if (!repo?.name) return;
+      const key = String(repo.full_name || repo.name).toLowerCase();
+      merged.set(key, repo);
+    });
+
+    return normalizeRepositories([...merged.values()]);
+  }
+
+  function readSessionCache() {
+    try {
+      const cached = JSON.parse(sessionStorage.getItem(REPOSITORY_CACHE_KEY) || "[]");
+      return publicRepositories(cached);
+    } catch {
+      return [];
+    }
+  }
+
+  function writeSessionCache(repos) {
+    try {
+      sessionStorage.setItem(REPOSITORY_CACHE_KEY, JSON.stringify(publicRepositories(repos)));
+    } catch {
+      // The bundled snapshot remains available when session storage is blocked.
+    }
+  }
+
+  async function fetchJson(url) {
+    const response = await fetch(url, {
+      headers: {
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
+      }
+    });
+
+    if (!response.ok) {
+      const error = new Error(`GitHub API ${response.status}`);
+      error.status = response.status;
+      throw error;
+    }
+
+    return response.json();
+  }
+
+  async function fetchPublicRepositories() {
+    const repos = [];
+
+    for (let page = 1; page <= 10; page += 1) {
+      const batch = await fetchJson(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=100&page=${page}`);
+      repos.push(...batch);
+      if (batch.length < 100) break;
+    }
+
+    return publicRepositories(repos);
+  }
+
+  async function loadRepositories() {
+    const snapshotRepos = normalizeRepositories(STATIC_REPOSITORY_SNAPSHOT);
+
+    try {
+      const livePublicRepos = await fetchPublicRepositories();
+      writeSessionCache(livePublicRepos);
+      const repos = mergeRepositories(snapshotRepos, livePublicRepos);
+      return { repos, source: snapshotRepos.some(isPrivateRepository) ? "live-snapshot" : "live" };
+    } catch (liveError) {
+      console.warn("Live GitHub repository request failed; using a local fallback.", liveError);
+
+      const cachedRepos = readSessionCache();
+      const repos = mergeRepositories(snapshotRepos, cachedRepos);
+      if (repos.length) {
+        const source = cachedRepos.length
+          ? snapshotRepos.length ? "session-snapshot" : "session"
+          : "snapshot";
+        return { repos, source };
+      }
+
+      throw liveError;
+    }
+  }
+
+  function formatDate(value) {
+    if (!value) return "未知";
+
+    return new Intl.DateTimeFormat("zh-CN", {
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    }).format(new Date(value));
+  }
+
+  function formatNumber(value) {
+    return new Intl.NumberFormat("zh-CN").format(value || 0);
+  }
+
+  function topicTag(topic) {
+    const label = formatTopic(topic);
+    return `<span class="repository-tag" title="${escapeHtml(label)}"><span class="repository-tag-label">${escapeHtml(label)}</span></span>`;
+  }
+
+  function cardTopics(repo) {
+    const visible = sortedTopics(repo.topics).slice(0, MAX_CARD_TOPICS);
+    return {
+      visible,
+      hiddenCount: Math.max(0, repo.topics.length - visible.length)
+    };
+  }
+
+  function moreTopicsTag(hiddenCount) {
+    if (!hiddenCount) return "";
+
+    return `<span class="repository-tag repository-tag-more" title="还有 ${hiddenCount} 个 Topics"><span aria-hidden="true">+${hiddenCount}</span><span class="sr-only">还有 ${hiddenCount} 个 Topics，查看详情可见完整列表</span></span>`;
+  }
+
+  function privateRepositoryTag(repo) {
+    return repo.private ? '<span class="repository-tag repository-tag-private">Private</span>' : "";
+  }
+
+  function filterCandidateScore(topic, coveredRepositoryNames) {
+    const uncoveredRepositories = state.repos.filter((repo) => (
+      !coveredRepositoryNames.has(repo.name) && repo.topics.includes(topic)
+    ));
+    const normalizedTopic = normalizeFilterTerm(topic);
+
+    return {
+      topic,
+      uncoveredRepositoryNames: uncoveredRepositories.map((repo) => repo.name),
+      uncoveredFeaturedCount: uncoveredRepositories.filter((repo) => repo.featured).length,
+      uncoveredRepositoryCount: uncoveredRepositories.length,
+      languageTopicMatchCount: normalizedTopic
+        ? uncoveredRepositories.filter((repo) => normalizeFilterTerm(repo.language) === normalizedTopic).length
+        : 0,
+      stargazerCount: uncoveredRepositories.reduce(
+        (total, repo) => total + Math.max(0, Number(repo.stargazers_count) || 0),
+        0
+      )
+    };
+  }
+
+  function compareFilterCandidates(left, right) {
+    return right.uncoveredFeaturedCount - left.uncoveredFeaturedCount
+      || right.uncoveredRepositoryCount - left.uncoveredRepositoryCount
+      || right.languageTopicMatchCount - left.languageTopicMatchCount
+      || right.stargazerCount - left.stargazerCount
+      || compareTopicsByDisplay(left.topic, right.topic);
+  }
+
+  function availableFilterTags() {
+    const candidateTopics = sortedTopics(topicFrequencies(state.repos).keys());
+    const coveredRepositoryNames = new Set();
+    const selectedTopics = [];
+
+    while (selectedTopics.length < MAX_FILTER_TOPICS) {
+      const nextCandidate = candidateTopics
+        .filter((topic) => !selectedTopics.includes(topic))
+        .map((topic) => filterCandidateScore(topic, coveredRepositoryNames))
+        .filter((candidate) => candidate.uncoveredRepositoryCount > 0)
+        .sort(compareFilterCandidates)[0];
+
+      if (!nextCandidate) break;
+
+      selectedTopics.push(nextCandidate.topic);
+      nextCandidate.uncoveredRepositoryNames.forEach((name) => coveredRepositoryNames.add(name));
+    }
+
+    return sortedTopics(selectedTopics);
+  }
+
+  function synchronizeFilterButtonWidth() {
+    const topicScroller = filterRow.querySelector(".filter-topic-scroll");
+    if (!topicScroller) return;
+
+    topicScroller.style.removeProperty("--filter-button-inline-size");
+    const buttons = [...topicScroller.querySelectorAll(".filter-button")];
+    const widestButton = Math.max(0, ...buttons.map((button) => button.getBoundingClientRect().width));
+
+    if (widestButton) {
+      topicScroller.style.setProperty("--filter-button-inline-size", `${Math.ceil(widestButton)}px`);
+    }
+  }
+
+  function renderFilterControls() {
+    const tags = availableFilterTags();
+
+    if (state.view === "tag" && !tags.includes(state.activeTag)) {
+      state.view = "featured";
+      state.activeTag = "";
+    }
+
+    const control = (view, label, tag = "") => {
+      const active = state.view === view && (view !== "tag" || state.activeTag === tag);
+      const tagAttribute = tag ? ` data-repository-tag="${escapeHtml(tag)}"` : "";
+
+      return `<button class="filter-button${active ? " is-active" : ""}" type="button" data-repository-view="${view}"${tagAttribute} aria-pressed="${active}" title="${escapeHtml(label)}">${iconMarkup(filterIconName(view, label), "filter-icon")}<span class="control-label">${escapeHtml(label)}</span></button>`;
+    };
+
+    filterRow.innerHTML = `
+      <div class="filter-anchor filter-anchor-start">${control("featured", "OnPin")}</div>
+      <div class="filter-topic-scroll" role="group" aria-label="按主题筛选仓库">${tags.map((tag) => control("tag", formatTopic(tag), tag)).join("")}</div>
+      <div class="filter-anchor filter-anchor-end">${control("all", "ALL")}</div>
+    `;
+
+    synchronizeFilterButtonWidth();
+  }
+
+  function repositoryMatchesView(repo) {
+    if (state.view === "featured") return repo.featured;
+    if (state.view === "all") return true;
+    return repo.topics.includes(state.activeTag);
+  }
+
+  function compareRepositoriesByStarsThenName(left, right) {
+    return (right.stargazers_count || 0) - (left.stargazers_count || 0)
+      || left.name.localeCompare(right.name, "en", { sensitivity: "base" });
+  }
+
+  function visibleRepositories() {
+    return state.repos
+      .filter(repositoryMatchesView)
+      .sort(compareRepositoriesByStarsThenName);
+  }
+
+  function getActiveRepository(repositories) {
+    const current = repositories.find((repo) => repo.name === state.activeName);
+    if (current) return current;
+
+    const featured = FEATURED_REPOSITORY_NAMES
+      .map((name) => repositories.find((repo) => repo.name === name))
+      .find(Boolean);
+    const next = featured || repositories[0] || null;
+    state.activeName = next?.name || "";
+    return next;
+  }
+
+  function updateControlState() {
+    [...filterRow.querySelectorAll("[data-repository-view]")].forEach((button) => {
+      const active = button.dataset.repositoryView === state.view
+        && (state.view !== "tag" || button.dataset.repositoryTag === state.activeTag);
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  function renderGrid(repositories, activeRepository) {
+    grid.setAttribute("aria-busy", "false");
+
+    if (state.loadError) {
+      delete grid.dataset.repositoryLayout;
+      grid.innerHTML = `
+        <p class="repository-empty">
+          仓库数据暂时无法载入。<a href="https://github.com/${GITHUB_USER}?tab=repositories" target="_blank" rel="noreferrer">直接访问 GitHub</a>
+        </p>
+      `;
+      return;
+    }
+
+    if (!repositories.length) {
+      delete grid.dataset.repositoryLayout;
+      grid.innerHTML = '<p class="repository-empty">没有匹配的仓库。可尝试切换视图筛选。</p>';
+      return;
+    }
+
+    grid.dataset.repositoryLayout = repositories.length === 4 ? "showcase" : "list";
+    grid.innerHTML = repositories.map((repo) => {
+      const active = repo.name === activeRepository?.name;
+      const topics = cardTopics(repo);
+      const tags = topics.visible.map(topicTag).join("") + moreTopicsTag(topics.hiddenCount);
+      const privateTag = privateRepositoryTag(repo);
+      const description = repo.description || "No description provided.";
+      const sourceUrl = repo.safeUrl || `https://github.com/${GITHUB_USER}/${encodeURIComponent(repo.name)}`;
+      const cardTags = `<div class="repository-card-tags">${privateTag}${tags}</div>`;
+      const cardHeading = `<h3><button class="repository-select" type="button" data-repository-name="${escapeHtml(repo.name)}" aria-pressed="${active}" aria-label="查看 ${escapeHtml(repo.name)} 仓库详情">${escapeHtml(repo.name)}</button></h3>`;
+      const cardDescription = `<p class="repository-card-description">${escapeHtml(description)}</p>`;
+      const cardBody = isSoftReposPage
+        ? `${cardHeading}${cardDescription}${cardTags}`
+        : `${cardTags}${cardHeading}${cardDescription}`;
+
+      return `
+        <article class="repository-card ${active ? "is-active" : ""}" data-repository-card="${escapeHtml(repo.name)}" data-repository-visibility="${repo.private ? "private" : "public"}" style="--repository-rgb: ${repo.repositoryRgb}; --repository-ink: ${repo.repositoryInk};">
+          <div class="repository-card-body">${cardBody}</div>
+          <footer class="repository-card-footer">
+            <span class="repository-card-meta"><span class="language-dot" aria-hidden="true"></span>${escapeHtml(repo.language)} · ★ ${formatNumber(repo.stargazers_count)}</span>
+            <a class="repository-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${sourceActionMarkup(repo.private, "repository-link-icon")}</a>
+          </footer>
+        </article>
+      `;
+    }).join("");
+  }
+
+  function detailTrailStep(index, label, value) {
+    return `
+      <div class="repository-trail-step">
+        <span aria-hidden="true">${String(index).padStart(2, "0")}</span>
+        <div>
+          <strong>${escapeHtml(label)}</strong>
+          <small>${escapeHtml(value)}</small>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderDetail(repo) {
+    if (!repo) {
+      detail.style.setProperty("--detail-rgb", "211, 147, 148");
+      detail.style.setProperty("--detail-ink", "#9f686a");
+      detailName.textContent = "No repository selected";
+      detailDescription.textContent = "没有与当前筛选相匹配的仓库。";
+      detailTags.innerHTML = "";
+      detailTrail.innerHTML = "";
+      delete detail.dataset.repositoryVisibility;
+      sourceLink.href = `https://github.com/${GITHUB_USER}`;
+      sourceLink.innerHTML = sourceActionMarkup(false, "detail-action-icon");
+      return;
+    }
+
+    detail.style.setProperty("--detail-rgb", repo.repositoryRgb);
+    detail.style.setProperty("--detail-ink", repo.repositoryInk);
+    detail.dataset.repositoryVisibility = repo.private ? "private" : "public";
+    detailName.textContent = repo.name;
+    detailDescription.textContent = repo.description || "No description provided.";
+    const topics = sortedTopics(repo.topics);
+    detailTags.innerHTML = `${privateRepositoryTag(repo)}${topics.length
+      ? topics.map(topicTag).join("")
+      : '<span class="detail-topic-empty">No topics set.</span>'}`;
+    detailTrail.innerHTML = [
+      detailTrailStep(1, "Repository", repo.full_name || `${GITHUB_USER}/${repo.name}`),
+      detailTrailStep(2, "Activity", `更新于 ${formatDate(repo.pushed_at)} · ★ ${formatNumber(repo.stargazers_count)} · Fork ${formatNumber(repo.forks_count)}`),
+      detailTrailStep(3, "Topics", topics.length ? topics.map(formatTopic).join(" · ") : "No topics set")
+    ].join("");
+
+    sourceLink.href = repo.safeUrl || `https://github.com/${GITHUB_USER}/${encodeURIComponent(repo.name)}`;
+    sourceLink.innerHTML = sourceActionMarkup(repo.private, "detail-action-icon");
+  }
+
+  function render() {
+    renderFilterControls();
+    const repositories = visibleRepositories();
+    const activeRepository = getActiveRepository(repositories);
+
+    updateControlState();
+    renderGrid(repositories, activeRepository);
+    renderDetail(activeRepository);
+  }
+
+  function focusRepository(name) {
+    [...grid.querySelectorAll("[data-repository-name]")]
+      .find((button) => button.dataset.repositoryName === name)
+      ?.focus();
+  }
+
+  function selectRepository(name, restoreFocus) {
+    if (!name) return;
+
+    state.activeName = name;
+    render();
+    if (restoreFocus) focusRepository(name);
+  }
+
+  filterRow.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-repository-view]");
+    if (!button || !filterRow.contains(button)) return;
+
+    const view = button.dataset.repositoryView;
+    state.view = view === "tag" || view === "all" ? view : "featured";
+    state.activeTag = state.view === "tag" ? button.dataset.repositoryTag || "" : "";
+    state.activeName = "";
+    render();
+  });
+
+  grid.addEventListener("click", (event) => {
+    if (event.target.closest(".repository-link")) return;
+
+    const button = event.target.closest("[data-repository-name]");
+    const card = event.target.closest("[data-repository-card]");
+    const name = button?.dataset.repositoryName || card?.dataset.repositoryCard || "";
+    selectRepository(name, Boolean(button));
+  });
+
+  async function initialiseRepositoryConsole() {
+    try {
+      const { repos, source } = await loadRepositories();
+      state.repos = repos;
+      state.dataSource = source;
+      state.activeName = FEATURED_REPOSITORY_NAMES.find((name) => repos.some((repo) => repo.name === name)) || "";
+    } catch (error) {
+      console.error("Repository data could not be loaded from GitHub or a local fallback.", error);
+      state.loadError = true;
+      state.dataSource = "failed";
+      grid.setAttribute("aria-busy", "false");
+    }
+
+    render();
+  }
+
+  void initialiseRepositoryConsole().catch((error) => {
+    console.error("Repository console could not be rendered.", error);
+  });
+})();

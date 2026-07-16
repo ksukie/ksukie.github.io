@@ -4,29 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="柯书奇 - Computer Vision, Edge AI and Robotics portfolio" />
-  <title>Shuqi Ke · Portfolio</title>
+  <title>Shuqi Ke · Portfolio &amp; Code Registry</title>
   <link rel="stylesheet" href="css/soft.css">
 </head>
 <body>
-  <div class="page">
+  <div class="page soft-repos-page">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="#top" aria-label="返回顶部">
           <span class="brand-mark">&lt;K&gt;</span>
           <span>Shuqi Ke</span>
         </a>
-        <div class="nav-links">
+        <div class="nav-links" id="site-header-nav">
           <a href="#profile">能力</a>
-          <a href="#projects">项目</a>
-          <a href="#repos">仓库</a>
+          <a href="#projects">仓库</a>
           <a href="#life">关于我</a>
           <a href="#contact">联系我</a>
+          <a class="nav-resume" href="resume.html" target="_blank" rel="noreferrer">获取简历</a>
         </div>
-        <a class="nav-resume" href="resume.html" target="_blank" rel="noreferrer">获取简历</a>
       </nav>
     </header>
 
-    <button class="nav-hanger" type="button" aria-label="Open navigation" aria-expanded="false">
+    <button class="nav-hanger" type="button" aria-label="打开主导航" aria-controls="site-header-nav" aria-expanded="false">
       <span class="nav-hanger-pin" aria-hidden="true"></span>
       <span class="nav-hanger-rope" aria-hidden="true"></span>
       <span class="nav-hanger-ball" aria-hidden="true"></span>
@@ -73,22 +72,22 @@
 
       <div class="lens-console">
         <aside class="lens-panel" aria-label="能力镜头">
-          <button class="lens-button is-active" type="button" data-lens="vision" data-index="01">
+          <button class="lens-button is-active" type="button" data-lens="vision" data-index="01" aria-pressed="true">
             <span class="lens-nav-content">
               <span class="lens-nav-title"><i data-lucide="aperture"></i><strong>Computer Vision</strong></span>
             </span>
           </button>
-          <button class="lens-button" type="button" data-lens="edge" data-index="02">
+          <button class="lens-button" type="button" data-lens="edge" data-index="02" aria-pressed="false">
             <span class="lens-nav-content">
               <span class="lens-nav-title"><i data-lucide="microchip"></i><strong>Edge Deployment</strong></span>
             </span>
           </button>
-          <button class="lens-button" type="button" data-lens="robot" data-index="03">
+          <button class="lens-button" type="button" data-lens="robot" data-index="03" aria-pressed="false">
             <span class="lens-nav-content">
               <span class="lens-nav-title"><i data-lucide="bot"></i><strong>Robot Learning</strong></span>
             </span>
           </button>
-          <button class="lens-button" type="button" data-lens="loop" data-index="04">
+          <button class="lens-button" type="button" data-lens="loop" data-index="04" aria-pressed="false">
             <span class="lens-nav-content">
               <span class="lens-nav-title"><i data-lucide="repeat-2"></i><strong>Engineering Loop</strong></span>
             </span>
@@ -163,6 +162,42 @@
       </div>
     </section>
 
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="projects-title">Repos</h2>
+        </div>
+      </div>
+
+      <div class="repository-section">
+        <div class="repository-console">
+          <div class="repository-main">
+            <div class="repository-controls">
+              <div class="repository-toolbar">
+                <div class="filter-row" data-repository-filters role="region" aria-label="仓库标签筛选">
+                  <span class="filter-loading">正在加载仓库标签…</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="repository-results" role="region" aria-label="仓库结果列表" tabindex="0">
+              <div class="repository-grid" data-repository-grid aria-busy="true">
+                <p class="repository-loading">正在加载仓库…</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="repository-detail" data-repository-detail aria-live="polite">
+            <h2 data-repository-name>Loading repository details</h2>
+            <p class="detail-description" data-repository-description>正在载入 GitHub 仓库数据。</p>
+            <div class="detail-tags" data-repository-tags></div>
+            <div class="repository-trail" data-repository-trail role="region" aria-label="仓库详情摘要" tabindex="0"></div>
+            <a class="detail-action" data-repository-source href="https://github.com/ksukie" target="_blank" rel="noreferrer">GitHub</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="life-bridge" aria-labelledby="life-bridge-title">
       <div class="bridge-clickable-wrap">
         <a class="g_clickable_link w-inline-block bridge-clickable-link" href="#life" aria-label="进入 Life Archive 区域">
@@ -182,7 +217,7 @@
     </section>
 
     <section class="section life-template-section" id="life" aria-labelledby="life-title">
-      <div class="life-template reveal" data-life-stage data-active-life="intro" tabindex="0">
+      <div class="life-template reveal" data-life-stage data-active-life="intro" tabindex="0" role="region" aria-roledescription="carousel" aria-label="生活档案">
         <div class="life-track" data-life-track>
           <article class="life-template-slide is-active" data-life-slide="intro" data-life-caption="Life Archive" data-watermark="Life">
             <p class="eyebrow">Life Archive / 生活档案</p>
@@ -203,17 +238,9 @@
               <p>登高峰一秒 得獎一秒 再破紀錄的一秒<br />港灣晚燈 山頂破曉 摘下懷念 記住美妙<br />升職那刻 新婚那朝 成為父母的一秒<br />要拍照的事 可不少</p>
               <p class="life-song-credit">陈奕迅 -《沙龙》</p>
             </header>
-            <div class="life-photo-shell" aria-label="Photography gallery shell">
-              <div class="life-photo-slot life-photo-carousel" data-photo-carousel>
-                <img class="life-photo-slide is-active" src="assets/life/photography/photo-00.png" alt="Photography memory 1" loading="eager" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-01.jpg" alt="Photography memory 2" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-02.jpg" alt="Photography memory 3" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-03.jpg" alt="Photography memory 4" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-04.jpg" alt="Photography memory 5" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-05.png" alt="Photography memory 6" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-06.png" alt="Photography memory 7" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-07.jpg" alt="Photography memory 8" loading="lazy" data-photo-slide />
-                <img class="life-photo-slide" src="assets/life/photography/photo-08.jpg" alt="Photography memory 9" loading="lazy" data-photo-slide />
+            <div class="life-photo-shell" aria-label="摄影作品">
+              <div class="life-photo-slot">
+                <img class="life-photo-slide is-active" src="assets/life/photography/photo-00.png" alt="Photography memory" loading="eager" />
               </div>
             </div>
           </article>
@@ -379,7 +406,7 @@
             <i data-lucide="arrow-left"></i>
           </button>
           <div class="life-dots" aria-label="当前位置">
-            <button class="life-dot is-active" type="button" data-life-dot="intro" aria-label="Life Archive"></button>
+            <button class="life-dot is-active" type="button" data-life-dot="intro" aria-label="Life Archive" aria-current="true"></button>
             <button class="life-dot" type="button" data-life-dot="photography" aria-label="Photography"></button>
             <button class="life-dot" type="button" data-life-dot="games" aria-label="Gaming Archive"></button>
             <button class="life-dot" type="button" data-life-dot="music" aria-label="Music Room"></button>
@@ -390,55 +417,6 @@
           <button class="life-arrow" type="button" data-life-next aria-label="下一页">
             <i data-lucide="arrow-right"></i>
           </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading">
-        <div>
-          <h2 id="projects-title">Selected project outcomes</h2>
-        </div>
-      </div>
-
-      <div class="project-stage">
-        <div class="project-console">
-          <div class="project-main">
-            <div class="project-toolbar">
-              <div class="project-filters" aria-label="项目筛选">
-                <button class="chip-button is-active" type="button" data-project-filter="All"><i data-lucide="layers-3"></i>All</button>
-                <button class="chip-button" type="button" data-project-filter="Robot"><i data-lucide="bot"></i>Robot</button>
-                <button class="chip-button" type="button" data-project-filter="Vision"><i data-lucide="scan-eye"></i>Vision</button>
-                <button class="chip-button" type="button" data-project-filter="Edge"><i data-lucide="cpu"></i>Edge</button>
-              </div>
-              <button class="chip-button" type="button" data-random-project><i data-lucide="shuffle"></i>Shuffle</button>
-            </div>
-            <div class="project-grid" data-project-grid></div>
-          </div>
-          <aside class="project-detail" aria-live="polite" data-project-detail></aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="repos" aria-labelledby="repos-title">
-      <div class="section-heading">
-        <h2 id="repos-title">Repos</h2>
-      </div>
-
-      <div class="repo-shell">
-        <div class="repo-toolbar">
-          <label class="search-field">
-            <input class="repo-search" type="search" placeholder="搜索仓库、描述、语言" aria-label="搜索公开仓库" />
-          </label>
-          <div class="sort-group" aria-label="仓库排序">
-            <button class="chip-button is-active" type="button" data-sort="updated">Updated</button>
-            <button class="chip-button" type="button" data-sort="stars">Stars</button>
-            <button class="chip-button" type="button" data-sort="name">Name</button>
-          </div>
-        </div>
-        <div class="language-filter" aria-label="语言筛选"></div>
-        <div class="repo-grid" aria-live="polite">
-          <div class="repo-loading"></div>
         </div>
       </div>
     </section>
@@ -501,7 +479,6 @@
   </footer>
 
   <script src="assets/vendor/lucide/lucide.min.js"></script>
-
   <script src="js/soft.js"></script>
 </body>
 </html>
