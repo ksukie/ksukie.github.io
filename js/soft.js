@@ -1294,7 +1294,9 @@ setupRepositories();
   }
 
   function normalizeRepositories(repos) {
-    const repositories = Array.isArray(repos) ? repos.filter(Boolean).map(normalizeRepository) : [];
+    const repositories = Array.isArray(repos)
+      ? repos.filter((repo) => repo && repo.name !== `${GITHUB_USER}.github.io`).map(normalizeRepository)
+      : [];
 
     return repositories.map((repo) => {
       const palette = paletteFor(repo.topics[0] || repo.name);
