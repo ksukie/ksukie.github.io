@@ -2,23 +2,44 @@
 // Repository metadata in this public file is intentionally visible on the portfolio.
 globalThis.REPOSITORY_SNAPSHOT = [
   {
-    "name": "adaptive-ui-engineer",
-    "full_name": "ksukie/adaptive-ui-engineer",
-    "private": false,
-    "visibility": "public",
-    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
+    "name": "VectorMotionTrack",
+    "full_name": "ksukie/VectorMotionTrack",
+    "private": true,
+    "visibility": "private",
+    "description": "OpticalTacFlow: A dual-frame dense motion estimation framework for vision-based tactile sensors, featuring versioned PyTorch models, training pipelines, unified inference, and ONNX/RKNN edge deployment.",
     "language": "Python",
     "topics": [
-      "agent",
-      "powershell",
-      "skill"
+      "edge-ai",
+      "edge-computing",
+      "optical-flow",
+      "qat",
+      "vision"
     ],
     "homepage": "",
-    "html_url": "https://github.com/ksukie/adaptive-ui-engineer",
-    "stargazers_count": 1,
+    "html_url": "https://github.com/ksukie/VectorMotionTrack",
+    "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-07-16T09:56:01Z",
-    "updated_at": "2026-07-16T09:56:08Z"
+    "pushed_at": "2026-07-17T03:33:08Z",
+    "updated_at": "2026-07-17T03:35:49Z"
+  },
+  {
+    "name": "vision-workbench",
+    "full_name": "ksukie/vision-workbench",
+    "private": false,
+    "visibility": "public",
+    "description": "A beginner-friendly computer vision workbench for learning, experimenting, and building CV workflows.",
+    "language": "Python",
+    "topics": [
+      "edge-ai",
+      "pyqt",
+      "vision"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/vision-workbench",
+    "stargazers_count": 6,
+    "forks_count": 0,
+    "pushed_at": "2026-07-16T17:00:10Z",
+    "updated_at": "2026-07-16T17:00:37Z"
   },
   {
     "name": "ksukie.github.io",
@@ -32,8 +53,27 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 1,
     "forks_count": 0,
-    "pushed_at": "2026-07-16T10:15:55Z",
-    "updated_at": "2026-07-16T07:39:30Z"
+    "pushed_at": "2026-07-16T16:56:30Z",
+    "updated_at": "2026-07-16T16:57:23Z"
+  },
+  {
+    "name": "adaptive-ui-engineer",
+    "full_name": "ksukie/adaptive-ui-engineer",
+    "private": false,
+    "visibility": "public",
+    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
+    "language": "Python",
+    "topics": [
+      "agent",
+      "powershell",
+      "skill"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/adaptive-ui-engineer",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "pushed_at": "2026-07-16T09:56:01Z",
+    "updated_at": "2026-07-16T13:23:52Z"
   },
   {
     "name": "AgentGuard",
@@ -97,27 +137,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "updated_at": "2026-07-14T15:50:32Z"
   },
   {
-    "name": "VectorMotionTrack",
-    "full_name": "ksukie/VectorMotionTrack",
-    "private": true,
-    "visibility": "private",
-    "description": null,
-    "language": "Python",
-    "topics": [
-      "edge-ai",
-      "edge-computing",
-      "optical-flow",
-      "qat",
-      "vision"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/VectorMotionTrack",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "pushed_at": "2026-06-06T04:14:28Z",
-    "updated_at": "2026-07-14T15:49:59Z"
-  },
-  {
     "name": "VTLA",
     "full_name": "ksukie/VTLA",
     "private": true,
@@ -151,24 +170,5 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2024-12-30T09:12:03Z",
     "updated_at": "2026-07-14T13:55:30Z"
-  },
-  {
-    "name": "vision-workbench",
-    "full_name": "ksukie/vision-workbench",
-    "private": false,
-    "visibility": "public",
-    "description": "A beginner-friendly computer vision workbench for learning, experimenting, and building CV workflows.",
-    "language": "Python",
-    "topics": [
-      "edge-ai",
-      "pyqt",
-      "vision"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/vision-workbench",
-    "stargazers_count": 6,
-    "forks_count": 0,
-    "pushed_at": "2026-07-14T03:01:39Z",
-    "updated_at": "2026-07-14T13:54:11Z"
   }
 ];
