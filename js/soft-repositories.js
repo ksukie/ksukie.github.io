@@ -2,6 +2,40 @@
 // Repository metadata in this public file is intentionally visible on the portfolio.
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "adaptive-ui-engineer",
+    "full_name": "ksukie/adaptive-ui-engineer",
+    "private": false,
+    "visibility": "public",
+    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
+    "language": "Python",
+    "topics": [
+      "agent",
+      "powershell",
+      "skill"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/adaptive-ui-engineer",
+    "stargazers_count": 3,
+    "forks_count": 0,
+    "pushed_at": "2026-07-16T09:56:01Z",
+    "updated_at": "2026-07-17T08:10:10Z"
+  },
+  {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "pushed_at": "2026-07-17T05:57:17Z",
+    "updated_at": "2026-07-17T05:57:24Z"
+  },
+  {
     "name": "VectorMotionTrack",
     "full_name": "ksukie/VectorMotionTrack",
     "private": true,
@@ -40,40 +74,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-07-16T17:00:10Z",
     "updated_at": "2026-07-16T17:00:37Z"
-  },
-  {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "pushed_at": "2026-07-16T16:56:30Z",
-    "updated_at": "2026-07-16T16:57:23Z"
-  },
-  {
-    "name": "adaptive-ui-engineer",
-    "full_name": "ksukie/adaptive-ui-engineer",
-    "private": false,
-    "visibility": "public",
-    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
-    "language": "Python",
-    "topics": [
-      "agent",
-      "powershell",
-      "skill"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/adaptive-ui-engineer",
-    "stargazers_count": 2,
-    "forks_count": 0,
-    "pushed_at": "2026-07-16T09:56:01Z",
-    "updated_at": "2026-07-16T13:23:52Z"
   },
   {
     "name": "AgentGuard",
