@@ -2,6 +2,21 @@
 // Repository metadata in this public file is intentionally visible on the portfolio.
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "pushed_at": "2026-07-18T05:37:46Z",
+    "updated_at": "2026-07-18T05:37:50Z"
+  },
+  {
     "name": "adaptive-ui-engineer",
     "full_name": "ksukie/adaptive-ui-engineer",
     "private": false,
@@ -19,21 +34,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-07-16T09:56:01Z",
     "updated_at": "2026-07-17T08:10:10Z"
-  },
-  {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "pushed_at": "2026-07-17T05:57:17Z",
-    "updated_at": "2026-07-17T05:57:24Z"
   },
   {
     "name": "VectorMotionTrack",
@@ -72,7 +72,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/vision-workbench",
     "stargazers_count": 6,
     "forks_count": 0,
-    "pushed_at": "2026-07-16T17:00:10Z",
+    "pushed_at": "2026-07-18T23:43:43Z",
     "updated_at": "2026-07-16T17:00:37Z"
   },
   {
