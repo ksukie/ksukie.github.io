@@ -2,38 +2,47 @@
 // Repository metadata in this public file is intentionally visible on the portfolio.
 globalThis.REPOSITORY_SNAPSHOT = [
   {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
+    "name": "OpenFireAlert",
+    "full_name": "ksukie/OpenFireAlert",
     "private": false,
     "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "pushed_at": "2026-07-18T05:37:46Z",
-    "updated_at": "2026-07-18T05:37:50Z"
-  },
-  {
-    "name": "adaptive-ui-engineer",
-    "full_name": "ksukie/adaptive-ui-engineer",
-    "private": false,
-    "visibility": "public",
-    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
+    "description": "Open-Source Edge AI Fire & Smoke Monitoring Platform",
     "language": "Python",
     "topics": [
-      "agent",
-      "powershell",
-      "skill"
+      "edge-ai",
+      "edge-comupting",
+      "esp32",
+      "fullstack-development",
+      "jetson",
+      "tensorrt",
+      "vision",
+      "yolov11"
     ],
     "homepage": "",
-    "html_url": "https://github.com/ksukie/adaptive-ui-engineer",
-    "stargazers_count": 3,
+    "html_url": "https://github.com/ksukie/OpenFireAlert",
+    "stargazers_count": 4,
     "forks_count": 0,
-    "pushed_at": "2026-07-16T09:56:01Z",
-    "updated_at": "2026-07-17T08:10:10Z"
+    "pushed_at": "2026-07-20T06:08:04Z",
+    "updated_at": "2026-07-20T06:15:26Z"
+  },
+  {
+    "name": "vision-workbench",
+    "full_name": "ksukie/vision-workbench",
+    "private": false,
+    "visibility": "public",
+    "description": "A beginner-friendly computer vision workbench for learning, experimenting, and building CV workflows.",
+    "language": "Python",
+    "topics": [
+      "edge-ai",
+      "pyqt",
+      "vision"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/vision-workbench",
+    "stargazers_count": 6,
+    "forks_count": 0,
+    "pushed_at": "2026-07-20T05:57:44Z",
+    "updated_at": "2026-07-20T05:18:54Z"
   },
   {
     "name": "VectorMotionTrack",
@@ -53,27 +62,27 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/VectorMotionTrack",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-07-17T03:33:08Z",
-    "updated_at": "2026-07-17T03:35:49Z"
+    "pushed_at": "2026-07-19T15:15:22Z",
+    "updated_at": "2026-07-19T15:15:30Z"
   },
   {
-    "name": "vision-workbench",
-    "full_name": "ksukie/vision-workbench",
+    "name": "adaptive-ui-engineer",
+    "full_name": "ksukie/adaptive-ui-engineer",
     "private": false,
     "visibility": "public",
-    "description": "A beginner-friendly computer vision workbench for learning, experimenting, and building CV workflows.",
+    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
     "language": "Python",
     "topics": [
-      "edge-ai",
-      "pyqt",
-      "vision"
+      "agent",
+      "powershell",
+      "skill"
     ],
     "homepage": "",
-    "html_url": "https://github.com/ksukie/vision-workbench",
-    "stargazers_count": 6,
+    "html_url": "https://github.com/ksukie/adaptive-ui-engineer",
+    "stargazers_count": 3,
     "forks_count": 0,
-    "pushed_at": "2026-07-18T23:43:43Z",
-    "updated_at": "2026-07-16T17:00:37Z"
+    "pushed_at": "2026-07-19T14:38:20Z",
+    "updated_at": "2026-07-19T14:38:23Z"
   },
   {
     "name": "AgentGuard",
@@ -90,32 +99,23 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/AgentGuard",
     "stargazers_count": 2,
     "forks_count": 0,
-    "pushed_at": "2026-07-14T15:47:43Z",
-    "updated_at": "2026-07-16T06:37:49Z"
+    "pushed_at": "2026-07-19T13:44:51Z",
+    "updated_at": "2026-07-19T13:44:55Z"
   },
   {
-    "name": "WildfireAegis",
-    "full_name": "ksukie/WildfireAegis",
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
     "private": false,
     "visibility": "public",
-    "description": "An open-source wildfire monitoring platform with ESP32 sensing, Jetson edge AI detection, real-time RTSP streaming, and a web-based control plane.",
-    "language": "Python",
-    "topics": [
-      "edge-ai",
-      "edge-comupting",
-      "esp32",
-      "fullstack-development",
-      "jetson",
-      "tensorrt",
-      "vision",
-      "yolov11"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/WildfireAegis",
-    "stargazers_count": 3,
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 1,
     "forks_count": 0,
-    "pushed_at": "2026-07-14T17:52:21Z",
-    "updated_at": "2026-07-14T17:52:26Z"
+    "pushed_at": "2026-07-19T06:09:56Z",
+    "updated_at": "2026-07-19T06:10:03Z"
   },
   {
     "name": "VisionDot",
