@@ -6,7 +6,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "full_name": "ksukie/OpenFireAlert",
     "private": false,
     "visibility": "public",
-    "description": "Open-Source Edge AI Fire & Smoke Monitoring Platform",
+    "description": "Open-source wildfire monitoring and early-warning platform powered by AI vision, Jetson edge inference, and ESP32 sensors.",
     "language": "Python",
     "topics": [
       "edge-ai",
@@ -20,14 +20,51 @@ globalThis.REPOSITORY_SNAPSHOT = [
     ],
     "homepage": "",
     "html_url": "https://github.com/ksukie/OpenFireAlert",
-    "stargazers_count": 4,
+    "stargazers_count": 5,
     "forks_count": 0,
-    "pushed_at": "2026-07-20T06:08:04Z",
-    "updated_at": "2026-07-20T06:15:26Z"
+    "pushed_at": "2026-07-21T05:54:09Z",
+    "updated_at": "2026-07-21T05:54:17Z"
   },
   {
-    "name": "vision-workbench",
-    "full_name": "ksukie/vision-workbench",
+    "name": "AgentTools",
+    "full_name": "ksukie/AgentTools",
+    "private": false,
+    "visibility": "public",
+    "description": "Cross-platform AGENTS.md templates and Windows-first read-only diagnostics for AI coding agents.",
+    "language": "Python",
+    "topics": [
+      "agent",
+      "powershell"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/AgentTools",
+    "stargazers_count": 3,
+    "forks_count": 0,
+    "pushed_at": "2026-07-20T10:46:23Z",
+    "updated_at": "2026-07-21T03:14:46Z"
+  },
+  {
+    "name": "AdaptiveUI-SKILL",
+    "full_name": "ksukie/AdaptiveUI-SKILL",
+    "private": false,
+    "visibility": "public",
+    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
+    "language": "Python",
+    "topics": [
+      "agent",
+      "powershell",
+      "skill"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/AdaptiveUI-SKILL",
+    "stargazers_count": 4,
+    "forks_count": 0,
+    "pushed_at": "2026-07-20T10:04:26Z",
+    "updated_at": "2026-07-21T03:14:39Z"
+  },
+  {
+    "name": "Vision-WorkBench",
+    "full_name": "ksukie/Vision-WorkBench",
     "private": false,
     "visibility": "public",
     "description": "A beginner-friendly computer vision workbench for learning, experimenting, and building CV workflows.",
@@ -38,15 +75,15 @@ globalThis.REPOSITORY_SNAPSHOT = [
       "vision"
     ],
     "homepage": "",
-    "html_url": "https://github.com/ksukie/vision-workbench",
-    "stargazers_count": 6,
+    "html_url": "https://github.com/ksukie/Vision-WorkBench",
+    "stargazers_count": 7,
     "forks_count": 0,
-    "pushed_at": "2026-07-20T05:57:44Z",
-    "updated_at": "2026-07-20T05:18:54Z"
+    "pushed_at": "2026-07-20T10:46:42Z",
+    "updated_at": "2026-07-21T03:14:33Z"
   },
   {
-    "name": "VectorMotionTrack",
-    "full_name": "ksukie/VectorMotionTrack",
+    "name": "TactileFlowField",
+    "full_name": "ksukie/TactileFlowField",
     "private": true,
     "visibility": "private",
     "description": "OpticalTacFlow: A dual-frame dense motion estimation framework for vision-based tactile sensors, featuring versioned PyTorch models, training pipelines, unified inference, and ONNX/RKNN edge deployment.",
@@ -59,48 +96,11 @@ globalThis.REPOSITORY_SNAPSHOT = [
       "vision"
     ],
     "homepage": "",
-    "html_url": "https://github.com/ksukie/VectorMotionTrack",
+    "html_url": "https://github.com/ksukie/TactileFlowField",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-07-19T15:15:22Z",
-    "updated_at": "2026-07-19T15:15:30Z"
-  },
-  {
-    "name": "adaptive-ui-engineer",
-    "full_name": "ksukie/adaptive-ui-engineer",
-    "private": false,
-    "visibility": "public",
-    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
-    "language": "Python",
-    "topics": [
-      "agent",
-      "powershell",
-      "skill"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/adaptive-ui-engineer",
-    "stargazers_count": 3,
-    "forks_count": 0,
-    "pushed_at": "2026-07-19T14:38:20Z",
-    "updated_at": "2026-07-19T14:38:23Z"
-  },
-  {
-    "name": "AgentGuard",
-    "full_name": "ksukie/AgentGuard",
-    "private": false,
-    "visibility": "public",
-    "description": "Cross-platform AGENTS.md templates and Windows-first read-only diagnostics for AI coding agents.",
-    "language": "PowerShell",
-    "topics": [
-      "agent",
-      "powershell"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/AgentGuard",
-    "stargazers_count": 2,
-    "forks_count": 0,
-    "pushed_at": "2026-07-19T13:44:51Z",
-    "updated_at": "2026-07-19T13:44:55Z"
+    "pushed_at": "2026-07-20T08:21:18Z",
+    "updated_at": "2026-07-20T08:22:31Z"
   },
   {
     "name": "ksukie.github.io",
@@ -114,8 +114,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 1,
     "forks_count": 0,
-    "pushed_at": "2026-07-19T06:09:56Z",
-    "updated_at": "2026-07-19T06:10:03Z"
+    "pushed_at": "2026-07-20T06:27:45Z",
+    "updated_at": "2026-07-20T06:27:59Z"
   },
   {
     "name": "VisionDot",
