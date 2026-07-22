@@ -2,6 +2,93 @@
 // Repository metadata in this public file is intentionally visible on the portfolio.
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "Vision-WorkBench",
+    "full_name": "ksukie/Vision-WorkBench",
+    "private": false,
+    "visibility": "public",
+    "description": "A beginner-friendly computer vision workbench for learning, experimenting, and building CV workflows.",
+    "language": "Python",
+    "topics": [
+      "edge-ai",
+      "pyqt",
+      "vision"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/Vision-WorkBench",
+    "stargazers_count": 7,
+    "forks_count": 0,
+    "pushed_at": "2026-07-22T03:12:21Z",
+    "updated_at": "2026-07-22T03:12:37Z"
+  },
+  {
+    "name": "EdgeVisTrack-RKNN",
+    "full_name": "ksukie/EdgeVisTrack-RKNN",
+    "private": true,
+    "visibility": "private",
+    "description": "Pure-vision, edge-optimized multi-camera circular-marker tracking for RV1126B with CPU reference and batched RKNN acceleration backends.",
+    "language": "Python",
+    "topics": [
+      "rk3588",
+      "rv1126b",
+      "vision"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/EdgeVisTrack-RKNN",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "pushed_at": "2026-07-21T10:55:05Z",
+    "updated_at": "2026-07-21T10:55:10Z"
+  },
+  {
+    "name": "Nvidia-isaaclab",
+    "full_name": "ksukie/Nvidia-isaaclab",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": null,
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/Nvidia-isaaclab",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2026-07-21T10:33:56Z",
+    "updated_at": "2026-07-21T10:33:56Z"
+  },
+  {
+    "name": "VTLA",
+    "full_name": "ksukie/VTLA",
+    "private": true,
+    "visibility": "private",
+    "description": "VTLA is a LeRobot-based stack for Piper arms, tactile sensing, multimodal data, DreamTacVLA training, evaluation, and deployment in real-world manipulation.",
+    "language": "Python",
+    "topics": [
+      "robots",
+      "tactile",
+      "vla"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/VTLA",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2026-07-21T09:06:57Z",
+    "updated_at": "2026-07-21T09:52:13Z"
+  },
+  {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "pushed_at": "2026-07-21T06:07:35Z",
+    "updated_at": "2026-07-21T06:08:03Z"
+  },
+  {
     "name": "OpenFireAlert",
     "full_name": "ksukie/OpenFireAlert",
     "private": false,
@@ -63,25 +150,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "updated_at": "2026-07-21T03:14:39Z"
   },
   {
-    "name": "Vision-WorkBench",
-    "full_name": "ksukie/Vision-WorkBench",
-    "private": false,
-    "visibility": "public",
-    "description": "A beginner-friendly computer vision workbench for learning, experimenting, and building CV workflows.",
-    "language": "Python",
-    "topics": [
-      "edge-ai",
-      "pyqt",
-      "vision"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/Vision-WorkBench",
-    "stargazers_count": 7,
-    "forks_count": 0,
-    "pushed_at": "2026-07-20T10:46:42Z",
-    "updated_at": "2026-07-21T03:14:33Z"
-  },
-  {
     "name": "TactileFlowField",
     "full_name": "ksukie/TactileFlowField",
     "private": true,
@@ -101,58 +169,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-07-20T08:21:18Z",
     "updated_at": "2026-07-20T08:22:31Z"
-  },
-  {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "pushed_at": "2026-07-20T06:27:45Z",
-    "updated_at": "2026-07-20T06:27:59Z"
-  },
-  {
-    "name": "VisionDot",
-    "full_name": "ksukie/VisionDot",
-    "private": true,
-    "visibility": "private",
-    "description": null,
-    "language": "Python",
-    "topics": [
-      "rk3588",
-      "rv1126b",
-      "vision"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/VisionDot",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "pushed_at": "2026-05-29T01:30:19Z",
-    "updated_at": "2026-07-14T15:50:32Z"
-  },
-  {
-    "name": "VTLA",
-    "full_name": "ksukie/VTLA",
-    "private": true,
-    "visibility": "private",
-    "description": null,
-    "language": "Python",
-    "topics": [
-      "robots",
-      "vla"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/VTLA",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "pushed_at": "2026-06-06T04:19:21Z",
-    "updated_at": "2026-07-14T14:05:07Z"
   },
   {
     "name": "GuessNumber",
