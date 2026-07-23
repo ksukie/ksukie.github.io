@@ -2,6 +2,84 @@
 // Repository metadata in this public file is intentionally visible on the portfolio.
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "IsaacSim-Tactile4OpenWorld",
+    "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
+    "private": false,
+    "visibility": "public",
+    "description": "OpenWorldTactile is an Isaac Sim platform for open-world robotic contact, deformation, force-field reconstruction, and visuotactile research across sensors and robots.",
+    "language": "Python",
+    "topics": [
+      "embodied-ai",
+      "isaacsim",
+      "robotics",
+      "tactical",
+      "vision"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
+    "stargazers_count": 4,
+    "forks_count": 0,
+    "pushed_at": "2026-07-23T01:42:28Z",
+    "updated_at": "2026-07-23T02:16:31Z"
+  },
+  {
+    "name": "OpenFireAlert",
+    "full_name": "ksukie/OpenFireAlert",
+    "private": false,
+    "visibility": "public",
+    "description": "Open-source wildfire monitoring and early-warning platform powered by AI vision, Jetson edge inference, and ESP32 sensors.",
+    "language": "Python",
+    "topics": [
+      "edge-ai",
+      "edge-comupting",
+      "esp32",
+      "fullstack-development",
+      "jetson",
+      "tensorrt",
+      "vision",
+      "yolov11"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/OpenFireAlert",
+    "stargazers_count": 5,
+    "forks_count": 0,
+    "pushed_at": "2026-07-21T05:54:09Z",
+    "updated_at": "2026-07-23T01:40:36Z"
+  },
+  {
+    "name": "AgentTools",
+    "full_name": "ksukie/AgentTools",
+    "private": false,
+    "visibility": "public",
+    "description": "Cross-platform AGENTS.md templates and Windows-first read-only diagnostics for AI coding agents.",
+    "language": "Python",
+    "topics": [
+      "agent",
+      "powershell"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/AgentTools",
+    "stargazers_count": 3,
+    "forks_count": 0,
+    "pushed_at": "2026-07-22T06:36:02Z",
+    "updated_at": "2026-07-22T06:37:08Z"
+  },
+  {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "pushed_at": "2026-07-22T06:06:19Z",
+    "updated_at": "2026-07-22T06:06:59Z"
+  },
+  {
     "name": "Vision-WorkBench",
     "full_name": "ksukie/Vision-WorkBench",
     "private": false,
@@ -40,21 +118,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "updated_at": "2026-07-21T10:55:10Z"
   },
   {
-    "name": "Nvidia-isaaclab",
-    "full_name": "ksukie/Nvidia-isaaclab",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": null,
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/Nvidia-isaaclab",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "pushed_at": "2026-07-21T10:33:56Z",
-    "updated_at": "2026-07-21T10:33:56Z"
-  },
-  {
     "name": "VTLA",
     "full_name": "ksukie/VTLA",
     "private": true,
@@ -72,63 +135,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-07-21T09:06:57Z",
     "updated_at": "2026-07-21T09:52:13Z"
-  },
-  {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "pushed_at": "2026-07-21T06:07:35Z",
-    "updated_at": "2026-07-21T06:08:03Z"
-  },
-  {
-    "name": "OpenFireAlert",
-    "full_name": "ksukie/OpenFireAlert",
-    "private": false,
-    "visibility": "public",
-    "description": "Open-source wildfire monitoring and early-warning platform powered by AI vision, Jetson edge inference, and ESP32 sensors.",
-    "language": "Python",
-    "topics": [
-      "edge-ai",
-      "edge-comupting",
-      "esp32",
-      "fullstack-development",
-      "jetson",
-      "tensorrt",
-      "vision",
-      "yolov11"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/OpenFireAlert",
-    "stargazers_count": 5,
-    "forks_count": 0,
-    "pushed_at": "2026-07-21T05:54:09Z",
-    "updated_at": "2026-07-21T05:54:17Z"
-  },
-  {
-    "name": "AgentTools",
-    "full_name": "ksukie/AgentTools",
-    "private": false,
-    "visibility": "public",
-    "description": "Cross-platform AGENTS.md templates and Windows-first read-only diagnostics for AI coding agents.",
-    "language": "Python",
-    "topics": [
-      "agent",
-      "powershell"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/AgentTools",
-    "stargazers_count": 3,
-    "forks_count": 0,
-    "pushed_at": "2026-07-20T10:46:23Z",
-    "updated_at": "2026-07-21T03:14:46Z"
   },
   {
     "name": "AdaptiveUI-SKILL",
