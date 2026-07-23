@@ -510,7 +510,7 @@
           <div class="item-body">
             <h3>VTLA：视觉-触觉机器人学习与真机训练推理栈</h3>
             <p>基于 LeRobot 0.5.2 构建兼容上游 CLI / API 的机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机与训练 / 录制 / 推理配置，面向 ACT 和 PI0 / PI0.5 打通真机数据采集、CAN 总线、流式编码、episode 管理与多模态数据统计。</p>
-            <p>模型侧扩展 PI0.5 触觉输入、TactileEncoder、触觉 token 投影和 embed_tactile_image 流程；训练侧改造梯度累积与有效 batch 统计，形成从真机数据到策略训练、部署评估的工程链路。</p>
+            <p>为 PI0.5 和 ACT-based DreamTacVLA 实现专用触觉通路，包括轻量 tactile-token 编码、力矩阵条件化（force-matrix conditioning）、梯度累积与回归测试保证的 legacy HDF5 转换，形成从真机数据到策略训练、部署评估的完整工程链路。</p>
           </div>
         </div>
 
@@ -521,8 +521,8 @@
           </div>
           <div class="item-body">
             <h3>IsaacSim-Tactile4OpenWorld：开放场景机器人触觉仿真与力场研究平台</h3>
-            <p>基于 Isaac Sim / Isaac Lab 构建机器人接触与视觉触觉研究平台，整合 UIPC / libuipc 刚柔体接触、柔性膜形变、触觉图像生成与三维 Fx / Fy / Fz 力场重建。</p>
-            <p>覆盖 GelSight Mini、Taxim、FOTS、FEM 等触觉方法，以及 AgileX Piper、Franka 的抓取、插入、滚动和接触实验，统一管理 V1–V6.2 实验谱系、HDF5 数据采集与依赖边界。</p>
+            <p>基于 Isaac Sim / Isaac Lab 构建机器人接触与视觉触觉研究平台，整合 UIPC / libuipc 刚柔体接触、柔性膜形变、触觉图像生成，从网格形变重建触觉局部三维 Fx / Fy / Fz 力场，包含力投影、符号校准、压力和剪切力估计。</p>
+            <p>构建迭代验证套件，覆盖接触 / 非接触、膜对齐、抓取、提升、插入和横向剪切场景，统一管理 V1–V6.2 实验谱系、HDF5 数据采集，并隔离 incompatible Isaac Lab 2.1.1 / 2.3.2 环境及外部资源依赖边界。</p>
           </div>
         </div>
 
@@ -533,8 +533,8 @@
           </div>
           <div class="item-body">
             <h3>OpenFireAlert：森林火灾智能监测与预警平台</h3>
-            <p>完成 YOLO11 火焰 / 烟雾检测模型训练、ONNX / TensorRT 导出与 Jetson 部署，打通 RTSP 视频流、端侧推理、告警同步和 Web 可视化。</p>
-            <p>集成 ESP32 传感器节点与 Spring Boot 控制平面，统一管理环境数据、检测状态、设备命令和告警记录。</p>
+            <p>基于 D-Fire 数据集完成 YOLO11 火焰 / 烟雾检测模型训练与优化，建立 PyTorch → ONNX → TensorRT 转换和 Jetson 部署管线，打通 RTSP 视频流、端侧推理、告警同步和 Web 可视化。</p>
+            <p>集成 ESP32 传感器节点与 Spring Boot 控制平面，融合烟雾传感器信号、抑制重复告警，并协调蜂鸣器、邮件和仪表盘三级通知，统一管理环境数据、检测状态和设备命令。</p>
           </div>
         </div>
 
@@ -545,8 +545,8 @@
           </div>
           <div class="item-body">
             <h3>TactileFlowField：视觉触觉稠密位移场学习与端侧部署</h3>
-            <p>面向视觉触觉传感器构建稠密位移场学习与部署工程，整理多版本模型和 27 个训练实验，支持 PyTorch 数据集与视频流推理。</p>
-            <p>完成 ONNX、FP16 / PTQ INT8 RKNN 导出及 RKNNLite 板端推理，适配 RV1126B、多路视频、基线标定和单 / 多设备触觉相机 API。</p>
+            <p>开发三阶段双帧网络族用于稠密触觉位移估计，探索多种特征提取、跨帧融合与位移场回归设计，标准化输入、checkpoint 和输出契约以提升模型复用性和跨配置泛化能力。</p>
+            <p>建立 PyTorch → ONNX → RKNN 端侧部署管线，围绕 RKNN 算子约束重新设计模型与推理路径，支持 FP16 / PTQ INT8 量化，适配 RV1126B、多路视频、单相机基线标定和多设备触觉相机 API。</p>
           </div>
         </div>
 
@@ -557,8 +557,8 @@
           </div>
           <div class="item-body">
             <h3>EdgeVisTrack-RKNN：多摄像头圆形标记点端侧追踪系统</h3>
-            <p>面向 RV1126B 构建多摄像头圆形标记点实时追踪系统，基于首帧区域阈值、Hough 圆检测与局部模板相关，实现标记点位移、色相变化和丢失重捕获，并保留 CPU 参考后端用于行为验证。</p>
-            <p>设计 Fixed / Dynamic 两类 RKNN 批处理后端，通过 Cython ROI 裁剪、FP16 LUT、可复用缓冲区和 RKNN C API 下沉高频计算，支持五路相机多进程运行及分阶段性能观测。</p>
+            <p>面向 RV1126B 构建多摄像头圆形标记点实时追踪系统，基于首帧区域阈值、Hough 圆检测与局部模板相关，实现标记点位移、亚像素细化、色相变化和丢失重捕获，保留 CPU 参考后端用于行为验证。</p>
+            <p>经五路相机 CPU 执行剖析（98%–99% 利用率）后，将热点路径迁移至 Fixed / Dynamic 两类 RKNN 批处理后端，通过 Cython ROI 裁剪、FP16 LUT、可复用缓冲区和 RKNN C API 下沉高频计算，支持多进程运行及分阶段性能观测。</p>
           </div>
         </div>
 
@@ -570,7 +570,7 @@
           <div class="item-body">
             <h3>Vision Workbench：统一桌面端计算机视觉学习与实验平台</h3>
             <p>基于 PySide6 构建统一桌面端计算机视觉工作台，整合传统图像处理、全景图重建、相机诊断、图像分类，以及 YOLO26 目标检测、实例分割、语义分割与训练流程，为计算机视觉学习、实验和模型验证提供一体化入口。</p>
-            <p>项目采用模块化 Python API 与统一 Qt 桌面外壳，配套模型和数据集管理、自动化测试、打包元数据及中英文文档；通过基础依赖与深度学习可选依赖分离，兼顾轻量启动和完整训练推理工作流。</p>
+            <p>项目采用模块化 Python API 与统一 Qt 桌面外壳，配套 184 项自动化测试、跨平台 Qt / 无障碍检查；发布工程方面实现可选依赖隔离、版本门控、SHA-256 校验、依赖指纹和回滚机制，支持 wheel 和 Windows EXE 的验证更新。</p>
           </div>
         </div>
 
@@ -581,7 +581,8 @@
           </div>
           <div class="item-body">
             <h3>AdaptiveUI-SKILL：响应式界面审计、修复与验证 Agent Skills</h3>
-            <p>构建 AdaptiveUI-S / AdaptiveUI-N 两个仅显式调用、框架无关的 Agent Skills，覆盖响应式布局、溢出、交互、无障碍和跨浏览器回退；配套零依赖 Python 审计器与 Codex Plugin，提供规则 ID、置信度、规则抑制、JSON 输出和 CI 阈值。</p>
+            <p>构建 AdaptiveUI-S / AdaptiveUI-N 两个仅显式调用、跨框架（HTML/CSS、React、Vue、Svelte、Tailwind）的 Agent Skills，覆盖响应式布局、溢出、交互、无障碍和跨浏览器回退。</p>
+            <p>实现零依赖 Python 审计器，包含 24 条稳定规则、严重度 / 置信度元数据、规则抑制、JSON Schema 输出和 CI 阈值，配套 79 项自动化测试与 Codex Plugin。</p>
           </div>
         </div>
 
