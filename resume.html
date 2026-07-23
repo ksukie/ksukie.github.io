@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="柯书奇 - 算法工程师方向个人简历" />
+  <meta name="description" content="柯书奇 - 计算机视觉、边缘 AI 与机器人学习方向个人简历" />
   <title>Shuqi Ke</title>
   <style>
     :root {
@@ -21,6 +21,8 @@
       --green: #2f3a45;
       --pale: #f6f8fa;
       --blue-soft: #eef5f7;
+      --paper-link: #4f86a6;
+      --paper-link-hover: #2f6887;
     }
 
     * {
@@ -284,6 +286,25 @@
       overflow-wrap: anywhere;
     }
 
+    .paper-link,
+    .paper-status {
+      display: inline-block;
+      margin-left: 7px;
+      color: var(--paper-link);
+      font-size: 0.78em;
+      font-weight: 800;
+      line-height: 1.35;
+      vertical-align: 1px;
+      white-space: nowrap;
+    }
+
+    .paper-link:hover,
+    .paper-link:focus-visible {
+      color: var(--paper-link-hover);
+      text-decoration: underline;
+      outline: none;
+    }
+
     @media (max-width: 980px) {
       .shell {
         width: 100%;
@@ -323,6 +344,14 @@
         margin: 0;
         box-shadow: none;
       }
+
+      .main {
+        padding-bottom: 0;
+      }
+
+      .main > .section:last-child {
+        margin-bottom: 0;
+      }
     }
   </style>
 </head>
@@ -335,7 +364,7 @@
           <div class="monogram">KSQ</div>
         </div>
         <h1>柯书奇</h1>
-        <p class="title">Algorithm Engineer</p>
+        <p class="title">CV / Edge AI / Robot Learning</p>
       </header>
 
       <section class="side-block">
@@ -343,11 +372,11 @@
         <ul class="side-list">
           <li>
             <span class="label">Phone</span>
-            <a href="tel:15707039996">15707039996</a>
+            <span>15707039996</span>
           </li>
           <li>
             <span class="label">Email</span>
-            <a href="mailto:15707039996@163.com">15707039996@163.com</a>
+            <span>15707039996@163.com</span>
           </li>
           <li>
             <span class="label">GitHub</span>
@@ -359,14 +388,14 @@
       <section class="side-block">
         <h2>Tech Stack</h2>
         <ul class="focus-list">
-          <li>Computer Vision / OpenCV</li>
-          <li>PyTorch / YOLO / U-Net</li>
-          <li>ONNX / TensorRT Deployment</li>
-          <li>Jetson / Edge AI / End to End</li>
-          <li>RKNN / RV1126B / RK3588</li>
-          <li>LeRobot / PI0 / PI0.5 / ACT</li>
-          <li>Data Collection / Piper / Tactile</li>
-          <li>Optical Flow / Quantization</li>
+          <li>PyTorch / YOLO / U-Net / OpenCV</li>
+          <li>ONNX / TensorRT / RKNN</li>
+          <li>Jetson / RV1126B / RK3588</li>
+          <li>FP16 / INT8 / QAT</li>
+          <li>LeRobot / ACT / PI0 / PI0.5</li>
+          <li>Piper / Tactile / Data Collection</li>
+          <li>GStreamer / RTSP / MIPI</li>
+          <li>Benchmark / Logging / Profiling</li>
         </ul>
       </section>
 
@@ -394,6 +423,7 @@
           <li>CET-4 / CET-6</li>
         </ul>
       </section>
+
     </aside>
 
     <main class="main">
@@ -401,12 +431,13 @@
         <h2 class="section-title">实习经历</h2>
         <div class="item">
           <div class="time">
-            <strong>图像算法实习生</strong>
-            2026.02 - 至今
+            <strong>算法工程师（实习）</strong>
+            2026.02 - 2026.08
           </div>
           <div class="item-body">
             <h3>深圳市视塔机器人科技有限公司</h3>
-            <p>实习期间围绕具身智能与边缘视觉场景开展算法工程工作，参与机器人学习栈、视觉触觉感知与端侧实时视觉模块研发，覆盖多模态数据采集、模型适配、训练验证、量化评估、硬件联调与现场测试等环节，沉淀从感知算法到真机部署的工程实践能力。</p>
+            <p>围绕具身智能与边缘视觉场景开展算法工程研发，搭建视觉—触觉机器人真机数据采集、录制、训练与推理链路，集成机械臂主从控制、触觉相机及多模态数据管理，并面向 ACT、PI0 / PI0.5 完成触觉输入、训练配置与有效批次统计适配。</p>
+            <p>面向端侧实时视觉，开展双帧运动向量预测、多路相机检测与模板追踪研发，完成模型结构及损失优化、FP16 / INT8 量化、校准样本构建与端侧一致性验证；在 PC、RV1126B、RK3588 上完成 GStreamer / MIPI 视频链路、并发处理、性能剖析、硬件联调与现场校准。</p>
           </div>
         </div>
       </section>
@@ -421,8 +452,8 @@
           <div class="item-body">
             <h3>JJU CVI Lab</h3>
             <p class="tagline">Object Detection · Semantic Segmentation · Edge AI</p>
-            <p>依托视觉研究所参与目标检测、医学图像分割与边缘智能应用研究，覆盖问题建模、实验假设设计、消融对比、误差分析与论文结果整理，形成从研究问题定义到实验验证和成果表达的科研训练。</p>
-            <p>同时承担实验室生物医学图像工具链建设，围绕染色体分割检测系统完成图像预处理、候选区域检测、分割结果复核与异常样本标注流程设计，基于 PyQt5 开发交互式分析工具，将批量图像载入、人工修正和结果导出整合为可运行系统，提升实验室数据标注与复核效率。</p>
+            <p>参与目标检测、医学图像分割与边缘智能应用研究，覆盖问题建模、实验假设设计、消融对比、误差分析与论文结果整理，形成从研究问题定义到实验验证和成果表达的科研训练。</p>
+            <p>承担实验室生物医学图像工具链建设，围绕染色体分割检测系统完成图像预处理、候选区域检测、结果复核与异常样本标注流程设计；基于 PyQt5 整合批量图像载入、人工修正和结果导出。</p>
           </div>
         </div>
 
@@ -433,9 +464,9 @@
           </div>
           <div class="item-body">
             <h3>TY-YOLO：集成注意力的多尺度复杂场景火灾烟雾检测算法</h3>
-            <p>面向森林火灾早期预警中小目标烟雾、遮挡干扰和复杂背景误检问题，独立完成模型选型、结构优化、损失函数调优和论文撰写，通过注意力机制与多尺度特征融合增强火焰/烟雾表征能力，在检测精度、参数规模与推理开销之间进行折中优化，构建适配边缘场景的轻量级目标检测模型。</p>
+            <p>针对森林火灾早期预警中的小目标烟雾、遮挡干扰和复杂背景误检，独立完成模型选型、结构优化、损失函数调优与论文撰写，通过注意力机制和多尺度特征融合平衡检测精度、参数规模与推理开销。</p>
             <div class="paper-ref">
-              TY-YOLO: An attention-based multi-scale complex scene fire smoke detection algorithm
+              [1] TY-YOLO: An attention-based multi-scale complex scene fire smoke detection algorithm<span class="paper-status">[Under Review]</span>
             </div>
           </div>
         </div>
@@ -447,9 +478,9 @@
           </div>
           <div class="item-body">
             <h3>FgFEU-Net：基于迁移学习的乳腺肿瘤分割模型</h3>
-            <p>面向乳腺超声图像中肿瘤边界模糊、样本标注成本高和前景/背景不均衡等问题，构建基于迁移学习的细粒度特征提取 U-Net 模型，引入 VGG16 作为编码器增强低层纹理与语义特征抽取，通过同层特征融合恢复高分辨率定位信息，并结合 Combo Loss 改善医学图像语义分割中的类别不平衡。</p>
+            <p>面向乳腺超声图像中肿瘤边界模糊和前景 / 背景不均衡问题，构建基于迁移学习的细粒度特征提取 U-Net，引入 VGG16 编码器、同层特征融合与 Combo Loss，增强纹理语义提取和高分辨率定位能力。</p>
             <div class="paper-ref">
-              FgFEU-Net: A Fine-grained Feature Extraction U-Net Model for Breast Tumor Segmentation Based on Transfer Learning
+              [2] FgFEU-Net: A Fine-grained Feature Extraction U-Net Model for Breast Tumor Segmentation Based on Transfer Learning<a class="paper-link" href="https://doi.org/10.1007/978-3-032-06307-6_4" target="_blank" rel="noreferrer" aria-label="打开 FgFEU-Net 论文页面">[paper]</a>
             </div>
           </div>
         </div>
@@ -461,9 +492,9 @@
           </div>
           <div class="item-body">
             <h3>边缘云协同智能交通感知系统</h3>
-            <p>面向城市交通场景中实时性、可扩展性和边缘部署成本约束，采用 YOLOv8n 作为轻量级目标检测模型，在边缘计算设备侧完成车辆类别识别、交通流统计、拥堵感知、逆行检测与越界告警，并通过边缘云协同方式降低集中式处理延迟，为异常交通事件感知和管理决策提供实时视觉分析能力。</p>
+            <p>采用 YOLOv8n 在边缘设备侧完成车辆识别、交通流统计、拥堵感知、逆行检测与越界告警，并通过边缘云协同降低集中式处理延迟，为异常交通事件感知提供实时视觉分析能力。</p>
             <div class="paper-ref">
-              The Real-Time Intelligent Transportation Detection System Based on Edge-Cloud Collaborative Computing
+              [3] The Real-Time Intelligent Transportation Detection System Based on Edge-Cloud Collaborative Computing<a class="paper-link" href="https://doi.org/10.1007/978-3-032-06307-6_7" target="_blank" rel="noreferrer" aria-label="打开边缘云协同智能交通感知系统论文页面">[paper]</a>
             </div>
           </div>
         </div>
@@ -477,48 +508,93 @@
             LeRobot · Piper · Tactile
           </div>
           <div class="item-body">
-            <h3>VTLA LeRobot：视觉-触觉机器人学习与真机训练推理栈</h3>
-            <p>基于 LeRobot 0.5.2 构建兼容上游 CLI / API 的机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机与训练 / 录制 / 推理配置，面向 ACT 模仿学习和 PI0 / PI0.5 策略微调打通真机数据采集、CAN 总线、流式编码、episode 管理与多模态数据统计。</p>
-            <p>模型侧扩展 PI0.5 触觉输入能力，新增 tactile_image_keys、TactileEncoder、触觉 token 投影和 embed_tactile_image 流程；训练侧改造梯度累积与有效 batch 统计，形成从真机数据到策略训练、部署评估的完整工程链路。</p>
+            <h3>VTLA：视觉-触觉机器人学习与真机训练推理栈</h3>
+            <p>基于 LeRobot 0.5.2 构建兼容上游 CLI / API 的机器人学习栈，集成 AgileX Piper leader-follower、LTeach 触觉相机与训练 / 录制 / 推理配置，面向 ACT 和 PI0 / PI0.5 打通真机数据采集、CAN 总线、流式编码、episode 管理与多模态数据统计。</p>
+            <p>模型侧扩展 PI0.5 触觉输入、TactileEncoder、触觉 token 投影和 embed_tactile_image 流程；训练侧改造梯度累积与有效 batch 统计，形成从真机数据到策略训练、部署评估的工程链路。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>触觉仿真平台</strong>
+            Isaac Sim · Isaac Lab · UIPC
+          </div>
+          <div class="item-body">
+            <h3>IsaacSim-Tactile4OpenWorld：开放场景机器人触觉仿真与力场研究平台</h3>
+            <p>基于 Isaac Sim / Isaac Lab 构建机器人接触与视觉触觉研究平台，整合 UIPC / libuipc 刚柔体接触、柔性膜形变、触觉图像生成与三维 Fx / Fy / Fz 力场重建。</p>
+            <p>覆盖 GelSight Mini、Taxim、FOTS、FEM 等触觉方法，以及 AgileX Piper、Franka 的抓取、插入、滚动和接触实验，统一管理 V1–V6.2 实验谱系、HDF5 数据采集与依赖边界。</p>
           </div>
         </div>
 
         <div class="item">
           <div class="time">
             <strong>火灾感知系统</strong>
-            YOLO · TensorRT · Jetson
+            YOLO11 · TensorRT · Jetson
           </div>
           <div class="item-body">
-            <h3>WildfireAegis：森林火灾智能检测与预警系统</h3>
-            <p>围绕森林火灾早期预警构建端到端火焰 / 烟雾监测系统，负责 YOLO 检测模型训练、轻量化优化、ONNX / TensorRT 导出与 Jetson Orin Nano 端侧部署，打通 RTSP 视频流接入、端侧推理、传感器联动、告警状态同步与 Web 控制台可视化流程，形成面向现场部署的边缘 AI 系统。</p>
-            <p>系统侧基于 SpringBoot3 搭建 Web 后端，将端侧检测结果、环境传感器数据与告警状态实时上传云平台，支持远程监控、历史数据管理与异常事件追踪，完成从模型训练、硬件部署到云端联动的全流程开发。</p>
+            <h3>OpenFireAlert：森林火灾智能监测与预警平台</h3>
+            <p>完成 YOLO11 火焰 / 烟雾检测模型训练、ONNX / TensorRT 导出与 Jetson 部署，打通 RTSP 视频流、端侧推理、告警同步和 Web 可视化。</p>
+            <p>集成 ESP32 传感器节点与 Spring Boot 控制平面，统一管理环境数据、检测状态、设备命令和告警记录。</p>
           </div>
         </div>
 
         <div class="item">
           <div class="time">
-            <strong>模型优化与量化</strong>
-            Optical Flow · INT8
+            <strong>视觉触觉位移场</strong>
+            PyTorch · ONNX · RKNN
           </div>
           <div class="item-body">
-            <h3>VectorMotionTrack：双帧运动向量预测模型与端侧量化部署</h3>
-            <p>面向视觉触觉传感器中的微小位移估计与实时运动跟踪，以双帧 RGB 输入构建运动向量预测模型，并针对端侧实时推理约束完成轻量化改进。重点优化 MobileNet-style 编码器、特征融合与分阶段损失设计，引入静止区假流抑制、方向一致性、位移幅值校正和分区误差约束，针对不同位移区间的误差模式设计约束项与校正策略。</p>
-            <p>量化侧围绕模型导出与端侧量化验证展开，完成 FP16 与 INT8 量化、校准样本构建、量化误差对比和端侧推理一致性检查，以量化前后精度保持、推理稳定性和端侧可运行性作为模型压缩效果的评估闭环。</p>
+            <h3>TactileFlowField：视觉触觉稠密位移场学习与端侧部署</h3>
+            <p>面向视觉触觉传感器构建稠密位移场学习与部署工程，整理多版本模型和 27 个训练实验，支持 PyTorch 数据集与视频流推理。</p>
+            <p>完成 ONNX、FP16 / PTQ INT8 RKNN 导出及 RKNNLite 板端推理，适配 RV1126B、多路视频、基线标定和单 / 多设备触觉相机 API。</p>
           </div>
         </div>
 
         <div class="item">
           <div class="time">
-            <strong>边缘视觉工程</strong>
-            OpenCV · RV1126B · RK3588
+            <strong>边缘视觉追踪</strong>
+            OpenCV · RKNN · Cython · RV1126B
           </div>
           <div class="item-body">
-            <h3>VisionDot：五路相机标记点检测与边缘实时追踪系统</h3>
-            <p>面向五路 / 单路相机场景构建跨 PC、RV1126B、RK3588 的端侧视觉系统，覆盖摄像头接入、GStreamer / MIPI 显示、上位机调参、日志分析与性能基准。算法链路以 RGB 分区阈值、形态学闭合、HoughCircles 初始化、灰度模板匹配和 Hue 基线偏移分析为核心，实现标记点检测、模板追踪、位移可视化与第一帧基准回零。</p>
-            <p>工程侧采用多进程五路并发和 OpenCV 线程控制，建立 FPS / CPU / IPC / cache miss 性能剖析工具，并将现场控制流程升级为 MIPI 切路 + 全路一键校准双状态机，解决多路实时追踪的显示调度、漂移复位和现场可控性问题。</p>
+            <h3>EdgeVisTrack-RKNN：多摄像头圆形标记点端侧追踪系统</h3>
+            <p>面向 RV1126B 构建多摄像头圆形标记点实时追踪系统，基于首帧区域阈值、Hough 圆检测与局部模板相关，实现标记点位移、色相变化和丢失重捕获，并保留 CPU 参考后端用于行为验证。</p>
+            <p>设计 Fixed / Dynamic 两类 RKNN 批处理后端，通过 Cython ROI 裁剪、FP16 LUT、可复用缓冲区和 RKNN C API 下沉高频计算，支持五路相机多进程运行及分阶段性能观测。</p>
           </div>
         </div>
 
+        <div class="item">
+          <div class="time">
+            <strong>计算机视觉工作台</strong>
+            PySide6 · OpenCV · YOLO26
+          </div>
+          <div class="item-body">
+            <h3>Vision Workbench：统一桌面端计算机视觉学习与实验平台</h3>
+            <p>基于 PySide6 构建统一桌面端计算机视觉工作台，整合传统图像处理、全景图重建、相机诊断、图像分类，以及 YOLO26 目标检测、实例分割、语义分割与训练流程，为计算机视觉学习、实验和模型验证提供一体化入口。</p>
+            <p>项目采用模块化 Python API 与统一 Qt 桌面外壳，配套模型和数据集管理、自动化测试、打包元数据及中英文文档；通过基础依赖与深度学习可选依赖分离，兼顾轻量启动和完整训练推理工作流。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>AI Agent 工程工具</strong>
+            Python · Agent Skills · Codex Plugin
+          </div>
+          <div class="item-body">
+            <h3>AdaptiveUI-SKILL：响应式界面审计、修复与验证 Agent Skills</h3>
+            <p>构建 AdaptiveUI-S / AdaptiveUI-N 两个仅显式调用、框架无关的 Agent Skills，覆盖响应式布局、溢出、交互、无障碍和跨浏览器回退；配套零依赖 Python 审计器与 Codex Plugin，提供规则 ID、置信度、规则抑制、JSON 输出和 CI 阈值。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
+            <strong>Agent 工程与诊断</strong>
+            PowerShell · Python · Cross-platform
+          </div>
+          <div class="item-body">
+            <h3>AgentTools：AI 编码代理诊断、策略与上下文工具</h3>
+            <p>整合显式调用的 Agent / Codex 诊断、跨平台 AGENTS.md 模板、任务上下文续接与 Codex Skill 清单，覆盖 PowerShell Profile、Conda Hook、Python 编码、Git 行尾、代理 / TUN 和重连信号；保持只读且不读取密钥。</p>
+          </div>
+        </div>
       </section>
 
     </main>
