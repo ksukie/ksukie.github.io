@@ -27,6 +27,14 @@ document.querySelectorAll("[data-placeholder-link]").forEach((link) => {
 const currentYear = document.querySelector("#current-year");
 if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href");
+  if (!href || href.startsWith("#") || href.startsWith("mailto:") || link.getAttribute("aria-disabled") === "true") return;
+
+  link.target = "_blank";
+  link.relList.add("noopener");
+});
+
 document.addEventListener("click", (event) => {
   document.querySelectorAll(".cv-menu[open]").forEach((menu) => {
     if (!menu.contains(event.target)) menu.open = false;
