@@ -145,6 +145,55 @@ hr {
   text-align: center;
 }
 
+.cv-menu {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.cv-menu summary {
+  color: #1772d0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.cv-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.cv-menu summary::marker {
+  content: "";
+}
+
+.cv-menu summary:focus,
+.cv-menu summary:hover,
+.cv-menu[open] summary {
+  color: #f09228;
+}
+
+.cv-options {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 4px);
+  left: 50%;
+  min-width: 6.5rem;
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  transform: translateX(-50%);
+}
+
+.cv-options a {
+  display: block;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
 .profile-copy p {
   margin: 0 0 16px;
 }

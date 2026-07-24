@@ -1,0 +1,31 @@
+{
+  "latex-workshop.latex.external.build.command": "powershell.exe",
+  "latex-workshop.latex.external.build.args": [
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "%DIR%/../build.ps1"
+  ],
+
+  "latex-workshop.latex.outDir": "%DIR%/../build",
+  "latex-workshop.latex.auxDir": "%OUTDIR%",
+
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.autoClean.run": "never",
+  "latex-workshop.latex.clean.method": "glob",
+  "latex-workshop.latex.clean.fileTypes": [
+    "%DOCFILE%.aux",
+    "%DOCFILE%.log",
+    "%DOCFILE%.out",
+    "%DOCFILE%.fls",
+    "%DOCFILE%.fdb_latexmk",
+    "%DOCFILE%.synctex.gz"
+  ],
+
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+  "latex-workshop.latex.rootFile.useSubFile": false,
+
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.build.rootfileInStatus": true
+}

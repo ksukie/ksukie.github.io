@@ -1,0 +1,116 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cv-style}[2026/07/24 Chinese CV style]
+
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+\RequirePackage[dvipsnames]{xcolor}
+\colorlet{icnclr}{gray}
+\RequirePackage[UTF8]{ctex}
+\setmainfont{Times New Roman}
+\RequirePackage{geometry}
+\geometry{
+    a4paper,
+    top=0.7cm,
+    bottom=0.4cm,
+    left=0.7cm,
+    right=0.7cm
+}
+\RequirePackage{enumitem}
+\setlist[itemize]{
+    noitemsep,
+    left=2em
+}
+\setlist[description]{itemsep=0pt}
+\setlist[enumerate]{align=left}
+\RequirePackage{titlesec}
+\RequirePackage{fontawesome5}
+\RequirePackage[bookmarks=false]{hyperref}
+\RequirePackage{fancyhdr}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+
+\setcounter{secnumdepth}{0}
+
+\newcommand{\cvbodyfont}{\fontsize{10pt}{11pt}\selectfont}
+\newcommand{\cvnamefont}{\fontsize{32pt}{36pt}\selectfont}
+\newcommand{\cvcontactfont}{\fontsize{8pt}{10pt}\selectfont}
+\newcommand{\cvsectionfont}{\fontsize{16pt}{18pt}\selectfont}
+\newcommand{\cvsubsectionfont}{\fontsize{12pt}{14pt}\selectfont}
+\newcommand{\cventryfont}{\fontsize{10pt}{12pt}\selectfont}
+\newcommand{\cvprojectbodyfont}{\fontsize{10pt}{11pt}\selectfont}
+\newcommand{\cvpublicationfont}{\fontsize{10pt}{11pt}\selectfont}
+\newcommand{\cvfooterfont}{\fontsize{8pt}{10pt}\selectfont}
+
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\color{Sepia}\cvsectionfont\fontseries{black}\selectfont\uppercase}{}{}{\ruleafter}[\global\RemVStrue]
+\titleformat{\subsection}{\cvsubsectionfont\fontseries{bold}\selectfont}{}{}{\rvs}
+\titleformat{\subsubsection}{\color{gray}\cventryfont\fontseries{bold}\selectfont}{}{}{}
+
+\newcommand{\cvsectionmarker}{}
+\newcommand\ruleafter[1]{#1~{\color{gray}\leaders\hrule height 1pt\hfill\kern0pt}\cvsectionmarker}
+
+\newif\ifRemVS
+\newcommand{\rvs}{
+    \ifRemVS
+        \vspace{-1.5ex}
+    \fi
+    \global\RemVSfalse
+}
+
+\newcommand{\cventryheading}[2]{%
+    \subsection{{\cventryfont\textbf{#1}\hfill #2}}%
+}
+\newcommand{\cventryrole}[1]{\subsubsection{#1}}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=Sepia,
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\renewcommand{\normalsize}{\cvbodyfont}
+
+\newcommand{\CVMakeHeader}{%
+    \vspace*{0.04cm}%
+    \begin{center}%
+        {\cvnamefont\heiti\textcolor{black}{\CVFullName}\par}%
+        \vspace{0.4em}%
+        {\cvcontactfont%
+            {\color{icnclr}\faEnvelope[regular]}~\href{mailto:\CVEmailAddress}{\CVEmailAddress}%
+            \enspace|\enspace%
+            {\color{icnclr}\faHome{}}~\href{\CVPersonalSiteURL}{\CVPersonalSiteLabel}%
+            \enspace|\enspace%
+            {\color{icnclr}\faIcon{github}}~\href{\CVGithubURL}{\CVGithubLabel}%
+            \tikz[remember picture, overlay, baseline]{%
+                \coordinate (contactcenter) at (0,0.5ex);%
+                \coordinate (contactright) at (0,0.5ex);%
+            }%
+        }%
+    \end{center}%
+    \renewcommand{\cvsectionmarker}{%
+        \tikz[remember picture, overlay, baseline]{%
+            \coordinate (educationrule) at (0,0.5ex);%
+            \coordinate (photobottom) at ($(contactcenter)!0.5!(educationrule)$);%
+            \node[anchor=south, inner sep=0pt, xshift=-2mm, yshift=-1mm]%
+                at ($(contactright |- photobottom)!0.5!(current page.east |- photobottom)$)%
+                {\includegraphics[width=3cm,height=3.9cm]{\CVAvatarPath}};%
+        }%
+    }%
+}
+
+\newcommand{\CVMakeFooter}{%
+    {\cvfooterfont\textcolor{Sepia}{更新于：\CVDocumentDate}}%
+}
+
+\AtBeginDocument{%
+    \hypersetup{
+        pdftitle={\CVFullName{} - 简历},
+        pdfauthor={\CVFullName}
+    }%
+}
+
+\endinput

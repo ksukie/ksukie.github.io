@@ -1,0 +1,59 @@
+% !TeX root = ../main.tex
+
+\section{项目经历}
+
+\cventryheading{VTLA}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 在保持上游 CLI/API 不变的前提下，扩展 LeRobot 0.5.2，接入 Piper 主从控制、LTeach 触觉相机，以及兼容 LeRobot 的数据录制、训练和推理流程。
+    \item 实现 PI0.5 与基于 ACT 的 DreamTacVLA 的专用触觉通路，包含轻量触觉 Token 编码、力矩阵条件化、梯度累积及经回归测试的旧版 HDF5 转换。
+\end{itemize}
+
+\cventryheading{IsaacSim-Tactile4OpenWorld}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 开发基于 UIPC 的柔顺触觉膜，并根据网格形变重建触觉局部三维 Fx/Fy/Fz 力场，涵盖力投影、符号标定、压力和剪切力估计。
+    \item 构建覆盖接触/非接触、膜对齐、抓取、提起、插入及横向剪切的迭代验证套件，并隔离不兼容的 Isaac Lab 环境和外部资产依赖。
+\end{itemize}
+
+\cventryheading{OpenFireAlert}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 基于 D-Fire 数据集开发并优化复杂室外环境火烟检测模型，构建 PyTorch--ONNX--TensorRT--Jetson 部署链路，兼顾检测鲁棒性、推理效率与可部署性。
+    \item 构建端到端告警系统：Jetson 端推理并发布标注 RTSP 流和检测状态；Spring Boot 融合 ESP32 烟雾传感器信号，完成重复告警抑制及蜂鸣器、邮件和仪表盘通知。
+\end{itemize}
+
+\cventryheading{TactileFlowField}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 开发三阶段双帧网络族，用于稠密触觉位移估计；探索特征提取、跨帧融合与位移场回归方案，并统一输入、检查点和输出接口。
+    \item 构建面向 RV1126B 的 PyTorch--ONNX--RKNN 边缘部署流程；支持 FP16、PTQ INT8、单相机基线校准和多设备推理。
+\end{itemize}
+
+\cventryheading{EdgeVisTrack-RKNN}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 设计圆形标记物跟踪管线，包含区域 RGB/Hough 初始化、局部模板相关、亚像素优化和丢失恢复，并以 CPU 实现作为行为基准。
+    \item 在 RV1126B 上分析五相机 CPU 执行达到 98\%--99\% 利用率的问题，将热点迁移至批处理 RKNN 后端和 Cython/RKNN C API，并采用 FP16 LUT、复用缓冲区和分阶段性能分析。
+\end{itemize}
+
+\cventryheading{Vision Workbench}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 构建统一的 PySide6 桌面应用，通过模块化 Python API 提供七类计算机视觉工作流，覆盖传统图像处理、全景重建、YOLO 检测、分割与训练。
+    \item 完成可选依赖隔离、184 个自动化测试函数、跨平台 Qt/无障碍检查，以及带版本门禁、SHA-256 校验、依赖指纹和回滚机制的 Wheel/Windows EXE 发布。
+\end{itemize}
+
+\cventryheading{AdaptiveUI-SKILL}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 设计两个显式调用的 Agent Skill，将 HTML/CSS、React、Vue、Svelte 和 Tailwind 项目的响应式 UI 工作转为审计、修复和验证流程。
+    \item 实现零依赖 Python 分析器，提供 24 条稳定规则、严重度/置信度元数据、抑制机制、JSON Schema 输出、CI 阈值和 79 项自动化测试。
+\end{itemize}
+
+\cventryheading{AgentTools}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 构建只读 Codex 诊断工具，关联 PowerShell 配置、Conda Hook、Python 编码、Git 行尾、代理/TUN 状态和重连日志；脱敏凭据且避免系统修改。
+    \item 提供跨平台 AGENTS.md 模板、任务上下文交接和运行时 Skill 清单，并遵循显式调用的插件契约。
+\end{itemize}

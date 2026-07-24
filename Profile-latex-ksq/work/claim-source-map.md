@@ -1,0 +1,32 @@
+| Claim | Source artifact | Source locator | Raw wording or user confirmation | State | Final handling |
+|---|---|---|---|---|---|
+| The resume belongs to 柯书奇 / Shuqi Ke | `input/resumesoft.html` | lines 337-338 and `<title>` | `柯书奇`; `Shuqi Ke`; user states page contains own information | resolved | use English display name to match the reference CV |
+| Direction is CV / Edge AI / Robot Learning | `input/resumesoft.html` | lines 338 and meta description | `CV / Edge AI / Robot Learning` | resolved | use as profile focus |
+| Phone is 15707039996 | `input/resumesoft.html` | lines 345-347 | `15707039996` | resolved | use |
+| Email is 15707039996@163.com | `input/resumesoft.html` | lines 349-351 | `15707039996@163.com` | resolved | use |
+| GitHub is github.com/ksukie | `input/resumesoft.html` | lines 353-355 | `https://github.com/ksukie` | resolved | use |
+| Jiujiang University, IoT Engineering, 2022.09-2026.06 | `input/resumesoft.html` | lines 378-390 | exact education block | resolved | use |
+| Jiujiang University location is Jiujiang, China | user confirmation | current conversation | user: `Jiujiang University后面的地址写 Jiujiang，China` | resolved | display beside university name |
+| Shenzhen Shita Robotics location is Shenzhen, China | user confirmation | current conversation | user: `Shenzhen ShitaRobotics Technology Co.,Ltd这里最右边也要加上 ShenZhen，China` | resolved | display at the far right of the company-name row |
+| Core courses are the five listed CS courses | `input/resumesoft.html` | lines 383-390 | exact course list | resolved | use compactly |
+| Holds CET-4 and CET-6 | `input/resumesoft.html` | lines 395-399 | `CET-4 / CET-6` | resolved | use |
+| Algorithm Engineer Intern at Shenzhen Shita Robotics, 2026.02-2026.08 | user confirmation plus `input/resumesoft.html` | current user instruction; HTML lines 406-415 | user: `职位名称改为“算法工程师（实习） 英文的吧`; source page supplies company, dates, and original role | resolved | use the user-confirmed English display title |
+| Built visual-tactile robot-learning and edge-vision pipelines | `input/resumesoft.html` | lines 413-415 | exact internship paragraphs | resolved | compress into two bullets |
+| JJU CVI Lab research, 2022.12-2025.09 | `input/resumesoft.html` | lines 421-431 | exact lab, dates, areas, and paragraphs | resolved | use |
+| TY-YOLO first-author JCR Q2 under-review work | `input/resumesoft.html` | lines 435-445 | exact role/status/title/work | resolved | use without inventing venue/date |
+| FgFEU-Net is published medical-image-segmentation work | `input/resumesoft.html` | lines 449-459 | exact status/title/work | resolved | use without inventing venue/date |
+| Edge-cloud transportation system is published work | `input/resumesoft.html` | lines 463-473 | exact status/title/work | resolved | use without inventing venue/date |
+| FgFEU-Net official paper link | `https://link.springer.com/chapter/10.1007/978-3-032-06307-6_4` | Springer chapter title, author list, and DOI | exact title; author list includes Shuqi Ke; DOI `10.1007/978-3-032-06307-6_4` | resolved | add `[Paper]` link |
+| Edge-cloud transportation official paper link | `https://link.springer.com/chapter/10.1007/978-3-032-06307-6_7` | Springer chapter title, author list, and DOI | exact title; author list includes Shuqi Ke; DOI `10.1007/978-3-032-06307-6_7` | resolved | add `[Paper]` link |
+| VTLA project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, VTLA entry | exact project title and two paragraphs; user confirmation: display name is `VTLA` | resolved | use |
+| IsaacSim-Tactile4OpenWorld project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, IsaacSim-Tactile4OpenWorld entry | exact project title and two paragraphs | resolved | use |
+| OpenFireAlert project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, OpenFireAlert entry | exact project title and two paragraphs | resolved | use |
+| TactileFlowField project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, TactileFlowField entry | exact project title and two paragraphs | resolved | use |
+| EdgeVisTrack-RKNN project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, EdgeVisTrack-RKNN entry | exact project title and two paragraphs | resolved | use |
+| Vision Workbench project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, Vision Workbench entry | exact project title and two paragraphs | resolved | use |
+| Technical stack shown in the final CV | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Tech Stack and project entries | exact stack lists and source-backed tools | resolved | group by function |
+| Portfolio URL | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Contact section | label only; no URL | omitted-unresolved | omit |
+| AdaptiveUI-SKILL project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, AdaptiveUI-SKILL entry | exact project title and paragraph | resolved | use compactly |
+| AgentTools project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, AgentTools entry | exact project title and paragraph | resolved | use compactly |
+
+Every factual claim planned for the final CV is covered by a resolved source row above; authoring will update rows if wording introduces a distinct claim.

@@ -1,0 +1,392 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cv-style}[2026/07/17 Semantic Awesome-CV-compatible style]
+
+% This is a deliberately small, project-local style layer.  It keeps the
+% visual vocabulary of Awesome-CV v1.6.1 while exposing semantic commands
+% instead of absolute PDF coordinates.
+\RequirePackage[
+  a4paper,
+  left=2cm,
+  right=2cm,
+  top=1.5cm,
+  bottom=1.5cm,
+  footskip=.5cm
+]{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{fancyhdr}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{etoolbox}
+\RequirePackage{needspace}
+\RequirePackage{xparse}
+
+\defaultfontfeatures{Ligatures=TeX}
+
+% Font files are pinned to the exact versions shipped with this project.
+\setmainfont[
+  Path=fonts/,
+  UprightFont=*-Light.otf,
+  ItalicFont=*-LightIt.otf,
+  BoldFont=*-Bold.otf,
+  BoldItalicFont=*-It.otf
+]{SourceSansPro}
+\newfontface\CVRobotoBold[Path=fonts/]{Roboto-Bold.ttf}
+\newfontface\CVRobotoRegular[Path=fonts/]{Roboto-Regular.ttf}
+\newfontface\CVFontAwesome[Path=fonts/]{FontAwesome.ttf}
+\newfontface\CVSourceBold[Path=fonts/]{SourceSansPro-Bold.otf}
+\newfontface\CVSourceSemibold[Path=fonts/]{SourceSansPro-Semibold.otf}
+\newfontface\CVSourceRegular[Path=fonts/]{SourceSansPro-Regular.otf}
+\newfontface\CVSourceRegularSC[
+  Path=fonts/,
+  Letters=SmallCaps
+]{SourceSansPro-Regular.otf}
+\newfontface\CVSourceLight[Path=fonts/]{SourceSansPro-Light.otf}
+\newfontface\CVSourceLightItalic[Path=fonts/]{SourceSansPro-LightIt.otf}
+\newfontface\CVSourceItalic[Path=fonts/]{SourceSansPro-It.otf}
+\newfontface\CVLMMono[Path=fonts/]{lmmono10-regular.otf}
+\newfontface\CVLatinMath[Path=fonts/]{latinmodern-math.otf}
+\newfontfamily\CVInterestFamily[
+  Path=fonts/,
+  UprightFont=SourceSansPro-Light.otf,
+  ItalicFont=SourceSansPro-LightIt.otf,
+  BoldFont=SourceSansPro-Semibold.otf,
+  FakeStretch=.99
+]{SourceSansPro-Light.otf}
+\newfontfamily\CVBodyFamily[
+  Path=fonts/,
+  UprightFont=SourceSansPro-Light.otf,
+  ItalicFont=SourceSansPro-LightIt.otf,
+  BoldFont=SourceSansPro-Semibold.otf
+]{SourceSansPro-Light.otf}
+\newfontfamily\CVAwardFamily[
+  Path=fonts/,
+  UprightFont=SourceSansPro-Regular.otf,
+  ItalicFont=SourceSansPro-It.otf,
+  BoldFont=SourceSansPro-Bold.otf
+]{SourceSansPro-Regular.otf}
+
+\definecolor{CVText}{HTML}{333333}
+\definecolor{CVDarkText}{HTML}{414141}
+\definecolor{CVGrayText}{HTML}{5D5D5D}
+\definecolor{CVLightText}{HTML}{999999}
+\definecolor{CVAccent}{HTML}{DC3522}
+\definecolor{CVOrange}{HTML}{FDA333}
+\definecolor{CVPink}{HTML}{EC008C}
+\definecolor{CVLinkBlue}{HTML}{0000FF}
+
+\hypersetup{
+  unicode=true,
+  pdfencoding=auto,
+  colorlinks=true,
+  linkcolor=CVLinkBlue,
+  urlcolor=CVLinkBlue,
+  citecolor=CVLinkBlue,
+  pdfborder={0 0 0}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\headheight}{0pt}
+\addtolength{\textheight}{8bp}
+\addtolength{\footskip}{4bp}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\color{CVText}
+
+\makeatletter
+
+% Font Awesome 4 glyphs used by the reference header.
+\newcommand{\CV@IconEnvelope}{{\CVFontAwesome\symbol{"F0E0}}}
+\newcommand{\CV@IconPhone}{{\CVFontAwesome\symbol{"F095}}}
+\newcommand{\CV@IconHome}{{\CVFontAwesome\symbol{"F015}}}
+\newcommand{\CV@IconGithub}{{\CVFontAwesome\symbol{"F092}}}
+\newcommand{\CV@IconScholar}{{\CVFontAwesome\symbol{"F19D}}}
+
+% The old Awesome-CV section treatment colors the first three characters.
+\def\CV@SectionColor#1#2#3#4\CV@Stop{%
+  {\color{CVAccent}#1#2#3}{\color{CVText}#4}%
+}
+\newcommand{\CV@ColoredSectionTitle}[1]{%
+  \expandafter\CV@SectionColor#1\CV@Stop
+}
+
+% Title-specific flow corrections preserve the measured section baselines
+% while all content remains ordinary, editable LaTeX text.
+\newcommand{\CV@SectionPreAdjust}[1]{%
+  \ifstrequal{#1}{Education}{\vspace{7.93bp}}{}%
+  \ifstrequal{#1}{Research Interests}{\vspace{12.92bp}}{}%
+  \ifstrequal{#1}{Honors and Awards}{\vspace{9.46bp}}{}%
+  \ifstrequal{#1}{Publications}{\vspace{4.79bp}}{}%
+  \ifstrequal{#1}{Academic Services}{\vspace{-10.73bp}}{}%
+  \ifstrequal{#1}{Invited Talks}{\vspace{7.76bp}}{}%
+  \ifstrequal{#1}{Press Coverage}{\vspace{-3.48bp}}{}%
+}
+
+\newcommand{\CV@SectionPostAdjust}[1]{%
+  \ifstrequal{#1}{Publications}{\vspace{-4.52bp}}{}%
+  \ifstrequal{#1}{Press Coverage}{\vspace{-2.31bp}}{}%
+}
+
+\newcommand{\CV@SectionLine}[2]{%
+  \par\addvspace{11bp}%
+  \CV@SectionPreAdjust{#1}%
+  \noindent
+  {\CVSourceBold\fontsize{16pt}{18pt}\selectfont
+    \CV@ColoredSectionTitle{#1}%
+    \ifblank{#2}{}{%
+      \hspace{.45em}{\fontsize{9pt}{11pt}\selectfont\color{CVText}(#2)}%
+    }%
+  }%
+  \hspace{.65em}%
+  {\color{CVGrayText}\leaders\hrule height .9bp\hfill\kern\z@}%
+  \par\nobreak\vspace{6.2bp}%
+  \CV@SectionPostAdjust{#1}%
+}
+
+\NewDocumentCommand{\CVSection}{+m}{\CV@SectionLine{#1}{}}
+\NewDocumentCommand{\CVSectionWithNote}{+m +m}{\CV@SectionLine{#1}{#2}}
+
+\NewDocumentCommand{\CVSubsection}{+m}{%
+  \par\addvspace{4.2bp}%
+  {\CVSourceRegular\fontsize{12pt}{14pt}\selectfont
+    \MakeUppercase{#1}\par}%
+  \nobreak\vspace{2.2bp}%
+}
+
+\newcommand{\CV@HeaderLink}[2]{%
+  \href{#1}{\textcolor{CVText}{#2}}%
+}
+
+\newcommand{\CV@ConfigureFooter}{%
+  \pagestyle{fancy}%
+  \fancyhf{}%
+  \fancyfoot[L]{%
+    {\CVSourceRegularSC\fontsize{8pt}{10pt}\selectfont
+      \color{CVLightText}\CVDocumentDate}%
+  }%
+  \fancyfoot[C]{%
+    {\CVSourceRegularSC\fontsize{8pt}{10pt}\selectfont
+      \color{CVLightText}%
+      \CVFullName\space\textperiodcentered\space\CVDocumentTitle}%
+  }%
+  \fancyfoot[R]{%
+    {\CVSourceRegular\fontsize{8pt}{10pt}\selectfont
+      \color{CVLightText}\thepage}%
+  }%
+}
+
+\NewDocumentCommand{\CVMakeHeader}{}{%
+  \CV@ConfigureFooter
+  \vspace*{-19.18bp}%
+  \begin{center}
+    {\CVRobotoBold\fontsize{32pt}{36pt}\selectfont
+      \color{CVText}\hspace*{2.9bp}\CVFullName\par}%
+    \vspace{4.72bp}%
+    {\CVRobotoRegular\fontsize{8pt}{10pt}\selectfont\color{CVText}%
+      \hspace*{2.9bp}%
+      \CV@HeaderLink{mailto:\CVEmailAddress}{%
+        \CV@IconEnvelope\hspace{.25em}\CVEmailAddress}%
+      \hspace{1em}\textbar\hspace{1em}%
+      \CV@HeaderLink{\CVPhoneURL}{%
+        \CV@IconPhone\hspace{.25em}\CVPhoneLabel}%
+      \hspace{1em}\textbar\hspace{1em}%
+      \CV@HeaderLink{\CVGithubURL}{%
+        \CV@IconGithub\hspace{.25em}\CVGithubLabel}%
+      \par}%
+  \end{center}%
+  \vspace{-17.07bp}%
+}
+
+\newcommand{\CV@EntryRows}[4]{%
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    {\CVSourceBold\fontsize{10pt}{12pt}\selectfont
+      \color{CVDarkText}#1} &
+    {\CVSourceLightItalic\fontsize{10pt}{12pt}\selectfont
+      \color{CVAccent}#2} \\
+    [2.6bp]
+    {\CVSourceRegular\fontsize{10pt}{12pt}\selectfont
+      \color{CVGrayText}#3} &
+    {\CVSourceLightItalic\fontsize{10pt}{12pt}\selectfont
+      \color{CVGrayText}#4}
+  \end{tabular*}%
+}
+
+\NewDocumentCommand{\CVEntry}{+m +m +m +m +m}{%
+  \par\addvspace{3.8bp}%
+  \Needspace{2.8\baselineskip}%
+  \CV@EntryRows{#1}{#2}{#3}{#4}%
+  \ifblank{#5}{}{\vspace{1.2bp}#5}%
+  \par\vspace{.69bp}%
+}
+
+% Projects and compact research outputs use a descriptive subtitle rather than
+% the role/degree field used by \CVEntry.  Preserve the supplied Title Case here
+% instead of applying the reference template's small-caps role treatment.
+\newcommand{\CV@ProjectRows}[4]{%
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    {\CVSourceBold\fontsize{10pt}{12pt}\selectfont
+      \color{CVDarkText}#1} &
+    {\CVSourceLightItalic\fontsize{10pt}{12pt}\selectfont
+      \color{CVAccent}#2} \\
+    [2.6bp]
+    {\CVSourceRegular\fontsize{10pt}{12pt}\selectfont
+      \color{CVGrayText}#3} &
+    {\CVSourceLightItalic\fontsize{10pt}{12pt}\selectfont
+      \color{CVGrayText}#4}
+  \end{tabular*}%
+}
+
+\NewDocumentCommand{\CVProject}{+m +m +m +m +m}{%
+  \par\addvspace{3.8bp}%
+  \Needspace{2.8\baselineskip}%
+  \CV@ProjectRows{#1}{#2}{#3}{#4}%
+  \ifblank{#5}{}{\vspace{1.2bp}#5}%
+  \par\vspace{.69bp}%
+}
+
+\NewDocumentCommand{\CVPaperEntry}{+m +m +m +m}{%
+  \par\addvspace{3.8bp}%
+  \Needspace{4.2\baselineskip}%
+  \begingroup
+    \raggedright
+    \noindent
+    {\CVSourceBold\fontsize{10pt}{11pt}\selectfont\color{CVDarkText}#1%
+      \ifblank{#3}{}{\nobreakspace{\CVSourceRegular\CVLink{#3}{[Paper]}}}%
+      \par}%
+    \vspace{1.2bp}%
+    {\CVSourceRegular\fontsize{10pt}{12pt}\selectfont\color{CVGrayText}#2\par}%
+  \endgroup
+  \ifblank{#4}{}{\vspace{1.2bp}#4}%
+  \par\vspace{.69bp}%
+}
+
+\NewDocumentCommand{\CVBullet}{+m}{%
+  \par\noindent
+  \begingroup
+    \raggedright\CVBodyFamily\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    \hangindent=11.4bp\hangafter=1%
+    \makebox[11.4bp][l]{\hspace{1.3bp}\raisebox{.16ex}{\fontsize{7pt}{7pt}\selectfont\textbullet}}#1%
+  \par
+  \endgroup
+}
+
+\NewDocumentCommand{\CVInterest}{+m +m}{%
+  \par\noindent
+  {\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    {\CVLMMono #1}{\CVInterestFamily:\space #2}\par}%
+  \vspace{3.4bp}%
+}
+
+\newcommand{\CVJustify}{%
+  \leftskip=0pt\relax
+  \rightskip=0pt\relax
+  \parfillskip=0pt plus 1fil\relax
+}
+
+\NewDocumentCommand{\CVAward}{+m +m}{%
+  \par\noindent\hspace{11.35bp}%
+  {\CVAwardFamily\fontsize{10pt}{12pt}\selectfont\color{CVGrayText}%
+    \makebox[31.2bp][l]{#1}#2\par}%
+  \vspace{1.6bp}%
+}
+
+\newcommand{\CV@PublicationHead}[3]{%
+  \par\noindent
+  {\CVSourceBold\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    [#1]\space #2\par}%
+  {\CVSourceRegular\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    \CVJustify#3\par}%
+}
+
+\def\CV@FormatVenue#1,#2\CV@Stop{%
+  {\CVSourceItalic #1}{\CVSourceRegular,#2}%
+}
+
+\newcommand{\CV@PublicationVenue}[2]{%
+  \par\noindent
+  {\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    \expandafter\CV@FormatVenue#1\CV@Stop
+    \ifblank{#2}{}{\space\CVLink{#2}{[Paper]}}%
+    \par}%
+  \vspace{2.35bp}%
+}
+
+\NewDocumentCommand{\CVPublication}{+m +m +m +m +m}{%
+  \CV@PublicationHead{#1}{#2}{#3}%
+  \CV@PublicationVenue{#4}{#5}%
+}
+
+\NewDocumentCommand{\CVPublicationSplit}{+m +m +m +m +m}{%
+  \CV@PublicationHead{#1}{#2}{#3}%
+  \CVPageBreak
+  \CV@PublicationVenue{#4}{#5}%
+}
+
+\NewDocumentCommand{\CVService}{+m +m +m}{%
+  \par\noindent
+  \begin{tabularx}{\linewidth}{@{}>{\raggedleft\arraybackslash}m{84bp}@{\hspace{8bp}}>{\CVJustify\arraybackslash}X@{}}
+    {\CVSourceBold\fontsize{10pt}{11pt}\selectfont\color{CVDarkText}#1} &
+    {\CVSourceRegular\fontsize{9pt}{10.5pt}\selectfont\color{CVText}#2}%
+    \space{\CVSourceLight\fontsize{9pt}{10.5pt}\selectfont\color{CVText}#3}
+  \end{tabularx}%
+  \vspace{-4.21bp}%
+}
+
+\NewDocumentCommand{\CVSkill}{+m +m}{%
+  \par\noindent
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{90bp}@{\hspace{8bp}}>{\raggedright\arraybackslash}X@{}}
+    {\CVSourceBold\fontsize{10pt}{11pt}\selectfont\color{CVDarkText}#1} &
+    {\CVSourceLight\fontsize{9pt}{10.5pt}\selectfont\color{CVText}#2}
+  \end{tabularx}%
+  \vspace{-5.03bp}%
+}
+
+\NewDocumentCommand{\CVTalk}{+m +m +m +m}{%
+  \par\noindent
+  {\CVSourceBold\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    [#1]\space #2\par}%
+  {\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    {\CVSourceItalic #3}%
+    \ifblank{#4}{}{\space #4}%
+    \par}%
+  \vspace{3.85bp}%
+}
+
+\NewDocumentCommand{\CVPress}{+m +m +m +m}{%
+  \par\noindent
+  {\CVSourceBold\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    [#1]\space #2\par}%
+  {\fontsize{10pt}{11pt}\selectfont\color{CVText}%
+    {\CVSourceItalic #3}%
+    \ifblank{#4}{}{\space\CVLink{#4}{[Link]}}%
+    \par}%
+  \vspace{3.85bp}%
+}
+
+\NewDocumentCommand{\CVLink}{+m +m}{%
+  \href{#1}{\underline{\textcolor{CVLinkBlue}{#2}}}%
+}
+
+\NewDocumentCommand{\CVOwner}{+m}{\underline{\textcolor{CVText}{#1}}}
+\NewDocumentCommand{\CVOral}{+m}{{\CVSourceRegular\color{CVOrange}#1}}
+\NewDocumentCommand{\CVAwardHighlight}{+m}{{\CVSourceRegular\color{CVPink}#1}}
+\NewDocumentCommand{\CVCompactAuthors}{+m}{{\addfontfeatures{LetterSpace=-1}#1}}
+\NewDocumentCommand{\CVMathTilde}{}{{\CVLatinMath\symbol{"223C}}}
+\NewDocumentCommand{\CVPageBreak}{}{\par\newpage\vspace*{4.1bp}}
+
+\makeatother
+
+\AtBeginDocument{%
+  \hypersetup{
+    pdftitle={\CVFullName\space-\space\CVDocumentTitle},
+    pdfauthor={\CVFullName}
+  }%
+  \fontsize{10pt}{11pt}\selectfont
+  \raggedright
+  \sloppy
+}
+
+\endinput
