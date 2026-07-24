@@ -2,6 +2,21 @@
 // Repository metadata in this public file is intentionally visible on the portfolio.
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2026-07-24T05:16:56Z",
+    "updated_at": "2026-07-24T05:17:00Z"
+  },
+  {
     "name": "IsaacSim-Tactile4OpenWorld",
     "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
     "private": false,
@@ -63,21 +78,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-07-22T06:36:02Z",
     "updated_at": "2026-07-22T06:37:08Z"
-  },
-  {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "pushed_at": "2026-07-22T06:06:19Z",
-    "updated_at": "2026-07-22T06:06:59Z"
   },
   {
     "name": "Vision-WorkBench",
