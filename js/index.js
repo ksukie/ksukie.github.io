@@ -29,7 +29,13 @@ if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
 document.querySelectorAll("a[href]").forEach((link) => {
   const href = link.getAttribute("href");
-  if (!href || href.startsWith("#") || href.startsWith("mailto:") || link.getAttribute("aria-disabled") === "true") return;
+  if (
+    !href ||
+    href.startsWith("#") ||
+    href.startsWith("mailto:") ||
+    link.hasAttribute("data-same-tab") ||
+    link.getAttribute("aria-disabled") === "true"
+  ) return;
 
   link.target = "_blank";
   link.relList.add("noopener");

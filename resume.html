@@ -305,6 +305,107 @@
       outline: none;
     }
 
+    @media (min-width: 981px) {
+      body {
+        font-size: 14.5px;
+        line-height: 1.55;
+      }
+
+      .shell {
+        grid-template-columns: 288px 1fr;
+      }
+
+      .identity {
+        padding: 31px 25px 25px;
+      }
+
+      .avatar-frame {
+        width: 108px;
+        height: 108px;
+      }
+
+      .identity h1 {
+        margin-top: 18px;
+        font-size: 31px;
+      }
+
+      .identity .title,
+      .side-list,
+      .focus-list li,
+      .time,
+      .time strong,
+      .tagline,
+      .paper-ref {
+        font-size: 14px;
+      }
+
+      .side-block {
+        padding: 20px 25px 0;
+      }
+
+      .side-list {
+        gap: 10px;
+      }
+
+      .focus-list {
+        gap: 6px;
+      }
+
+      .focus-list li {
+        padding: 6px 8px;
+      }
+
+      .side-note,
+      .course-list {
+        font-size: 13px;
+      }
+
+      .main {
+        padding: 36px 40px 40px;
+      }
+
+      .section {
+        margin-bottom: 18px;
+      }
+
+      .section-title {
+        margin-bottom: 7px;
+        padding-bottom: 4px;
+        font-size: 20px;
+      }
+
+      .item {
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 16px;
+        padding: 13px 0;
+      }
+
+      .time strong {
+        margin-bottom: 4px;
+      }
+
+      .item-body h3 {
+        font-size: 18px;
+      }
+
+      .tagline {
+        margin-bottom: 6px;
+      }
+
+      .item-body p {
+        font-size: 14.5px;
+      }
+
+      .item-body p:not(.tagline) + p {
+        margin-top: 5px;
+      }
+
+      .paper-ref {
+        margin-top: 5px;
+        padding-top: 4px;
+      }
+    }
+
     @media (max-width: 980px) {
       .shell {
         width: 100%;
