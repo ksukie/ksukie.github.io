@@ -11,6 +11,14 @@
    \CVBullet{Implemented dedicated tactile pathways for PI0.5 and ACT-based DreamTacVLA, including lightweight tactile-token encoding, force-matrix conditioning, gradient accumulation, and regression-tested legacy HDF5 conversion.}}
 
 \CVProject
+  {TactiWeave-VP}
+  {PyTorch \textperiodcentered\ ResNet-18 \textperiodcentered\ Causal TCN}
+  {Visual-Physical Tactile Fusion}
+  {}
+  {\CVBullet{Built a visual-physical temporal-fusion prototype for fabric classification, combining 64-frame grayscale tactile pressure sequences with calibrated force, friction, and contact-area measurements.}
+   \CVBullet{Used a shared ResNet-18 visual encoder and a six-dimensional physical-state MLP with per-frame fusion, causal dilated TCN processing, and attention pooling; the data loader validates aligned sequences and supports chronological splitting.}}
+
+\CVProject
   {IsaacSim-Tactile4OpenWorld}
   {Isaac Lab \textperiodcentered\ UIPC \textperiodcentered\ Force Fields}
   {Tactile Simulation \& Force Fields}

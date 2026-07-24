@@ -737,11 +737,30 @@ setupLifeArchive();
   const GITHUB_USER = "ksukie";
   // GitHub's public REST API does not expose profile pins. Keep this list in the same order as the public profile's pinned cards.
   const FEATURED_REPOSITORY_NAMES = [
+    "TactiWeave-VP",
     "WildfireAegis",
     "vision-workbench",
     "adaptive-ui-engineer",
     "AgentGuard"
   ];
+  // Portfolio projects outside the account queried below stay visible after snapshot refreshes.
+  const PORTFOLIO_REPOSITORIES = Object.freeze([
+    {
+      name: "TactiWeave-VP",
+      full_name: "CanyonChen/TactiWeave-VP",
+      private: false,
+      visibility: "public",
+      description: "Visual-physical temporal fusion for fabric classification from tactile pressure sequences and calibrated physical measurements.",
+      language: "Python",
+      topics: ["tactile", "pytorch", "resnet", "temporal-fusion"],
+      homepage: "",
+      html_url: "https://github.com/CanyonChen/TactiWeave-VP",
+      stargazers_count: 0,
+      forks_count: 0,
+      pushed_at: "2026-07-24T09:27:17Z",
+      updated_at: "2026-07-24T09:27:17Z"
+    }
+  ]);
   // GitHub Topics are the source of card metadata and representative top-level filters.
   const REPOSITORY_PALETTES = Object.freeze([
     { rgb: "113, 131, 143", ink: "#60717c" },
@@ -998,7 +1017,10 @@ setupLifeArchive();
   }
 
   async function loadRepositories() {
-    const snapshotRepos = normalizeRepositories(STATIC_REPOSITORY_SNAPSHOT);
+    const snapshotRepos = normalizeRepositories([
+      ...STATIC_REPOSITORY_SNAPSHOT,
+      ...PORTFOLIO_REPOSITORIES
+    ]);
 
     try {
       const livePublicRepos = await fetchPublicRepositories();

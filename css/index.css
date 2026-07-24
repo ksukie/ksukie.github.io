@@ -278,6 +278,10 @@ hr {
   object-fit: contain;
 }
 
+.repo-placeholder--tacti-weave {
+  background: #4f7893;
+}
+
 .repo-title {
   margin: 0;
   font-size: 17px;

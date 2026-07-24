@@ -9,6 +9,13 @@
     \item 实现 PI0.5 与基于 ACT 的 DreamTacVLA 的专用触觉通路，包含轻量触觉 Token 编码、力矩阵条件化、梯度累积及经回归测试的旧版 HDF5 转换。
 \end{itemize}
 
+\cventryheading{TactiWeave-VP}{}
+\begin{itemize}
+\cvprojectbodyfont
+    \item 构建面向织物分类的视觉—物理时序融合原型，将连续 64 帧灰度触觉压力图像与经标定的力、摩擦和接触面积测量联合建模。
+    \item 以单通道 ResNet-18 编码视觉特征、以 MLP 编码六维物理状态，在帧级融合后使用因果膨胀 TCN 和注意力池化完成分类；数据加载器支持序列对齐校验与按时间顺序划分。
+\end{itemize}
+
 \cventryheading{IsaacSim-Tactile4OpenWorld}{}
 \begin{itemize}
 \cvprojectbodyfont

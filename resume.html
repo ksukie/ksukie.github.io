@@ -516,6 +516,18 @@
 
         <div class="item">
           <div class="time">
+            <strong>视觉-物理触觉融合</strong>
+            PyTorch · ResNet-18 · Causal TCN
+          </div>
+          <div class="item-body">
+            <h3>TactiWeave-VP：视觉—物理时序融合的织物触觉分类</h3>
+            <p>构建面向织物分类的视觉—物理时序融合原型，将短时触觉压力图像序列与经标定的力、摩擦和接触面积测量联合建模；默认配置以连续 64 帧作为一个样本。</p>
+            <p>以单通道 ResNet-18 编码触觉图像、以 MLP 编码六维物理状态，在帧级融合后通过因果膨胀 TCN 与注意力池化完成分类；数据加载流程支持序列对齐、缺失数据校验和按时间顺序划分实验集。</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="time">
             <strong>触觉仿真平台</strong>
             Isaac Sim · Isaac Lab · UIPC
           </div>
