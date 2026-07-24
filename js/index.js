@@ -26,3 +26,9 @@ document.querySelectorAll("[data-placeholder-link]").forEach((link) => {
 
 const currentYear = document.querySelector("#current-year");
 if (currentYear) currentYear.textContent = String(new Date().getFullYear());
+
+document.addEventListener("click", (event) => {
+  document.querySelectorAll(".cv-menu[open]").forEach((menu) => {
+    if (!menu.contains(event.target)) menu.open = false;
+  });
+});
