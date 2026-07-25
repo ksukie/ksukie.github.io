@@ -166,7 +166,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
       "edge-ai",
       "edge-computing",
       "optical-flow",
-      "qat",
+      "ptq",
       "vision"
     ],
     "homepage": "",

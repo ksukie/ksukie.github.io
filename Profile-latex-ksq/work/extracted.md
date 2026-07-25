@@ -154,7 +154,7 @@ The user explicitly stated that the page contains their own information.
 ## Technical stack
 
 - Vision/modeling: PyTorch, YOLO11, U-Net, OpenCV, Cython
-- Deployment: ONNX, TensorRT, RKNN, RKNNLite, FP16, PTQ INT8, QAT
+- Deployment: ONNX, TensorRT, RKNN, RKNNLite, FP16, PTQ INT8
 - Hardware: Jetson, RV1126B, RK3588, ESP32
 - Robot learning: LeRobot, ACT, PI0, PI0.5, Piper, Isaac Sim, Isaac Lab, UIPC,
   tactile sensing, data collection
