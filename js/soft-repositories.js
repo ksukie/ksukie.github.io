@@ -13,8 +13,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-07-24T05:16:56Z",
-    "updated_at": "2026-07-24T05:17:00Z"
+    "pushed_at": "2026-07-25T04:32:04Z",
+    "updated_at": "2026-07-25T04:32:23Z"
   },
   {
     "name": "IsaacSim-Tactile4OpenWorld",
@@ -32,10 +32,10 @@ globalThis.REPOSITORY_SNAPSHOT = [
     ],
     "homepage": "",
     "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
-    "stargazers_count": 4,
+    "stargazers_count": 5,
     "forks_count": 0,
-    "pushed_at": "2026-07-23T01:42:28Z",
-    "updated_at": "2026-07-23T02:16:31Z"
+    "pushed_at": "2026-07-24T08:57:15Z",
+    "updated_at": "2026-07-25T01:55:42Z"
   },
   {
     "name": "OpenFireAlert",
@@ -166,7 +166,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
       "edge-ai",
       "edge-computing",
       "optical-flow",
-      "ptq",
+      "qat",
       "vision"
     ],
     "homepage": "",
