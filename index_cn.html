@@ -263,10 +263,8 @@
                 <h3 class="repo-title">VTLA</h3>
                 <p class="repo-tech">LeRobot · PI0.5 · Piper</p>
                 <p class="repo-description">
-                  基于 LeRobot 0.5.2 的实体机器人视触觉学习扩展栈，兼容上游 LeRobot 接口，
-                  集成 AgileX Piper 主从臂、LTeach 触觉传感及数据采集、训练与评估流程。系统支持
-                  ACT、PI0/PI0.5 触觉扩展与 DreamTacVLA；后者在 ACT 主干上引入力矩阵驱动的
-                  Think → Dream → Act 分支，并以统一数据契约对齐机器人状态、RGB 观测、触觉力场与动作序列。
+                  基于 LeRobot 0.5.2 的实体机器人视触觉学习扩展栈，集成 Piper 主从臂、LTeach
+                  触觉传感及数据采集、训练与评估流程，支持 ACT、PI0/PI0.5 与 DreamTacVLA。
                 </p>
                 <p class="repo-access repo-private">
                   <img
@@ -293,9 +291,8 @@
                 <h3 class="repo-title">TactiWeave-VP</h3>
                 <p class="repo-tech">PyTorch · ResNet-18 · 因果 TCN</p>
                 <p class="repo-description">
-                  面向短时触觉交互的织物分类研究原型，将触觉压力图像序列与经标定的六维物理状态——
-                  三轴力、平面合力、摩擦系数和接触面积——联合建模。模型融合单通道 ResNet-18 与物理状态 MLP
-                  特征，经逐帧融合、膨胀因果 TCN 和注意力池化完成时序分类。
+                  面向短时触觉交互的织物分类原型，融合触觉压力图像序列与六维物理状态，
+                  并通过 ResNet-18、因果 TCN 和注意力池化完成时序分类。
                 </p>
                 <p class="repo-access repo-private">
                   <img
@@ -328,9 +325,8 @@
                 </h3>
                 <p class="repo-tech">Isaac Lab · UIPC · 力场</p>
                 <p class="repo-description">
-                  基于 Isaac Sim / Isaac Lab 的触觉接触研究平台，使用 UIPC/libuipc 建模刚体与可形变接触、
-                  柔性触觉膜形变及局部 Fx/Fy/Fz 力场重建。项目将触觉 RGB、力场、机器人资产与实验任务统一到
-                  同一工作流，支持 Piper 与 Franka 的抓取、抬升、插入和滚动实验，并输出 RGB、元数据和 HDF5 研究数据。
+                  基于 Isaac Sim / Isaac Lab 的触觉接触研究平台，使用 UIPC/libuipc 建模柔性膜形变与
+                  局部 Fx/Fy/Fz 力场，支持 Piper 和 Franka 操作实验。
                 </p>
                 <p class="repo-access">
                   <a
@@ -369,9 +365,8 @@
                 </h3>
                 <p class="repo-tech">YOLO11 · TensorRT · Jetson</p>
                 <p class="repo-description">
-                  面向野火与火烟监测的端到端边缘智能平台，整合 Jetson 上的 YOLO11/TensorRT 视觉推理、
-                  ESP32-S3 传感节点，以及基于 Spring Boot / MySQL 的控制平面与 Web 控制台。系统将相机、温湿度、
-                  烟雾与蜂鸣器信号纳入统一告警链路，并通过按设备的抗抖动与冷却机制协同触发蜂鸣器、邮件和仪表盘告警。
+                  面向野火与火烟监测的边缘智能平台，整合 Jetson 上的 YOLO11/TensorRT 视觉推理、
+                  ESP32-S3 传感节点与 Spring Boot/MySQL 控制平面，并支持设备级告警联动。
                 </p>
                 <p class="repo-access">
                   <a
@@ -404,9 +399,8 @@
                 <h3 class="repo-title">TactileFlowField</h3>
                 <p class="repo-tech">PyTorch · RKNN · RV1126B</p>
                 <p class="repo-description">
-                  面向视觉触觉传感器的稠密光流学习与边缘部署工程，覆盖多版本模型管理、训练、PyTorch
-                  流式推理及 ONNX/RKNN 转换。系统以当前帧和初始参考帧预测稠密光流，支持基于量化感知训练（QAT）的
-                  INT8 量化与 FP16 推理，以及 RV1126B 上的多路顺序推理、ROI 处理、基线标定和设备管理。
+                  面向视觉触觉传感器的稠密光流学习与边缘部署工程，支持 PyTorch 流式推理、
+                  ONNX/RKNN 转换、基于 QAT 的 INT8 量化与 RV1126B 多路推理。
                 </p>
                 <p class="repo-access repo-private">
                   <img
@@ -433,9 +427,8 @@
                 <h3 class="repo-title">EdgeVisTrack-RKNN</h3>
                 <p class="repo-tech">RKNN · Cython · RV1126B</p>
                 <p class="repo-description">
-                  面向 RV1126B 的纯视觉多相机稀疏圆形标记点跟踪工程。系统通过区域 RGB 阈值、形态学闭运算和 Hough
-                  圆检测完成首帧建模，后续在局部 ROI 内执行模板相关、亚像素定位和丢失回退；提供 CPU、Fixed RKNN
-                  与 Dynamic RKNN 三类后端，其中 Fixed 使用模型内嵌共享低秩模板，Dynamic 通过运行时系数保留各标记点的首帧外观差异。
+                  面向 RV1126B 的纯视觉多相机稀疏标记点跟踪工程，采用局部 ROI 模板相关与亚像素定位，
+                  提供 CPU、Fixed RKNN 和 Dynamic RKNN 后端。
                 </p>
                 <p class="repo-access repo-private">
                   <img
