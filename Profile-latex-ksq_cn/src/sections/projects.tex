@@ -5,43 +5,43 @@
 \cventryheading{VTLA}{}
 \begin{itemize}
 \cvprojectbodyfont
-    \item 在保持上游 CLI/API 不变的前提下，扩展 LeRobot 0.5.2，接入 Piper 主从控制、LTeach 触觉相机，以及兼容 LeRobot 的数据录制、训练和推理流程。
-    \item 实现 PI0.5 与基于 ACT 的 DreamTacVLA 的专用触觉通路，包含轻量触觉 Token 编码、力矩阵条件化、梯度累积及经回归测试的旧版 HDF5 转换。
+    \item 基于 LeRobot 0.5.2 构建实体机器人视触觉学习扩展栈，在保持上游 CLI/API 兼容的前提下，集成 AgileX Piper 主从臂、LTeach 触觉传感及数据采集、训练与评估流程。
+    \item 支持 ACT、PI0/PI0.5 的触觉扩展与 DreamTacVLA；在 ACT 主干上引入力矩阵驱动的 Think--Dream--Act 分支，并以统一数据契约对齐机器人状态、RGB 观测、触觉力场与动作序列。
 \end{itemize}
 
 \cventryheading{TactiWeave-VP}{}
 \begin{itemize}
 \cvprojectbodyfont
-    \item 构建面向织物分类的视觉—物理时序融合原型，将连续 64 帧灰度触觉压力图像与经标定的力、摩擦和接触面积测量联合建模。
-    \item 以单通道 ResNet-18 编码视觉特征、以 MLP 编码六维物理状态，在帧级融合后使用因果膨胀 TCN 和注意力池化完成分类；数据加载器支持序列对齐校验与按时间顺序划分。
+    \item 面向短时触觉交互构建织物分类研究原型，将触觉压力图像序列与经标定的六维物理状态——三轴力、平面合力、摩擦系数和接触面积——联合建模。
+    \item 使用单通道 ResNet-18 编码视觉特征、物理状态 MLP 编码六维状态，经逐帧融合、膨胀因果 TCN 与注意力池化完成时序分类。
 \end{itemize}
 
 \cventryheading{IsaacSim-Tactile4OpenWorld}{}
 \begin{itemize}
 \cvprojectbodyfont
-    \item 开发基于 UIPC/libuipc 的柔顺触觉膜，并根据网格形变重建触觉局部三维 Fx/Fy/Fz 力场，支持 Piper 和 Franka 操作实验，涵盖力投影、符号标定、压力和剪切力估计。
-    \item 构建覆盖接触/非接触、膜对齐、抓取、提起、插入及横向剪切的迭代验证套件，并隔离不兼容的 Isaac Lab 环境和外部资产依赖。
+    \item 基于 Isaac Sim / Isaac Lab 构建触觉接触研究平台，使用 UIPC/libuipc 建模刚体与可形变接触、柔性触觉膜形变及局部 Fx/Fy/Fz 力场重建。
+    \item 将触觉 RGB、力场、机器人资产与实验任务纳入统一工作流，支持 Piper 与 Franka 的抓取、抬升、插入和滚动实验，并输出 RGB、元数据与 HDF5 研究数据。
 \end{itemize}
 
 \cventryheading{OpenFireAlert}{}
 \begin{itemize}
 \cvprojectbodyfont
-    \item 基于 D-Fire 数据集开发并优化复杂室外环境火烟检测模型，构建 PyTorch--ONNX--TensorRT--Jetson 部署链路，兼顾检测鲁棒性、推理效率与可部署性。
-    \item 构建端到端告警系统：Jetson 端推理并发布标注 RTSP 流和检测状态；Spring Boot/MySQL 控制平面融合 ESP32-S3 烟雾传感节点信号，完成重复告警抑制及设备级蜂鸣器、邮件和仪表盘联动。
+    \item 构建面向野火与火烟监测的端到端边缘智能平台，整合 Jetson 上的 YOLO11/TensorRT 视觉推理、ESP32-S3 传感节点，以及 Spring Boot/MySQL 控制平面与 Web 控制台。
+    \item 将相机、温湿度、烟雾与蜂鸣器信号纳入统一告警链路，通过按设备的抗抖动与冷却机制协同触发蜂鸣器、邮件和仪表盘告警。
 \end{itemize}
 
 \cventryheading{TactileFlowField}{}
 \begin{itemize}
 \cvprojectbodyfont
-    \item 开发三阶段双帧网络族，用于视觉触觉稠密光流估计；探索特征提取、跨帧融合与光流场回归方案，并统一输入、检查点和输出接口。
-    \item 构建面向 RV1126B 的 PyTorch 流式推理、ONNX/RKNN 转换与边缘部署流程；支持 FP16、PTQ INT8、单相机基线校准和多设备推理。
+    \item 构建面向视觉触觉传感器的稠密光流学习与边缘部署工程，覆盖多版本模型管理、训练、PyTorch 流式推理及 ONNX/RKNN 转换。
+    \item 以当前帧和初始参考帧预测稠密光流，支持 FP16 与基于训练后量化（PTQ）的 INT8 推理，以及 RV1126B 多路顺序推理、ROI 处理、基线标定和设备管理。
 \end{itemize}
 
 \cventryheading{EdgeVisTrack-RKNN}{}
 \begin{itemize}
 \cvprojectbodyfont
-    \item 设计面向 RV1126B 的纯视觉多相机稀疏圆形标记点跟踪管线，包含区域 RGB/Hough 初始化、局部 ROI 模板相关、亚像素优化和丢失恢复，并以 CPU 实现作为行为基准。
-    \item 在 RV1126B 上分析五相机 CPU 执行达到 98\%--99\% 利用率的问题，将热点迁移至 Fixed RKNN 和 Dynamic RKNN 批处理后端及 Cython/RKNN C API，并采用 FP16 LUT、复用缓冲区和分阶段性能分析。
+    \item 构建面向 RV1126B 的纯视觉多相机稀疏圆形标记点跟踪工程：通过区域 RGB 阈值、形态学闭运算和 Hough 圆检测完成首帧建模，随后在局部 ROI 内执行模板相关、亚像素定位与丢失回退。
+    \item 提供 CPU、Fixed RKNN 与 Dynamic RKNN 三类后端；Fixed 使用模型内嵌的共享低秩模板，Dynamic 通过运行时系数保留各标记点的首帧外观差异。
 \end{itemize}
 
 \cventryheading{Vision Workbench}{}

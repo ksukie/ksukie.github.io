@@ -7,48 +7,48 @@
   {LeRobot \textperiodcentered\ PI0.5 \textperiodcentered\ Piper}
   {VLA / Robot Learning}
   {}
-  {\CVBullet{Extended LeRobot 0.5.2 with Piper leader-follower control, LTeach tactile sensing, and LeRobot-compatible recording, training, and inference workflows while preserving the upstream CLI/API.}
-   \CVBullet{Implemented dedicated tactile pathways for PI0.5 and ACT-based DreamTacVLA, including lightweight tactile-token encoding, force-matrix conditioning, gradient accumulation, and regression-tested legacy HDF5 conversion.}}
+  {\CVBullet{Built a LeRobot 0.5.2-based visual-tactile learning extension stack for real-world robots while preserving upstream compatibility; integrated AgileX Piper leader-follower arms, LTeach tactile sensing, and data collection, training, and evaluation workflows.}
+   \CVBullet{Extended ACT and PI0/PI0.5 with tactile inputs and implemented DreamTacVLA: a torque-matrix-driven Think--Dream--Act branch on the ACT backbone with a unified data contract for robot state, RGB observations, tactile force fields, and action sequences.}}
 
 \CVProject
   {TactiWeave-VP}
   {PyTorch \textperiodcentered\ ResNet-18 \textperiodcentered\ Causal TCN}
   {Visual-Physical Tactile Fusion}
   {}
-  {\CVBullet{Built a visual-physical temporal-fusion prototype for fabric classification, combining 64-frame grayscale tactile pressure sequences with calibrated force, friction, and contact-area measurements.}
-   \CVBullet{Used a shared ResNet-18 visual encoder and a six-dimensional physical-state MLP with per-frame fusion, causal dilated TCN processing, and attention pooling; the data loader validates aligned sequences and supports chronological splitting.}}
+  {\CVBullet{Built a fabric-classification research prototype for short tactile interactions by jointly modeling tactile-pressure image sequences and calibrated six-dimensional physical states: tri-axial force, planar resultant, friction coefficient, and contact area.}
+   \CVBullet{Combined a single-channel ResNet-18 visual encoder with a physical-state MLP, followed by frame-wise fusion, dilated causal TCN processing, and attention pooling for temporal classification.}}
 
 \CVProject
   {IsaacSim-Tactile4OpenWorld}
   {Isaac Lab \textperiodcentered\ UIPC \textperiodcentered\ Force Fields}
   {Tactile Simulation \& Force Fields}
   {}
-  {\CVBullet{Developed a UIPC/libuipc-based compliant tactile membrane in Isaac Sim/Lab and reconstructed tactile-local 3D Fx/Fy/Fz fields from mesh deformation for Piper and Franka manipulation experiments, including force projection, sign calibration, pressure, and shear estimation.}
-   \CVBullet{Built an iterative validation suite covering contact/no-contact, membrane alignment, grasping, lifting, insertion, and lateral shear, while isolating incompatible Isaac Lab 2.1.1/2.3.2 environments and external asset dependencies.}}
+  {\CVBullet{Built a tactile-contact research platform in Isaac Sim/Isaac Lab using UIPC/libuipc to model rigid-deformable contact, compliant tactile-membrane deformation, and local Fx/Fy/Fz force-field reconstruction.}
+   \CVBullet{Unified tactile RGB, force fields, robot assets, and tasks in one workflow for Piper and Franka grasping, lifting, insertion, and rolling experiments, producing RGB, metadata, and HDF5 research data.}}
 
 \CVProject
   {OpenFireAlert}
   {YOLO11 \textperiodcentered\ TensorRT \textperiodcentered\ Jetson}
   {Wildfire Monitoring \& Alerting}
   {}
-  {\CVBullet{Developed and optimized a YOLO11 fire-and-smoke detector for complex outdoor environments using the D-Fire dataset; established a PyTorch-to-ONNX-to-TensorRT conversion and Jetson deployment pipeline, delivering an edge-vision solution that balances detection robustness, inference efficiency, and deployability.}
-   \CVBullet{Engineered an end-to-end alerting system in which Jetson performs edge inference and publishes annotated RTSP streams and detection states to a Spring Boot/MySQL control plane that fuses ESP32-S3 smoke-sensor signals, suppresses duplicate alerts, and coordinates device-level buzzer, email, and dashboard notifications.}}
+  {\CVBullet{Built an end-to-end edge-intelligence platform for wildfire and fire/smoke monitoring, integrating YOLO11/TensorRT inference on Jetson, ESP32-S3 sensor nodes, and a Spring Boot/MySQL control plane with a web console.}
+   \CVBullet{Unified camera, temperature/humidity, smoke, and buzzer signals in one alert pipeline; used per-device debouncing and cooldown mechanisms to coordinate buzzer, email, and dashboard alerts.}}
 
 \CVProject
   {TactileFlowField}
   {PyTorch \textperiodcentered\ RKNN \textperiodcentered\ RV1126B}
   {Visual-Tactile Dense Optical Flow}
   {}
-  {\CVBullet{Developed three-stage dual-frame networks for visual-tactile dense optical-flow estimation, exploring feature extraction, cross-frame fusion, and flow-field regression with standardized input, checkpoint, and output interfaces.}
-   \CVBullet{Built a PyTorch streaming-inference pipeline with ONNX/RKNN conversion for RV1126B, supporting FP16/PTQ INT8, per-camera calibration, and multi-device inference under RKNN operator constraints.}}
+  {\CVBullet{Built a dense optical-flow learning and edge-deployment system for visual-tactile sensors, covering multi-version model management, training, PyTorch streaming inference, and ONNX/RKNN conversion.}
+   \CVBullet{Predicted dense optical flow from the current frame and an initial reference frame; supported FP16 and PTQ INT8 inference, plus RV1126B multi-stream sequential inference, ROI processing, baseline calibration, and device management.}}
 
 \CVProject
   {EdgeVisTrack-RKNN}
   {RKNN \textperiodcentered\ Cython \textperiodcentered\ RV1126B}
   {Sparse Multi-Camera Marker Tracking}
   {}
-  {\CVBullet{Designed a pure-vision multi-camera sparse circular-marker tracking pipeline with regional RGB/Hough initialization, local ROI template correlation, subpixel refinement, and loss recovery, using the CPU implementation as the behavioral reference.}
-   \CVBullet{After profiling five-camera CPU execution at 98\%--99\% utilization on RV1126B, moved the hot path to Fixed and Dynamic RKNN batch backends and Cython/RKNN C APIs with FP16 LUT conversion, reusable buffers, and stage-level profiling.}}
+  {\CVBullet{Built a pure-vision multi-camera sparse circular-marker tracker for RV1126B: regional RGB thresholding, morphological closing, and Hough circles establish the first frame; local ROI template correlation, subpixel localization, and loss recovery track subsequent frames.}
+   \CVBullet{Provided CPU, Fixed RKNN, and Dynamic RKNN backends. Fixed uses embedded shared low-rank templates, while Dynamic retains each marker's first-frame appearance through runtime coefficients.}}
 
 \CVProject
   {Vision Workbench}

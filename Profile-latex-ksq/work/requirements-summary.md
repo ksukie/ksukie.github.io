@@ -24,6 +24,9 @@
   visual-tactile optical-flow SDK, hardware optimization, algorithm deployment,
   dense-optical-flow terminology, sim-to-real, and exploratory world-model
   direction; keep quantization terminology as PTQ INT8.
+- User confirmation: use the detailed pre-60%-compression wording for the six
+  core project entries in both PDFs, while retaining the corrected PTQ INT8
+  terminology for TactileFlowField.
 - Missing portfolio URL is omitted rather than inferred from the repository name.
 - Publication venues, author lists, dates, DOI links, and metrics not present in
   the source are not invented.

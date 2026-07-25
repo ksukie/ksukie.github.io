@@ -94,6 +94,10 @@ The user explicitly stated that the page contains their own information.
 
 ## Projects
 
+- User confirmation: use the pre-60%-compression detailed project wording in
+  both PDFs; retain PTQ rather than the superseded QAT wording for
+  TactileFlowField.
+
 ### VTLA
 
 - Built a LeRobot 0.5.2-compatible real-robot stack integrating AgileX Piper
