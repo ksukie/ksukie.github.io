@@ -24,9 +24,9 @@ The user explicitly stated that the page contains their own information.
 
 ## Education and credentials
 
-- Jiujiang University, IoT Engineering, 2022.09 - 2026.06
-- Core courses: Data Structures, Computer Networks, Operating Systems,
-  Computer Organization, Advanced Programming
+- Jiujiang University, IoT Engineering (Bachelor's), 2022.09 - 2026.06
+- Relevant courses: Data Structures, Computer Organization, Operating Systems,
+  Computer Networks, Linear Algebra, and Advanced Mathematics
 - Credentials: CET-4 / CET-6
 
 ## Internship

@@ -27,6 +27,8 @@
 - User confirmation: use the detailed pre-60%-compression wording for the six
   core project entries in both PDFs, while retaining the corrected PTQ INT8
   terminology for TactileFlowField.
+- User confirmation: display the degree as `物联网工程（本科）` in the Chinese
+  PDF and use the confirmed six-course education list.
 - Missing portfolio URL is omitted rather than inferred from the repository name.
 - Publication venues, author lists, dates, DOI links, and metrics not present in
   the source are not invented.

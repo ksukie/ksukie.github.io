@@ -5,10 +5,10 @@
 | Phone is 15707039996 | `input/resumesoft.html` | lines 345-347 | `15707039996` | resolved | use |
 | Email is 15707039996@163.com | `input/resumesoft.html` | lines 349-351 | `15707039996@163.com` | resolved | use |
 | GitHub is github.com/ksukie | `input/resumesoft.html` | lines 353-355 | `https://github.com/ksukie` | resolved | use |
-| Jiujiang University, IoT Engineering, 2022.09-2026.06 | `input/resumesoft.html` | lines 378-390 | exact education block | resolved | use |
+| Jiujiang University, IoT Engineering (Bachelor's), 2022.09-2026.06 | `input/resumesoft.html`; user confirmation | lines 378-390; current conversation | source education block; user confirmed `物联网工程（本科）` | resolved | use |
 | Jiujiang University location is Jiujiang, China | user confirmation | current conversation | user: `Jiujiang University后面的地址写 Jiujiang，China` | resolved | display beside university name |
 | Shenzhen Shita Robotics location is Shenzhen, China | user confirmation | current conversation | user: `Shenzhen ShitaRobotics Technology Co.,Ltd这里最右边也要加上 ShenZhen，China` | resolved | display at the far right of the company-name row |
-| Core courses are the five listed CS courses | `input/resumesoft.html` | lines 383-390 | exact course list | resolved | use compactly |
+| Relevant courses are Data Structures, Computer Organization, Operating Systems, Computer Networks, Linear Algebra, and Advanced Mathematics | user confirmation | current conversation | user: `相关课程：数据结构、计算机组成原理、操作系统、计算机网络、线性代数、高等数学。` | resolved | use in the Chinese education section |
 | Holds CET-4 and CET-6 | `input/resumesoft.html` | lines 395-399 | `CET-4 / CET-6` | resolved | use |
 | Algorithm Engineer Intern at Shenzhen Shita Robotics, 2026.02-2026.08 | user confirmation plus `input/resumesoft.html` | current user instruction; HTML lines 406-415 | user: `职位名称改为“算法工程师（实习） 英文的吧`; source page supplies company, dates, and original role | resolved | use the user-confirmed English display title |
 | Built visual-tactile robot-learning and edge-vision pipelines | `input/resumesoft.html` | lines 413-415 | exact internship paragraphs | resolved | compress into two bullets |
