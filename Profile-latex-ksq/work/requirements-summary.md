@@ -31,8 +31,8 @@
   PDF and use the confirmed six-course education list.
 - User confirmation: display the portfolio link as `ksukie.github.io` in the
   Chinese PDF header, after GitHub.
-- User confirmation: add clickable, black-text repository titles for the five
-  public Chinese PDF projects: IsaacSim-Tactile4OpenWorld, OpenFireAlert,
+- User confirmation: add clickable, black-text repository titles in both PDFs
+  for the five public projects: IsaacSim-Tactile4OpenWorld, OpenFireAlert,
   Vision Workbench, AdaptiveUI-SKILL, and AgentTools.
 - Publication venues, author lists, dates, DOI links, and metrics not present in
   the source are not invented.
