@@ -110,6 +110,7 @@ The user explicitly stated that the page contains their own information.
 
 ### IsaacSim-Tactile4OpenWorld
 
+- Repository: https://github.com/ksukie/IsaacSim-Tactile4OpenWorld
 - Built an Isaac Sim / Isaac Lab robot-contact and visuotactile platform with
   UIPC / libuipc rigid-soft contact, flexible-membrane deformation,
   tactile-image synthesis, and 3D Fx / Fy / Fz force-field reconstruction.
@@ -119,6 +120,7 @@ The user explicitly stated that the page contains their own information.
 
 ### OpenFireAlert
 
+- Repository: https://github.com/ksukie/OpenFireAlert
 - Trained a YOLO11 fire-and-smoke detector; exported ONNX / TensorRT and
   deployed it on Jetson with RTSP streaming, edge inference, alerts, and web
   visualization.
@@ -151,6 +153,7 @@ The user explicitly stated that the page contains their own information.
 
 ### Vision Workbench
 
+- Repository: https://github.com/ksukie/Vision-WorkBench
 - Built a PySide6 desktop computer-vision workbench covering traditional image
   processing, panorama reconstruction, camera diagnostics, classification,
   YOLO26 detection / instance segmentation, semantic segmentation, and training.
@@ -160,12 +163,14 @@ The user explicitly stated that the page contains their own information.
 
 ### AdaptiveUI-SKILL
 
+- Repository: https://github.com/ksukie/AdaptiveUI-SKILL
 - Built explicitly invoked, framework-agnostic AdaptiveUI-S / AdaptiveUI-N
   skills for responsive layout, overflow, interaction, accessibility, and
   cross-browser fallbacks, with a dependency-free auditor and CI thresholds.
 
 ### AgentTools
 
+- Repository: https://github.com/ksukie/AgentTools
 - Built explicit Agent / Codex diagnostics, cross-platform AGENTS.md templates,
   task-context continuation, and skill inventories for PowerShell profiles,
   Conda hooks, Python encoding, Git line endings, proxies / TUN, and reconnect
