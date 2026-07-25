@@ -279,9 +279,15 @@
                 <h3 class="repo-title">VTLA</h3>
                 <p class="repo-tech">LeRobot · PI0.5 · Piper</p>
                 <p class="repo-description">
-                  A LeRobot-compatible visual-tactile robot-learning stack with
-                  Piper leader-follower control, LTeach sensing, and ACT/PI0.5
-                  recording, training, and inference workflows.
+                  A visual-tactile learning extension stack for real-world robots,
+                  built on LeRobot 0.5.2 and retaining compatibility with upstream
+                  LeRobot interfaces. It integrates AgileX Piper leader-follower
+                  arms, LTeach tactile sensing, and data collection, training, and
+                  evaluation workflows. It supports ACT, PI0/PI0.5 tactile
+                  extensions, and DreamTacVLA; the latter adds a force-matrix-driven
+                  Think → Dream → Act branch to the ACT backbone. A unified data
+                  contract aligns robot state, RGB observations, tactile force
+                  fields, and action sequences.
                 </p>
                 <p class="repo-access repo-private">
                   <img
@@ -308,9 +314,13 @@
                 <h3 class="repo-title">TactiWeave-VP</h3>
                 <p class="repo-tech">PyTorch · ResNet-18 · Causal TCN</p>
                 <p class="repo-description">
-                  A visual-physical temporal-fusion prototype for fabric
-                  classification from tactile pressure sequences and calibrated
-                  force, friction, and contact-area measurements.
+                  A research prototype for fabric classification from short tactile
+                  interactions, jointly modeling tactile pressure-image sequences
+                  and calibrated six-dimensional physical states: three-axis force,
+                  planar resultant force, friction coefficient, and contact area.
+                  It fuses single-channel ResNet-18 and physical-state MLP features
+                  through per-frame fusion, a dilated causal TCN, and attention
+                  pooling for temporal classification.
                 </p>
                 <p class="repo-access repo-private">
                   <img
@@ -343,9 +353,13 @@
                 </h3>
                 <p class="repo-tech">Isaac Lab · UIPC · Force Fields</p>
                 <p class="repo-description">
-                  A contact-rich tactile simulation platform using compliant
-                  UIPC membranes and tactile-local 3D Fx/Fy/Fz force-field
-                  reconstruction in Isaac Sim and Isaac Lab.
+                  A tactile-contact research platform built on Isaac Sim / Isaac
+                  Lab, using UIPC/libuipc to model rigid and deformable contact,
+                  compliant tactile-membrane deformation, and local Fx/Fy/Fz
+                  force-field reconstruction. It brings tactile RGB, force fields,
+                  robot assets, and experimental tasks into one workflow, supporting
+                  grasping, lifting, insertion, and rolling experiments with Piper
+                  and Franka and producing RGB, metadata, and HDF5 research data.
                 </p>
                 <p class="repo-access">
                   <a
@@ -384,9 +398,13 @@
                 </h3>
                 <p class="repo-tech">YOLO11 · TensorRT · Jetson</p>
                 <p class="repo-description">
-                  A wildfire monitoring system combining YOLO11/TensorRT edge
-                  inference, RTSP streaming, ESP32 smoke-sensor fusion, and
-                  coordinated buzzer, email, and dashboard alerts.
+                  An end-to-end edge-intelligence platform for wildfire and
+                  fire/smoke monitoring, integrating YOLO11/TensorRT vision
+                  inference on Jetson, ESP32-S3 sensor nodes, and a Spring
+                  Boot/MySQL control plane with a web console. It brings camera,
+                  temperature/humidity, smoke, and buzzer signals into a unified
+                  alerting pipeline and uses per-device debounce and cooldown logic
+                  to coordinate buzzer, email, and dashboard alerts.
                 </p>
                 <p class="repo-access">
                   <a
@@ -410,7 +428,7 @@
                 <img
                   class="repo-image"
                   src="assets/index/tactile-flow-field.webp"
-                  alt="Tactile displacement-field learning illustration"
+                  alt="Visual-tactile dense optical-flow learning illustration"
                   width="1672"
                   height="941"
                 />
@@ -419,10 +437,14 @@
                 <h3 class="repo-title">TactileFlowField</h3>
                 <p class="repo-tech">PyTorch · RKNN · RV1126B</p>
                 <p class="repo-description">
-                  Dense dual-frame tactile displacement models with
-                  PyTorch-to-ONNX-to-RKNN deployment, FP16 inference and
-                  QAT-based INT8 quantization, multi-device inference, and
-                  per-camera calibration.
+                  A dense optical-flow learning and edge-deployment system for
+                  visual-tactile sensors, covering multi-version model management,
+                  training, PyTorch streaming inference, and ONNX/RKNN conversion.
+                  It predicts dense optical flow from the current frame and an
+                  initial reference frame, supports QAT-based INT8 quantization and
+                  FP16 inference, and provides multi-stream sequential inference,
+                  ROI processing, baseline calibration, and device management on
+                  RV1126B.
                 </p>
                 <p class="repo-access repo-private">
                   <img
@@ -449,9 +471,14 @@
                 <h3 class="repo-title">EdgeVisTrack-RKNN</h3>
                 <p class="repo-tech">RKNN · Cython · RV1126B</p>
                 <p class="repo-description">
-                  A five-camera circular-marker tracking pipeline using template
-                  correlation, subpixel refinement, loss recovery, and batched
-                  RKNN/Cython acceleration on RV1126B.
+                  An edge-optimized, pure-vision multi-camera sparse circular-marker
+                  tracking system for RV1126B. It initializes markers with regional
+                  RGB thresholds, morphological closing, and Hough circle detection,
+                  then performs local-ROI template correlation, subpixel
+                  localization, and loss recovery; it provides CPU, Fixed RKNN, and
+                  Dynamic RKNN backends, with Fixed using a model-embedded shared
+                  low-rank template and Dynamic preserving first-frame appearance
+                  differences through runtime coefficients.
                 </p>
                 <p class="repo-access repo-private">
                   <img
