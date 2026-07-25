@@ -29,7 +29,8 @@
   terminology for TactileFlowField.
 - User confirmation: display the degree as `物联网工程（本科）` in the Chinese
   PDF and use the confirmed six-course education list.
-- Missing portfolio URL is omitted rather than inferred from the repository name.
+- User confirmation: display the portfolio link as `ksukie.github.io` in the
+  Chinese PDF header, after GitHub.
 - Publication venues, author lists, dates, DOI links, and metrics not present in
   the source are not invented.
 
@@ -60,6 +61,4 @@
 
 ## Omission audit
 
-- Portfolio URL: omitted because no URL appears in the supplied source; impact is
-  limited to showing email, phone, and GitHub in the header.
 - No source-backed project is omitted from the final two-page version.

@@ -20,7 +20,8 @@ The user explicitly stated that the page contains their own information.
 - Phone: 15707039996
 - Email: 15707039996@163.com
 - GitHub: https://github.com/ksukie
-- The page says “Portfolio & Code Registry” but provides no URL; omit it.
+- Portfolio: https://ksukie.github.io/ (user-confirmed; display as
+  `ksukie.github.io` in the Chinese PDF header).
 
 ## Education and credentials
 

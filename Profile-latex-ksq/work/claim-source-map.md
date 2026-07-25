@@ -25,7 +25,7 @@
 | EdgeVisTrack-RKNN project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, EdgeVisTrack-RKNN entry | exact project title and two paragraphs | resolved | use |
 | Vision Workbench project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, Vision Workbench entry | exact project title and two paragraphs | resolved | use |
 | Technical stack shown in the final CV | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Tech Stack and project entries | exact stack lists and source-backed tools | resolved | group by function |
-| Portfolio URL | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Contact section | label only; no URL | omitted-unresolved | omit |
+| Portfolio URL is https://ksukie.github.io/ | user confirmation; `Profile-latex-ksq_cn/src/cv-data.tex` | current conversation; line 6 | user: `顶部ksukie换成ksukie.github.io这个名称` | resolved | display as `ksukie.github.io` in the Chinese header |
 | AdaptiveUI-SKILL project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, AdaptiveUI-SKILL entry | exact project title and paragraph | resolved | use compactly |
 | AgentTools project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, AgentTools entry | exact project title and paragraph | resolved | use compactly |
 | CVI Lab data annotation, model research, first-author experimental work, and PyQt5 maintenance | user confirmation | current conversation | user: `数据标注`; `ResNet，DenseNet，SAM调研`; `线序检测也参与了一下模型的调研`; `自己的一篇一作的实验`; `QT页面开发前后端维护` | resolved | use in the bilingual CVI Lab bullets |
