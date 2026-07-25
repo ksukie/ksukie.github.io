@@ -28,5 +28,6 @@
 | Portfolio URL | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Contact section | label only; no URL | omitted-unresolved | omit |
 | AdaptiveUI-SKILL project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, AdaptiveUI-SKILL entry | exact project title and paragraph | resolved | use compactly |
 | AgentTools project details | `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html` | Projects section, AgentTools entry | exact project title and paragraph | resolved | use compactly |
+| CVI Lab data annotation, model research, first-author experimental work, and PyQt5 maintenance | user confirmation | current conversation | user: `数据标注`; `ResNet，DenseNet，SAM调研`; `线序检测也参与了一下模型的调研`; `自己的一篇一作的实验`; `QT页面开发前后端维护` | resolved | use in the bilingual CVI Lab bullets |
 
 Every factual claim planned for the final CV is covered by a resolved source row above; authoring will update rows if wording introduces a distinct claim.

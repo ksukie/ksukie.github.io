@@ -17,6 +17,9 @@
 
 - Authoritative source: `C:/Users/asus/Desktop/ksukie.github.io/resumesoft.html`.
 - User confirmation: the supplied HTML contains the user's own information.
+- User confirmation: CVI Lab work also includes data annotation, ResNet/DenseNet
+  and SAM research, wire-sequence model research, first-author-paper experiments,
+  and PyQt5 UI/front-end/back-end maintenance.
 - Missing portfolio URL is omitted rather than inferred from the repository name.
 - Publication venues, author lists, dates, DOI links, and metrics not present in
   the source are not invented.

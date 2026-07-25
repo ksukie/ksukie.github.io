@@ -53,6 +53,12 @@ The user explicitly stated that the page contains their own information.
 - Built a biomedical-image workflow for chromosome segmentation and detection,
   including preprocessing, candidate-region detection, review, abnormal-sample
   annotation, batch loading, manual correction, and export through PyQt5.
+- User confirmation: handled data annotation and processing; investigated ResNet
+  and DenseNet backbones, SAM segmentation models, and wire-sequence detection
+  models; and independently conducted the experimental work for a first-author
+  paper.
+- User confirmation: maintained the PyQt5 workflow's UI and related front-end/
+  back-end functionality.
 
 ## Research outputs
 
