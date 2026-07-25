@@ -23,7 +23,7 @@
   {Isaac Lab \textperiodcentered\ UIPC \textperiodcentered\ Force Fields}
   {Tactile Simulation \& Force Fields}
   {}
-  {\CVBullet{Developed a UIPC-based compliant tactile membrane in Isaac Sim/Lab and reconstructed tactile-local 3D Fx/Fy/Fz fields from mesh deformation, including force projection, sign calibration, pressure, and shear estimation.}
+  {\CVBullet{Developed a UIPC/libuipc-based compliant tactile membrane in Isaac Sim/Lab and reconstructed tactile-local 3D Fx/Fy/Fz fields from mesh deformation for Piper and Franka manipulation experiments, including force projection, sign calibration, pressure, and shear estimation.}
    \CVBullet{Built an iterative validation suite covering contact/no-contact, membrane alignment, grasping, lifting, insertion, and lateral shear, while isolating incompatible Isaac Lab 2.1.1/2.3.2 environments and external asset dependencies.}}
 
 \CVProject
@@ -32,23 +32,23 @@
   {Wildfire Monitoring \& Alerting}
   {}
   {\CVBullet{Developed and optimized a YOLO11 fire-and-smoke detector for complex outdoor environments using the D-Fire dataset; established a PyTorch-to-ONNX-to-TensorRT conversion and Jetson deployment pipeline, delivering an edge-vision solution that balances detection robustness, inference efficiency, and deployability.}
-   \CVBullet{Engineered an end-to-end alerting system in which Jetson performs edge inference and publishes annotated RTSP streams and detection states to a Spring Boot control plane that fuses ESP32 smoke-sensor signals, suppresses duplicate alerts, and coordinates buzzer, email, and dashboard notifications.}}
+   \CVBullet{Engineered an end-to-end alerting system in which Jetson performs edge inference and publishes annotated RTSP streams and detection states to a Spring Boot/MySQL control plane that fuses ESP32-S3 smoke-sensor signals, suppresses duplicate alerts, and coordinates device-level buzzer, email, and dashboard notifications.}}
 
 \CVProject
   {TactileFlowField}
   {PyTorch \textperiodcentered\ RKNN \textperiodcentered\ RV1126B}
-  {Tactile Dense Displacement}
+  {Visual-Tactile Dense Optical Flow}
   {}
-  {\CVBullet{Developed a family of three-stage dual-frame networks for dense tactile displacement estimation, exploring multiple designs for feature extraction, cross-frame fusion, and displacement-field regression; standardized input, checkpoint, and output contracts to improve reusability, extensibility, and generalization across model and sensing configurations.}
-   \CVBullet{Built a PyTorch-to-ONNX-to-RKNN edge deployment pipeline for RV1126B, redesigning model and inference paths around RKNN operator constraints; supported FP16 and PTQ INT8 quantization, per-camera baseline calibration, and multi-device inference for deployment portability and hardware adaptability.}}
+  {\CVBullet{Developed three-stage dual-frame networks for visual-tactile dense optical-flow estimation, exploring feature extraction, cross-frame fusion, and flow-field regression with standardized input, checkpoint, and output interfaces.}
+   \CVBullet{Built a PyTorch streaming-inference pipeline with ONNX/RKNN conversion for RV1126B, supporting FP16/PTQ INT8, per-camera calibration, and multi-device inference under RKNN operator constraints.}}
 
 \CVProject
   {EdgeVisTrack-RKNN}
   {RKNN \textperiodcentered\ Cython \textperiodcentered\ RV1126B}
-  {Multi-Camera Edge Tracking}
+  {Sparse Multi-Camera Marker Tracking}
   {}
-  {\CVBullet{Designed a circular-marker tracking pipeline with regional RGB/Hough initialization, local template correlation, subpixel refinement, and loss recovery, using the CPU implementation as the behavioral reference.}
-   \CVBullet{After profiling five-camera CPU execution at 98\%--99\% utilization on RV1126B, moved the hot path to batched RKNN backends and Cython/RKNN C APIs with FP16 LUT conversion, reusable buffers, and stage-level profiling.}}
+  {\CVBullet{Designed a pure-vision multi-camera sparse circular-marker tracking pipeline with regional RGB/Hough initialization, local ROI template correlation, subpixel refinement, and loss recovery, using the CPU implementation as the behavioral reference.}
+   \CVBullet{After profiling five-camera CPU execution at 98\%--99\% utilization on RV1126B, moved the hot path to Fixed and Dynamic RKNN batch backends and Cython/RKNN C APIs with FP16 LUT conversion, reusable buffers, and stage-level profiling.}}
 
 \CVProject
   {Vision Workbench}
@@ -71,5 +71,5 @@
   {PowerShell \textperiodcentered\ Diagnostics \textperiodcentered\ Codex}
   {Agent Engineering \& Diagnostics}
   {}
-  {\CVBullet{Built a read-only Codex diagnostics tool that correlates PowerShell profiles, Conda hooks, Python encoding, Git line endings, proxy/TUN state, and reconnect logs while redacting credentials and avoiding system mutation.}
-   \CVBullet{Added cross-platform AGENTS.md templates, scoped task-context handoff, and runtime Skill inventory under an explicit-invocation plugin contract.}}
+  {\CVBullet{Built a read-only Codex diagnostics tool covering PowerShell profiles, Conda hooks, Python encoding, Git line endings, proxy/TUN state, and reconnect logs, without exposing credentials or modifying the system.}
+   \CVBullet{Added cross-platform AGENTS.md templates, task handoff, and runtime Skill inventory for explicit-invocation plugins.}}

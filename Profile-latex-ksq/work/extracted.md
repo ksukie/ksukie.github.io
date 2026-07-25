@@ -43,6 +43,9 @@ The user explicitly stated that the page contains their own information.
   quantization, calibration data construction, and edge consistency validation.
 - Worked across PC, RV1126B, and RK3588 with GStreamer / MIPI, concurrency,
   profiling, hardware integration, and on-site calibration.
+- User confirmation: in parallel with the embodied-intelligence work, maintained
+  a visual-tactile optical-flow estimation SDK, optimized hardware solutions,
+  and deployed algorithms.
 
 ## Research experience
 
@@ -116,6 +119,8 @@ The user explicitly stated that the page contains their own information.
   visualization.
 - Integrated ESP32 sensor nodes and a Spring Boot control plane for
   environmental data, detection state, device commands, and alert records.
+- Current homepage/user confirmation: uses ESP32-S3 sensor nodes and a Spring
+  Boot/MySQL control plane with device-level alert orchestration.
 
 ### TactileFlowField
 
@@ -125,6 +130,8 @@ The user explicitly stated that the page contains their own information.
 - Exported ONNX and FP16 / PTQ INT8 RKNN models; deployed with RKNNLite on
   RV1126B and supported multi-stream video, baseline calibration, and
   single- / multi-device tactile-camera APIs.
+- User confirmation: use the term "dense optical flow" for dense visual-tactile
+  flow; retain PTQ rather than QAT.
 
 ### EdgeVisTrack-RKNN
 
@@ -134,6 +141,8 @@ The user explicitly stated that the page contains their own information.
 - Designed Fixed / Dynamic RKNN batch backends using Cython ROI cropping, FP16
   LUTs, reusable buffers, and the RKNN C API for high-frequency work across
   five cameras with staged performance observation.
+- Current homepage/user confirmation: position it as pure-vision multi-camera
+  sparse marker tracking with CPU, Fixed RKNN, and Dynamic RKNN backends.
 
 ### Vision Workbench
 
@@ -157,12 +166,19 @@ The user explicitly stated that the page contains their own information.
   Conda hooks, Python encoding, Git line endings, proxies / TUN, and reconnect
   signals; behavior is read-only and does not access secrets.
 
+## Current research direction
+
+- User confirmation: research focuses on tactile perception, multimodal robot
+  learning, and algorithm optimization; it spans visual-tactile data collection,
+  multimodal policy training, sim-to-real transfer, and edge-device deployment,
+  while progressively exploring world models for embodied intelligence.
+
 ## Technical stack
 
 - Vision/modeling: PyTorch, YOLO11, U-Net, OpenCV, Cython
 - Deployment: ONNX, TensorRT, RKNN, RKNNLite, FP16, PTQ INT8
-- Hardware: Jetson, RV1126B, RK3588, ESP32
-- Robot learning: LeRobot, ACT, PI0, PI0.5, Piper, Isaac Sim, Isaac Lab, UIPC,
+- Hardware: Jetson, RV1126B, RK3588, ESP32-S3
+- Robot learning: LeRobot, ACT, PI0, PI0.5, Piper, Isaac Sim, Isaac Lab, UIPC/libuipc,
   tactile sensing, data collection
 - Video/edge: GStreamer, RTSP, MIPI
 - Engineering: Python, PyQt5, PySide6, Spring Boot 3, HDF5, benchmarking,

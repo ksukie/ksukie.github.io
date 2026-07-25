@@ -20,6 +20,10 @@
 - User confirmation: CVI Lab work also includes data annotation, ResNet/DenseNet
   and SAM research, wire-sequence model research, first-author-paper experiments,
   and PyQt5 UI/front-end/back-end maintenance.
+- User confirmation: synchronize the bilingual PDFs with the homepage's
+  visual-tactile optical-flow SDK, hardware optimization, algorithm deployment,
+  dense-optical-flow terminology, sim-to-real, and exploratory world-model
+  direction; keep quantization terminology as PTQ INT8.
 - Missing portfolio URL is omitted rather than inferred from the repository name.
 - Publication venues, author lists, dates, DOI links, and metrics not present in
   the source are not invented.
@@ -38,8 +42,10 @@
 
 - Keep the internship, lab experience, all three research outputs, and all eight
   source-backed projects, including the new IsaacSim-Tactile4OpenWorld entry.
-- Synchronize renamed and revised repositories: OpenFireAlert, TactileFlowField,
-  and EdgeVisTrack-RKNN. Retain the two broader engineering projects compactly.
+- Synchronize revised project facts: UIPC/libuipc with Piper/Franka,
+  OpenFireAlert's ESP32-S3 and Spring Boot/MySQL control plane,
+  TactileFlowField's dense optical-flow/PTQ terminology, and EdgeVisTrack's
+  sparse-marker CPU/Fixed RKNN/Dynamic RKNN backends.
 - Convert long web paragraphs into concise bullets without adding metrics or claims.
 
 ## Blocking gaps
