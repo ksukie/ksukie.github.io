@@ -297,14 +297,14 @@ function setupLifeArchive() {
   const stage = document.querySelector("[data-life-stage]");
   if (!stage) return;
   const track = stage.querySelector("[data-life-track]");
-  const slides = Array.from(stage.querySelectorAll("[data-life-slide]"));
-  const dots = stage.querySelectorAll("[data-life-dot]");
+  const slides = Array.from(stage.querySelectorAll("[data-life-slide]:not([hidden])"));
+  const dots = stage.querySelectorAll("[data-life-dot]:not([hidden])");
   const prev = stage.querySelector("[data-life-prev]");
   const next = stage.querySelector("[data-life-next]");
   const count = document.querySelector("[data-life-count]");
   const caption = document.querySelector("[data-life-current-caption]");
-  const artists = document.querySelectorAll("[data-artist]");
-  const trackPanel = document.querySelector("[data-track-panel]");
+  const artists = stage.querySelectorAll("[data-life-slide]:not([hidden]) [data-artist]");
+  const trackPanel = stage.querySelector("[data-life-slide]:not([hidden]) [data-track-panel]");
   const order = slides.map((slide) => slide.dataset.lifeSlide);
   let activeIndex = 0;
   let dragStartX = 0;

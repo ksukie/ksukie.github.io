@@ -1884,6 +1884,11 @@ h2 {
   overflow: hidden;
 }
 
+.life-template-slide[hidden],
+.life-dot[hidden] {
+  display: none !important;
+}
+
 .life-template-slide::before {
   content: attr(data-watermark);
   position: absolute;
