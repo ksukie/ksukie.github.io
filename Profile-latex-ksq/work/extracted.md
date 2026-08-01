@@ -18,7 +18,7 @@ The user explicitly stated that the page contains their own information.
 ## Contact
 
 - Phone: 15707039996
-- Email: 15707039996@163.com
+- Email: kkksukie@gmail.com
 - GitHub: https://github.com/ksukie
 - Portfolio: https://ksukie.github.io/ (user-confirmed; display as
   `ksukie.github.io` in the Chinese PDF header).

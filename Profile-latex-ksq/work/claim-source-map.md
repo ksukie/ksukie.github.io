@@ -3,7 +3,7 @@
 | The resume belongs to 柯书奇 / Shuqi Ke | `input/resumesoft.html` | lines 337-338 and `<title>` | `柯书奇`; `Shuqi Ke`; user states page contains own information | resolved | use English display name to match the reference CV |
 | Direction is CV / Edge AI / Robot Learning | `input/resumesoft.html` | lines 338 and meta description | `CV / Edge AI / Robot Learning` | resolved | use as profile focus |
 | Phone is 15707039996 | `input/resumesoft.html` | lines 345-347 | `15707039996` | resolved | use |
-| Email is 15707039996@163.com | `input/resumesoft.html` | lines 349-351 | `15707039996@163.com` | resolved | use |
+| Email is kkksukie@gmail.com | `input/resumesoft.html` | lines 349-351 | `kkksukie@gmail.com` | resolved | use |
 | GitHub is github.com/ksukie | `input/resumesoft.html` | lines 353-355 | `https://github.com/ksukie` | resolved | use |
 | Jiujiang University, IoT Engineering (Bachelor's), 2022.09-2026.06 | `input/resumesoft.html`; user confirmation | lines 378-390; current conversation | source education block; user confirmed `物联网工程（本科）` | resolved | use |
 | Jiujiang University location is Jiujiang, China | user confirmation | current conversation | user: `Jiujiang University后面的地址写 Jiujiang，China` | resolved | display beside university name |
