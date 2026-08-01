@@ -1261,6 +1261,9 @@ setupLifeArchive();
   }
 
   function renderDetail(repo) {
+    detail.scrollTop = 0;
+    detailTrail.scrollTop = 0;
+
     if (!repo) {
       detail.style.setProperty("--detail-rgb", "211, 147, 148");
       detail.style.setProperty("--detail-ink", "#9f686a");
