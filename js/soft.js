@@ -1155,9 +1155,11 @@ setupLifeArchive();
     };
 
     filterRow.innerHTML = `
-      <div class="filter-anchor filter-anchor-start">${control("featured", "OnPin")}</div>
-      <div class="filter-topic-scroll" role="group" aria-label="按主题筛选仓库">${tags.map((tag) => control("tag", formatTopic(tag), tag)).join("")}</div>
-      <div class="filter-anchor filter-anchor-end">${control("all", "ALL")}</div>
+      <div class="filter-topic-scroll filter-topic-scroll-all" role="group" aria-label="按视图或主题筛选仓库">
+        ${control("all", "ALL")}
+        ${control("featured", "OnPin")}
+        ${tags.map((tag) => control("tag", formatTopic(tag), tag)).join("")}
+      </div>
     `;
 
     synchronizeFilterButtonWidth();
