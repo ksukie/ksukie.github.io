@@ -802,7 +802,7 @@ setupLifeArchive();
 
   const state = {
     repos: [],
-    view: "featured",
+    view: "all",
     activeTag: "",
     activeName: "",
     loadError: false,
