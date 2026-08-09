@@ -1,4 +1,4 @@
-name: Refresh Soft repositories
+name: Refresh World repositories
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
     branches:
       - main
     paths:
-      - ".github/workflows/refresh-soft-repositories.yml"
-      - "scripts/refresh-soft-repositories.mjs"
+      - ".github/workflows/refresh-ksukie-world-repositories.yml"
+      - "scripts/refresh-ksukie-world-repositories.mjs"
 
 permissions:
   contents: write
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Refresh Soft repository data
+      - name: Refresh World repository data
         env:
           PORTFOLIO_REPOSITORIES_TOKEN: ${{ secrets.PORTFOLIO_REPOSITORIES_TOKEN }}
         run: |
@@ -34,16 +34,16 @@ jobs:
             echo "::error::PORTFOLIO_REPOSITORIES_TOKEN is not configured."
             exit 1
           fi
-          node scripts/refresh-soft-repositories.mjs --check
-          node scripts/refresh-soft-repositories.mjs
+          node scripts/refresh-ksukie-world-repositories.mjs --check
+          node scripts/refresh-ksukie-world-repositories.mjs
 
       - name: Commit refreshed repository data
         run: |
-          if git diff --quiet -- js/soft-repositories.js; then
+          if git diff --quiet -- js/ksukie-world-repositories.js; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add js/soft-repositories.js
-          git commit -m "chore: refresh Soft repository data"
+          git add js/ksukie-world-repositories.js
+          git commit -m "chore: refresh World repository data"
           git push

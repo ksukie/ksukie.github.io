@@ -9507,10 +9507,10 @@ summary,
 }
 
 /*
- * The Repos interface replaces Soft's original #projects content here.
+ * The Repos interface replaces the World page's original #projects content here.
  * Keep that host section's sizing without changing the standalone Repos page.
  */
-.soft-repos-page #projects > .repository-section {
+.world-repos-page #projects > .repository-section {
   inline-size: 100%;
   min-inline-size: 0;
   min-block-size: 0;
@@ -9518,28 +9518,28 @@ summary,
   margin-inline: 0;
 }
 
-.soft-repos-page #projects .repository-console {
+.world-repos-page #projects .repository-console {
   grid-template-columns: minmax(0, 1fr) minmax(var(--rs-340, 340px), 0.45fr);
   gap: clamp(0.75rem, 1vw, 1rem);
   min-block-size: 100%;
   block-size: 100%;
 }
 
-.soft-repos-page #projects .repository-main {
+.world-repos-page #projects .repository-main {
   block-size: 100%;
   padding: var(--project-panel-pad);
 }
 
-.soft-repos-page #projects .repository-card-body {
+.world-repos-page #projects .repository-card-body {
   display: flex;
   flex-direction: column;
 }
 
-.soft-repos-page #projects .repository-card-tags {
+.world-repos-page #projects .repository-card-tags {
   margin-block-start: auto;
 }
 
-.soft-repos-page #projects .repository-detail {
+.world-repos-page #projects .repository-detail {
   padding: clamp(var(--rs-26, 26px), 2.4vw, var(--rs-43, 43px));
   border-color: rgba(var(--detail-rgb, var(--sand-rgb)), 0.3);
   background:
@@ -9551,7 +9551,7 @@ summary,
     0 16px 36px rgba(var(--detail-rgb, var(--sand-rgb)), 0.055);
 }
 
-.soft-repos-page #projects .repository-detail h2 {
+.world-repos-page #projects .repository-detail h2 {
   color: var(--ink);
   font-size: clamp(1.45rem, 1.85vw, 2rem);
   font-weight: 700;
@@ -9559,36 +9559,36 @@ summary,
   letter-spacing: -0.025em;
 }
 
-.soft-repos-page #projects .detail-description {
+.world-repos-page #projects .detail-description {
   color: #4f5965;
   color: color-mix(in srgb, var(--detail-ink, #55636d) 26%, #4f5965 74%);
   font-size: 0.9rem;
   line-height: 1.62;
 }
 
-.soft-repos-page #projects .detail-topic-empty,
-.soft-repos-page #projects .repository-trail-step small {
+.world-repos-page #projects .detail-topic-empty,
+.world-repos-page #projects .repository-trail-step small {
   color: #4f5965;
   color: color-mix(in srgb, var(--detail-ink, #55636d) 26%, #4f5965 74%);
   font-size: 0.8rem;
 }
 
-.soft-repos-page #projects .repository-tag {
+.world-repos-page #projects .repository-tag {
   min-block-size: 1.85rem;
   font-size: 0.75rem;
 }
 
-.soft-repos-page #projects .repository-card-meta {
+.world-repos-page #projects .repository-card-meta {
   font-size: 0.78rem;
 }
 
-.soft-repos-page #projects .repository-trail {
+.world-repos-page #projects .repository-trail {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
-.soft-repos-page #projects .repository-trail-step {
+.world-repos-page #projects .repository-trail-step {
   flex: 0 0 auto;
   border-color: rgba(var(--detail-rgb, var(--sand-rgb)), 0.26);
   background:
@@ -9599,7 +9599,7 @@ summary,
     inset 0 0 0 1px rgba(var(--detail-rgb, var(--sand-rgb)), 0.035);
 }
 
-.soft-repos-page #projects .repository-trail-step > span {
+.world-repos-page #projects .repository-trail-step > span {
   border: 1px solid rgba(var(--detail-rgb, var(--sand-rgb)), 0.28);
   color: var(--detail-ink, #55636d);
   background:
@@ -9611,41 +9611,41 @@ summary,
   font-size: 0.7rem;
 }
 
-.soft-repos-page #projects .repository-trail-step strong {
+.world-repos-page #projects .repository-trail-step strong {
   color: var(--ink);
   font-size: 0.82rem;
   font-weight: 700;
 }
 
-.soft-repos-page #projects .repository-detail > .detail-action {
+.world-repos-page #projects .repository-detail > .detail-action {
   border-color: rgba(var(--detail-rgb, var(--sand-rgb)), 0.28);
   font-size: 0.82rem;
   font-weight: 700;
 }
 
 @media (min-width: 981px) {
-  .soft-repos-page #projects.section {
+  .world-repos-page #projects.section {
     block-size: 100vh;
     block-size: 100svh;
   }
 
-  .soft-repos-page #projects > .repository-section,
-  .soft-repos-page #projects .repository-console,
-  .soft-repos-page #projects .repository-main,
-  .soft-repos-page #projects .repository-results,
-  .soft-repos-page #projects .repository-detail {
+  .world-repos-page #projects > .repository-section,
+  .world-repos-page #projects .repository-console,
+  .world-repos-page #projects .repository-main,
+  .world-repos-page #projects .repository-results,
+  .world-repos-page #projects .repository-detail {
     min-block-size: 0;
   }
 
 }
 
 @media (max-width: 980px) {
-  .soft-repos-page #projects > .repository-section,
-  .soft-repos-page #projects .repository-console {
+  .world-repos-page #projects > .repository-section,
+  .world-repos-page #projects .repository-console {
     block-size: auto;
   }
 
-  .soft-repos-page #projects .repository-console {
+  .world-repos-page #projects .repository-console {
     grid-template-columns: minmax(0, 1fr);
   }
 }

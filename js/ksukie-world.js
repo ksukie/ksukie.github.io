@@ -763,11 +763,10 @@ setupProvinceMap();
   const GITHUB_USER = "ksukie";
   // GitHub's public REST API does not expose profile pins. Keep this list in the same order as the public profile's pinned cards.
   const FEATURED_REPOSITORY_NAMES = [
-    "TactiWeave-VP",
-    "WildfireAegis",
-    "vision-workbench",
-    "adaptive-ui-engineer",
-    "AgentGuard"
+    "OpenFireAlert",
+    "IsaacSim-Tactile4OpenWorld",
+    "Vision-WorkBench",
+    "AdaptiveUI-SKILL"
   ];
   // Portfolio projects outside the account queried below stay visible after snapshot refreshes.
   const PORTFOLIO_REPOSITORIES = Object.freeze([
@@ -820,7 +819,7 @@ setupProvinceMap();
   const detailTrail = document.querySelector("[data-repository-trail]");
   const sourceLink = document.querySelector("[data-repository-source]");
   const privateSourceButton = document.querySelector("[data-repository-private-source]");
-  const isSoftReposPage = document.querySelector(".soft-repos-page") !== null;
+  const isWorldReposPage = document.querySelector(".world-repos-page") !== null;
 
   if (!filterRow || !grid || !detail || !detailName || !detailDescription || !detailTags || !detailTrail || !sourceLink || !privateSourceButton) {
     return;
@@ -1205,7 +1204,9 @@ setupProvinceMap();
   function visibleRepositories() {
     return state.repos
       .filter(repositoryMatchesView)
-      .sort(compareRepositoriesByStarsThenName);
+      .sort(state.view === "featured"
+        ? (left, right) => left.featuredOrder - right.featuredOrder
+        : compareRepositoriesByStarsThenName);
   }
 
   function getActiveRepository(repositories) {
@@ -1258,7 +1259,7 @@ setupProvinceMap();
       const cardTags = `<div class="repository-card-tags">${tags}</div>`;
       const cardHeading = `<h3><button class="repository-select" type="button" data-repository-name="${escapeHtml(repo.name)}" aria-pressed="${active}" aria-label="查看 ${escapeHtml(repo.name)} 仓库详情">${escapeHtml(repo.name)}</button></h3>`;
       const cardDescription = `<p class="repository-card-description">${escapeHtml(description)}</p>`;
-      const cardBody = isSoftReposPage
+      const cardBody = isWorldReposPage
         ? `${cardHeading}${cardDescription}${cardTags}`
         : `${cardTags}${cardHeading}${cardDescription}`;
 
