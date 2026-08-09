@@ -2,6 +2,25 @@
 // Repository metadata in this public file is intentionally visible on the portfolio.
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "OmniNexus-MosaicMind2WorldModel",
+    "full_name": "ksukie/OmniNexus-MosaicMind2WorldModel",
+    "private": true,
+    "visibility": "private",
+    "description": "A system that unifies disparate multimodal perceptions into a coherent intelligence, ultimately evolving into a world model.",
+    "language": "Python",
+    "topics": [
+      "multimodal",
+      "vision",
+      "world-models"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/OmniNexus-MosaicMind2WorldModel",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "pushed_at": "2026-07-30T13:45:05Z",
+    "updated_at": "2026-08-09T16:20:01Z"
+  },
+  {
     "name": "ksukie.github.io",
     "full_name": "ksukie/ksukie.github.io",
     "private": false,
@@ -13,8 +32,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-08-08T04:29:51Z",
-    "updated_at": "2026-08-08T04:29:54Z"
+    "pushed_at": "2026-08-09T16:20:08Z",
+    "updated_at": "2026-08-09T15:48:19Z"
   },
   {
     "name": "IsaacSim-Tactile4OpenWorld",
@@ -32,25 +51,10 @@ globalThis.REPOSITORY_SNAPSHOT = [
     ],
     "homepage": "",
     "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
-    "stargazers_count": 5,
+    "stargazers_count": 6,
     "forks_count": 0,
     "pushed_at": "2026-07-24T08:57:15Z",
-    "updated_at": "2026-08-01T07:45:54Z"
-  },
-  {
-    "name": "OmniNexus-MosaicMind2WorldModel",
-    "full_name": "ksukie/OmniNexus-MosaicMind2WorldModel",
-    "private": true,
-    "visibility": "private",
-    "description": "A system that unifies disparate multimodal perceptions into a coherent intelligence, ultimately evolving into a world model.",
-    "language": "Python",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/OmniNexus-MosaicMind2WorldModel",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "pushed_at": "2026-07-30T13:45:05Z",
-    "updated_at": "2026-07-30T13:50:05Z"
+    "updated_at": "2026-08-09T09:33:35Z"
   },
   {
     "name": "OpenFireAlert",
