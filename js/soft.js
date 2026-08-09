@@ -1,4 +1,4 @@
-/* Canonical application logic for soft.html. */
+/* Canonical application logic for ksukie-world.html. */
 
 const root = document.documentElement;
 const toast = document.querySelector(".toast");
@@ -639,6 +639,19 @@ function setupLifeArchive() {
   renderTracks(document.querySelector("[data-artist].is-active") || artists[0]);
 }
 
+function setupProvinceMap() {
+  const hotspots = Array.from(document.querySelectorAll("[data-province]"));
+  hotspots.forEach((hotspot) => {
+    hotspot.addEventListener("click", () => {
+      hotspots.forEach((item) => {
+        const selected = item.dataset.province === hotspot.dataset.province;
+        item.classList.toggle("is-selected", selected);
+        item.setAttribute("aria-pressed", String(selected));
+      });
+    });
+  });
+}
+
 function showToast(message) {
   if (!toast) return;
   toast.textContent = message;
@@ -730,6 +743,7 @@ setupResponsiveScale();
 setupPageSnap();
 setupLensConsole();
 setupLifeArchive();
+setupProvinceMap();
 
 (() => {
   "use strict";

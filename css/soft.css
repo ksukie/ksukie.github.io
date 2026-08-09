@@ -1,4 +1,4 @@
-/* Canonical, self-contained stylesheet for soft.html. */
+/* Canonical, self-contained stylesheet for ksukie-world.html. */
 
 :root {
   --page-bg: #f7f7f3;
@@ -9647,5 +9647,113 @@ summary,
 
   .soft-repos-page #projects .repository-console {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* life-travel-map */
+
+#life .life-template-slide[data-life-slide="travel-map"] {
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 4svh, 48px) clamp(74px, 7vw, 112px);
+  background: #f7f7f3;
+}
+
+#life .life-template-slide[data-life-slide="travel-map"]::before {
+  display: none;
+}
+
+.life-map-canvas {
+  position: relative;
+  width: min(82vw, calc(88svh * 1.32));
+  aspect-ratio: 2000 / 1420;
+}
+
+.life-map-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: grayscale(1) contrast(0.82);
+  opacity: 0.78;
+}
+
+.life-province-hotspots {
+  position: absolute;
+  inset: 0;
+}
+
+.life-province-hotspots button {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: clamp(20px, var(--size, 3.5%), 54px);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.life-province-hotspots button::after {
+  content: "";
+  width: 8px;
+  aspect-ratio: 1;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  background: #0f766e;
+  box-shadow: 0 0 0 6px rgba(15, 118, 110, 0.12);
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.life-province-hotspots button:hover,
+.life-province-hotspots button:focus-visible,
+.life-province-hotspots button.is-selected {
+  background: rgba(15, 118, 110, 0.09);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.life-province-hotspots button:hover::after,
+.life-province-hotspots button:focus-visible::after,
+.life-province-hotspots button.is-selected::after {
+  opacity: 1;
+}
+
+.life-province-hotspots button:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.life-template[data-active-life="travel-map"] .life-template-readout,
+.life-template[data-active-life="travel-map"] .life-next-label {
+  display: none;
+}
+
+.life-template[data-active-life="travel-map"] [data-life-next] {
+  opacity: 0.2;
+}
+
+@media (max-width: 980px) {
+  #life .life-template-slide[data-life-slide="travel-map"] {
+    padding: 96px 56px 48px;
+  }
+
+  .life-map-canvas {
+    width: min(88vw, calc(78svh * 1.32));
+  }
+}
+
+@media (max-width: 720px) {
+  #life .life-template-slide[data-life-slide="travel-map"] {
+    min-height: 100svh;
+    padding: 120px 24px 48px;
+  }
+
+  .life-map-canvas {
+    width: 100%;
   }
 }
