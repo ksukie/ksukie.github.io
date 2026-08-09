@@ -247,10 +247,10 @@
             </div>
           </article>
 
-          <article class="life-template-slide" data-life-slide="travel-map" data-life-caption="Travel Map" data-watermark="">
+          <article class="life-template-slide" data-life-slide="travel-map" data-life-caption="Travel Map" data-watermark="" hidden>
             <div class="life-map-canvas" data-province-map>
               <!-- 2023 standard map, review number GS(2023)2767, published with the Ministry of Natural Resources release. -->
-              <img class="life-map-image" src="assets/life/photography/china-standard-gs2023-2767.jpeg" alt="中国标准地图，审图号GS(2023)2767号" loading="eager" />
+              <img class="life-map-image" src="assets/life/photography/china-standard-gs2023-2767.jpeg" alt="中国标准地图，审图号GS(2023)2767号" loading="lazy" />
               <div class="life-province-hotspots" role="group" aria-label="省级行政区选择">
                 <button type="button" data-province="新疆维吾尔自治区" aria-label="新疆维吾尔自治区" aria-pressed="false" style="--x: 28%; --y: 34%; --size: 8%;"></button>
                 <button type="button" data-province="西藏自治区" aria-label="西藏自治区" aria-pressed="false" style="--x: 28%; --y: 56%; --size: 8%;"></button>
@@ -443,7 +443,7 @@
         </div>
 
         <div class="life-template-readout" aria-live="polite">
-          <span data-life-count>01 / 03</span>
+          <span data-life-count>01 / 02</span>
           <span data-life-current-caption>Life Archive</span>
         </div>
 
@@ -454,7 +454,7 @@
           <div class="life-dots" aria-label="当前位置">
             <button class="life-dot is-active" type="button" data-life-dot="intro" aria-label="Life Archive" aria-current="true"></button>
             <button class="life-dot" type="button" data-life-dot="photography" aria-label="Photography"></button>
-            <button class="life-dot" type="button" data-life-dot="travel-map" aria-label="Travel Map"></button>
+            <button class="life-dot" type="button" data-life-dot="travel-map" aria-label="Travel Map" hidden></button>
             <button class="life-dot" type="button" data-life-dot="games" aria-label="Gaming Archive" hidden></button>
             <button class="life-dot" type="button" data-life-dot="music" aria-label="Music Room" hidden></button>
             <button class="life-dot" type="button" data-life-dot="reading" aria-label="Reading Shelf" hidden></button>
@@ -500,7 +500,7 @@
           </a>
           <div class="contact-card" aria-label="Location">
             <span class="icon-box"><i data-lucide="map-pin"></i></span>
-            <span><strong>Location</strong><span>Shenzhen, Guangdong</span></span>
+            <span><strong>Location</strong><span>Shenzhen, China</span></span>
           </div>
           <a class="contact-card contact-link" href="resume.html" target="_blank" rel="noreferrer">
             <span class="icon-box"><i data-lucide="file-text"></i></span>

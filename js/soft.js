@@ -123,6 +123,17 @@ function setupResponsiveScale() {
   window.addEventListener("orientationchange", scheduleUpdate);
 }
 
+function setupReloadPosition() {
+  const navigation = performance.getEntriesByType("navigation")[0];
+  if (navigation?.type !== "reload" || window.location.hash) return;
+
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.addEventListener("pageshow", () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    if ("scrollRestoration" in history) history.scrollRestoration = "auto";
+  }, { once: true });
+}
+
 function setupPageSnap() {
   const settleDelay = 90;
   const wheelIntentThreshold = 12;
@@ -737,6 +748,7 @@ function setupLensConsole() {
   activateLens(activeLens);
 }
 
+setupReloadPosition();
 updateIcons();
 setupNavHanger();
 setupResponsiveScale();
