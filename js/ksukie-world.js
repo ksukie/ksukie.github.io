@@ -761,13 +761,9 @@ setupProvinceMap();
   "use strict";
 
   const GITHUB_USER = "ksukie";
-  // GitHub's public REST API does not expose profile pins. Keep this list in the same order as the public profile's pinned cards.
-  const FEATURED_REPOSITORY_NAMES = [
-    "OpenFireAlert",
-    "IsaacSim-Tactile4OpenWorld",
-    "Vision-WorkBench",
-    "AdaptiveUI-SKILL"
-  ];
+  const PINNED_REPOSITORY_NAMES = Array.isArray(globalThis.PINNED_REPOSITORY_NAMES)
+    ? globalThis.PINNED_REPOSITORY_NAMES
+    : [];
   // Portfolio projects outside the account queried below stay visible after snapshot refreshes.
   const PORTFOLIO_REPOSITORIES = Object.freeze([
     {
@@ -937,7 +933,7 @@ setupProvinceMap();
     const privateRepository = isPrivateRepository(repo);
     const language = repo.language || "Other";
     const topics = repositoryTopics(repo);
-    const featuredOrder = FEATURED_REPOSITORY_NAMES.indexOf(repo.name);
+    const featuredOrder = PINNED_REPOSITORY_NAMES.indexOf(repo.name);
 
     return {
       ...repo,
@@ -1213,7 +1209,7 @@ setupProvinceMap();
     const current = repositories.find((repo) => repo.name === state.activeName);
     if (current) return current;
 
-    const featured = FEATURED_REPOSITORY_NAMES
+    const featured = PINNED_REPOSITORY_NAMES
       .map((name) => repositories.find((repo) => repo.name === name))
       .find(Boolean);
     const next = featured || repositories[0] || null;
@@ -1398,7 +1394,7 @@ setupProvinceMap();
       const { repos, source } = await loadRepositories();
       state.repos = repos;
       state.dataSource = source;
-      state.activeName = FEATURED_REPOSITORY_NAMES.find((name) => repos.some((repo) => repo.name === name)) || "";
+      state.activeName = PINNED_REPOSITORY_NAMES.find((name) => repos.some((repo) => repo.name === name)) || "";
     } catch (error) {
       console.error("Repository data could not be loaded from GitHub or a local fallback.", error);
       state.loadError = true;
