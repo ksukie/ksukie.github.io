@@ -8,6 +8,27 @@ globalThis.PINNED_REPOSITORY_NAMES = [
 ];
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "IsaacSim-Tactile4OpenWorld",
+    "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
+    "private": false,
+    "visibility": "public",
+    "description": "OpenWorldTactile is an Isaac Sim platform for open-world robotic contact, deformation, force-field reconstruction, and visuotactile research across sensors and robots.",
+    "language": "Python",
+    "topics": [
+      "embodied-ai",
+      "isaacsim",
+      "robotics",
+      "tactile",
+      "vision"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
+    "stargazers_count": 7,
+    "forks_count": 0,
+    "pushed_at": "2026-07-24T08:57:15Z",
+    "updated_at": "2026-08-10T03:40:37Z"
+  },
+  {
     "name": "ksukie.github.io",
     "full_name": "ksukie/ksukie.github.io",
     "private": false,
@@ -19,8 +40,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-08-09T23:49:58Z",
-    "updated_at": "2026-08-09T23:50:02Z"
+    "pushed_at": "2026-08-10T02:37:16Z",
+    "updated_at": "2026-08-10T02:37:20Z"
   },
   {
     "name": "OmniNexus-MosaicMind2WorldModel",
@@ -40,27 +61,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-07-30T13:45:05Z",
     "updated_at": "2026-08-09T16:20:01Z"
-  },
-  {
-    "name": "IsaacSim-Tactile4OpenWorld",
-    "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
-    "private": false,
-    "visibility": "public",
-    "description": "OpenWorldTactile is an Isaac Sim platform for open-world robotic contact, deformation, force-field reconstruction, and visuotactile research across sensors and robots.",
-    "language": "Python",
-    "topics": [
-      "embodied-ai",
-      "isaacsim",
-      "robotics",
-      "tactile",
-      "vision"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
-    "stargazers_count": 6,
-    "forks_count": 0,
-    "pushed_at": "2026-07-24T08:57:15Z",
-    "updated_at": "2026-08-09T09:33:35Z"
   },
   {
     "name": "OpenFireAlert",
