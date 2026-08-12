@@ -4,24 +4,11 @@ globalThis.PINNED_REPOSITORY_NAMES = [
   "OpenFireAlert",
   "IsaacSim-Tactile4OpenWorld",
   "Vision-WorkBench",
-  "AdaptiveUI-SKILL"
+  "AdaptiveUI-SKILL",
+  "TactiWeave-VP",
+  "Edge-Inference-4-AADFlowNet"
 ];
 globalThis.REPOSITORY_SNAPSHOT = [
-  {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "pushed_at": "2026-08-12T15:17:13Z",
-    "updated_at": "2026-08-12T15:20:25Z"
-  },
   {
     "name": "IsaacSim-Tactile4OpenWorld",
     "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
@@ -40,27 +27,27 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
     "stargazers_count": 7,
     "forks_count": 0,
-    "pushed_at": "2026-07-24T08:57:15Z",
-    "updated_at": "2026-08-10T03:40:37Z"
+    "pushed_at": "2026-08-12T16:54:15Z",
+    "updated_at": "2026-08-12T16:54:49Z"
   },
   {
-    "name": "OmniNexus-MosaicMind2WorldModel",
-    "full_name": "ksukie/OmniNexus-MosaicMind2WorldModel",
-    "private": true,
-    "visibility": "private",
-    "description": "A system that unifies disparate multimodal perceptions into a coherent intelligence, ultimately evolving into a world model.",
+    "name": "AdaptiveUI-SKILL",
+    "full_name": "ksukie/AdaptiveUI-SKILL",
+    "private": false,
+    "visibility": "public",
+    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
     "language": "Python",
     "topics": [
-      "multimodal",
-      "vision",
-      "world-models"
+      "agent",
+      "powershell",
+      "skill"
     ],
     "homepage": "",
-    "html_url": "https://github.com/ksukie/OmniNexus-MosaicMind2WorldModel",
-    "stargazers_count": 1,
+    "html_url": "https://github.com/ksukie/AdaptiveUI-SKILL",
+    "stargazers_count": 4,
     "forks_count": 0,
-    "pushed_at": "2026-07-30T13:45:05Z",
-    "updated_at": "2026-08-09T16:20:01Z"
+    "pushed_at": "2026-08-12T16:51:16Z",
+    "updated_at": "2026-08-12T16:51:32Z"
   },
   {
     "name": "OpenFireAlert",
@@ -83,8 +70,42 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/OpenFireAlert",
     "stargazers_count": 5,
     "forks_count": 0,
-    "pushed_at": "2026-07-21T05:54:09Z",
-    "updated_at": "2026-07-23T01:40:36Z"
+    "pushed_at": "2026-08-12T16:51:16Z",
+    "updated_at": "2026-08-12T16:51:32Z"
+  },
+  {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2026-08-12T16:14:33Z",
+    "updated_at": "2026-08-12T16:16:17Z"
+  },
+  {
+    "name": "OmniNexus-MosaicMind2WorldModel",
+    "full_name": "ksukie/OmniNexus-MosaicMind2WorldModel",
+    "private": true,
+    "visibility": "private",
+    "description": "A system that unifies disparate multimodal perceptions into a coherent intelligence, ultimately evolving into a world model.",
+    "language": "Python",
+    "topics": [
+      "multimodal",
+      "vision",
+      "world-models"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/OmniNexus-MosaicMind2WorldModel",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "pushed_at": "2026-07-30T13:45:05Z",
+    "updated_at": "2026-08-09T16:20:01Z"
   },
   {
     "name": "AgentTools",
@@ -160,25 +181,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-07-21T09:06:57Z",
     "updated_at": "2026-07-21T09:52:13Z"
-  },
-  {
-    "name": "AdaptiveUI-SKILL",
-    "full_name": "ksukie/AdaptiveUI-SKILL",
-    "private": false,
-    "visibility": "public",
-    "description": "A portable Agent Skill for auditing, refactoring, and verifying resilient responsive web interfaces.",
-    "language": "Python",
-    "topics": [
-      "agent",
-      "powershell",
-      "skill"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/AdaptiveUI-SKILL",
-    "stargazers_count": 4,
-    "forks_count": 0,
-    "pushed_at": "2026-08-01T02:57:14Z",
-    "updated_at": "2026-07-21T03:14:39Z"
   },
   {
     "name": "TactileFlowField",
