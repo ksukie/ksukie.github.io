@@ -10,6 +10,21 @@ globalThis.PINNED_REPOSITORY_NAMES = [
 ];
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2026-08-12T17:16:59Z",
+    "updated_at": "2026-08-12T17:17:09Z"
+  },
+  {
     "name": "IsaacSim-Tactile4OpenWorld",
     "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
     "private": false,
@@ -72,21 +87,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-08-12T16:51:16Z",
     "updated_at": "2026-08-12T16:51:32Z"
-  },
-  {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "pushed_at": "2026-08-12T16:14:33Z",
-    "updated_at": "2026-08-12T16:16:17Z"
   },
   {
     "name": "OmniNexus-MosaicMind2WorldModel",
