@@ -21,8 +21,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-08-17T09:03:24Z",
-    "updated_at": "2026-08-17T09:04:38Z"
+    "pushed_at": "2026-08-17T10:00:05Z",
+    "updated_at": "2026-08-17T10:00:32Z"
   },
   {
     "name": "IsaacSim-Tactile4OpenWorld",
@@ -122,7 +122,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/AgentTools",
     "stargazers_count": 3,
     "forks_count": 0,
-    "pushed_at": "2026-07-22T06:36:02Z",
+    "pushed_at": "2026-08-17T10:48:38Z",
     "updated_at": "2026-07-22T06:37:08Z"
   },
   {
