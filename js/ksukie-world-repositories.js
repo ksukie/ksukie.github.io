@@ -21,8 +21,26 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-08-17T10:00:05Z",
-    "updated_at": "2026-08-17T10:00:32Z"
+    "pushed_at": "2026-08-17T10:50:03Z",
+    "updated_at": "2026-08-17T10:52:18Z"
+  },
+  {
+    "name": "AgentTools",
+    "full_name": "ksukie/AgentTools",
+    "private": false,
+    "visibility": "public",
+    "description": "Cross-platform AGENTS.md templates and Windows-first read-only diagnostics for AI coding agents.",
+    "language": "Python",
+    "topics": [
+      "agent",
+      "powershell"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/AgentTools",
+    "stargazers_count": 3,
+    "forks_count": 0,
+    "pushed_at": "2026-08-17T10:48:38Z",
+    "updated_at": "2026-08-17T10:50:46Z"
   },
   {
     "name": "IsaacSim-Tactile4OpenWorld",
@@ -106,24 +124,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-07-30T13:45:05Z",
     "updated_at": "2026-08-09T16:20:01Z"
-  },
-  {
-    "name": "AgentTools",
-    "full_name": "ksukie/AgentTools",
-    "private": false,
-    "visibility": "public",
-    "description": "Cross-platform AGENTS.md templates and Windows-first read-only diagnostics for AI coding agents.",
-    "language": "Python",
-    "topics": [
-      "agent",
-      "powershell"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/AgentTools",
-    "stargazers_count": 3,
-    "forks_count": 0,
-    "pushed_at": "2026-08-17T10:48:38Z",
-    "updated_at": "2026-07-22T06:37:08Z"
   },
   {
     "name": "Vision-WorkBench",
