@@ -21,8 +21,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-08-31T20:09:36Z",
-    "updated_at": "2026-08-31T20:09:42Z"
+    "pushed_at": "2026-08-31T23:53:27Z",
+    "updated_at": "2026-08-31T23:56:34Z"
   },
   {
     "name": "AgentTools",
@@ -79,7 +79,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/AdaptiveUI-SKILL",
     "stargazers_count": 4,
     "forks_count": 0,
-    "pushed_at": "2026-08-12T16:51:16Z",
+    "pushed_at": "2026-09-01T02:58:36Z",
     "updated_at": "2026-08-12T16:51:32Z"
   },
   {
