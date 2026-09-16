@@ -10,6 +10,27 @@ globalThis.PINNED_REPOSITORY_NAMES = [
 ];
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "IsaacSim-Tactile4OpenWorld",
+    "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
+    "private": false,
+    "visibility": "public",
+    "description": "OpenWorldTactile is an Isaac Sim platform for open-world robotic contact, deformation, force-field reconstruction, and visuotactile research across sensors and robots.",
+    "language": "Python",
+    "topics": [
+      "embodied-ai",
+      "isaacsim",
+      "robotics",
+      "tactile",
+      "vision"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
+    "stargazers_count": 8,
+    "forks_count": 0,
+    "pushed_at": "2026-08-12T16:54:15Z",
+    "updated_at": "2026-09-16T01:39:45Z"
+  },
+  {
     "name": "ksukie.github.io",
     "full_name": "ksukie/ksukie.github.io",
     "private": false,
@@ -21,8 +42,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-09-15T21:29:19Z",
-    "updated_at": "2026-09-15T21:29:24Z"
+    "pushed_at": "2026-09-16T00:25:52Z",
+    "updated_at": "2026-09-16T00:25:56Z"
   },
   {
     "name": "AgentTools",
@@ -41,27 +62,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 0,
     "pushed_at": "2026-08-17T11:53:11Z",
     "updated_at": "2026-08-17T11:53:43Z"
-  },
-  {
-    "name": "IsaacSim-Tactile4OpenWorld",
-    "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
-    "private": false,
-    "visibility": "public",
-    "description": "OpenWorldTactile is an Isaac Sim platform for open-world robotic contact, deformation, force-field reconstruction, and visuotactile research across sensors and robots.",
-    "language": "Python",
-    "topics": [
-      "embodied-ai",
-      "isaacsim",
-      "robotics",
-      "tactile",
-      "vision"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
-    "stargazers_count": 7,
-    "forks_count": 0,
-    "pushed_at": "2026-08-12T16:54:15Z",
-    "updated_at": "2026-08-12T16:54:49Z"
   },
   {
     "name": "AdaptiveUI-SKILL",
