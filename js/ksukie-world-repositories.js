@@ -10,21 +10,6 @@ globalThis.PINNED_REPOSITORY_NAMES = [
 ];
 globalThis.REPOSITORY_SNAPSHOT = [
   {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "pushed_at": "2026-09-21T19:34:05Z",
-    "updated_at": "2026-09-21T19:34:09Z"
-  },
-  {
     "name": "IsaacSim-Tactile4OpenWorld",
     "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
     "private": false,
@@ -40,10 +25,25 @@ globalThis.REPOSITORY_SNAPSHOT = [
     ],
     "homepage": "",
     "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
-    "stargazers_count": 8,
+    "stargazers_count": 9,
     "forks_count": 0,
     "pushed_at": "2026-08-12T16:54:15Z",
-    "updated_at": "2026-09-16T01:39:45Z"
+    "updated_at": "2026-09-22T02:22:17Z"
+  },
+  {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2026-09-21T23:20:16Z",
+    "updated_at": "2026-09-21T23:20:20Z"
   },
   {
     "name": "AgentTools",
