@@ -21,8 +21,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-09-30T19:26:03Z",
-    "updated_at": "2026-09-30T19:26:07Z"
+    "pushed_at": "2026-09-30T23:55:04Z",
+    "updated_at": "2026-09-30T23:55:08Z"
   },
   {
     "name": "IsaacSim-Tactile4OpenWorld",
@@ -79,7 +79,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/AdaptiveUI-SKILL",
     "stargazers_count": 4,
     "forks_count": 0,
-    "pushed_at": "2026-09-01T02:58:36Z",
+    "pushed_at": "2026-10-01T02:58:27Z",
     "updated_at": "2026-08-12T16:51:32Z"
   },
   {
