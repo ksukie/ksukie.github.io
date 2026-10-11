@@ -10,6 +10,30 @@ globalThis.PINNED_REPOSITORY_NAMES = [
 ];
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "OpenFireAlert",
+    "full_name": "ksukie/OpenFireAlert",
+    "private": false,
+    "visibility": "public",
+    "description": "Open-source wildfire monitoring and early-warning platform powered by AI vision, Jetson edge inference, and ESP32 sensors.",
+    "language": "Python",
+    "topics": [
+      "edge-ai",
+      "edge-comupting",
+      "esp32",
+      "fullstack-development",
+      "jetson",
+      "tensorrt",
+      "vision",
+      "yolov11"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/OpenFireAlert",
+    "stargazers_count": 6,
+    "forks_count": 1,
+    "pushed_at": "2026-08-12T16:51:16Z",
+    "updated_at": "2026-10-11T17:48:58Z"
+  },
+  {
     "name": "ksukie.github.io",
     "full_name": "ksukie/ksukie.github.io",
     "private": false,
@@ -21,8 +45,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-10-11T05:54:49Z",
-    "updated_at": "2026-10-11T05:54:52Z"
+    "pushed_at": "2026-10-11T12:58:51Z",
+    "updated_at": "2026-10-11T12:58:55Z"
   },
   {
     "name": "IsaacSim-Tactile4OpenWorld",
@@ -80,30 +104,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "stargazers_count": 4,
     "forks_count": 0,
     "pushed_at": "2026-10-01T02:58:27Z",
-    "updated_at": "2026-08-12T16:51:32Z"
-  },
-  {
-    "name": "OpenFireAlert",
-    "full_name": "ksukie/OpenFireAlert",
-    "private": false,
-    "visibility": "public",
-    "description": "Open-source wildfire monitoring and early-warning platform powered by AI vision, Jetson edge inference, and ESP32 sensors.",
-    "language": "Python",
-    "topics": [
-      "edge-ai",
-      "edge-comupting",
-      "esp32",
-      "fullstack-development",
-      "jetson",
-      "tensorrt",
-      "vision",
-      "yolov11"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/OpenFireAlert",
-    "stargazers_count": 5,
-    "forks_count": 1,
-    "pushed_at": "2026-08-12T16:51:16Z",
     "updated_at": "2026-08-12T16:51:32Z"
   },
   {
