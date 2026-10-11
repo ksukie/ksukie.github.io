@@ -10,6 +10,21 @@ globalThis.PINNED_REPOSITORY_NAMES = [
 ];
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "ksukie.github.io",
+    "full_name": "ksukie/ksukie.github.io",
+    "private": false,
+    "visibility": "public",
+    "description": null,
+    "language": "CSS",
+    "topics": [],
+    "homepage": null,
+    "html_url": "https://github.com/ksukie/ksukie.github.io",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "pushed_at": "2026-10-11T18:07:37Z",
+    "updated_at": "2026-10-11T18:07:40Z"
+  },
+  {
     "name": "OpenFireAlert",
     "full_name": "ksukie/OpenFireAlert",
     "private": false,
@@ -32,21 +47,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 1,
     "pushed_at": "2026-08-12T16:51:16Z",
     "updated_at": "2026-10-11T17:48:58Z"
-  },
-  {
-    "name": "ksukie.github.io",
-    "full_name": "ksukie/ksukie.github.io",
-    "private": false,
-    "visibility": "public",
-    "description": null,
-    "language": "CSS",
-    "topics": [],
-    "homepage": null,
-    "html_url": "https://github.com/ksukie/ksukie.github.io",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "pushed_at": "2026-10-11T12:58:51Z",
-    "updated_at": "2026-10-11T12:58:55Z"
   },
   {
     "name": "IsaacSim-Tactile4OpenWorld",
