@@ -10,6 +10,27 @@ globalThis.PINNED_REPOSITORY_NAMES = [
 ];
 globalThis.REPOSITORY_SNAPSHOT = [
   {
+    "name": "IsaacSim-Tactile4OpenWorld",
+    "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
+    "private": false,
+    "visibility": "public",
+    "description": "OpenWorldTactile is an Isaac Sim platform for open-world robotic contact, deformation, force-field reconstruction, and visuotactile research across sensors and robots.",
+    "language": "Python",
+    "topics": [
+      "embodied-ai",
+      "isaacsim",
+      "robotics",
+      "tactile",
+      "vision"
+    ],
+    "homepage": "",
+    "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
+    "stargazers_count": 10,
+    "forks_count": 0,
+    "pushed_at": "2026-08-12T16:54:15Z",
+    "updated_at": "2026-11-10T02:16:17Z"
+  },
+  {
     "name": "ksukie.github.io",
     "full_name": "ksukie/ksukie.github.io",
     "private": false,
@@ -21,8 +42,8 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-11-09T11:42:40Z",
-    "updated_at": "2026-11-09T11:42:43Z"
+    "pushed_at": "2026-11-09T22:27:01Z",
+    "updated_at": "2026-11-09T22:27:05Z"
   },
   {
     "name": "OpenFireAlert",
@@ -47,27 +68,6 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "forks_count": 1,
     "pushed_at": "2026-08-12T16:51:16Z",
     "updated_at": "2026-10-11T17:48:58Z"
-  },
-  {
-    "name": "IsaacSim-Tactile4OpenWorld",
-    "full_name": "ksukie/IsaacSim-Tactile4OpenWorld",
-    "private": false,
-    "visibility": "public",
-    "description": "OpenWorldTactile is an Isaac Sim platform for open-world robotic contact, deformation, force-field reconstruction, and visuotactile research across sensors and robots.",
-    "language": "Python",
-    "topics": [
-      "embodied-ai",
-      "isaacsim",
-      "robotics",
-      "tactile",
-      "vision"
-    ],
-    "homepage": "",
-    "html_url": "https://github.com/ksukie/IsaacSim-Tactile4OpenWorld",
-    "stargazers_count": 9,
-    "forks_count": 0,
-    "pushed_at": "2026-08-12T16:54:15Z",
-    "updated_at": "2026-09-22T02:22:17Z"
   },
   {
     "name": "AgentTools",
