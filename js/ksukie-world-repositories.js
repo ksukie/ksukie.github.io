@@ -21,7 +21,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "html_url": "https://github.com/ksukie/ksukie.github.io",
     "stargazers_count": 0,
     "forks_count": 0,
-    "pushed_at": "2026-11-14T06:35:13Z",
+    "pushed_at": "2026-11-14T14:13:47Z",
     "updated_at": "2026-11-12T13:50:04Z"
   },
   {
@@ -65,7 +65,7 @@ globalThis.REPOSITORY_SNAPSHOT = [
     "homepage": "",
     "html_url": "https://github.com/ksukie/OpenFireAlert",
     "stargazers_count": 6,
-    "forks_count": 1,
+    "forks_count": 0,
     "pushed_at": "2026-08-12T16:51:16Z",
     "updated_at": "2026-10-11T17:48:58Z"
   },
